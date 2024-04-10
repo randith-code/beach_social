@@ -1,6 +1,8 @@
 import Hero from "./components/Hero section/Hero";
-import StoryCard from "./components/Success stories/storycrad";
+import StoryCard from "./components/CardModules/storycrad";
 import ListItem from "./components/Hero section/ListItem";
+import InsightCard from "./components/CardModules/InsightCard";
+import Footer from "./components/Navigation/Footer";
 
 export default function Home() {
   const partnersDesc =
@@ -287,6 +289,77 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      {/* recent insight */}
+      <div className="w-full flex flex-col items-center pb-8 gap-8">
+        <div className="w-8/12 flex flex-col gap-8">
+          <span className="flex">
+            <h1 className="font-extrabold text-4xl">Recent</h1>
+            <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+              &nbsp; insights
+            </h1>
+          </span>
+          <div className="w-full flex flex-col">
+            <span className="w-full flex gap-2">
+              <InsightCard
+                img={"/insight_3.png"}
+                title={"A Day in the Life of a Social Media Manager"}
+                description={
+                  "Get an insider's look at the world of social media management. Follow a day in the life of a social media manager and uncover the strategies and tools that keep campaigns running smoothly."
+                }
+              />
+              <InsightCard
+                img={"/insight_2.png"}
+                title={"Planning Your Social Media Success"}
+                description={
+                  "Unlock the secrets of effective content planning. Dive into the art of creating a content calendar that keeps your social media strategy on track and your audience engaged."
+                }
+              />
+              <InsightCard
+                img={"/insight_1.png"}
+                title={"A Deep Dive into Social Media Surfing"}
+                description={
+                  "Explore the latest trends and strategies in the ever-evolving world of social media. Learn how to ride the digital waves with finesse and make a splash in your online presence."
+                }
+              />
+            </span>
+          </div>
+        </div>
+        <span className="w-1/2 flex justify-center gap-4">
+          <div className="w-12 h-2 rounded-lg bg-black"></div>
+          <div className="w-12 h-2 rounded-lg bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
+          <div className="w-12 h-2 rounded-lg bg-black"></div>
+          <div className="w-12 h-2 rounded-lg bg-black"></div>
+          <div className="w-12 h-2 rounded-lg bg-black"></div>
+          <div className="w-12 h-2 rounded-lg bg-black"></div>
+          <div className="w-12 h-2 rounded-lg bg-black"></div>
+        </span>
+        <hr className="w-8/12 h-1 bg-slate-200" />
+      </div>
+
+      {/* contact us */}
+      <div className="w-full flex justify-center pb-8">
+        <div className="w-8/12 flex flex-col gap-4">
+          <h4 className="font-semibold text-black w-1/2 text-lg">
+            We love to help brands succeed. Let's Start a Winning Project
+            Together.
+          </h4>
+          <span className="flex gap-8">
+            <div className="w-fit relative">
+              <h1 className="font-bold text-black text-6xl z-50 relative">
+                Get in Touch with Us
+              </h1>
+              <div className="w-full h-6 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 absolute bottom-0 left-0"></div>
+            </div>
+            <div className="rounded-full bg-black cursor-pointer -translate-y-1/2 grid place-items-center w-16 aspect-square">
+              <img className="w-4" src="/side_arrow.svg" alt="button icon" />
+            </div>
+          </span>
+        </div>
+      </div>
+
+      {/* footer */}
+      <Footer />
     </main>
   );
 }
