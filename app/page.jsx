@@ -1,20 +1,98 @@
+"use client";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 import Hero from "./components/Hero section/Hero";
 import StoryCard from "./components/CardModules/storycrad";
 import ListItem from "./components/Hero section/ListItem";
 import InsightCard from "./components/CardModules/InsightCard";
 import Footer from "./components/Navigation/Footer";
+import Container from "postcss/lib/container";
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 export default function Home() {
   const partnersDesc =
     "We build strong client relationships based on trust and honesty. You can always count on us to have your back.";
 
+  const containerRef = useRef();
+  useGSAP(
+    () => {
+      gsap.from(".partner-header", {
+        yPercent: "100",
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".partner-header",
+          toggleActions: "restart complete restart pause",
+        },
+      });
+      gsap.from(".partner-desc", {
+        yPercent: "100",
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".partner-desc",
+          toggleActions: "restart complete restart pause",
+        },
+      });
+
+      gsap.from(".services", {
+        yPercent: "100",
+        duration: 0.5,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".services",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+        },
+      });
+
+      gsap.from(".values", {
+        xPercent: "-100",
+        duration: 0.8,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".values",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          end: "center center",
+        },
+      });
+      gsap.to(".top-logos", {
+        xPercent: "-25",
+        duration: 0.8,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".top-logos",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          end: "center center",
+        },
+      });
+      gsap.to(".bottom-logos", {
+        xPercent: "25",
+        duration: 0.8,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".bottom-logos",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          end: "center center",
+        },
+      });
+    },
+    { scope: containerRef.current }
+  );
+
   return (
-    <main className="flex flex-col gap-8">
+    <main ref={containerRef} className="flex font-Roboto flex-col gap-8">
       <Hero />
 
       {/* partners */}
       <div className="w-full flex flex-col gap-4 items-center bg-white z-40">
-        <span className="flex">
+        <span className="partner-header flex">
           <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             Friends
           </h1>
@@ -22,9 +100,9 @@ export default function Home() {
             &nbsp; we have made along the way
           </h1>
         </span>
-        <p className="text-xs w-2/6 text-center">{partnersDesc}</p>
+        <p className="partner-desc text-xs w-2/6 text-center">{partnersDesc}</p>
         <div className="flex flex-col gap-8 mt-8 bg-white z-40">
-          <div className="flex gap-4 overflow-hidden">
+          <div className="top-logos flex gap-4 overflow-hidden">
             <img src="/aely.png" alt="partner company logo" />
             <img src="/camp.png" alt="partner company logo" />
             <img src="/graanted.png" alt="partner company logo" />
@@ -33,7 +111,7 @@ export default function Home() {
             <img src="/mint.png" alt="partner company logo" />
             <img src="/oax.png" alt="partner company logo" />
           </div>
-          <div className="flex gap-6 overflow-hidden">
+          <div className="bottom-logos flex gap-6 overflow-hidden">
             <img src="/overland.png" alt="partner company logo" />
             <img src="/sunrun.png" alt="partner company logo" />
             <img src="/sign.png" alt="partner company logo" />
@@ -47,47 +125,47 @@ export default function Home() {
 
       {/* services */}
       <div className="flex flex-col items-center mt-8 bg-white z-40">
-        <span className="flex">
+        <span className="services flex">
           <h1 className="font-extrabold text-4xl">We’ve got just what</h1>
           <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             &nbsp; you need.
           </h1>
         </span>
-        <div className="grid grid-cols-[1fr_50px_1fr] text-2xl gap-y-8 font-bold pt-8">
-          <div className="text-right">Copy Writing</div>
-          <div className="text-center flex justify-center items-center">
+        <div className="services grid grid-cols-[1fr_50px_1fr] text-2xl gap-y-8 font-bold pt-8">
+          <div className="services text-right">Copy Writing</div>
+          <div className="services text-center flex justify-center items-center">
             <hr className="h-1 w-7/12 bg-black" />
           </div>
-          <div className="text-left">Chat bots</div>
+          <div className="services text-left">Chat bots</div>
 
-          <div className="text-right">Email Campaign</div>
-          <div className="text-center flex justify-center items-center">
+          <div className="services text-right">Email Campaign</div>
+          <div className="services text-center flex justify-center items-center">
             <hr className="h-1 w-7/12 bg-black" />
           </div>
-          <div className="text-left">SMS Campaign</div>
+          <div className="services text-left">SMS Campaign</div>
 
-          <div className="text-right">Event Promotion</div>
-          <div className="text-center flex justify-center items-center">
+          <div className="services text-right">Event Promotion</div>
+          <div className="services text-center flex justify-center items-center">
             <hr className="h-1 w-7/12 bg-black" />
           </div>
-          <div className="text-left">Creative Designs</div>
+          <div className="services text-left">Creative Designs</div>
 
-          <div className="text-right">Social Media Advertising</div>
-          <div className="text-center flex justify-center items-center">
+          <div className="services text-right">Social Media Advertising</div>
+          <div className="services text-center flex justify-center items-center">
             <hr className="h-1 w-7/12 bg-black" />
           </div>
-          <div className="text-left">Social Media Consulting</div>
+          <div className="services text-left">Social Media Consulting</div>
 
-          <div className="text-right">Social Media Management</div>
-          <div className="text-center flex justify-center items-center">
+          <div className="services text-right">Social Media Management</div>
+          <div className="services text-center flex justify-center items-center">
             <hr className="h-1 w-7/12 bg-black" />
           </div>
-          <div className="text-left">Google adwords Campaign</div>
+          <div className="services text-left">Google adwords Campaign</div>
         </div>
       </div>
 
       {/* values */}
-      <div className="bg-valuesBg w-full flex justify-center">
+      <div className="values bg-valuesBg w-full flex justify-center">
         <div className="w-10/12 flex">
           <div className="w-1/2 flex items-center justify-end">
             <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">

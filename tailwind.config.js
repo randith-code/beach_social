@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,6 +17,9 @@ module.exports = {
       colors: {
         main: "#31DAEA",
         valuesBg: "rgba(0, 182, 255, 0.07)",
+      },
+      fontFamily: {
+        Roboto: ['"Roboto"', ...defaultTheme.fontFamily.sans],
       },
     },
   },
