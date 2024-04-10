@@ -72,7 +72,7 @@ export default function ConatctUs() {
             <img className="w-2/12" src="/footer_logo.png" alt="" />
             <div className="flex items-center bg-white rounded-3xl px-4 gap-4">
               <h1 className="font-extrabold text-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
-                Let's collaborate with us!
+                Let&apos;s collaborate with us!
               </h1>
               <div className="w-12 aspect-square rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 grid place-items-center">
                 <img src="/black_arrow.svg" alt="" />

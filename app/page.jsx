@@ -126,7 +126,7 @@ export default function Home() {
       {/* services */}
       <div className="flex flex-col items-center mt-8 bg-white z-40">
         <span className="services flex">
-          <h1 className="font-extrabold text-4xl">We’ve got just what</h1>
+          <h1 className="font-extrabold text-4xl">We&apos;ve got just what</h1>
           <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             &nbsp; you need.
           </h1>
@@ -419,7 +419,7 @@ export default function Home() {
       <div className="w-full flex justify-center pb-8">
         <div className="w-8/12 flex flex-col gap-4">
           <h4 className="font-semibold text-black w-1/2 text-lg">
-            We love to help brands succeed. Let's Start a Winning Project
+            We love to help brands succeed. Let&apos;s Start a Winning Project
             Together.
           </h4>
           <span className="flex gap-8">

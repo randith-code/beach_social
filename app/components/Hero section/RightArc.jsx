@@ -9,4 +9,6 @@ const RightArc = forwardRef((props, ref) => {
   );
 });
 
+RightArc.displayName = "RightArc";
+
 export default RightArc;

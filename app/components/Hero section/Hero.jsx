@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import parse from "html-react-parser";
 
 import ParticlesComponent from "./Particle";
-import Navbar from "../Navigation/NavBar";
+import Navbar from "../Navigation/Navbar";
 import { getHeroContent } from "@/app/services/posts";
 import LeftArc from "./LeftArc";
 import RightArc from "./RightArc";
