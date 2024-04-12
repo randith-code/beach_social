@@ -1,9 +1,40 @@
-export default function ConatctUs() {
+"use client";
+import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
+
+export default function ConatctUs({ className, setOpenContact }) {
+  const { contextSafe } = useGSAP(() => {
+    gsap.from(".contactus", {
+      opacity: 0.4,
+      yPercent: "100",
+      duration: 0.9,
+    });
+  }, []);
+
+  const handelClose = contextSafe(async () => {
+    await gsap.to(".contactus", {
+      yPercent: "100",
+      duration: 0.9,
+    });
+    setOpenContact(false);
+  });
   return (
-    <div className="flex flex-col w-full">
+    <div className={`contactus ${className} flex flex-col w-full`}>
       <div className="bg-gradient-to-r from-emerald-400 grid place-items-center to-cyan-400 h-screen">
         <div className="w-10/12 flex flex-col bg-black h-5/6">
-          <div className="w-full flex justify-end"></div>
+          <div className="w-full flex justify-end">
+            <Image
+              src="/close_button.png"
+              onClick={handelClose}
+              width={20}
+              height={20}
+              alt="close button"
+              className="cursor-pointer m-2"
+            />
+          </div>
           <div className="flex flex-1">
             <div className="w-1/2 h-full grid place-items-center">
               <span className="w-8/12 flex flex-col gap-4">
@@ -66,28 +97,6 @@ export default function ConatctUs() {
           </div>
         </div>
       </div>
-      <footer className="flex flex-col w-full items-center bg-black text-white font-normal text-sm">
-        <div className="flex w-full py-8 border-b-2 border-white px-8 justify-center">
-          <span className="flex w-8/12 justify-between">
-            <img className="w-2/12" src="/footer_logo.png" alt="" />
-            <div className="flex items-center bg-white rounded-3xl px-4 gap-4">
-              <h1 className="font-extrabold text-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
-                Let&apos;s collaborate with us!
-              </h1>
-              <div className="w-12 aspect-square rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 grid place-items-center">
-                <img src="/black_arrow.svg" alt="" />
-              </div>
-            </div>
-          </span>
-        </div>
-        <div className="flex w-8/12 justify-between py-2 font-light">
-          <p>© 2023 BeachSocial . Copyright and All rights reserved.</p>
-          <span className="flex gap-4">
-            <p>Terms & Agreements</p>
-            <p>Privacy Policy</p>
-          </span>
-        </div>
-      </footer>
     </div>
   );
 }

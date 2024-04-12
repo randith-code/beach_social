@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,7 +9,7 @@ import StoryCard from "./components/CardModules/storycrad";
 import ListItem from "./components/Hero section/ListItem";
 import InsightCard from "./components/CardModules/InsightCard";
 import Footer from "./components/Navigation/Footer";
-import Container from "postcss/lib/container";
+import ConatctUs from "./components/ContactUs/ContactUs";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -19,6 +19,9 @@ export default function Home() {
     "We build strong client relationships based on trust and honesty. You can always count on us to have your back.";
 
   const containerRef = useRef();
+
+  const [openContact, setOpenContact] = useState(false);
+
   useGSAP(
     () => {
       gsap.from(".partner-header", {
@@ -86,8 +89,15 @@ export default function Home() {
     { scope: containerRef.current }
   );
 
+  const handleOpenContact = () => {
+    setOpenContact(true);
+  };
+
   return (
-    <main ref={containerRef} className="flex font-Roboto flex-col gap-8">
+    <main
+      ref={containerRef}
+      className="flex overflow-x-hidden font-Roboto flex-col gap-8"
+    >
       <Hero />
 
       {/* partners */}
@@ -416,7 +426,14 @@ export default function Home() {
       </div>
 
       {/* contact us */}
-      <div className="w-full flex justify-center pb-8">
+      <div className="w-full flex overflow-hidden justify-center pb-8">
+        {openContact ? (
+          <ConatctUs
+            className={"absolute z-40"}
+            setOpenContact={setOpenContact}
+          />
+        ) : null}
+
         <div className="w-8/12 flex flex-col gap-4">
           <h4 className="font-semibold text-black w-1/2 text-lg">
             We love to help brands succeed. Let&apos;s Start a Winning Project
@@ -424,12 +441,15 @@ export default function Home() {
           </h4>
           <span className="flex gap-8">
             <div className="w-fit relative">
-              <h1 className="font-bold text-black text-6xl z-50 relative">
+              <h1 className="font-bold text-black text-6xl z-20 relative">
                 Get in Touch with Us
               </h1>
               <div className="w-full h-6 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 absolute bottom-0 left-0"></div>
             </div>
-            <div className="rounded-full bg-black cursor-pointer -translate-y-1/2 grid place-items-center w-16 aspect-square">
+            <div
+              className="rounded-full bg-black cursor-pointer -translate-y-1/2 grid place-items-center w-16 aspect-square"
+              onClick={handleOpenContact}
+            >
               <img className="w-4" src="/side_arrow.svg" alt="button icon" />
             </div>
           </span>
