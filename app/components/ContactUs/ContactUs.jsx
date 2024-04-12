@@ -44,11 +44,11 @@ export default function ConatctUs({ className, setOpenContact }) {
                     SocialReach Nexus
                   </h1>
                   <h1 className="font-extrabold text-white text-3xl">
-                    Let's Connect and Elevate Your Presence!
+                    Let&apos;s Connect and Elevate Your Presence!
                   </h1>
                 </span>
                 <p className="font-light text-white">
-                  let's weave the threads of innovation, creativity, and
+                  let&apos;s weave the threads of innovation, creativity, and
                   strategy to magnetize your social media presence. Our team is
                   here to turn your digital dreams into reality. Ready to make
                   waves in the social sphere? Contact us now, and let the social

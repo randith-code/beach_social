@@ -274,11 +274,11 @@ export default function Home() {
         <div className="w-8/12 flex gap-8">
           <div className="w-1/2 flex flex-col gap-4">
             <span className="flex">
-              <h1 className="font-extrabold text-4xl">Your "</h1>
+              <h1 className="font-extrabold text-4xl">Your &quot;</h1>
               <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
                 Hook
               </h1>
-              <h1 className="font-extrabold text-4xl">"</h1>
+              <h1 className="font-extrabold text-4xl">&quot;</h1>
             </span>
             <p>
               Where creativity meets strategy. Elevate your social presence with
