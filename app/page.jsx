@@ -63,26 +63,105 @@ export default function Home() {
           end: "center center",
         },
       });
-      gsap.to(".top-logos", {
-        xPercent: "-25",
-        duration: 0.8,
-        stagger: 0.1,
+
+      gsap.from(".story-title", {
+        yPercent: "50",
+        opacity: 0,
+        duration: 0.4,
         scrollTrigger: {
-          trigger: ".top-logos",
+          trigger: ".story-title",
+          toggleActions: "restart complete restart pause",
+        },
+      });
+
+      gsap.from(".stories-line1", {
+        yPercent: "25",
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".stories-line1",
           toggleActions: "restart complete restart pause",
           scrub: 1,
           end: "center center",
         },
       });
+      gsap.from(".stories-line2", {
+        yPercent: "25",
+        duration: 0.5,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".stories-line2",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          end: "center center",
+        },
+      });
+      gsap.from(".stories-line3", {
+        yPercent: "25",
+        duration: 0.5,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".stories-line3",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          end: "center center",
+        },
+      });
+      gsap.to(".top-logos", {
+        xPercent: "10",
+        scrollTrigger: {
+          trigger: ".top-logos",
+          toggleActions: "restart pause restart pause",
+          scrub: 1,
+          start: "top bottom",
+          end: "bottom top",
+        },
+      });
       gsap.to(".bottom-logos", {
-        xPercent: "25",
-        duration: 0.8,
-        stagger: 0.1,
+        xPercent: "-10",
         scrollTrigger: {
           trigger: ".bottom-logos",
           toggleActions: "restart complete restart pause",
           scrub: 1,
-          end: "center center",
+          start: "top bottom",
+          end: "bottom top",
+        },
+      });
+      gsap.from(".hook-element", {
+        yPercent: "30",
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: ".hook-container",
+          toggleActions: "restart complete restart pause",
+        },
+      });
+      gsap.from(".recent-insight", {
+        yPercent: "25",
+        duration: 0.4,
+        scrollTrigger: {
+          trigger: ".recent-insight",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+        },
+      });
+      gsap.from(".contact-us", {
+        yPercent: "30",
+        duration: 0.4,
+        scrollTrigger: {
+          trigger: ".contact-us",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+        },
+      });
+      gsap.to(".srcoller-inner", {
+        xPercent: "15",
+        scrollTrigger: {
+          trigger: ".srcoller-inner",
+          toggleActions: "restart pause restart pause",
+          scrub: 1,
+          start: "top bottom",
+          end: "bottom top",
         },
       });
     },
@@ -112,23 +191,35 @@ export default function Home() {
         </span>
         <p className="partner-desc text-xs w-2/6 text-center">{partnersDesc}</p>
         <div className="flex flex-col gap-8 mt-8 bg-white z-40">
-          <div className="top-logos flex gap-4 overflow-hidden">
-            <img src="/aely.png" alt="partner company logo" />
-            <img src="/camp.png" alt="partner company logo" />
-            <img src="/graanted.png" alt="partner company logo" />
-            <img src="/legato.png" alt="partner company logo" />
-            <img src="/metric.png" alt="partner company logo" />
-            <img src="/mint.png" alt="partner company logo" />
-            <img src="/oax.png" alt="partner company logo" />
+          <div className="flex w-full overflow-x-hidden">
+            <div className="top-logos flex gap-6 -translate-x-2/3">
+              <img src="/aely.png" alt="partner company logo" />
+              <img src="/camp.png" alt="partner company logo" />
+              <img src="/graanted.png" alt="partner company logo" />
+              <img src="/legato.png" alt="partner company logo" />
+              <img src="/metric.png" alt="partner company logo" />
+              <img src="/mint.png" alt="partner company logo" />
+              <img src="/oax.png" alt="partner company logo" />
+              <img src="/aely.png" alt="partner company logo" />
+              <img src="/camp.png" alt="partner company logo" />
+              <img src="/graanted.png" alt="partner company logo" />
+              <img src="/legato.png" alt="partner company logo" />
+              <img src="/metric.png" alt="partner company logo" />
+              <img src="/mint.png" alt="partner company logo" />
+              <img src="/oax.png" alt="partner company logo" />
+            </div>
           </div>
-          <div className="bottom-logos flex gap-6 overflow-hidden">
-            <img src="/overland.png" alt="partner company logo" />
-            <img src="/sunrun.png" alt="partner company logo" />
-            <img src="/sign.png" alt="partner company logo" />
-            <img src="/screensight.png" alt="partner company logo" />
-            <img src="/miller.png" alt="partner company logo" />
-            <img src="/oax.png" alt="partner company logo" />
-            <img src="/legato.png" alt="partner company logo" />
+          <div className="flex w-full overflow-x-hidden">
+            <div className="bottom-logos flex gap-6">
+              <img src="/overland.png" alt="partner company logo" />
+              <img src="/sunrun.png" alt="partner company logo" />
+              <img src="/sign.png" alt="partner company logo" />
+              <img src="/screensight.png" alt="partner company logo" />
+              <img src="/miller.png" alt="partner company logo" />
+              <img src="/oax.png" alt="partner company logo" />
+              <img src="/legato.png" alt="partner company logo" />
+              <img src="/overland.png" alt="partner company logo" />
+            </div>
           </div>
         </div>
       </div>
@@ -209,9 +300,11 @@ export default function Home() {
       {/* success stories */}
       <div className="bg-gradient-to-r from-emerald-400 to-cyan-400 w-full z-40 flex justify-center">
         <span className="w-8/12 flex flex-col">
-          <h3 className="text-4xl font-bold pt-8">Success Stories</h3>
+          <h3 className="story-title text-4xl font-bold pt-8">
+            Success Stories
+          </h3>
           <div className="flex flex-col gap-6 py-8">
-            <div className="flex justify-between gap-6">
+            <div className="stories-line1 flex justify-between gap-6">
               <StoryCard
                 img="/view_img.png"
                 title={"Varnish Nightclub"}
@@ -231,7 +324,7 @@ export default function Home() {
                 isLarge={false}
               />
             </div>
-            <div className="flex justify-between gap-6">
+            <div className="stories-line2 flex justify-between gap-6">
               <StoryCard
                 img="/view_img.png"
                 title={"Varnish Nightclub"}
@@ -245,7 +338,7 @@ export default function Home() {
                 isLarge={true}
               />
             </div>
-            <div className="flex justify-between gap-6">
+            <div className="stories-line3 flex justify-between gap-6">
               <StoryCard
                 img="/view_img.png"
                 title={"Varnish Nightclub"}
@@ -270,9 +363,9 @@ export default function Home() {
       </div>
 
       {/* your hook */}
-      <div className="w-full flex justify-center my-8 max-h-60 bg-white z-40">
+      <div className="hook-container w-full flex justify-center my-8 max-h-60 bg-white z-40">
         <div className="w-8/12 flex gap-8">
-          <div className="w-1/2 flex flex-col gap-4">
+          <div className="hook-element w-1/2 flex flex-col gap-4">
             <span className="flex">
               <h1 className="font-extrabold text-4xl">Your &quot;</h1>
               <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
@@ -288,7 +381,7 @@ export default function Home() {
               realm. Let your brand story shine with Beach Social.
             </p>
           </div>
-          <div className="w-1/2 flex flex-col overflow-y-scroll no-scrollbar gap-8">
+          <div className="hook-element w-1/2 flex flex-col overflow-y-scroll no-scrollbar gap-8">
             <ListItem
               item={
                 "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
@@ -324,8 +417,8 @@ export default function Home() {
       </div>
 
       {/* personal story */}
-      <div className="w-full flex flex-col items-center gap-8 py-12  bg-gradient-to-r from-emerald-400 to-cyan-400">
-        <div className="flex w-full gap-8 overflow-x-hidden">
+      <div className="w-full flex flex-col items-center overflow-x-hidden gap-8 py-12  bg-gradient-to-r from-emerald-400 to-cyan-400">
+        <div className="srcoller-inner flex w-full gap-8 -translate-x-1/3">
           <img
             className="w-2/12 aspect-square"
             src="/personal_story_1.png"
@@ -379,7 +472,7 @@ export default function Home() {
       </div>
 
       {/* recent insight */}
-      <div className="w-full flex flex-col items-center pb-8 gap-8">
+      <div className="recent-insight w-full flex flex-col items-center pb-8 gap-8">
         <div className="w-8/12 flex flex-col gap-8">
           <span className="flex">
             <h1 className="font-extrabold text-4xl">Recent</h1>
@@ -434,7 +527,7 @@ export default function Home() {
           />
         ) : null}
 
-        <div className="w-8/12 flex flex-col gap-4">
+        <div className="contact-us w-8/12 flex flex-col gap-4">
           <h4 className="font-semibold text-black w-1/2 text-lg">
             We love to help brands succeed. Let&apos;s Start a Winning Project
             Together.
