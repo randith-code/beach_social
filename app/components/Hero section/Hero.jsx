@@ -53,20 +53,6 @@ const Hero = () => {
       );
     }
 
-    // if (rightArcRef.current) {
-    //   gsap.from(rightArcRef.current, {
-    //     width: 0,
-    //     duration: 1.5,
-    //   });
-    // }
-
-    // if (leftArcRef.current) {
-    //   gsap.from(leftArcRef.current, {
-    //     width: 0,
-    //     duration: 1.5,
-    //   });
-    // }
-
     if (navRef.current) {
       gsap.from(navRef.current, {
         yPercent: "-100",

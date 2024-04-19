@@ -25,43 +25,29 @@ export default function Home() {
 
   useGSAP(
     () => {
-      gsap.from(".partner-header", {
-        yPercent: "100",
-        duration: 0.5,
+      gsap.to(".story-initial", {
+        scale: 3,
+        opacity: 0.4,
+        display: "none",
         scrollTrigger: {
-          trigger: ".partner-header",
-          toggleActions: "restart complete restart pause",
-        },
-      });
-      gsap.from(".partner-desc", {
-        yPercent: "100",
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: ".partner-desc",
-          toggleActions: "restart complete restart pause",
+          trigger: ".story-initial",
+          toggleActions: "restart complete reverse reset",
+          start: "top 95%",
+          end: "bottom 20%",
+          scrub: true,
+          markers: true,
         },
       });
 
-      gsap.from(".services", {
-        yPercent: "100",
-        duration: 0.5,
-        stagger: 0.1,
+      gsap.to(".initial-text-containe", {
+        opacity: 0,
+        display: "none",
+        duration: 0.4,
         scrollTrigger: {
-          trigger: ".services",
-          toggleActions: "restart complete restart pause",
-          scrub: 1,
-        },
-      });
-
-      gsap.from(".values", {
-        xPercent: "-100",
-        duration: 0.8,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: ".values",
-          toggleActions: "restart complete restart pause",
-          scrub: 1,
-          end: "center center",
+          trigger: ".story-initial",
+          toggleActions: "restart complete reverse reset",
+          start: "top 5%",
+          markers: true,
         },
       });
 
@@ -109,6 +95,47 @@ export default function Home() {
           end: "center center",
         },
       });
+
+      gsap.from(".partner-header", {
+        yPercent: "100",
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".partner-header",
+          toggleActions: "restart complete restart pause",
+        },
+      });
+      gsap.from(".partner-desc", {
+        yPercent: "100",
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".partner-desc",
+          toggleActions: "restart complete restart pause",
+        },
+      });
+
+      gsap.from(".services", {
+        yPercent: "100",
+        duration: 0.5,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".services",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+        },
+      });
+
+      gsap.from(".values", {
+        xPercent: "-100",
+        duration: 0.8,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".values",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          end: "center center",
+        },
+      });
+
       gsap.to(".top-logos", {
         xPercent: "10",
         scrollTrigger: {
@@ -176,9 +203,8 @@ export default function Home() {
   return (
     <main ref={containerRef} className="flex overflow-x-hidden flex-col">
       <Hero />
-
       {/* partners */}
-      <div className="w-full flex flex-col gap-6 items-center mt-12 bg-white z-40">
+      <div className="w-full flex flex-col gap-6 items-center mt-8 bg-white z-40">
         <span className="partner-header font-Anton flex">
           <h1 className="font-bold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             Friends
@@ -225,43 +251,43 @@ export default function Home() {
       </div>
 
       {/* services */}
-      <div className="flex flex-col font-Anton items-center gap-10 mt-12 bg-white z-40">
+      <div className="flex flex-col h-screen font-Anton items-center gap-20 justify-center bg-white z-40">
         <span className="services flex">
-          <h1 className="font-medium text-4xl">We&apos;ve got just what</h1>
-          <h1 className="font-medium text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+          <h1 className="font-medium text-5xl">We&apos;ve got just what</h1>
+          <h1 className="font-medium text-5xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             &nbsp; you need.
           </h1>
         </span>
         <div className="flex flex-col gap-8 items-center w-full">
-          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
             <div className=" text-right flex-1">Copy Writing</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
             </div>
             <div className="text-left flex-1">Chat bots</div>
           </div>
-          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
             <div className=" text-right flex-1">Email Campaign</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
             </div>
             <div className="text-left flex-1">SMS Campaig</div>
           </div>
-          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
             <div className=" text-right flex-1">Event Promotion</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
             </div>
             <div className="text-left flex-1">Creative Design</div>
           </div>
-          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
             <div className=" text-right flex-1">Social Media Advertising</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
             </div>
             <div className="text-left flex-1">Social Media Consultingn</div>
           </div>
-          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
             <div className=" text-right flex-1">Social Media Management</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
@@ -304,9 +330,14 @@ export default function Home() {
       </div>
 
       {/* success stories */}
-      <div className="bg-gradient-to-r from-emerald-400 to-cyan-400 w-full z-40 flex justify-center">
+      <div className="success-story-container relative bg-gradient-to-r from-emerald-400 to-cyan-400 w-full z-40 flex justify-center">
+        <span className="initial-text-container absolute felx justify-center w-full h-full bg-gradient-to-r from-emerald-400 to-cyan-400 z-50">
+          <h3 className="story-initial font-Anton text-center text-4xl font-medium pt-20">
+            Success Stories
+          </h3>
+        </span>
         <span className="w-8/12 flex flex-col">
-          <h3 className="story-title font-Anton text-4xl font-semibold pt-8">
+          <h3 className="story-title font-Anton text-4xl font-medium pt-8">
             Success Stories
           </h3>
           <div className="flex flex-col gap-6 py-8">
