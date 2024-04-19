@@ -259,43 +259,45 @@ export default function Home() {
       </div>
 
       {/* services */}
-      <div className="flex flex-col h-screen font-Anton items-center gap-20 justify-center bg-white z-40">
+      <div className="flex flex-col h-screen font-Anton items-center gap-12 2xl:gap-20 justify-center bg-white z-40">
         <span className="services flex">
-          <h1 className="font-medium text-5xl">We&apos;ve got just what</h1>
-          <h1 className="font-medium text-5xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+          <h1 className="font-medium text-5xl 2xl:text-7xl">
+            We&apos;ve got just what
+          </h1>
+          <h1 className="font-medium text-5xl 2xl:text-7xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             &nbsp; you need.
           </h1>
         </span>
         <div className="flex flex-col gap-8 items-center w-full">
-          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl 2xl:text-6xl gap-4">
             <div className=" text-right flex-1">Copy Writing</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
             </div>
             <div className="text-left flex-1">Chat bots</div>
           </div>
-          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl 2xl:text-6xl gap-4">
             <div className=" text-right flex-1">Email Campaign</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
             </div>
             <div className="text-left flex-1">SMS Campaig</div>
           </div>
-          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl 2xl:text-6xl gap-4">
             <div className=" text-right flex-1">Event Promotion</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
             </div>
             <div className="text-left flex-1">Creative Design</div>
           </div>
-          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl 2xl:text-6xl gap-4">
             <div className=" text-right flex-1">Social Media Advertising</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
             </div>
             <div className="text-left flex-1">Social Media Consultingn</div>
           </div>
-          <div className="services flex justify-center items-center w-full font-normal text-4xl gap-4">
+          <div className="services flex justify-center items-center w-full font-normal text-4xl 2xl:text-6xl gap-4">
             <div className=" text-right flex-1">Social Media Management</div>
             <div className=" text-center flex justify-center items-center w-10">
               <hr className="h-1.5 w-full bg-black rounded-lg" />
