@@ -13,11 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>Beach Social</title>
-        <link
-          rel="shortcut icon"
-          type="image/x-icon"
-          href="http://www.beachsocial.leadmedia.lk/wp-content/uploads/2024/04/beach_social_logo.png"
-        />
+        <link rel="shortcut icon" type="image/x-icon" href="/Logo color.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
