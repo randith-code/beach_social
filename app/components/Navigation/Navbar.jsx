@@ -1,3 +1,4 @@
+"use client";
 import { forwardRef, useState } from "react";
 import Link from "next/link";
 
@@ -46,11 +47,11 @@ const Navbar = forwardRef((props, ref) => {
         </span>
         {open ? (
           <span className="absolute flex flex-col md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-white items-center justify-around">
-            <a href="">Home</a>
-            <a href="">About Us</a>
-            <a href="">Services</a>
-            <a href="">Success stories</a>
-            <Link href="/contactus">
+            <a href="/">Home</a>
+            <a href="/aboutus">About Us</a>
+            <a href="/services">Services</a>
+            <a href="successstories">Success stories</a>
+            <Link href="">
               <button className="bg-black rounded-xl text-white px-3 py-1">
                 Contact Us
               </button>
@@ -58,13 +59,15 @@ const Navbar = forwardRef((props, ref) => {
           </span>
         ) : null}
         <span className="hidden md:flex w-6/12 items-center font-medium justify-around text-sm">
-          <a href="">Home</a>
-          <a href="">About Us</a>
-          <a href="">Services</a>
-          <a href="">Success stories</a>
-          <Link href="/contactus">
-            <button className="bg-black rounded-xl text-white px-3 py-1">
-              Contact Us
+          <a href="/">Home</a>
+          <a href="/aboutus">About Us</a>
+          <a href="/services">Services</a>
+          <a href="/successstories">Success stories</a>
+          <Link href="">
+            <button className="bg-black rounded-3xl text-white px-5 py-2">
+              <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+                Get in Touch
+              </p>
             </button>
           </Link>
         </span>

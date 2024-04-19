@@ -7,7 +7,7 @@ import parse from "html-react-parser";
 
 import ParticlesComponent from "./Particle";
 import Navbar from "../Navigation/Navbar";
-import { getHeroContent } from "@/app/services/posts";
+import { getHeroContent } from "@/app/api/posts";
 import LeftArc from "./LeftArc";
 import RightArc from "./RightArc";
 import {
@@ -91,8 +91,10 @@ const Hero = () => {
         <p className="main-content font-medium 2xl:text-xl text-sm w-2/5 text-center">
           {description}
         </p>
-        <button className="contact-button bg-black rounded-2xl text-white py-2 px-6">
-          Get in Touch
+        <button className="contact-button bg-black rounded-3xl text-white py-2 px-6">
+          <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+            Get in Touch
+          </p>
         </button>
       </div>
       <div className="absolute w-full h-full inset-0 -z-10 flex justify-between">

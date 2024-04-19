@@ -23,19 +23,66 @@ export default function Home() {
 
   const [openContact, setOpenContact] = useState(false);
 
-  useGSAP(
+  const { contextSafe } = useGSAP(
     () => {
+      gsap.to(".personal-initial", {
+        scale: 6,
+        opacity: 0.4,
+        display: "none",
+        scrollTrigger: {
+          trigger: ".personal-initial",
+          toggleActions: "restart complete reverse reset",
+          start: "top 80%",
+          end: "bottom 40%",
+          scrub: true,
+        },
+      });
+
+      gsap.to(".personal-text-container", {
+        opacity: 0,
+        display: "none",
+        duration: 0.4,
+        scrollTrigger: {
+          trigger: ".personal-text-container",
+          toggleActions: "restart complete reverse reset",
+          start: "top 20%",
+        },
+      });
+
+      gsap.to(".service-initial-text", {
+        scale: 6,
+        opacity: 0.4,
+        display: "none",
+        scrollTrigger: {
+          trigger: ".service-initial-text",
+          toggleActions: "restart complete reverse reset",
+          start: "top 80%",
+          end: "bottom 40%",
+          scrub: true,
+        },
+      });
+
+      gsap.to(".service-text-container", {
+        opacity: 0,
+        display: "none",
+        duration: 0.4,
+        scrollTrigger: {
+          trigger: ".service-text-container",
+          toggleActions: "restart complete reverse reset",
+          start: "top 30%",
+        },
+      });
+
       gsap.to(".story-initial", {
-        scale: 3,
+        scale: 4,
         opacity: 0.4,
         display: "none",
         scrollTrigger: {
           trigger: ".story-initial",
           toggleActions: "restart complete reverse reset",
-          start: "top 95%",
+          start: "top 80%",
           end: "bottom 30%",
           scrub: true,
-          markers: true,
         },
       });
 
@@ -47,7 +94,6 @@ export default function Home() {
           trigger: ".initial-text-container",
           toggleActions: "restart complete reverse reset",
           start: "top 10%",
-          markers: true,
         },
       });
 
@@ -173,15 +219,15 @@ export default function Home() {
           scrub: 1,
         },
       });
-      gsap.from(".contact-us", {
-        yPercent: "30",
-        duration: 0.4,
-        scrollTrigger: {
-          trigger: ".contact-us",
-          toggleActions: "restart complete restart pause",
-          scrub: 1,
-        },
-      });
+      // gsap.from(".contact-us", {
+      //   yPercent: "30",
+      //   duration: 0.4,
+      //   scrollTrigger: {
+      //     trigger: ".contact-us",
+      //     toggleActions: "restart complete restart pause",
+      //     scrub: 1,
+      //   },
+      // });
       gsap.to(".srcoller-inner", {
         xPercent: "20",
         scrollTrigger: {
@@ -195,6 +241,20 @@ export default function Home() {
     },
     { scope: containerRef.current }
   );
+
+  const handleContactEnter = contextSafe(() => {
+    gsap.to(".contactBar", {
+      height: "1.5rem",
+      duration: 0.4,
+    });
+  });
+
+  const handleContactLeave = contextSafe(() => {
+    gsap.to(".contactBar", {
+      height: 0,
+      duration: 0.4,
+    });
+  });
 
   const handleOpenContact = () => {
     setOpenContact(true);
@@ -259,7 +319,17 @@ export default function Home() {
       </div>
 
       {/* services */}
-      <div className="flex flex-col h-screen font-Anton items-center gap-12 2xl:gap-20 justify-center bg-white z-40">
+      <div className="relative flex flex-col h-screen font-Anton items-center gap-12 2xl:gap-20 justify-center bg-white z-40">
+        <span className="service-text-container absolute flex items-center justify-center w-full h-full bg-white z-50">
+          <span className="service-initial-text flex items-center h-fit py-4">
+            <h1 className="font-medium text-5xl 2xl:text-7xl">
+              We&apos;ve got just what
+            </h1>
+            <h1 className="font-medium text-5xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              &nbsp; you need.
+            </h1>
+          </span>
+        </span>
         <span className="services flex">
           <h1 className="font-medium text-5xl 2xl:text-7xl">
             We&apos;ve got just what
@@ -322,7 +392,9 @@ export default function Home() {
                 customers and strengthening community ties.
               </p>
               <button className="bg-black text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
-                Get in Touch
+                <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+                  Get in Touch
+                </p>
               </button>
             </span>
           </div>
@@ -347,7 +419,7 @@ export default function Home() {
           </h3>
         </span>
         <span className="w-8/12 flex flex-col">
-          <h3 className="story-title font-Anton text-4xl font-medium pt-8">
+          <h3 className="story-title font-Anton text-4xl 2xl:text-6xl font-medium pt-8">
             Success Stories
           </h3>
           <div className="flex flex-col gap-6 py-8">
@@ -467,7 +539,12 @@ export default function Home() {
       </div>
 
       {/* personal story */}
-      <div className="w-full flex flex-col items-center overflow-x-hidden gap-8 py-12  bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop">
+      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-12  bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop">
+        <span className="personal-text-container absolute grid place-items-center w-full h-5/6 bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
+          <h3 className="personal-initial font-Anton text-center text-4xl font-medium">
+            Personal Story
+          </h3>
+        </span>
         <div className="srcoller-inner flex w-full gap-8 -translate-x-1/3">
           <img
             className="w-2/12 aspect-square"
@@ -511,8 +588,10 @@ export default function Home() {
           />
         </div>
         <div className="w-8/12 flex flex-col gap-4">
-          <h3 className="text-3xl font-Anton font-medium">Personal Story</h3>
-          <p className="font-medium">
+          <h3 className="text-3xl font-Anton font-medium 2xl:text-6xl">
+            Personal Story
+          </h3>
+          <p className="font-medium 2xl:text-xl">
             We value authenticity, community, and growth. We believe in telling
             genuine stories that resonate with both the heart and history of a
             business, fostering a sense of belonging among customers and
@@ -525,8 +604,8 @@ export default function Home() {
       <div className="recent-insight w-full flex flex-col items-center pb-8 gap-8">
         <div className="w-8/12 flex flex-col gap-8">
           <span className="flex font-Anton">
-            <h1 className="font-medium text-4xl">Recent</h1>
-            <h1 className="font-medium text-4xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+            <h1 className="font-medium text-4xl 2xl:text-6xl">Recent</h1>
+            <h1 className="font-medium text-4xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
               &nbsp; insights
             </h1>
           </span>
@@ -580,16 +659,24 @@ export default function Home() {
             </h4>
             <span className="flex gap-8 2xl:gap-16">
               <div className="w-fit relative">
-                <h1 className="font-medium font-Anton text-black text-6xl 2xl:text-9xl z-20 relative">
+                <h1
+                  onMouseEnter={handleContactEnter}
+                  onMouseLeave={handleContactLeave}
+                  className="font-medium font-Anton text-black text-6xl 2xl:text-8xl z-20 relative"
+                >
                   Get in Touch with Us
                 </h1>
-                <div className="w-full h-6 rounded-xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop absolute bottom-0 left-0"></div>
+                <div className="contactBar w-full h-0 rounded-xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop absolute bottom-0 left-0"></div>
               </div>
               <div
-                className="rounded-full bg-black cursor-pointer -translate-y-1/2 grid place-items-center w-16 aspect-square"
+                className="rounded-full bg-black cursor-pointer -translate-y-1/2 grid place-items-center w-16 h-16 2xl:w-20 2xl:h-20 aspect-square"
                 onClick={handleOpenContact}
               >
-                <img className="w-4" src="/side_arrow.svg" alt="button icon" />
+                <img
+                  className="w-1/3"
+                  src="/side_arrow.svg"
+                  alt="button icon"
+                />
               </div>
             </span>
           </div>
