@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -19,6 +19,7 @@ export default function Home() {
     "We build strong client relationships based on trust and honesty. You can always count on us to have your back.";
 
   const containerRef = useRef();
+  const hookListRef = useRef();
 
   const [openContact, setOpenContact] = useState(false);
 
@@ -177,7 +178,7 @@ export default function Home() {
       <Hero />
 
       {/* partners */}
-      <div className="w-full flex flex-col gap-6 items-center bg-white z-40">
+      <div className="w-full flex flex-col gap-6 items-center mt-12 bg-white z-40">
         <span className="partner-header font-Anton flex">
           <h1 className="font-bold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             Friends
@@ -386,7 +387,10 @@ export default function Home() {
               realm. Let your brand story shine with Beach Social.
             </p>
           </div>
-          <div className="hook-element w-1/2 flex flex-col overflow-y-scroll no-scrollbar gap-8">
+          <div
+            ref={hookListRef}
+            className="hook-element w-1/2 flex flex-col overflow-y-scroll no-scrollbar gap-8"
+          >
             <ListItem
               item={
                 "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
