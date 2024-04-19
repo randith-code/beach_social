@@ -309,19 +309,19 @@ export default function Home() {
 
       {/* values */}
       <div className="values bg-valuesBg w-full flex justify-center">
-        <div className="w-10/12 flex">
+        <div className="w-9/12 flex">
           <div className="w-1/2 flex items-center justify-end">
             <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
-              <h2 className="font-extrabold font-Anton text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+              <h2 className="font-extrabold font-Anton text-4xl 2xl:text-7xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
                 Values
               </h2>
-              <p className="font-medium font-Anton w-10/12">
+              <p className="font-medium font-Anton w-10/12 2xl:text-xl">
                 We value authenticity, community, and growth. We believe in
                 telling genuine stories that resonate with both the heart and
                 history of a business, fostering a sense of belonging among
                 customers and strengthening community ties.
               </p>
-              <button className="bg-black text-sm text-white rounded-3xl w-fit px-4 py-2">
+              <button className="bg-black text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
                 Get in Touch
               </button>
             </span>
@@ -414,13 +414,13 @@ export default function Home() {
         <div className="w-8/12 flex gap-8">
           <div className="hook-element w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
-              <h1 className="font-medium text-4xl">Your &quot;</h1>
-              <h1 className="font-medium text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-4xl 2xl:text-7xl">Your &quot;</h1>
+              <h1 className="font-medium text-4xl 2xl:text-7xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
                 Hook
               </h1>
-              <h1 className="font-medium text-4xl">&quot;</h1>
+              <h1 className="font-medium text-4xl 2xl:text-7xl">&quot;</h1>
             </span>
-            <p className="font-medium text-sm">
+            <p className="font-medium text-sm 2xl:text-xl">
               Where creativity meets strategy. Elevate your social presence with
               compelling content, engaging campaigns, and strategic maneuvers.
               Discover how we transform your unique hook into a magnetic force,
