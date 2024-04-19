@@ -85,7 +85,7 @@ const Hero = () => {
     <header className="relative w-full h-screen">
       <Navbar ref={navRef} />
       <div className="flex flex-col w-full items-center gap-4 pt-10">
-        <h1 className="main-title text-5xl 2xl:text-8xl font-Anton font-bold w-1/2 text-center bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+        <h1 className="main-title text-5xl 2xl:text-8xl font-Anton font-bold w-1/2 text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
           {title}
         </h1>
         <p className="main-content font-medium 2xl:text-xl text-sm w-2/5 text-center">

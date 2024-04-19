@@ -16,6 +16,8 @@ module.exports = {
       },
       colors: {
         main: "#31DAEA",
+        gradiantLftBtm: "#00B6FF",
+        gradiantRghtTop: "#2ED8EB",
         valuesBg: "rgba(0, 182, 255, 0.07)",
       },
       fontFamily: {

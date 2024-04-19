@@ -33,20 +33,20 @@ export default function Home() {
           trigger: ".story-initial",
           toggleActions: "restart complete reverse reset",
           start: "top 95%",
-          end: "bottom 20%",
+          end: "bottom 30%",
           scrub: true,
           markers: true,
         },
       });
 
-      gsap.to(".initial-text-containe", {
+      gsap.to(".initial-text-container", {
         opacity: 0,
         display: "none",
         duration: 0.4,
         scrollTrigger: {
-          trigger: ".story-initial",
+          trigger: ".initial-text-container",
           toggleActions: "restart complete reverse reset",
-          start: "top 5%",
+          start: "top 10%",
           markers: true,
         },
       });
@@ -206,7 +206,7 @@ export default function Home() {
       {/* partners */}
       <div className="w-full flex flex-col gap-6 items-center mt-8 bg-white z-40">
         <span className="partner-header font-Anton flex">
-          <h1 className="font-bold text-4xl 2xl:text-6xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+          <h1 className="font-bold text-4xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
             Friends
           </h1>
           <h1 className="font-bold text-4xl 2xl:text-6xl">
@@ -264,7 +264,7 @@ export default function Home() {
           <h1 className="font-medium text-5xl 2xl:text-7xl">
             We&apos;ve got just what
           </h1>
-          <h1 className="font-medium text-5xl 2xl:text-7xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+          <h1 className="font-medium text-5xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
             &nbsp; you need.
           </h1>
         </span>
@@ -312,7 +312,7 @@ export default function Home() {
         <div className="w-9/12 flex">
           <div className="w-1/2 flex items-center justify-end">
             <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
-              <h2 className="font-extrabold font-Anton text-4xl 2xl:text-7xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+              <h2 className="font-extrabold font-Anton text-4xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Values
               </h2>
               <p className="font-medium font-Anton w-10/12 2xl:text-xl">
@@ -333,15 +333,15 @@ export default function Home() {
                 src="/view_img.png"
                 alt="into image"
               />
-              <div className="rounded-2xl w-full aspect-square bg-gradient-to-r from-emerald-400 to-cyan-400 translate-x-4 -translate-y-4"></div>
+              <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
             </div>
           </div>
         </div>
       </div>
 
       {/* success stories */}
-      <div className="success-story-container relative bg-gradient-to-r from-emerald-400 to-cyan-400 w-full z-40 flex justify-center">
-        <span className="initial-text-container absolute felx justify-center w-full h-full bg-gradient-to-r from-emerald-400 to-cyan-400 z-50">
+      <div className="success-story-container relative bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop w-full z-40 flex justify-center">
+        <span className="initial-text-container absolute felx justify-center w-full h-full bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
           <h3 className="story-initial font-Anton text-center text-4xl font-medium pt-20">
             Success Stories
           </h3>
@@ -410,12 +410,12 @@ export default function Home() {
       </div>
 
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center my-8 max-h-60 bg-white z-40">
+      <div className="hook-container w-full flex justify-center my-8 2xl:my-20 max-h-60 bg-white z-40">
         <div className="w-8/12 flex gap-8">
           <div className="hook-element w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-4xl 2xl:text-7xl">Your &quot;</h1>
-              <h1 className="font-medium text-4xl 2xl:text-7xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-4xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Hook
               </h1>
               <h1 className="font-medium text-4xl 2xl:text-7xl">&quot;</h1>
@@ -467,7 +467,7 @@ export default function Home() {
       </div>
 
       {/* personal story */}
-      <div className="w-full flex flex-col items-center overflow-x-hidden gap-8 py-12  bg-gradient-to-r from-emerald-400 to-cyan-400">
+      <div className="w-full flex flex-col items-center overflow-x-hidden gap-8 py-12  bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop">
         <div className="srcoller-inner flex w-full gap-8 -translate-x-1/3">
           <img
             className="w-2/12 aspect-square"
@@ -526,7 +526,7 @@ export default function Home() {
         <div className="w-8/12 flex flex-col gap-8">
           <span className="flex font-Anton">
             <h1 className="font-medium text-4xl">Recent</h1>
-            <h1 className="font-medium text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+            <h1 className="font-medium text-4xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
               &nbsp; insights
             </h1>
           </span>
@@ -558,7 +558,7 @@ export default function Home() {
         </div>
         <span className="w-1/2 flex justify-center gap-4">
           <div className="w-12 h-2 rounded-lg bg-black"></div>
-          <div className="w-12 h-2 rounded-lg bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
+          <div className="w-12 h-2 rounded-lg bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop"></div>
           <div className="w-12 h-2 rounded-lg bg-black"></div>
           <div className="w-12 h-2 rounded-lg bg-black"></div>
           <div className="w-12 h-2 rounded-lg bg-black"></div>
@@ -578,12 +578,12 @@ export default function Home() {
               We love to help brands succeed. Let&apos;s Start a Winning Project
               Together.
             </h4>
-            <span className="flex gap-8">
+            <span className="flex gap-8 2xl:gap-16">
               <div className="w-fit relative">
-                <h1 className="font-medium font-Anton text-black text-6xl z-20 relative">
+                <h1 className="font-medium font-Anton text-black text-6xl 2xl:text-9xl z-20 relative">
                   Get in Touch with Us
                 </h1>
-                <div className="w-full h-6 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 absolute bottom-0 left-0"></div>
+                <div className="w-full h-6 rounded-xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop absolute bottom-0 left-0"></div>
               </div>
               <div
                 className="rounded-full bg-black cursor-pointer -translate-y-1/2 grid place-items-center w-16 aspect-square"
