@@ -206,19 +206,19 @@ export default function Home() {
       {/* partners */}
       <div className="w-full flex flex-col gap-6 items-center mt-8 bg-white z-40">
         <span className="partner-header font-Anton flex">
-          <h1 className="font-bold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+          <h1 className="font-bold text-4xl 2xl:text-6xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             Friends
           </h1>
-          <h1 className="font-bold text-4xl">
+          <h1 className="font-bold text-4xl 2xl:text-6xl">
             &nbsp; we have made along the way
           </h1>
         </span>
-        <p className="partner-desc text-sm font-medium w-2/6 text-center">
+        <p className="partner-desc 2xl:text-xl text-sm font-medium w-2/6 text-center">
           {partnersDesc}
         </p>
         <div className="flex flex-col gap-12 mt-8 bg-white z-40">
           <div className="flex w-full overflow-x-hidden">
-            <div className="top-logos flex gap-6 -translate-x-2/3">
+            <div className="top-logos flex gap-6 -translate-x-2/3 2xl:-translate-x-1/3">
               <img src="/aely.png" alt="partner company logo" />
               <img src="/camp.png" alt="partner company logo" />
               <img src="/graanted.png" alt="partner company logo" />
@@ -237,6 +237,14 @@ export default function Home() {
           </div>
           <div className="flex w-full overflow-x-hidden">
             <div className="bottom-logos flex gap-6">
+              <img src="/overland.png" alt="partner company logo" />
+              <img src="/sunrun.png" alt="partner company logo" />
+              <img src="/sign.png" alt="partner company logo" />
+              <img src="/screensight.png" alt="partner company logo" />
+              <img src="/miller.png" alt="partner company logo" />
+              <img src="/oax.png" alt="partner company logo" />
+              <img src="/legato.png" alt="partner company logo" />
+              <img src="/overland.png" alt="partner company logo" />
               <img src="/overland.png" alt="partner company logo" />
               <img src="/sunrun.png" alt="partner company logo" />
               <img src="/sign.png" alt="partner company logo" />
