@@ -85,13 +85,13 @@ const Hero = () => {
     <header className="relative w-full h-screen">
       <Navbar ref={navRef} />
       <div className="flex flex-col w-full items-center gap-4 pt-10">
-        <h1 className="main-title text-5xl font-Anton font-bold w-1/2 text-center bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+        <h1 className="main-title text-5xl 2xl:text-8xl font-Anton font-bold w-1/2 text-center bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
           {title}
         </h1>
-        <p className="main-content font-medium text-sm w-2/5 text-center">
+        <p className="main-content font-medium 2xl:text-xl text-sm w-2/5 text-center">
           {description}
         </p>
-        <button className="contact-button bg-black rounded-2xl text-white py-1 px-3">
+        <button className="contact-button bg-black rounded-2xl text-white py-2 px-6">
           Get in Touch
         </button>
       </div>
@@ -101,7 +101,7 @@ const Hero = () => {
       </div>
       <ParticlesComponent id="particles" />
       <div className="w-full h-auto flex justify-center pt-8">
-        <span className="feature-container flex w-8/12 gap-6 justify-between">
+        <span className="feature-container flex w-3/4 gap-6 justify-between">
           <FirstFeatureCard className="features" />
           <SecondFeaturesCard className="features" />
           <ThirdFeatureCard className="features" />

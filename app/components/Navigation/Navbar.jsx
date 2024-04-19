@@ -5,7 +5,7 @@ const Navbar = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
   return (
     <nav ref={ref} className="flex items-center justify-center w-full pt-4">
-      <span className="flex items-center justify-between w-9/12">
+      <span className="flex items-center justify-between w-3/4">
         <img
           className="h-8 "
           src="http://www.beachsocial.leadmedia.lk/wp-content/uploads/2024/04/beach_social_logo.png"
