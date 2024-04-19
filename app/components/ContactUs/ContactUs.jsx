@@ -5,25 +5,25 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
-export default function ConatctUs({ className, setOpenContact }) {
+export default function ConatctUs({ setOpenContact }) {
   const { contextSafe } = useGSAP(() => {
     gsap.from(".contactus", {
       opacity: 0.4,
-      yPercent: "100",
-      duration: 0.9,
+      // yPercent: "100",
+      duration: 0.6,
     });
   }, []);
 
   const handelClose = contextSafe(async () => {
     await gsap.to(".contactus", {
-      yPercent: "100",
-      duration: 0.9,
+      opacity: 0,
+      duration: 0.2,
     });
     setOpenContact(false);
   });
   return (
-    <div className={`contactus ${className} flex flex-col w-full`}>
-      <div className="bg-gradient-to-r from-emerald-400 grid place-items-center to-cyan-400 h-screen">
+    <div className={`contactus flex flex-col w-full`}>
+      <div className="bg-gradient-to-r from-emerald-400 to-cyan-400 grid place-items-center h-screen">
         <div className="w-10/12 flex flex-col bg-black h-5/6">
           <div className="w-full flex justify-end">
             <Image

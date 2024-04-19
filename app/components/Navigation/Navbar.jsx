@@ -57,7 +57,7 @@ const Navbar = forwardRef((props, ref) => {
             </Link>
           </span>
         ) : null}
-        <span className="hidden md:flex w-6/12 items-center justify-around text-sm">
+        <span className="hidden md:flex w-6/12 items-center font-medium justify-around text-sm">
           <a href="">Home</a>
           <a href="">About Us</a>
           <a href="">Services</a>

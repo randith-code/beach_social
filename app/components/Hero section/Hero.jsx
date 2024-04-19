@@ -39,13 +39,34 @@ const Hero = () => {
   gsap.registerPlugin(useGSAP);
 
   useGSAP(() => {
-    if (rightArcRef.current) {
-      gsap.from([rightArcRef.current, leftArcRef.current], {
-        width: 0,
-        duration: 1.5,
+    const tl = gsap.timeline();
+    if (rightArcRef.current && leftArcRef.current) {
+      tl.from(leftArcRef.current, {
+        duration: 1,
+        opacity: 0.2,
         ease: "power1.inOut",
       });
+      tl.from(
+        rightArcRef.current,
+        { duration: 1, opacity: 0.2, ease: "power1.inOut" },
+        0
+      );
     }
+
+    // if (rightArcRef.current) {
+    //   gsap.from(rightArcRef.current, {
+    //     width: 0,
+    //     duration: 1.5,
+    //   });
+    // }
+
+    // if (leftArcRef.current) {
+    //   gsap.from(leftArcRef.current, {
+    //     width: 0,
+    //     duration: 1.5,
+    //   });
+    // }
+
     if (navRef.current) {
       gsap.from(navRef.current, {
         yPercent: "-100",
@@ -78,10 +99,12 @@ const Hero = () => {
     <header className="relative w-full h-screen">
       <Navbar ref={navRef} />
       <div className="flex flex-col w-full items-center gap-4 pt-10">
-        <h1 className="main-title text-5xl font-extrabold w-1/2 text-center bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+        <h1 className="main-title text-5xl font-Anton font-bold w-1/2 text-center bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
           {title}
         </h1>
-        <p className="main-content text-xs w-2/5 text-center">{description}</p>
+        <p className="main-content font-medium text-sm w-2/5 text-center">
+          {description}
+        </p>
         <button className="contact-button bg-black rounded-2xl text-white py-1 px-3">
           Get in Touch
         </button>
@@ -92,7 +115,7 @@ const Hero = () => {
       </div>
       <ParticlesComponent id="particles" />
       <div className="w-full h-auto flex justify-center pt-8">
-        <span className="feature-container flex w-8/12 gap-4">
+        <span className="feature-container flex w-8/12 justify-between">
           <FirstFeatureCard className="features" />
           <SecondFeaturesCard className="features" />
           <ThirdFeatureCard className="features" />

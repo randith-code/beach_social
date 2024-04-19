@@ -20,6 +20,7 @@ module.exports = {
       },
       fontFamily: {
         Roboto: ['"Roboto"', ...defaultTheme.fontFamily.sans],
+        Anton: ["Anton"],
       },
     },
   },

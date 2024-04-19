@@ -155,7 +155,7 @@ export default function Home() {
         },
       });
       gsap.to(".srcoller-inner", {
-        xPercent: "15",
+        xPercent: "20",
         scrollTrigger: {
           trigger: ".srcoller-inner",
           toggleActions: "restart pause restart pause",
@@ -173,24 +173,23 @@ export default function Home() {
   };
 
   return (
-    <main
-      ref={containerRef}
-      className="flex overflow-x-hidden font-Roboto flex-col gap-8"
-    >
+    <main ref={containerRef} className="flex overflow-x-hidden flex-col">
       <Hero />
 
       {/* partners */}
-      <div className="w-full flex flex-col gap-4 items-center bg-white z-40">
-        <span className="partner-header flex">
-          <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+      <div className="w-full flex flex-col gap-6 items-center bg-white z-40">
+        <span className="partner-header font-Anton flex">
+          <h1 className="font-bold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             Friends
           </h1>
-          <h1 className="font-extrabold text-4xl">
+          <h1 className="font-bold text-4xl">
             &nbsp; we have made along the way
           </h1>
         </span>
-        <p className="partner-desc text-xs w-2/6 text-center">{partnersDesc}</p>
-        <div className="flex flex-col gap-8 mt-8 bg-white z-40">
+        <p className="partner-desc text-sm font-medium w-2/6 text-center">
+          {partnersDesc}
+        </p>
+        <div className="flex flex-col gap-12 mt-8 bg-white z-40">
           <div className="flex w-full overflow-x-hidden">
             <div className="top-logos flex gap-6 -translate-x-2/3">
               <img src="/aely.png" alt="partner company logo" />
@@ -225,43 +224,49 @@ export default function Home() {
       </div>
 
       {/* services */}
-      <div className="flex flex-col items-center mt-8 bg-white z-40">
+      <div className="flex flex-col font-Anton items-center gap-10 mt-12 bg-white z-40">
         <span className="services flex">
-          <h1 className="font-extrabold text-4xl">We&apos;ve got just what</h1>
-          <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+          <h1 className="font-medium text-4xl">We&apos;ve got just what</h1>
+          <h1 className="font-medium text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
             &nbsp; you need.
           </h1>
         </span>
-        <div className="services grid grid-cols-[1fr_50px_1fr] text-2xl gap-y-8 font-bold pt-8">
-          <div className="services text-right">Copy Writing</div>
-          <div className="services text-center flex justify-center items-center">
-            <hr className="h-1 w-7/12 bg-black" />
+        <div className="flex flex-col gap-8 items-center w-full">
+          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+            <div className=" text-right flex-1">Copy Writing</div>
+            <div className=" text-center flex justify-center items-center w-10">
+              <hr className="h-1.5 w-full bg-black rounded-lg" />
+            </div>
+            <div className="text-left flex-1">Chat bots</div>
           </div>
-          <div className="services text-left">Chat bots</div>
-
-          <div className="services text-right">Email Campaign</div>
-          <div className="services text-center flex justify-center items-center">
-            <hr className="h-1 w-7/12 bg-black" />
+          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+            <div className=" text-right flex-1">Email Campaign</div>
+            <div className=" text-center flex justify-center items-center w-10">
+              <hr className="h-1.5 w-full bg-black rounded-lg" />
+            </div>
+            <div className="text-left flex-1">SMS Campaig</div>
           </div>
-          <div className="services text-left">SMS Campaign</div>
-
-          <div className="services text-right">Event Promotion</div>
-          <div className="services text-center flex justify-center items-center">
-            <hr className="h-1 w-7/12 bg-black" />
+          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+            <div className=" text-right flex-1">Event Promotion</div>
+            <div className=" text-center flex justify-center items-center w-10">
+              <hr className="h-1.5 w-full bg-black rounded-lg" />
+            </div>
+            <div className="text-left flex-1">Creative Design</div>
           </div>
-          <div className="services text-left">Creative Designs</div>
-
-          <div className="services text-right">Social Media Advertising</div>
-          <div className="services text-center flex justify-center items-center">
-            <hr className="h-1 w-7/12 bg-black" />
+          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+            <div className=" text-right flex-1">Social Media Advertising</div>
+            <div className=" text-center flex justify-center items-center w-10">
+              <hr className="h-1.5 w-full bg-black rounded-lg" />
+            </div>
+            <div className="text-left flex-1">Social Media Consultingn</div>
           </div>
-          <div className="services text-left">Social Media Consulting</div>
-
-          <div className="services text-right">Social Media Management</div>
-          <div className="services text-center flex justify-center items-center">
-            <hr className="h-1 w-7/12 bg-black" />
+          <div className="services flex justify-center items-center w-full font-normal text-3xl gap-4">
+            <div className=" text-right flex-1">Social Media Management</div>
+            <div className=" text-center flex justify-center items-center w-10">
+              <hr className="h-1.5 w-full bg-black rounded-lg" />
+            </div>
+            <div className="text-left flex-1">Google adwords Campaign</div>
           </div>
-          <div className="services text-left">Google adwords Campaign</div>
         </div>
       </div>
 
@@ -270,10 +275,10 @@ export default function Home() {
         <div className="w-10/12 flex">
           <div className="w-1/2 flex items-center justify-end">
             <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
-              <h2 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+              <h2 className="font-extrabold font-Anton text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
                 Values
               </h2>
-              <p className="font-semibold w-10/12">
+              <p className="font-medium font-Anton w-10/12">
                 We value authenticity, community, and growth. We believe in
                 telling genuine stories that resonate with both the heart and
                 history of a business, fostering a sense of belonging among
@@ -300,7 +305,7 @@ export default function Home() {
       {/* success stories */}
       <div className="bg-gradient-to-r from-emerald-400 to-cyan-400 w-full z-40 flex justify-center">
         <span className="w-8/12 flex flex-col">
-          <h3 className="story-title text-4xl font-bold pt-8">
+          <h3 className="story-title font-Anton text-4xl font-semibold pt-8">
             Success Stories
           </h3>
           <div className="flex flex-col gap-6 py-8">
@@ -366,14 +371,14 @@ export default function Home() {
       <div className="hook-container w-full flex justify-center my-8 max-h-60 bg-white z-40">
         <div className="w-8/12 flex gap-8">
           <div className="hook-element w-1/2 flex flex-col gap-4">
-            <span className="flex">
-              <h1 className="font-extrabold text-4xl">Your &quot;</h1>
-              <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+            <span className="flex font-Anton">
+              <h1 className="font-medium text-4xl">Your &quot;</h1>
+              <h1 className="font-medium text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
                 Hook
               </h1>
-              <h1 className="font-extrabold text-4xl">&quot;</h1>
+              <h1 className="font-medium text-4xl">&quot;</h1>
             </span>
-            <p>
+            <p className="font-medium text-sm">
               Where creativity meets strategy. Elevate your social presence with
               compelling content, engaging campaigns, and strategic maneuvers.
               Discover how we transform your unique hook into a magnetic force,
@@ -461,8 +466,8 @@ export default function Home() {
           />
         </div>
         <div className="w-8/12 flex flex-col gap-4">
-          <h3 className="text-3xl font-bold">Personal Story</h3>
-          <p>
+          <h3 className="text-3xl font-Anton font-medium">Personal Story</h3>
+          <p className="font-medium">
             We value authenticity, community, and growth. We believe in telling
             genuine stories that resonate with both the heart and history of a
             business, fostering a sense of belonging among customers and
@@ -474,9 +479,9 @@ export default function Home() {
       {/* recent insight */}
       <div className="recent-insight w-full flex flex-col items-center pb-8 gap-8">
         <div className="w-8/12 flex flex-col gap-8">
-          <span className="flex">
-            <h1 className="font-extrabold text-4xl">Recent</h1>
-            <h1 className="font-extrabold text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+          <span className="flex font-Anton">
+            <h1 className="font-medium text-4xl">Recent</h1>
+            <h1 className="font-medium text-4xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
               &nbsp; insights
             </h1>
           </span>
@@ -519,34 +524,31 @@ export default function Home() {
       </div>
 
       {/* contact us */}
-      <div className="w-full flex overflow-hidden justify-center pb-8">
+      <div className="w-full flex overflow-hidden justify-center">
         {openContact ? (
-          <ConatctUs
-            className={"absolute z-40"}
-            setOpenContact={setOpenContact}
-          />
-        ) : null}
-
-        <div className="contact-us w-8/12 flex flex-col gap-4">
-          <h4 className="font-semibold text-black w-1/2 text-lg">
-            We love to help brands succeed. Let&apos;s Start a Winning Project
-            Together.
-          </h4>
-          <span className="flex gap-8">
-            <div className="w-fit relative">
-              <h1 className="font-bold text-black text-6xl z-20 relative">
-                Get in Touch with Us
-              </h1>
-              <div className="w-full h-6 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 absolute bottom-0 left-0"></div>
-            </div>
-            <div
-              className="rounded-full bg-black cursor-pointer -translate-y-1/2 grid place-items-center w-16 aspect-square"
-              onClick={handleOpenContact}
-            >
-              <img className="w-4" src="/side_arrow.svg" alt="button icon" />
-            </div>
-          </span>
-        </div>
+          <ConatctUs setOpenContact={setOpenContact} />
+        ) : (
+          <div className="contact-us w-8/12 flex flex-col gap-4 pb-8">
+            <h4 className="font-semibold text-black w-1/2 text-lg">
+              We love to help brands succeed. Let&apos;s Start a Winning Project
+              Together.
+            </h4>
+            <span className="flex gap-8">
+              <div className="w-fit relative">
+                <h1 className="font-medium font-Anton text-black text-6xl z-20 relative">
+                  Get in Touch with Us
+                </h1>
+                <div className="w-full h-6 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 absolute bottom-0 left-0"></div>
+              </div>
+              <div
+                className="rounded-full bg-black cursor-pointer -translate-y-1/2 grid place-items-center w-16 aspect-square"
+                onClick={handleOpenContact}
+              >
+                <img className="w-4" src="/side_arrow.svg" alt="button icon" />
+              </div>
+            </span>
+          </div>
+        )}
       </div>
 
       {/* footer */}
