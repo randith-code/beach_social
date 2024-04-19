@@ -101,7 +101,7 @@ const Hero = () => {
       </div>
       <ParticlesComponent id="particles" />
       <div className="w-full h-auto flex justify-center pt-8">
-        <span className="feature-container flex w-8/12 justify-between">
+        <span className="feature-container flex w-8/12 gap-6 justify-between">
           <FirstFeatureCard className="features" />
           <SecondFeaturesCard className="features" />
           <ThirdFeatureCard className="features" />
