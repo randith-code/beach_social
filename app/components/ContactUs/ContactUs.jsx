@@ -23,8 +23,8 @@ export default function ConatctUs({ setOpenContact }) {
   });
   return (
     <div className={`contactus flex flex-col w-full`}>
-      <div className="bg-gradient-to-r from-emerald-400 to-cyan-400 grid place-items-center h-screen">
-        <div className="w-10/12 flex flex-col bg-black h-5/6">
+      <div className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop grid place-items-center h-screen">
+        <div className="w-10/12 flex flex-col bg-black">
           <div className="w-full flex justify-end">
             <Image
               src="/close_button.png"
@@ -35,19 +35,19 @@ export default function ConatctUs({ setOpenContact }) {
               className="cursor-pointer m-2"
             />
           </div>
-          <div className="flex flex-1">
-            <div className="w-1/2 h-full grid place-items-center">
+          <div className="flex flex-col md:flex-row flex-1">
+            <div className="w-full md:w-1/2 h-full grid place-items-center">
               <span className="w-8/12 flex flex-col gap-4">
                 <img className="w-2/5" src="/footer_logo.png" alt="" />
                 <span className="flex flex-col">
-                  <h1 className="font-extrabold text-3xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+                  <h1 className="font-extrabold text-xl md:text-3xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
                     SocialReach Nexus
                   </h1>
-                  <h1 className="font-extrabold text-white text-3xl">
+                  <h1 className="font-extrabold text-white text-xl md:text-3xl">
                     Let&apos;s Connect and Elevate Your Presence!
                   </h1>
                 </span>
-                <p className="font-light text-white">
+                <p className="font-light text-xs md:text-base text-white">
                   let&apos;s weave the threads of innovation, creativity, and
                   strategy to magnetize your social media presence. Our team is
                   here to turn your digital dreams into reality. Ready to make
@@ -56,8 +56,11 @@ export default function ConatctUs({ setOpenContact }) {
                 </p>
               </span>
             </div>
-            <div className="w-1/2 h-full grid place-items-center">
-              <form className="flex flex-col w-9/12 gap-8" action="">
+            <div className="w-full md:w-1/2 h-full grid place-items-center">
+              <form
+                className="flex flex-col w-9/12 gap-8 py-4 md:py-0"
+                action=""
+              >
                 <input
                   className="bg-transparent border-b-2 font-light border-white text-white outline-none"
                   type="text"
@@ -86,7 +89,7 @@ export default function ConatctUs({ setOpenContact }) {
                     Clear
                   </button>
                   <button
-                    className="bg-gradient-to-r from-emerald-400 to-cyan-400 text-black px-4 rounded-xl"
+                    className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-black px-4 rounded-xl"
                     type="submit"
                   >
                     Submit

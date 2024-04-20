@@ -24,6 +24,9 @@ module.exports = {
         Roboto: ['"Roboto"', ...defaultTheme.fontFamily.sans],
         Anton: ["Anton"],
       },
+      fontSize: {
+        xxs: "0.5rem",
+      },
     },
   },
   plugins: [

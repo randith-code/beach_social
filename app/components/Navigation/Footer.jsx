@@ -3,10 +3,10 @@ const Footer = () => {
     <footer className="flex flex-col w-full items-center bg-black text-white font-normal text-sm 2xl:texl-xl">
       <div className="flex w-full py-8 border-b-2 border-white justify-center">
         {/* inner-container */}
-        <div className="flex justify-center w-8/12">
-          <div className="w-1/4 flex flex-col gap-4">
+        <div className="flex flex-col md:flex-row justify-center w-10/12 md:w-8/12">
+          <div className="w-full md:w-1/4 flex flex-col gap-4">
             <img className="w-3/5" src="/footer_logo.png" alt="footer logo" />
-            <p className="text-xs w-3/5 font-light">
+            <p className="text-xs w-full md:w-3/5 font-light">
               Dive into a sea of endless possibilities with Beach Social
             </p>
             <span className="flex gap-4">
@@ -21,8 +21,8 @@ const Footer = () => {
               </div>
             </span>
           </div>
-          <div className="w-3/4 flex justify-between gap-4 text-xs">
-            <div className="flex flex-col gap-4 w-2/12">
+          <div className="w-full md:w-3/4 grid grid-cols-2 md:flex justify-between gap-4 text-xs">
+            <div className="flex flex-col mt-4 md:mt-0 gap-4 w-full md:w-2/12">
               <h3 className="font-bold"> Services</h3>
               <span className="flex flex-col gap-3 font-light">
                 <p>Chatbots</p>
@@ -32,7 +32,7 @@ const Footer = () => {
                 <p>Event Promotion</p>
               </span>
             </div>
-            <div className="flex flex-col gap-4 w-4/12">
+            <div className="flex flex-col gap-4 w-full md:w-4/12">
               <h3 className="h-4"></h3>
               <span className="flex flex-col gap-3 font-light">
                 <p>Google adwords Campaign</p>
@@ -42,7 +42,7 @@ const Footer = () => {
                 <p>Creative Designs</p>
               </span>
             </div>
-            <div className="flex flex-col gap-4  w-3/12">
+            <div className="flex flex-col gap-4 w-full  md:w-3/12">
               <h3 className="font-bold"> Quick Links</h3>
               <span className="flex flex-col gap-3 font-light">
                 <p>Home</p>
@@ -51,7 +51,7 @@ const Footer = () => {
                 <p>Success Stories</p>
               </span>
             </div>
-            <div className="flex flex-col gap-4 w-3/12">
+            <div className="flex flex-col gap-4 w-full md:w-3/12">
               <h3 className="font-bold">Get in Touch</h3>
               <span className="flex flex-col gap-4 font-light">
                 <span className="flex items-center gap-4">
@@ -71,9 +71,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-8/12 justify-between py-2 font-light">
+      <div className="flex w-10/12 text-xxs md:w-8/12 justify-between py-2 font-light">
         <p>© 2023 BeachSocial . Copyright and All rights reserved.</p>
-        <span className="flex gap-4">
+        <span className="flex gap-1 md:gap-4">
           <p>Terms & Agreements</p>
           <p>Privacy Policy</p>
         </span>
