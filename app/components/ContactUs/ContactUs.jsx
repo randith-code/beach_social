@@ -35,8 +35,8 @@ export default function ConatctUs({ setOpenContact }) {
               className="cursor-pointer m-2"
             />
           </div>
-          <div className="flex flex-col md:flex-row flex-1">
-            <div className="w-full md:w-1/2 h-full grid place-items-center">
+          <div className="flex flex-col md:flex-row md:items-center flex-1">
+            <div className="w-full md:w-1/2 md:pb-8 h-full grid place-items-center">
               <span className="w-8/12 flex flex-col gap-4">
                 <img className="w-2/5" src="/footer_logo.png" alt="" />
                 <span className="flex flex-col">

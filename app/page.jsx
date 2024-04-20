@@ -60,8 +60,8 @@ export default function Home() {
             trigger: ".service-initial-text",
             toggleActions: "restart complete reverse reset",
             start: "top 80%",
-            end: "bottom 40%",
-            scrub: true,
+            end: "bottom 30%",
+            scrub: 2,
           },
         });
 
@@ -72,12 +72,12 @@ export default function Home() {
           scrollTrigger: {
             trigger: ".service-text-container",
             toggleActions: "restart complete reverse reset",
-            start: "top 30%",
+            start: "top 20%",
           },
         });
 
         gsap.to(".story-initial", {
-          scale: 4,
+          scale: 6,
           opacity: 0.4,
           display: "none",
           scrollTrigger: {
@@ -86,6 +86,7 @@ export default function Home() {
             start: "top 80%",
             end: "bottom 30%",
             scrub: true,
+            markers: true,
           },
         });
 
@@ -96,7 +97,7 @@ export default function Home() {
           scrollTrigger: {
             trigger: ".initial-text-container",
             toggleActions: "restart complete reverse reset",
-            start: "top 10%",
+            start: "top 20%",
           },
         });
 
@@ -417,8 +418,8 @@ export default function Home() {
 
       {/* success stories */}
       <div className="success-story-container relative bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop w-full z-40 flex justify-center">
-        <span className="hidden initial-text-container absolute md:flex justify-center w-full h-full bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
-          <h3 className="story-initial font-Anton text-center text-4xl font-medium pt-20">
+        <span className="initial-text-container hidden  absolute md:flex justify-center w-full h-full bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
+          <h3 className="story-initial font-Anton text-center text-4xl font-medium mt-60">
             Success Stories
           </h3>
         </span>
