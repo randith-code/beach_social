@@ -4,6 +4,10 @@ import Link from "next/link";
 
 const Navbar = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <nav ref={ref} className="flex items-center justify-center w-full pt-4">
       <span className="flex items-center justify-between w-3/4">
@@ -46,16 +50,46 @@ const Navbar = forwardRef((props, ref) => {
           )}
         </span>
         {open ? (
-          <span className="absolute flex flex-col md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-white items-center justify-around">
-            <a href="/">Home</a>
-            <a href="/aboutus">About Us</a>
-            <a href="/services">Services</a>
-            <a href="successstories">Success stories</a>
-            <Link href="">
-              <button className="bg-black rounded-xl text-white px-3 py-1">
-                Contact Us
-              </button>
-            </Link>
+          <span className="fixed flex flex-col md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-white items-center justify-around">
+            <span className="w-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6 m-4"
+                onClick={handleClose}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </span>
+            <span className="flex-1 flex flex-col font-Anton justify-around text-2xl">
+              <a onClick={handleClose} href="/">
+                Home
+              </a>
+              <a onClick={handleClose} href="/aboutus">
+                About Us
+              </a>
+              <a onClick={handleClose} href="/services">
+                Services
+              </a>
+              <a onClick={handleClose} href="successstories">
+                Success stories
+              </a>
+              <Link href="">
+                <button
+                  onClick={handleClose}
+                  className="bg-black rounded-xl text-white px-3 py-1"
+                >
+                  Contact Us
+                </button>
+              </Link>
+            </span>
           </span>
         ) : null}
         <span className="hidden md:flex w-6/12 items-center font-medium justify-around text-sm">
