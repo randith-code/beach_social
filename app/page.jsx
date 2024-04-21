@@ -27,7 +27,7 @@ export default function Home() {
     () => {
       const mm = gsap.matchMedia();
 
-      mm.add("(min-width: 800px)", () => {
+      mm.add("(min-width: 768px)", () => {
         gsap.to(".personal-initial", {
           scale: 6,
           opacity: 0.4,

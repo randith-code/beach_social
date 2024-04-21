@@ -41,7 +41,7 @@ const Hero = () => {
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 800px)", () => {
+    mm.add("(min-width: 768px)", () => {
       const tl = gsap.timeline();
       if (rightArcRef.current && leftArcRef.current) {
         tl.from(leftArcRef.current, {
@@ -86,7 +86,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <header className="relative w-full h-fit md:h-screen">
+    <header className="relative w-full h-fit md:h-fit">
       <Navbar ref={navRef} />
       <div className="flex flex-col w-full items-center gap-4 pt-10">
         <h1 className="main-title text-5xl 2xl:text-8xl font-Anton font-bold w-10/12 md:w-1/2 text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
