@@ -92,7 +92,7 @@ const Navbar = forwardRef((props, ref) => {
             </span>
           </span>
         ) : null}
-        <span className="hidden md:flex w-6/12 items-center font-medium justify-around text-sm">
+        <span className="hidden md:flex gap-4 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:base">
           <a href="/">Home</a>
           <a href="/aboutus">About Us</a>
           <a href="/services">Services</a>

@@ -25,7 +25,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div id="overlay-root"></div>
+        {children}
+      </body>
     </html>
   );
 }

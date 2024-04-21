@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-10/12 text-xxs md:w-8/12 justify-between py-2 font-light">
+      <div className="flex w-10/12 text-xxs md:text-sm 2xl:text-xl  md:w-8/12 justify-between py-2 font-light">
         <p>© 2023 BeachSocial . Copyright and All rights reserved.</p>
         <span className="flex gap-1 md:gap-4">
           <p>Terms & Agreements</p>
