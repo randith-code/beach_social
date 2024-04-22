@@ -81,10 +81,10 @@ const Navbar = forwardRef((props, ref) => {
               <a onClick={handleClose} href="/services">
                 Services
               </a>
-              <a onClick={handleClose} href="successstories">
+              <a onClick={handleClose} href="/successstories">
                 Success stories
               </a>
-              <Link href="">
+              <Link href="/contactus">
                 <button
                   onClick={handleClose}
                   className="bg-black rounded-xl text-white px-3 py-1"
@@ -100,7 +100,7 @@ const Navbar = forwardRef((props, ref) => {
           <a href="/aboutus">About Us</a>
           <a href="/services">Services</a>
           <a href="/successstories">Success stories</a>
-          <Link href="">
+          <Link href="/contactus">
             <button className="bg-black rounded-3xl text-white px-5 py-2">
               <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Contact Us
