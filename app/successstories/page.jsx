@@ -171,29 +171,79 @@ const SuccessStories = () => {
           </div>
           <div className="hook-element w-full md:w-1/2 flex flex-col md:overflow-y-scroll no-scrollbar gap-8">
             <OurValuesItem
-              item={"Community:"}
+              item={"Strategy Development:"}
               description={
-                "At Beach Social, our core values drive everything we do. We champion Community, embrace Innovation, uphold Integrity, and celebrate Inclusivity. These principles ensure our platform remains a vibrant, trusted, and inclusive space for all."
+                "We begin by understanding your brand, goals, and audience. Using this insight, we craft a tailored social media strategy that aligns with your business objectives and sets the stage for digital success."
               }
             />
             <OurValuesItem
-              item={"Innovation:"}
+              item={"Content Creation:"}
               description={
-                "We continually push the boundaries of what social media can do, implementing cutting-edge technologies and creative strategies to enhance user experience."
+                "Dive into a sea of creativity with our expert content creators. From eye-catching graphics to compelling copy, we produce content that resonates with your target audience and embodies your brand’s voice."
               }
             />
             <OurValuesItem
-              item={"Integrity:"}
+              item={"Daily Management and Posting:"}
               description={
-                "We operate with transparency and honesty, valuing the trust that our users place in us to manage their online presence responsibly."
+                "Leave the day-to-day management of your social media profiles to us. We ensure that your accounts are active, engaging, and timely—keeping your brand top-of-mind and your audience engaged."
               }
             />
             <OurValuesItem
-              item={"Inclusivity:"}
+              item={"Monitoring and Engagement:"}
               description={
-                "Beach Social is for everyone. We celebrate diversity and work to ensure that our platform is accessible, welcoming, and empowering for all."
+                "We monitor your social channels to ensure that every comment, query, and opportunity for engagement doesn’t slip through the net. Our team helps nurture relationships by interacting with your audience in a genuine and professional manner."
               }
             />
+            <OurValuesItem
+              item={"Analytics and Reporting:"}
+              description={
+                "With our comprehensive analytics tools, we track the performance of your campaigns and provide detailed reports. This helps us refine strategies and make data-driven decisions to boost your social media effectiveness."
+              }
+            />
+          </div>
+        </div>
+      </div>
+      {/* values */}
+      <div className="values bg-valuesBg w-full py-10 flex justify-center">
+        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row-reverse">
+          <div className="w-full md:w-1/2 flex items-center md:justify-end">
+            <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
+              <span className="flex font-Anton">
+                <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl">
+                  Why &quot;
+                </h1>
+                <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+                  Choose Us
+                </h1>
+                <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl">
+                  &quot;
+                </h1>
+              </span>
+              <p className="font-medium w-full md:w-full 2xl:text-xl">
+                At Beach Social, we don&apos;t just manage your social
+                media&#59; we empower your brand to thrive in a digital world.
+                Our team of social media experts is passionate about crafting
+                unique strategies that drive engagement, increase followers, and
+                convert leads into loyal customers. Partner with us to
+                experience the difference that professional social media
+                management can make.
+              </p>
+              <button className="bg-black text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
+                <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+                  Get in Touch
+                </p>
+              </button>
+            </span>
+          </div>
+          <div className="w-10/12 md:w-1/2 h-fit flex justify-center py-8">
+            <div className="relative w-3/4 md:w-3/4">
+              <img
+                className="absolute top-0 w-full aspect-square z-10"
+                src="/view_img.png"
+                alt="into image"
+              />
+              <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
+            </div>
           </div>
         </div>
       </div>
