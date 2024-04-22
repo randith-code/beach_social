@@ -52,7 +52,7 @@ const ContactUs = () => {
         </h1>
       </div>
 
-      <div className="values bg-white w-full flex justify-center items-center py-10">
+      <div className="values bg-white w-full flex justify-center items-center py-16">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row items-center">
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
             <div className="relative w-3/4 md:w-2/3">

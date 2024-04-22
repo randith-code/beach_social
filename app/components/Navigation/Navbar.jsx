@@ -22,7 +22,7 @@ const Navbar = forwardRef((props, ref) => {
   return (
     <nav
       ref={ref}
-      className="flex bg-inherit items-center justify-center w-full py-4"
+      className="flex bg-inherit items-center justify-center w-full py-8"
     >
       <span className="flex items-center justify-between w-3/4">
         <img
@@ -107,7 +107,7 @@ const Navbar = forwardRef((props, ref) => {
           </span>
         ) : null}
         <span className="hidden md:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:base">
-          <span className="flex items-center gap-4">
+          <span className="flex items-center gap-6">
             <a className="hover:text-cyan-400" href="/">
               Home
             </a>
@@ -127,8 +127,8 @@ const Navbar = forwardRef((props, ref) => {
             </a>
           </span>
           <Link href="/contactus">
-            <button className="bg-black rounded-3xl text-white px-5 py-2">
-              <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+            <button className="group hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop bg-black rounded-3xl text-white px-5 py-2">
+              <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Contact Us
               </p>
             </button>

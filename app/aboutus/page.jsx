@@ -74,7 +74,7 @@ const AboutUs = () => {
           About Us
         </h1>
       </div>
-      <div className="values bg-white w-full flex justify-center items-center py-10">
+      <div className="values bg-white w-full flex justify-center items-center py-16">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row items-center">
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
             <div className="relative w-3/4 md:w-2/3">
@@ -115,7 +115,7 @@ const AboutUs = () => {
       </div>
 
       {/* personal stories */}
-      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-12  bg-valuesBg">
+      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-16  bg-valuesBg">
         <span className="personal-text-container hidden absolute md:grid place-items-center w-full h-5/6 bg-lightBlue z-50">
           <h3 className="personal-initial font-Anton text-center text-4xl font-medium">
             Personal Story
@@ -176,7 +176,7 @@ const AboutUs = () => {
         </div>
       </div>
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center py-10 2xl:my-20 md:max-h-72 bg-white z-40">
+      <div className="hook-container w-full flex justify-center py-24 2xl:my-20 md:max-h-96 bg-white z-40">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
@@ -226,7 +226,7 @@ const AboutUs = () => {
         </div>
       </div>
       {/* meet the team */}
-      <div className="w-full bg-lightBlue flex justify-center py-10">
+      <div className="w-full bg-lightBlue flex justify-center py-16">
         <div className="flex flex-col gap-6 w-3/4">
           <span className="flex items-center text-4xl font-Anton">
             <h1>Meet Our</h1>
@@ -267,7 +267,7 @@ const AboutUs = () => {
       </div>
 
       {/* contact us */}
-      <div className="w-full flex overflow-hidden justify-center my-10">
+      <div className="w-full flex bg-white overflow-hidden justify-center py-16">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
             <h2 className="text-black text-base md:text-2xl font-bold">

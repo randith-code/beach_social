@@ -88,15 +88,15 @@ const Hero = () => {
   return (
     <header className="relative w-full h-fit md:h-fit">
       <Navbar ref={navRef} />
-      <div className="flex flex-col w-full items-center gap-4 pt-10">
+      <div className="flex flex-col w-full items-center gap-6 pt-16">
         <h1 className="main-title 2xl:pt-20 text-5xl 2xl:text-8xl font-Anton font-bold w-10/12 md:w-1/2 text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
           {title}
         </h1>
         <p className="main-content font-medium 2xl:text-xl text-sm w-10/12 md:w-2/5 text-center">
           {description}
         </p>
-        <button className="contact-button bg-black rounded-3xl text-white py-2 px-6">
-          <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+        <button className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6">
+          <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
             Get in Touch
           </p>
         </button>
@@ -106,7 +106,7 @@ const Hero = () => {
         <RightArc ref={rightArcRef} />
       </div>
       <ParticlesComponent id="particles" />
-      <div className="w-full h-auto flex justify-center pt-10">
+      <div className="w-full h-auto flex justify-center pt-16">
         <span className="feature-container grid grid-cols-2 md:flex w-10/12 md:w-3/4 gap-6 justify-between">
           <FirstFeatureCard className="features" />
           <SecondFeaturesCard className="features" />

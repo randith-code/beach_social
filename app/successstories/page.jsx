@@ -137,7 +137,7 @@ const SuccessStories = () => {
         </h1>
       </div>
       {/* success stories */}
-      <div className="success-story-container py-10 relative bg-white w-full z-40 flex justify-center">
+      <div className="success-story-container py-16 relative bg-white w-full z-40 flex justify-center">
         <span className="w-10/12 md:w-9/12 flex flex-col">
           <div className="md:hidden grid grid-cols-2 gap-2 pb-4">
             <StoryCard
@@ -230,7 +230,7 @@ const SuccessStories = () => {
         </span>
       </div>
       {/* contact us */}
-      <div className="w-full flex overflow-hidden justify-center my-10">
+      <div className="w-full flex overflow-hidden justify-center my-16">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
             <h2 className="text-black text-base md:text-2xl font-bold">

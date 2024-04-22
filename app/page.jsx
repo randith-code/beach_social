@@ -273,7 +273,7 @@ export default function Home() {
     >
       <Hero />
       {/* partners */}
-      <div className="w-full flex flex-col gap-6 items-center mt-24 bg-white z-40">
+      <div className="w-full flex flex-col gap-6 items-center py-32 bg-white z-40">
         <span className="partner-header font-Anton flex">
           <h1 className="font-bold text-2xl md:text-4xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
             Friends
@@ -285,8 +285,8 @@ export default function Home() {
         <p className="partner-desc 2xl:text-xl text-xs md:text-sm font-medium w-1/2 md:w-2/6 text-center">
           {partnersDesc}
         </p>
-        <div className="flex flex-col gap-12 mt-8 bg-white z-40">
-          <div className="flex w-full overflow-x-hidden">
+        <div className="flex flex-col gap-14 mt-8 bg-white z-40">
+          <div className="flex w-full gap-10 overflow-x-hidden">
             <div className="top-logos flex gap-6 -translate-x-2/3 2xl:-translate-x-1/3">
               <img src="/aely.png" alt="partner company logo" />
               <img src="/camp.png" alt="partner company logo" />
@@ -305,7 +305,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex w-full overflow-x-hidden">
-            <div className="bottom-logos flex gap-6">
+            <div className="bottom-logos flex gap-10">
               <img src="/overland.png" alt="partner company logo" />
               <img src="/sunrun.png" alt="partner company logo" />
               <img src="/sign.png" alt="partner company logo" />
@@ -387,21 +387,21 @@ export default function Home() {
       </div>
 
       {/* values */}
-      <div className="values bg-valuesBg w-full flex justify-center">
+      <div className="values bg-valuesBg py-16 w-full flex justify-center">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 flex items-center md:justify-end">
             <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
-              <h2 className="font-extrabold font-Anton text-4xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <h2 className="font-extrabold font-Anton text-5xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Values
               </h2>
-              <p className="font-medium font-Anton w-full md:w-10/12 2xl:text-xl">
+              <p className="font-medium font-Anton text-lg w-full md:w-10/12 2xl:text-xl">
                 We value authenticity, community, and growth. We believe in
                 telling genuine stories that resonate with both the heart and
                 history of a business, fostering a sense of belonging among
                 customers and strengthening community ties.
               </p>
-              <button className="bg-black text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
-                <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <button className="group bg-black hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
+                <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                   Get in Touch
                 </p>
               </button>
@@ -421,7 +421,7 @@ export default function Home() {
       </div>
 
       {/* success stories */}
-      <div className="success-story-container py-10 relative bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop w-full z-40 flex justify-center">
+      <div className="success-story-container py-16 relative bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop w-full z-40 flex justify-center">
         <span className="initial-text-container hidden absolute md:flex justify-center items-baseline w-full h-full bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
           <h3 className="story-initial font-Anton text-center text-4xl font-medium mt-60">
             Success Stories
@@ -541,7 +541,7 @@ export default function Home() {
       </div>
 
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center my-12 2xl:my-20 md:max-h-60 bg-white z-40">
+      <div className="hook-container w-full flex justify-center my-20 2xl:my-20 md:max-h-72 bg-white z-40">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
@@ -602,7 +602,7 @@ export default function Home() {
       </div>
 
       {/* personal story */}
-      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-12  bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop">
+      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-20  bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop">
         <span className="personal-text-container hidden absolute md:grid place-items-center w-full h-5/6 bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
           <h3 className="personal-initial font-Anton text-center text-4xl font-medium">
             Personal Story
@@ -664,7 +664,7 @@ export default function Home() {
       </div>
 
       {/* recent insight */}
-      <div className="recent-insight w-full flex flex-col items-center pb-8 gap-8">
+      <div className="recent-insight w-full flex flex-col items-center pt-16 gap-8">
         <div className="w-10/12 md:w-9/12 flex flex-col gap-8">
           <span className="flex font-Anton mt-8 md:mt-0">
             <h1 className="font-medium text-2xl md:text-4xl 2xl:text-6xl">
@@ -700,7 +700,7 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <span className="w-1/2 hidden md:flex justify-center gap-4">
+        <span className="w-1/2 hidden md:flex justify-center pb-16 gap-4">
           <div className="w-12 h-2 rounded-lg bg-black"></div>
           <div className="w-12 h-2 rounded-lg bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop"></div>
           <div className="w-12 h-2 rounded-lg bg-black"></div>
@@ -713,7 +713,7 @@ export default function Home() {
       </div>
 
       {/* contact us */}
-      <div className="w-full py-10 flex overflow-hidden justify-center">
+      <div className="w-full py-16 flex overflow-hidden justify-center">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-4 pb-8">
           <h4 className="font-semibold text-black w-full md:w-1/2 text-base md:text-lg">
             We love to help brands succeed. Let&apos;s Start a Winning Project

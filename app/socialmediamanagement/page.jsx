@@ -131,7 +131,7 @@ const SocialMediaMangement = () => {
         </h1>
       </div>
       {/* Elevate your online presence */}
-      <div className="w-full flex justify-center bg-white py-20">
+      <div className="w-full flex justify-center bg-white py-16">
         <div className="w-3/4 flex flex-col gap-6">
           <span className="flex items-center text-4xl font-Anton">
             <h1>Elevate Your</h1>
@@ -149,7 +149,7 @@ const SocialMediaMangement = () => {
         </div>
       </div>
       {/* Our services */}
-      <div className="hook-container w-full flex justify-center py-20 2xl:my-20 md:max-h-96 bg-white z-40">
+      <div className="hook-container w-full flex justify-center py-16 2xl:my-20 md:max-h-96 bg-white z-40">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
@@ -205,7 +205,7 @@ const SocialMediaMangement = () => {
         </div>
       </div>
       {/* values */}
-      <div className="values bg-valuesBg w-full py-10 flex justify-center">
+      <div className="values bg-valuesBg w-full py-16 flex justify-center">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row-reverse">
           <div className="w-full md:w-1/2 flex items-center md:justify-end">
             <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
@@ -330,7 +330,7 @@ const SocialMediaMangement = () => {
         </span>
       </div>
       {/* contact us */}
-      <div className="w-full flex overflow-hidden justify-center my-10">
+      <div className="w-full flex overflow-hidden justify-center my-16">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
             <h2 className="text-black text-base md:text-2xl font-bold">
