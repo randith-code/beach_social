@@ -9,7 +9,10 @@ const Navbar = forwardRef((props, ref) => {
     setOpen(false);
   };
   return (
-    <nav ref={ref} className="flex items-center justify-center w-full pt-4">
+    <nav
+      ref={ref}
+      className="flex bg-inherit items-center justify-center w-full py-4"
+    >
       <span className="flex items-center justify-between w-3/4">
         <img
           className="h-8 "
@@ -50,7 +53,7 @@ const Navbar = forwardRef((props, ref) => {
           )}
         </span>
         {open ? (
-          <span className="fixed flex flex-col md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-white items-center justify-around">
+          <span className="fixed flex flex-col md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-transparent items-center justify-around">
             <span className="w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +103,7 @@ const Navbar = forwardRef((props, ref) => {
           <Link href="">
             <button className="bg-black rounded-3xl text-white px-5 py-2">
               <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                Get in Touch
+                Contact Us
               </p>
             </button>
           </Link>

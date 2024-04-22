@@ -19,6 +19,7 @@ module.exports = {
         gradiantLftBtm: "#00B6FF",
         gradiantRghtTop: "#2ED8EB",
         valuesBg: "rgba(0, 182, 255, 0.07)",
+        lightBlue: "#DCF5FF",
       },
       fontFamily: {
         Roboto: ['"Roboto"', ...defaultTheme.fontFamily.sans],
@@ -26,6 +27,9 @@ module.exports = {
       },
       fontSize: {
         xxs: "0.5rem",
+      },
+      height: {
+        "25vh": "25vh",
       },
     },
   },

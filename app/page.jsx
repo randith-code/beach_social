@@ -95,7 +95,7 @@ export default function Home() {
           duration: 0.4,
           scrollTrigger: {
             trigger: ".initial-text-container",
-            toggleActions: "restart complete reverse reset",
+            toggleActions: "restart complete none reset",
             start: "top 10%",
           },
         });
@@ -652,7 +652,7 @@ export default function Home() {
       {/* recent insight */}
       <div className="recent-insight w-full flex flex-col items-center pb-8 gap-8">
         <div className="w-10/12 md:w-8/12 flex flex-col gap-8">
-          <span className="flex font-Anton">
+          <span className="flex font-Anton mt-8 md:mt-0">
             <h1 className="font-medium text-2xl md:text-4xl 2xl:text-6xl">
               Recent
             </h1>
