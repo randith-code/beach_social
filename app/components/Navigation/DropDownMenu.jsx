@@ -3,7 +3,7 @@ import Link from "next/link";
 const DropdownMenu = ({ className }) => {
   return (
     <div
-      className={`${className} bg-white -translate-x-1/4 z-100 drop-shadow-md`}
+      className={`${className} bg-white -translate-x-1/4 z-100 rounded-md drop-shadow-md`}
     >
       <ul>
         <Link href="/socialmediamanagement">
