@@ -95,11 +95,13 @@ const Navbar = forwardRef((props, ref) => {
             </span>
           </span>
         ) : null}
-        <span className="hidden md:flex gap-4 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:base">
-          <a href="/">Home</a>
-          <a href="/aboutus">About Us</a>
-          <a href="/services">Services</a>
-          <a href="/successstories">Success stories</a>
+        <span className="hidden md:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:base">
+          <span className="flex items-center gap-4">
+            <a href="/">Home</a>
+            <a href="/aboutus">About Us</a>
+            <a href="/services">Services</a>
+            <a href="/successstories">Success stories</a>
+          </span>
           <Link href="/contactus">
             <button className="bg-black rounded-3xl text-white px-5 py-2">
               <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
