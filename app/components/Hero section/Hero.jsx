@@ -106,7 +106,7 @@ const Hero = () => {
         <RightArc ref={rightArcRef} />
       </div>
       <ParticlesComponent id="particles" />
-      <div className="w-full h-auto flex justify-center pt-8">
+      <div className="w-full h-auto flex justify-center pt-10">
         <span className="feature-container grid grid-cols-2 md:flex w-10/12 md:w-3/4 gap-6 justify-between">
           <FirstFeatureCard className="features" />
           <SecondFeaturesCard className="features" />

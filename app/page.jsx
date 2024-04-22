@@ -259,7 +259,7 @@ export default function Home() {
     <main ref={containerRef} className="flex overflow-x-hidden flex-col">
       <Hero />
       {/* partners */}
-      <div className="w-full flex flex-col gap-6 items-center mt-8 bg-white z-40">
+      <div className="w-full flex flex-col gap-6 items-center mt-24 bg-white z-40">
         <span className="partner-header font-Anton flex">
           <h1 className="font-bold text-2xl md:text-4xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
             Friends
@@ -407,7 +407,7 @@ export default function Home() {
       </div>
 
       {/* success stories */}
-      <div className="success-story-container relative bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop w-full z-40 flex justify-center">
+      <div className="success-story-container py-10 relative bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop w-full z-40 flex justify-center">
         <span className="initial-text-container hidden absolute md:flex justify-center items-baseline w-full h-full bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
           <h3 className="story-initial font-Anton text-center text-4xl font-medium mt-60">
             Success Stories
@@ -699,7 +699,7 @@ export default function Home() {
       </div>
 
       {/* contact us */}
-      <div className="w-full flex overflow-hidden justify-center">
+      <div className="w-full py-10 flex overflow-hidden justify-center">
         {openContact ? (
           <ConatctUs setOpenContact={setOpenContact} />
         ) : (
