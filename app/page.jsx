@@ -413,7 +413,7 @@ export default function Home() {
             Success Stories
           </h3>
         </span>
-        <span className="w-10/12 md:w-8/12 flex flex-col">
+        <span className="w-10/12 md:w-9/12 flex flex-col">
           <h3 className="story-title font-Anton text-2xl md:text-4xl 2xl:text-6xl font-medium py-4 md:pt-8">
             Success Stories
           </h3>
@@ -527,8 +527,8 @@ export default function Home() {
       </div>
 
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center my-8 2xl:my-20 md:max-h-60 bg-white z-40">
-        <div className="w-10/12 md:w-8/12 flex flex-col md:flex-row gap-8">
+      <div className="hook-container w-full flex justify-center my-12 2xl:my-20 md:max-h-60 bg-white z-40">
+        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl">
@@ -636,7 +636,7 @@ export default function Home() {
             alt="coresel image"
           />
         </div>
-        <div className="w-10/12 md:w-8/12 flex flex-col gap-4">
+        <div className="w-10/12 md:w-9/12 flex flex-col gap-4">
           <h3 className="text-2xl md:text-3xl font-Anton font-medium 2xl:text-6xl">
             Personal Story
           </h3>
@@ -651,7 +651,7 @@ export default function Home() {
 
       {/* recent insight */}
       <div className="recent-insight w-full flex flex-col items-center pb-8 gap-8">
-        <div className="w-10/12 md:w-8/12 flex flex-col gap-8">
+        <div className="w-10/12 md:w-9/12 flex flex-col gap-8">
           <span className="flex font-Anton mt-8 md:mt-0">
             <h1 className="font-medium text-2xl md:text-4xl 2xl:text-6xl">
               Recent
@@ -695,7 +695,7 @@ export default function Home() {
           <div className="w-12 h-2 rounded-lg bg-black"></div>
           <div className="w-12 h-2 rounded-lg bg-black"></div>
         </span>
-        <hr className="w-8/12 h-1 bg-slate-200" />
+        <hr className="w-9/12 h-1 bg-slate-200" />
       </div>
 
       {/* contact us */}
@@ -703,7 +703,7 @@ export default function Home() {
         {openContact ? (
           <ConatctUs setOpenContact={setOpenContact} />
         ) : (
-          <div className="contact-us w-10/12 md:w-8/12 flex flex-col gap-4 pb-8">
+          <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-4 pb-8">
             <h4 className="font-semibold text-black w-full md:w-1/2 text-base md:text-lg">
               We love to help brands succeed. Let&apos;s Start a Winning Project
               Together.

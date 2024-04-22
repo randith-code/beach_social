@@ -7,8 +7,9 @@ import { useGSAP } from "@gsap/react";
 
 import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
-import ListItem from "../components/Hero section/ListItem";
+import OurValuesItem from "../components/CardModules/OurValuesItem";
 import ConatctUs from "../components/ContactUs/ContactUs";
+import TeamMemberCard from "../components/CardModules/TeamMemberCard";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -72,9 +73,9 @@ const AboutUs = () => {
           About Us
         </h1>
       </div>
-      <div className="values bg-white w-full flex justify-center items-center">
+      <div className="values bg-white w-full flex justify-center items-center py-10">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row items-center">
-          <div className="w-10/12 md:w-1/2 h-fit flex justify-center py-8">
+          <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
             <div className="relative w-3/4 md:w-2/3">
               <img
                 className="absolute top-0 w-full aspect-square z-10"
@@ -85,7 +86,7 @@ const AboutUs = () => {
             </div>
           </div>
           {/* description */}
-          <div className="w-full md:w-1/2 flex items-center md:justify-end">
+          <div className="w-full md:w-1/2 flex items-center">
             <span className="flex flex-col justify-start gap-4 w-full mt-8">
               <p className="text-sm w-full 2xl:text-xl">
                 Founded in the vibrant heart of [City/Region], Beach Social
@@ -161,7 +162,7 @@ const AboutUs = () => {
             alt="coresel image"
           />
         </div>
-        <div className="w-10/12 md:w-8/12 flex flex-col gap-4">
+        <div className="w-10/12 md:w-9/12 flex flex-col gap-4">
           <h3 className="text-2xl md:text-3xl font-Anton font-medium 2xl:text-6xl">
             Personal Story
           </h3>
@@ -174,57 +175,90 @@ const AboutUs = () => {
         </div>
       </div>
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center py-8 2xl:my-20 md:max-h-60 bg-white z-40">
-        <div className="w-10/12 md:w-8/12 flex flex-col md:flex-row gap-8">
+      <div className="hook-container w-full flex justify-center py-10 2xl:my-20 md:max-h-72 bg-white z-40">
+        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl">
-                Your &quot;
+                Our &quot;
               </h1>
               <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                Hook
+                Values
               </h1>
               <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
             <p className="font-medium text-sm 2xl:text-xl">
-              Where creativity meets strategy. Elevate your social presence with
-              compelling content, engaging campaigns, and strategic maneuvers.
-              Discover how we transform your unique hook into a magnetic force,
-              capturing attention and fostering connections in the digital
-              realm. Let your brand story shine with Beach Social.
+              At Beach Social, our core values drive everything we do. We
+              champion Community, embrace Innovation, uphold Integrity, and
+              celebrate Inclusivity. These principles ensure our platform
+              remains a vibrant, trusted, and inclusive space for all.
             </p>
           </div>
           <div className="hook-element w-full md:w-1/2 flex flex-col md:overflow-y-scroll no-scrollbar gap-8">
-            <ListItem
-              item={
-                "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
+            <OurValuesItem
+              item={"Community:"}
+              description={
+                "At Beach Social, our core values drive everything we do. We champion Community, embrace Innovation, uphold Integrity, and celebrate Inclusivity. These principles ensure our platform remains a vibrant, trusted, and inclusive space for all."
               }
             />
-            <ListItem
-              item={
-                "Social Media Success, Simplified: Targeted Strategies, Tangible Results."
+            <OurValuesItem
+              item={"Innovation:"}
+              description={
+                "We continually push the boundaries of what social media can do, implementing cutting-edge technologies and creative strategies to enhance user experience."
               }
             />
-            <ListItem
-              item={
-                "From Posts to Profits: We Craft Your Social Media Success, You Reap the Rewards"
+            <OurValuesItem
+              item={"Integrity:"}
+              description={
+                "We operate with transparency and honesty, valuing the trust that our users place in us to manage their online presence responsibly."
               }
             />
-            <ListItem
-              item={
-                "From Shoreline to Online: Crafting Digital Experiences as Memorable as a Day at the Beach."
+            <OurValuesItem
+              item={"Inclusivity:"}
+              description={
+                "Beach Social is for everyone. We celebrate diversity and work to ensure that our platform is accessible, welcoming, and empowering for all."
               }
             />
-            <ListItem
-              item={
-                "Your Business at the Beach, Amplified Online: We Navigate the Digital Currents for You."
+          </div>
+        </div>
+      </div>
+      {/* meet the team */}
+      <div className="w-full bg-lightBlue flex justify-center py-10">
+        <div className="flex flex-col gap-6 w-3/4">
+          <span className="flex items-center text-4xl font-Anton">
+            <h1>Meet Our</h1>
+            <h1 className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              &nbsp;Team
+            </h1>
+          </span>
+          <p className="w-full text-sm font-medium">
+            Behind every post and pixel is our dedicated team of dreamers,
+            thinkers, and doers. From tech gurus to creative mavens, our team's
+            diverse backgrounds and skills breathe life into Beach Social’s
+            vision every day.
+          </p>
+          <div className="flex w-full justify-between">
+            <TeamMemberCard
+              img={"/member1.png"}
+              name={"User Name"}
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis congue quam. Donec vitae feugiat orci, at tempor enim. Etiam sit amet viverra quam,"
               }
             />
-            <ListItem
-              item={
-                "Seaside to Screenside: Crafting Your Beach Brand's Digital Journey."
+            <TeamMemberCard
+              img={"/member2.png"}
+              name={"User Name"}
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis congue quam. Donec vitae feugiat orci, at tempor enim. Etiam sit amet viverra quam,"
+              }
+            />
+            <TeamMemberCard
+              img={"/member3.png"}
+              name={"User Name"}
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis congue quam. Donec vitae feugiat orci, at tempor enim. Etiam sit amet viverra quam,"
               }
             />
           </div>
@@ -232,15 +266,26 @@ const AboutUs = () => {
       </div>
 
       {/* contact us */}
-      <div className="w-full flex overflow-hidden justify-center">
+      <div className="w-full flex overflow-hidden justify-center my-10">
         {openContact ? (
           <ConatctUs setOpenContact={setOpenContact} />
         ) : (
-          <div className="contact-us w-10/12 md:w-8/12 flex flex-col gap-4 pb-8">
-            <h4 className="font-semibold text-black w-full md:w-1/2 text-base md:text-lg">
-              We love to help brands succeed. Let&apos;s Start a Winning Project
-              Together.
-            </h4>
+          <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
+            <span className="flex items-center justify-start md:text-xl">
+              <h2 className="text-black text-base md:text-2xl font-bold">
+                Join our
+              </h2>
+              <h2 className="text-base md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+                &nbsp;Community
+              </h2>
+            </span>
+            <h2 className="text-black w-3/4 font-medium text-sm 2xl:text-base">
+              Whether you&apos;re looking to grow your brand, expand your social
+              network, or just find a fun and friendly place to express
+              yourself, Beach Social is your go-to platform. Connect with us to
+              stay updated on exciting features, community highlights, and more
+              as we continue to make social media a positive force in the world.
+            </h2>
             <span className="flex gap-8 2xl:gap-16">
               <div className="w-fit relative">
                 <h1

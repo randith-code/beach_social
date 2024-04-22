@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="flex flex-col w-full items-center bg-black text-white font-normal text-sm 2xl:texl-xl">
       <div className="flex w-full py-8 border-b-2 border-white justify-center">
         {/* inner-container */}
-        <div className="flex flex-col md:flex-row justify-center w-10/12 md:w-8/12">
+        <div className="flex flex-col md:flex-row justify-center w-10/12 md:w-9/12">
           <div className="w-full md:w-1/4 flex flex-col gap-4">
             <img className="w-3/5" src="/footer_logo.png" alt="footer logo" />
             <p className="text-xs w-full md:w-3/5 font-light">
@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-10/12 text-xxs md:text-sm 2xl:text-xl  md:w-8/12 justify-between py-2 font-light">
+      <div className="flex w-10/12 text-xxs md:text-xs 2xl:text-base  md:w-9/12 justify-between py-2 font-light">
         <p>© 2023 BeachSocial . Copyright and All rights reserved.</p>
         <span className="flex gap-1 md:gap-4">
           <p>Terms & Agreements</p>
