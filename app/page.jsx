@@ -169,7 +169,7 @@ export default function Home() {
         gsap.from(".services", {
           yPercent: "100",
           duration: 0.5,
-          stagger: 1,
+          stagger: 0.1,
           scrollTrigger: {
             trigger: ".services",
             toggleActions: "restart complete restart pause",
@@ -265,10 +265,6 @@ export default function Home() {
       duration: 0.4,
     });
   });
-
-  const handleOpenContact = () => {
-    setOpenContact(true);
-  };
 
   return (
     <main

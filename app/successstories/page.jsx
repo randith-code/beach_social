@@ -19,85 +19,96 @@ const SuccessStories = () => {
   const [openContact, setOpenContact] = useState(false);
 
   const { contextSafe } = useGSAP(() => {
-    // const mm = gsap.matchMedia();
-    // mm.add("(min-width: 768px)", () => {
-    //   gsap.to(".personal-initial", {
-    //     scale: 6,
-    //     opacity: 0.4,
-    //     display: "none",
-    //     scrollTrigger: {
-    //       trigger: ".personal-initial",
-    //       toggleActions: "restart complete reverse reset",
-    //       start: "top 80%",
-    //       end: "bottom 40%",
-    //       scrub: true,
-    //     },
-    //   });
-    //   gsap.to(".personal-text-container", {
-    //     opacity: 0,
-    //     display: "none",
-    //     duration: 0.4,
-    //     scrollTrigger: {
-    //       trigger: ".personal-text-container",
-    //       toggleActions: "restart complete reverse reset",
-    //       start: "top 20%",
-    //     },
-    //   });
-    //   gsap.to(".story-initial", {
-    //     scale: 6,
-    //     opacity: 0.4,
-    //     display: "none",
-    //     scrollTrigger: {
-    //       trigger: ".story-initial",
-    //       toggleActions: "restart complete reverse reset",
-    //       start: "top 90%",
-    //       end: "bottom 50%",
-    //       scrub: true,
-    //     },
-    //   });
-    //   gsap.to(".initial-text-container", {
-    //     opacity: 0,
-    //     display: "none",
-    //     duration: 0.4,
-    //     scrollTrigger: {
-    //       trigger: ".initial-text-container",
-    //       toggleActions: "restart complete none reset",
-    //       start: "top 10%",
-    //     },
-    //   });
-    //   gsap.from(".story-title", {
-    //     yPercent: "50",
-    //     opacity: 0,
-    //     duration: 0.4,
-    //     scrollTrigger: {
-    //       trigger: ".story-title",
-    //       toggleActions: "restart complete restart pause",
-    //     },
-    //   });
-    //   gsap.from(".stories-line1", {
-    //     yPercent: "25",
-    //     opacity: 0,
-    //     duration: 0.8,
-    //     stagger: 0.2,
-    //     scrollTrigger: {
-    //       trigger: ".stories-line1",
-    //       toggleActions: "restart complete restart pause",
-    //       scrub: 1,
-    //       end: "center center",
-    //     },
-    //   });
-    //   gsap.from(".stories-line2", {
-    //     yPercent: "25",
-    //     duration: 0.5,
-    //     stagger: 0.2,
-    //     scrollTrigger: {
-    //       trigger: ".stories-line2",
-    //       toggleActions: "restart complete restart pause",
-    //       scrub: 1,
-    //       end: "center center",
-    //     },
-    //   });
-    // });
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      //   gsap.to(".personal-initial", {
+      //     scale: 6,
+      //     opacity: 0.4,
+      //     display: "none",
+      //     scrollTrigger: {
+      //       trigger: ".personal-initial",
+      //       toggleActions: "restart complete reverse reset",
+      //       start: "top 80%",
+      //       end: "bottom 40%",
+      //       scrub: true,
+      //     },
+      //   });
+      //   gsap.to(".personal-text-container", {
+      //     opacity: 0,
+      //     display: "none",
+      //     duration: 0.4,
+      //     scrollTrigger: {
+      //       trigger: ".personal-text-container",
+      //       toggleActions: "restart complete reverse reset",
+      //       start: "top 20%",
+      //     },
+      //   });
+      //   gsap.to(".story-initial", {
+      //     scale: 6,
+      //     opacity: 0.4,
+      //     display: "none",
+      //     scrollTrigger: {
+      //       trigger: ".story-initial",
+      //       toggleActions: "restart complete reverse reset",
+      //       start: "top 90%",
+      //       end: "bottom 50%",
+      //       scrub: true,
+      //     },
+      //   });
+      //   gsap.to(".initial-text-container", {
+      //     opacity: 0,
+      //     display: "none",
+      //     duration: 0.4,
+      //     scrollTrigger: {
+      //       trigger: ".initial-text-container",
+      //       toggleActions: "restart complete none reset",
+      //       start: "top 10%",
+      //     },
+      //   });
+      //   gsap.from(".story-title", {
+      //     yPercent: "50",
+      //     opacity: 0,
+      //     duration: 0.4,
+      //     scrollTrigger: {
+      //       trigger: ".story-title",
+      //       toggleActions: "restart complete restart pause",
+      //     },
+      //   });
+      gsap.from(".stories-line1", {
+        yPercent: "25",
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".stories-line1",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          end: "center center",
+        },
+      });
+      gsap.from(".stories-line2", {
+        yPercent: "25",
+        duration: 0.5,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".stories-line2",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          end: "center center",
+        },
+      });
+      gsap.from(".stories-line3", {
+        yPercent: "25",
+        duration: 0.5,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".stories-line3",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          end: "center center",
+        },
+      });
+    });
   });
 
   const handleContactEnter = contextSafe(() => {
@@ -127,15 +138,7 @@ const SuccessStories = () => {
       </div>
       {/* success stories */}
       <div className="success-story-container py-10 relative bg-white w-full z-40 flex justify-center">
-        {/* <span className="initial-text-container hidden absolute md:flex justify-center items-baseline w-full h-full bg-white z-50">
-          <h3 className="story-initial font-Anton text-center text-4xl font-medium mt-60">
-            Recent Works
-          </h3>
-        </span> */}
         <span className="w-10/12 md:w-9/12 flex flex-col">
-          <h3 className="story-title font-Anton text-2xl md:text-4xl 2xl:text-6xl font-medium py-4 md:pt-8">
-            Recent Works
-          </h3>
           <div className="md:hidden grid grid-cols-2 gap-2 pb-4">
             <StoryCard
               img="/view_img.png"
@@ -203,7 +206,7 @@ const SuccessStories = () => {
                 isLarge={true}
               />
             </div>
-            <div className="stories-line1 flex justify-between gap-6">
+            <div className="stories-line3 flex justify-between gap-6">
               <StoryCard
                 img="/view_img.png"
                 title={"Varnish Nightclub"}
