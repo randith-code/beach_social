@@ -1,12 +1,23 @@
 "use client";
 import { forwardRef, useState } from "react";
 import Link from "next/link";
+import DropdownMenu from "./DropDownMenu";
 
 const Navbar = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const handleMouseEnter = () => {
+    setDropdownVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownVisible(false);
   };
   return (
     <nav
@@ -15,7 +26,7 @@ const Navbar = forwardRef((props, ref) => {
     >
       <span className="flex items-center justify-between w-3/4">
         <img
-          className="h-8 "
+          className="h-12 "
           src="http://www.beachsocial.leadmedia.lk/wp-content/uploads/2024/04/beach_social_logo.png"
           alt="beach social logo"
         />
@@ -97,10 +108,23 @@ const Navbar = forwardRef((props, ref) => {
         ) : null}
         <span className="hidden md:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:base">
           <span className="flex items-center gap-4">
-            <a href="/">Home</a>
-            <a href="/aboutus">About Us</a>
-            <a href="/services">Services</a>
-            <a href="/successstories">Success stories</a>
+            <a className="hover:text-cyan-400" href="/">
+              Home
+            </a>
+            <a className="hover:text-cyan-400" href="/aboutus">
+              About Us
+            </a>
+            <div
+              className="w-fit z-50"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <p className="hover:text-cyan-400">Services</p>
+              {isDropdownVisible && <DropdownMenu className="absolute z-50" />}
+            </div>
+            <a className="hover:text-cyan-400" href="/successstories">
+              Success stories
+            </a>
           </span>
           <Link href="/contactus">
             <button className="bg-black rounded-3xl text-white px-5 py-2">

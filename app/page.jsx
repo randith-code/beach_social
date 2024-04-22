@@ -169,7 +169,7 @@ export default function Home() {
         gsap.from(".services", {
           yPercent: "100",
           duration: 0.5,
-          stagger: 0.1,
+          stagger: 1,
           scrollTrigger: {
             trigger: ".services",
             toggleActions: "restart complete restart pause",
@@ -180,7 +180,7 @@ export default function Home() {
         gsap.from(".values", {
           xPercent: "-100",
           duration: 0.8,
-          stagger: 0.1,
+          stagger: 1,
           scrollTrigger: {
             trigger: ".values",
             toggleActions: "restart complete restart pause",

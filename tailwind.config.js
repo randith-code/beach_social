@@ -32,6 +32,9 @@ module.exports = {
       height: {
         "25vh": "25vh",
       },
+      zIndex: {
+        100: "10000",
+      },
     },
   },
   plugins: [
