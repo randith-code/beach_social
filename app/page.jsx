@@ -10,6 +10,9 @@ import ListItem from "./components/Hero section/ListItem";
 import InsightCard from "./components/CardModules/InsightCard";
 import Footer from "./components/Navigation/Footer";
 import ConatctUs from "./components/ContactUs/ContactUs";
+import useScrollPosition from "./customHooks/useScrollPosition";
+import ConatctCard from "./components/ContactUs/ContactCard";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -20,6 +23,7 @@ export default function Home() {
 
   const containerRef = useRef();
   const hookListRef = useRef();
+  const scrollPosition = useScrollPosition();
 
   const [openContact, setOpenContact] = useState(false);
 
@@ -237,6 +241,17 @@ export default function Home() {
     { scope: containerRef.current }
   );
 
+  const [isHitTheBottom, setHitTheBottom] = useState(false);
+
+  useEffect(() => {
+    if (scrollPosition >= 99) {
+      setHitTheBottom(true);
+    } else {
+      setHitTheBottom(false);
+    }
+    console.log(scrollPosition);
+  }, [scrollPosition]);
+
   const handleContactEnter = contextSafe(() => {
     gsap.to(".contactBar", {
       height: "1.5rem",
@@ -256,7 +271,10 @@ export default function Home() {
   };
 
   return (
-    <main ref={containerRef} className="flex overflow-x-hidden flex-col">
+    <main
+      ref={containerRef}
+      className="flex relative overflow-x-hidden flex-col"
+    >
       <Hero />
       {/* partners */}
       <div className="w-full flex flex-col gap-6 items-center mt-24 bg-white z-40">
@@ -700,14 +718,12 @@ export default function Home() {
 
       {/* contact us */}
       <div className="w-full py-10 flex overflow-hidden justify-center">
-        {openContact ? (
-          <ConatctUs setOpenContact={setOpenContact} />
-        ) : (
-          <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-4 pb-8">
-            <h4 className="font-semibold text-black w-full md:w-1/2 text-base md:text-lg">
-              We love to help brands succeed. Let&apos;s Start a Winning Project
-              Together.
-            </h4>
+        <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-4 pb-8">
+          <h4 className="font-semibold text-black w-full md:w-1/2 text-base md:text-lg">
+            We love to help brands succeed. Let&apos;s Start a Winning Project
+            Together.
+          </h4>
+          <Link href="/contactus">
             <span className="flex gap-8 2xl:gap-16">
               <div className="w-fit relative">
                 <h1
@@ -719,10 +735,7 @@ export default function Home() {
                 </h1>
                 <div className="contactBar w-full h-0 rounded-xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop absolute bottom-0 left-0"></div>
               </div>
-              <div
-                className="rounded-full bg-black cursor-pointer md:-translate-y-1/2 grid place-items-center w-10 h-10 md:w-16 md:h-16 2xl:w-20 2xl:h-20 aspect-square"
-                onClick={handleOpenContact}
-              >
+              <div className="rounded-full bg-black cursor-pointer md:-translate-y-1/2 grid place-items-center w-10 h-10 md:w-16 md:h-16 2xl:w-20 2xl:h-20 aspect-square">
                 <img
                   className="w-1/3"
                   src="/side_arrow.svg"
@@ -730,9 +743,18 @@ export default function Home() {
                 />
               </div>
             </span>
-          </div>
-        )}
+          </Link>
+        </div>
       </div>
+
+      {isHitTheBottom ? (
+        <div className="absolute bottom-0 left-0 w-full h-screen z-50 bg-valuesBg">
+          <ConatctCard
+            hideSection={setHitTheBottom}
+            setOpenContact={setOpenContact}
+          />
+        </div>
+      ) : null}
 
       {/* footer */}
       <Footer />

@@ -10,6 +10,7 @@ import Footer from "../components/Navigation/Footer";
 import OurValuesItem from "../components/CardModules/OurValuesItem";
 import StoryCard from "../components/CardModules/storycrad";
 import ConatctUs from "../components/ContactUs/ContactUs";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -148,7 +149,7 @@ const SuccessStories = () => {
         </div>
       </div>
       {/* Our services */}
-      <div className="hook-container w-full flex justify-center py-20 2xl:my-20 md:max-h-72 bg-white z-40">
+      <div className="hook-container w-full flex justify-center py-20 2xl:my-20 md:max-h-96 bg-white z-40">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
@@ -330,25 +331,23 @@ const SuccessStories = () => {
       </div>
       {/* contact us */}
       <div className="w-full flex overflow-hidden justify-center my-10">
-        {openContact ? (
-          <ConatctUs setOpenContact={setOpenContact} />
-        ) : (
-          <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
-            <span className="flex items-center justify-start md:text-xl">
-              <h2 className="text-black text-base md:text-2xl font-bold">
-                Join our
-              </h2>
-              <h2 className="text-base md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                &nbsp;Community
-              </h2>
-            </span>
-            <h2 className="text-black w-3/4 font-medium text-sm 2xl:text-base">
-              Whether you&apos;re looking to grow your brand, expand your social
-              network, or just find a fun and friendly place to express
-              yourself, Beach Social is your go-to platform. Connect with us to
-              stay updated on exciting features, community highlights, and more
-              as we continue to make social media a positive force in the world.
+        <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
+          <span className="flex items-center justify-start md:text-xl">
+            <h2 className="text-black text-base md:text-2xl font-bold">
+              Join our
             </h2>
+            <h2 className="text-base md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              &nbsp;Community
+            </h2>
+          </span>
+          <h2 className="text-black w-3/4 font-medium text-sm 2xl:text-base">
+            Whether you&apos;re looking to grow your brand, expand your social
+            network, or just find a fun and friendly place to express yourself,
+            Beach Social is your go-to platform. Connect with us to stay updated
+            on exciting features, community highlights, and more as we continue
+            to make social media a positive force in the world.
+          </h2>
+          <Link href="/contactus">
             <span className="flex gap-8 2xl:gap-16">
               <div className="w-fit relative">
                 <h1
@@ -360,10 +359,7 @@ const SuccessStories = () => {
                 </h1>
                 <div className="contactBar w-full h-0 rounded-xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop absolute bottom-0 left-0"></div>
               </div>
-              <div
-                className="rounded-full bg-black cursor-pointer md:-translate-y-1/2 grid place-items-center w-10 h-10 md:w-16 md:h-16 2xl:w-20 2xl:h-20 aspect-square"
-                onClick={handleOpenContact}
-              >
+              <div className="rounded-full bg-black cursor-pointer md:-translate-y-1/2 grid place-items-center w-10 h-10 md:w-16 md:h-16 2xl:w-20 2xl:h-20 aspect-square">
                 <img
                   className="w-1/3"
                   src="/side_arrow.svg"
@@ -371,8 +367,8 @@ const SuccessStories = () => {
                 />
               </div>
             </span>
-          </div>
-        )}
+          </Link>
+        </div>
       </div>
       <Footer />
     </main>

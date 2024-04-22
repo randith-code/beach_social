@@ -20,6 +20,7 @@ module.exports = {
         gradiantRghtTop: "#2ED8EB",
         valuesBg: "rgba(0, 182, 255, 0.07)",
         lightBlue: "#DCF5FF",
+        backgroundBlur: "rgba(255, 255, 255, 0.6)",
       },
       fontFamily: {
         Roboto: ['"Roboto"', ...defaultTheme.fontFamily.sans],
