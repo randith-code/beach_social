@@ -9,6 +9,7 @@ import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
 import OurValuesItem from "../components/CardModules/OurValuesItem";
 import StoryCard from "../components/CardModules/storycrad";
+import ConatctUs from "../components/ContactUs/ContactUs";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
