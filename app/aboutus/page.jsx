@@ -235,9 +235,9 @@ const AboutUs = () => {
           </span>
           <p className="w-full text-sm font-medium">
             Behind every post and pixel is our dedicated team of dreamers,
-            thinkers, and doers. From tech gurus to creative mavens, our team's
-            diverse backgrounds and skills breathe life into Beach Social&apos;s
-            vision every day.
+            thinkers, and doers. From tech gurus to creative mavens, our
+            team&apos;s diverse backgrounds and skills breathe life into Beach
+            Social&apos;s vision every day.
           </p>
           <div className="flex w-full justify-between">
             <TeamMemberCard
