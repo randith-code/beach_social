@@ -9,7 +9,6 @@ import StoryCard from "./components/CardModules/storycrad";
 import ListItem from "./components/Hero section/ListItem";
 import InsightCard from "./components/CardModules/InsightCard";
 import Footer from "./components/Navigation/Footer";
-import ConatctUs from "./components/ContactUs/ContactUs";
 import useScrollPosition from "./customHooks/useScrollPosition";
 import ConatctCard from "./components/ContactUs/ContactCard";
 import Link from "next/link";
@@ -89,7 +88,7 @@ export default function Home() {
             toggleActions: "restart complete reverse reset",
             start: "top 90%",
             end: "bottom 50%",
-            scrub: true,
+            scrub: 2,
           },
         });
 
@@ -218,7 +217,7 @@ export default function Home() {
           },
         });
         gsap.from(".recent-insight", {
-          yPercent: "25",
+          yPercent: "5",
           duration: 0.4,
           scrollTrigger: {
             trigger: ".recent-insight",
@@ -268,8 +267,9 @@ export default function Home() {
 
   return (
     <main
+      id="main-container"
       ref={containerRef}
-      className="flex relative overflow-x-hidden flex-col"
+      className="scroll-smooth flex relative overflow-x-hidden flex-col"
     >
       <Hero />
       {/* partners */}
@@ -664,7 +664,7 @@ export default function Home() {
       </div>
 
       {/* recent insight */}
-      <div className="recent-insight w-full flex flex-col items-center pt-16 gap-8">
+      <div className="recent-insight w-full flex flex-col items-center pt-10 gap-8">
         <div className="w-10/12 md:w-9/12 flex flex-col gap-8">
           <span className="flex font-Anton mt-8 md:mt-0">
             <h1 className="font-medium text-2xl md:text-4xl 2xl:text-6xl">

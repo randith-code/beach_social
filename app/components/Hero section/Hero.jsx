@@ -45,13 +45,19 @@ const Hero = () => {
       const tl = gsap.timeline();
       if (rightArcRef.current && leftArcRef.current) {
         tl.from(leftArcRef.current, {
-          duration: 1,
+          duration: 1.5,
           opacity: 0.2,
+          transformOrigin: "left",
           ease: "power1.inOut",
         });
         tl.from(
           rightArcRef.current,
-          { duration: 1, opacity: 0.2, ease: "power1.inOut" },
+          {
+            duration: 1.5,
+            opacity: 0.2,
+            transformOrigin: "right",
+            ease: "power1.inOut",
+          },
           0
         );
       }
@@ -89,7 +95,7 @@ const Hero = () => {
     <header className="relative w-full h-fit md:h-fit">
       <Navbar ref={navRef} />
       <div className="flex flex-col w-full items-center gap-6 pt-16">
-        <h1 className="main-title 2xl:pt-20 text-5xl 2xl:text-8xl font-Anton font-bold w-10/12 md:w-1/2 text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+        <h1 className="main-title 2xl:pt-20 text-6xl 2xl:text-8xl font-Anton font-bold w-10/12 md:w-1/2 text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
           {title}
         </h1>
         <p className="main-content font-medium 2xl:text-xl text-sm w-10/12 md:w-2/5 text-center">
@@ -106,7 +112,7 @@ const Hero = () => {
         <RightArc ref={rightArcRef} />
       </div>
       <ParticlesComponent id="particles" />
-      <div className="w-full h-auto flex justify-center pt-16">
+      <div className="w-full h-auto flex justify-center pt-16 pb-2">
         <span className="feature-container grid grid-cols-2 md:flex w-10/12 md:w-3/4 gap-6 justify-between">
           <FirstFeatureCard className="features" />
           <SecondFeaturesCard className="features" />

@@ -8,7 +8,6 @@ import { useGSAP } from "@gsap/react";
 import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
 import OurValuesItem from "../components/CardModules/OurValuesItem";
-import ConatctUs from "../components/ContactUs/ContactUs";
 import TeamMemberCard from "../components/CardModules/TeamMemberCard";
 import Link from "next/link";
 
@@ -22,27 +21,14 @@ const AboutUs = () => {
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
-      gsap.to(".personal-initial", {
-        scale: 6,
-        opacity: 0.4,
-        display: "none",
+      gsap.to(".srcoller-inner", {
+        xPercent: "20",
         scrollTrigger: {
-          trigger: ".personal-initial",
-          toggleActions: "restart complete reverse reset",
-          start: "top 80%",
-          end: "bottom 40%",
-          scrub: true,
-        },
-      });
-
-      gsap.to(".personal-text-container", {
-        opacity: 0,
-        display: "none",
-        duration: 0.4,
-        scrollTrigger: {
-          trigger: ".personal-text-container",
-          toggleActions: "restart complete reverse reset",
-          start: "top 20%",
+          trigger: ".srcoller-inner",
+          toggleActions: "restart pause restart pause",
+          scrub: 1,
+          start: "top bottom",
+          end: "bottom top",
         },
       });
     });
@@ -116,11 +102,11 @@ const AboutUs = () => {
 
       {/* personal stories */}
       <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-16  bg-valuesBg">
-        <span className="personal-text-container hidden absolute md:grid place-items-center w-full h-5/6 bg-lightBlue z-50">
+        {/* <span className="personal-text-container hidden absolute md:grid place-items-center w-full h-5/6 bg-lightBlue z-50">
           <h3 className="personal-initial font-Anton text-center text-4xl font-medium">
             Personal Story
           </h3>
-        </span>
+        </span> */}
         <div className="srcoller-inner flex w-full gap-8 -translate-x-1/3">
           <img
             className="w-1/4 md:w-2/12 aspect-square"
@@ -240,7 +226,7 @@ const AboutUs = () => {
             team&apos;s diverse backgrounds and skills breathe life into Beach
             Social&apos;s vision every day.
           </p>
-          <div className="flex w-full justify-between">
+          <div className="flex flex-col md:flex-row w-full justify-between">
             <TeamMemberCard
               img={"/member1.png"}
               name={"User Name"}

@@ -22,53 +22,6 @@ const SocialMediaMangement = () => {
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
-      gsap.to(".personal-initial", {
-        scale: 6,
-        opacity: 0.4,
-        display: "none",
-        scrollTrigger: {
-          trigger: ".personal-initial",
-          toggleActions: "restart complete reverse reset",
-          start: "top 80%",
-          end: "bottom 40%",
-          scrub: true,
-        },
-      });
-
-      gsap.to(".personal-text-container", {
-        opacity: 0,
-        display: "none",
-        duration: 0.4,
-        scrollTrigger: {
-          trigger: ".personal-text-container",
-          toggleActions: "restart complete reverse reset",
-          start: "top 20%",
-        },
-      });
-      gsap.to(".story-initial", {
-        scale: 6,
-        opacity: 0.4,
-        display: "none",
-        scrollTrigger: {
-          trigger: ".story-initial",
-          toggleActions: "restart complete reverse reset",
-          start: "top 90%",
-          end: "bottom 50%",
-          scrub: true,
-        },
-      });
-
-      gsap.to(".initial-text-container", {
-        opacity: 0,
-        display: "none",
-        duration: 0.4,
-        scrollTrigger: {
-          trigger: ".initial-text-container",
-          toggleActions: "restart complete none reset",
-          start: "top 10%",
-        },
-      });
-
       gsap.from(".story-title", {
         yPercent: "50",
         opacity: 0,
@@ -229,8 +182,8 @@ const SocialMediaMangement = () => {
                 experience the difference that professional social media
                 management can make.
               </p>
-              <button className="bg-black text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
-                <p className="font-semibold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <button className="bg-black group hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
+                <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                   Get in Touch
                 </p>
               </button>
@@ -250,11 +203,6 @@ const SocialMediaMangement = () => {
       </div>
       {/* success stories */}
       <div className="success-story-container py-10 relative bg-white w-full z-40 flex justify-center">
-        <span className="initial-text-container hidden absolute md:flex justify-center items-baseline w-full h-full bg-white z-50">
-          <h3 className="story-initial font-Anton text-center text-4xl font-medium mt-60">
-            Recent Works
-          </h3>
-        </span>
         <span className="w-10/12 md:w-9/12 flex flex-col">
           <h3 className="story-title font-Anton text-2xl md:text-4xl 2xl:text-6xl font-medium py-4 md:pt-8">
             Recent Works
