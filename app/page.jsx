@@ -287,10 +287,10 @@ export default function Home() {
       {/* partners */}
       <div className="w-full flex flex-col gap-6 items-center py-32 bg-white z-40">
         <span className="partner-header font-Anton flex">
-          <h1 className="font-bold text-2xl md:text-4xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+          <h1 className="font-bold text-2xl md:text-5xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
             Friends
           </h1>
-          <h1 className="font-bold text-2xl md:text-4xl 2xl:text-6xl">
+          <h1 className="font-bold text-2xl md:text-5xl 2xl:text-6xl">
             &nbsp; we have made along the way
           </h1>
         </span>
@@ -440,7 +440,7 @@ export default function Home() {
           </h3>
         </span>
         <span className="w-10/12 md:w-9/12 flex flex-col">
-          <h3 className="story-title font-Anton text-2xl md:text-4xl 2xl:text-6xl font-medium py-4 md:pt-8">
+          <h3 className="story-title font-Anton text-2xl md:text-5xl 2xl:text-6xl font-medium py-4 md:pt-8">
             Success Stories
           </h3>
           <div className="md:hidden grid grid-cols-2 gap-2 pb-4">
@@ -665,7 +665,7 @@ export default function Home() {
           />
         </div>
         <div className="w-10/12 md:w-9/12 flex flex-col gap-4">
-          <h3 className="text-2xl md:text-3xl font-Anton font-medium 2xl:text-6xl">
+          <h3 className="text-2xl md:text-5xl font-Anton font-medium 2xl:text-6xl">
             Personal Story
           </h3>
           <p className="font-medium text-xs md:text-base 2xl:text-xl">
@@ -681,10 +681,10 @@ export default function Home() {
       <div className="recent-insight w-full flex flex-col items-center pt-10 gap-8">
         <div className="w-10/12 md:w-9/12 flex flex-col gap-8">
           <span className="flex font-Anton mt-8 md:mt-0">
-            <h1 className="font-medium text-2xl md:text-4xl 2xl:text-6xl">
+            <h1 className="font-medium text-2xl md:text-5xl 2xl:text-6xl">
               Recent
             </h1>
-            <h1 className="font-medium text-2xl md:text-4xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+            <h1 className="font-medium text-2xl md:text-5xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
               &nbsp; insights
             </h1>
           </span>
