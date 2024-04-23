@@ -209,14 +209,14 @@ export default function Home() {
             end: "bottom top",
           },
         });
-        gsap.from(".hook-element", {
-          yPercent: "30",
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: ".hook-container",
-            toggleActions: "restart complete restart pause",
-          },
-        });
+        // gsap.from(".hook-element", {
+        //   yPercent: "30",
+        //   duration: 0.6,
+        //   scrollTrigger: {
+        //     trigger: ".hook-container",
+        //     toggleActions: "restart complete restart pause",
+        //   },
+        // });
         gsap.from(".recent-insight", {
           yPercent: "5",
           duration: 0.4,
@@ -234,6 +234,17 @@ export default function Home() {
             scrub: 1,
             start: "top bottom",
             end: "bottom top",
+          },
+        });
+        gsap.to(".hook-inner-container", {
+          yPercent: "-45",
+          scrollTrigger: {
+            trigger: ".hook-inner-container",
+            pin: ".hook-element",
+            toggleActions: "restart complete reverse pause",
+            scrub: 3,
+            start: "-=10% 10%",
+            end: "+=10%",
           },
         });
       });
@@ -542,21 +553,21 @@ export default function Home() {
       </div>
 
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center my-20 2xl:my-20 md:max-h-72 bg-white z-40">
-        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
+      <div className="w-full flex justify-center my-20 2xl:my-20 md:max-h-72 bg-white z-40">
+        <div className="hook-container w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
-              <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl">
+              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
                 Your &quot;
               </h1>
-              <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Hook
               </h1>
-              <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl">
+              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
-            <p className="font-medium text-sm 2xl:text-xl">
+            <p className="font-medium text-xl 2xl:text-xl">
               Where creativity meets strategy. Elevate your social presence with
               compelling content, engaging campaigns, and strategic maneuvers.
               Discover how we transform your unique hook into a magnetic force,
@@ -566,38 +577,40 @@ export default function Home() {
           </div>
           <div
             ref={hookListRef}
-            className="hook-element w-full md:w-1/2 flex flex-col md:overflow-y-scroll no-scrollbar gap-8"
+            className="w-full md:w-1/2 flex flex-col md:overflow-y-hidden gap-8"
           >
-            <ListItem
-              item={
-                "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
-              }
-            />
-            <ListItem
-              item={
-                "Social Media Success, Simplified: Targeted Strategies, Tangible Results."
-              }
-            />
-            <ListItem
-              item={
-                "From Posts to Profits: We Craft Your Social Media Success, You Reap the Rewards"
-              }
-            />
-            <ListItem
-              item={
-                "From Shoreline to Online: Crafting Digital Experiences as Memorable as a Day at the Beach."
-              }
-            />
-            <ListItem
-              item={
-                "Your Business at the Beach, Amplified Online: We Navigate the Digital Currents for You."
-              }
-            />
-            <ListItem
-              item={
-                "Seaside to Screenside: Crafting Your Beach Brand's Digital Journey."
-              }
-            />
+            <div className="hook-inner-container flex flex-col gap-9 w-full">
+              <ListItem
+                item={
+                  "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
+                }
+              />
+              <ListItem
+                item={
+                  "Social Media Success, Simplified: Targeted Strategies, Tangible Results."
+                }
+              />
+              <ListItem
+                item={
+                  "From Posts to Profits: We Craft Your Social Media Success, You Reap the Rewards"
+                }
+              />
+              <ListItem
+                item={
+                  "From Shoreline to Online: Crafting Digital Experiences as Memorable as a Day at the Beach."
+                }
+              />
+              <ListItem
+                item={
+                  "Your Business at the Beach, Amplified Online: We Navigate the Digital Currents for You."
+                }
+              />
+              <ListItem
+                item={
+                  "Seaside to Screenside: Crafting Your Beach Brand's Digital Journey."
+                }
+              />
+            </div>
           </div>
         </div>
       </div>
