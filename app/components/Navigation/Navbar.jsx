@@ -2,13 +2,15 @@
 import { forwardRef, useState } from "react";
 import Link from "next/link";
 import DropdownMenu from "./DropDownMenu";
-
+import { usePathname } from "next/navigation";
 const Navbar = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
 
   const handleClose = () => {
     setOpen(false);
   };
+
+  const pathName = usePathname();
 
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
@@ -108,10 +110,20 @@ const Navbar = forwardRef((props, ref) => {
         ) : null}
         <span className="hidden md:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:base">
           <span className="flex items-center gap-6">
-            <a className="hover:text-cyan-400" href="/">
+            <a
+              className={
+                pathName == "/" ? "text-cyan-400" : "hover:text-cyan-400"
+              }
+              href="/"
+            >
               Home
             </a>
-            <a className="hover:text-cyan-400" href="/aboutus">
+            <a
+              className={
+                pathName == "/aboutus" ? "text-cyan-400" : "hover:text-cyan-400"
+              }
+              href="/aboutus"
+            >
               About Us
             </a>
             <div
@@ -119,10 +131,28 @@ const Navbar = forwardRef((props, ref) => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <p className="hover:text-cyan-400">Services</p>
+              <p
+                className={
+                  pathName !== "/successstories" &&
+                  pathName !== "/aboutus" &&
+                  pathName !== "/" &&
+                  pathName !== "/contactus"
+                    ? "text-cyan-400"
+                    : "hover:text-cyan-400"
+                }
+              >
+                Services
+              </p>
               {isDropdownVisible && <DropdownMenu className="absolute z-50" />}
             </div>
-            <a className="hover:text-cyan-400" href="/successstories">
+            <a
+              className={
+                pathName == "/successstories"
+                  ? "text-cyan-400"
+                  : "hover:text-cyan-400"
+              }
+              href="/successstories"
+            >
               Success stories
             </a>
           </span>

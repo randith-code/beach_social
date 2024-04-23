@@ -12,6 +12,7 @@ import Footer from "./components/Navigation/Footer";
 import useScrollPosition from "./customHooks/useScrollPosition";
 import ConatctCard from "./components/ContactUs/ContactCard";
 import Link from "next/link";
+import useElementScrollPosition from "./customHooks/useElementScrollPosition";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -241,6 +242,20 @@ export default function Home() {
   );
 
   const [isHitTheBottom, setHitTheBottom] = useState(false);
+  const [fullyScrolled, setFullyScrolled] = useState(false);
+  const elementScrollPosition = useElementScrollPosition(hookListRef);
+
+  const handleElementScroll = (event) => {
+    // Prevent default scroll behavior
+    event.preventDefault();
+  };
+
+  // useEffect(() => {
+  //   if (elementScrollPosition < 90) {
+  //     window.addEventListener("scroll", handleElementScroll);
+  //   }
+  //   console.log(elementScrollPosition);
+  // }, []);
 
   useEffect(() => {
     if (scrollPosition >= 99) {
@@ -248,7 +263,6 @@ export default function Home() {
     } else {
       setHitTheBottom(false);
     }
-    console.log(scrollPosition);
   }, [scrollPosition]);
 
   const handleContactEnter = contextSafe(() => {
