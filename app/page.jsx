@@ -386,7 +386,7 @@ export default function Home() {
             <div className=" text-center flex justify-center items-center w-6 md:w-10">
               <hr className="h-1 md:h-1.5 w-full bg-black rounded-lg" />
             </div>
-            <div className="text-left flex-1">Social Media Consultingn</div>
+            <div className="text-left flex-1">Social Media Consulting</div>
           </div>
           <div className="services flex justify-center items-center w-full font-normal text-xl md:text-4xl 2xl:text-6xl gap-4">
             <div className=" text-right flex-1">Social Media Management</div>
