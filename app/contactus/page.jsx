@@ -71,9 +71,9 @@ const ContactUs = () => {
     },
   });
   return (
-    <main ref={containerRef} className="bg-valuesBg h-screen">
+    <main ref={containerRef} className="bg-lightBlue h-screen">
       <Navbar />
-      <div className="bg-valuesBg grid place-items-center w-full h-25vh">
+      <div className="grid place-items-center w-full h-25vh">
         <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
           Contact Us
         </h1>

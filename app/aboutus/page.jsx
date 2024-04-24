@@ -78,7 +78,7 @@ const AboutUs = () => {
   return (
     <main ref={containerRef} className="bg-valuesBg h-screen">
       <Navbar />
-      <div className="bg-valuesBg grid place-items-center w-full h-25vh">
+      <div className="grid place-items-center w-full h-25vh">
         <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
           About Us
         </h1>
@@ -294,7 +294,7 @@ const AboutUs = () => {
             to make social media a positive force in the world.
           </h2>
           <Link href="/contactus">
-            <span className="flex gap-8 2xl:gap-16">
+            <span className="flex mt-12 gap-8 2xl:gap-16">
               <div className="w-fit relative">
                 <h1
                   onMouseEnter={handleContactEnter}

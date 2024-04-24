@@ -316,7 +316,7 @@ const SocialMediaMangement = () => {
             to make social media a positive force in the world.
           </h2>
           <Link href="/contactus">
-            <span className="flex gap-8 2xl:gap-16">
+            <span className="flex mt-12 gap-8 2xl:gap-16">
               <div className="w-fit relative">
                 <h1
                   onMouseEnter={handleContactEnter}
