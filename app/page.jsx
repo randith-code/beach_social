@@ -12,7 +12,7 @@ import Footer from "./components/Navigation/Footer";
 import useScrollPosition from "./customHooks/useScrollPosition";
 import ConatctCard from "./components/ContactUs/ContactCard";
 import Link from "next/link";
-import useElementScrollPosition from "./customHooks/useElementScrollPosition";
+import Scrollbar from "smooth-scrollbar";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -30,8 +30,28 @@ export default function Home() {
   const { contextSafe } = useGSAP(
     () => {
       const mm = gsap.matchMedia();
+      const scroller = containerRef.current;
 
       mm.add("(min-width: 768px)", () => {
+        let bodyScrollBar = Scrollbar.init(scroller, {
+          damping: 0.1,
+          delegateTo: document,
+        });
+
+        bodyScrollBar.setPosition(0, 0);
+
+        ScrollTrigger.scrollerProxy(scroller, {
+          scrollTop(value) {
+            if (arguments.length) {
+              bodyScrollBar.scrollTop = value;
+            }
+            return bodyScrollBar.scrollTop;
+          },
+        });
+
+        bodyScrollBar.addListener(ScrollTrigger.update);
+        ScrollTrigger.defaults({ scroller: scroller });
+
         gsap.to(".personal-initial", {
           scale: 6,
           opacity: 0.4,
@@ -281,7 +301,7 @@ export default function Home() {
     <main
       id="main-container"
       ref={containerRef}
-      className="scroll-smooth flex relative overflow-x-hidden flex-col"
+      className="flex relative overflow-x-hidden flex-col h-screen"
     >
       <Hero />
       {/* partners */}
@@ -372,7 +392,7 @@ export default function Home() {
             <div className=" text-center flex justify-center items-center w-6 md:w-10">
               <hr className="h-1 md:h-1.5 w-full bg-black rounded-lg" />
             </div>
-            <div className="text-left flex-1">SMS Campaig</div>
+            <div className="text-left flex-1">SMS Campaign</div>
           </div>
           <div className="services flex justify-center items-center w-full font-normal text-xl md:text-4xl 2xl:text-6xl gap-4">
             <div className=" text-right flex-1">Event Promotion</div>

@@ -1,26 +1,47 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
+import Scrollbar from "smooth-scrollbar";
 
 import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
-import OurValuesItem from "../components/CardModules/OurValuesItem";
 import StoryCard from "../components/CardModules/storycrad";
-import ConatctUs from "../components/ContactUs/ContactUs";
-import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 const SuccessStories = () => {
   const [openContact, setOpenContact] = useState(false);
+  const containerRef = useRef();
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
-    mm.add("(min-width: 768px)", () => {});
+    const scroller = containerRef.current;
+
+    mm.add("(min-width: 768px)", () => {
+      let bodyScrollBar = Scrollbar.init(scroller, {
+        damping: 0.1,
+        delegateTo: document,
+      });
+
+      bodyScrollBar.setPosition(0, 0);
+
+      ScrollTrigger.scrollerProxy(scroller, {
+        scrollTop(value) {
+          if (arguments.length) {
+            bodyScrollBar.scrollTop = value;
+          }
+          return bodyScrollBar.scrollTop;
+        },
+      });
+
+      bodyScrollBar.addListener(ScrollTrigger.update);
+      ScrollTrigger.defaults({ scroller: scroller });
+    });
   });
 
   const handleContactEnter = contextSafe(() => {
@@ -41,7 +62,7 @@ const SuccessStories = () => {
     setOpenContact(true);
   };
   return (
-    <main className="bg-lightBlue">
+    <main ref={containerRef} className="bg-lightBlue h-screen">
       <Navbar />
       <div className="w-full h-25vh bg-lightBlue grid place-items-center">
         <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">

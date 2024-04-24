@@ -14,17 +14,14 @@ const Navbar = forwardRef((props, ref) => {
 
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
-  const handleMouseEnter = () => {
-    setDropdownVisible(true);
+  const handleOpen = () => {
+    setDropdownVisible(!isDropdownVisible);
   };
 
-  const handleMouseLeave = () => {
-    setDropdownVisible(false);
-  };
   return (
     <nav
       ref={ref}
-      className="flex bg-inherit items-center justify-center w-full py-8"
+      className="flex relative z-100 bg-inherit items-center justify-center w-full py-8"
     >
       <span className="flex items-center justify-between w-3/4">
         <img
@@ -127,9 +124,8 @@ const Navbar = forwardRef((props, ref) => {
               About Us
             </a>
             <div
-              className="w-fit z-50"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              className="w-fit flex cursor-pointer items-center gap-1 z-50"
+              onClick={handleOpen}
             >
               <p
                 className={
@@ -143,6 +139,39 @@ const Navbar = forwardRef((props, ref) => {
               >
                 Services
               </p>
+              <span>
+                {isDropdownVisible ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                )}
+              </span>
               {isDropdownVisible && <DropdownMenu className="absolute z-50" />}
             </div>
             <a

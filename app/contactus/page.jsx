@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-
 import { useFormik } from "formik";
+import Scrollbar from "smooth-scrollbar";
 
 import { sendMessage } from "@/app/api/contactForm";
 import Navbar from "../components/Navigation/Navbar";
@@ -18,6 +18,33 @@ const ContactUs = () => {
   const [isLoading, setLoading] = useState(false);
   const [submited, setSubmited] = useState(false);
   const [message, setMessage] = useState("");
+  const containerRef = useRef();
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+    const scroller = containerRef.current;
+
+    mm.add("(min-width: 768px)", () => {
+      let bodyScrollBar = Scrollbar.init(scroller, {
+        damping: 0.1,
+        delegateTo: document,
+      });
+
+      bodyScrollBar.setPosition(0, 0);
+
+      ScrollTrigger.scrollerProxy(scroller, {
+        scrollTop(value) {
+          if (arguments.length) {
+            bodyScrollBar.scrollTop = value;
+          }
+          return bodyScrollBar.scrollTop;
+        },
+      });
+
+      bodyScrollBar.addListener(ScrollTrigger.update);
+      ScrollTrigger.defaults({ scroller: scroller });
+    });
+  });
 
   const formik = useFormik({
     initialValues: {
@@ -44,7 +71,7 @@ const ContactUs = () => {
     },
   });
   return (
-    <main className="bg-valuesBg">
+    <main ref={containerRef} className="bg-valuesBg h-screen">
       <Navbar />
       <div className="bg-valuesBg grid place-items-center w-full h-25vh">
         <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">

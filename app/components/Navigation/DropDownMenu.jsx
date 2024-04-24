@@ -3,11 +3,17 @@ import Link from "next/link";
 const DropdownMenu = ({ className }) => {
   return (
     <div
-      className={`${className} bg-white -translate-x-1/4 z-100 rounded-md drop-shadow-md`}
+      className={`${className} bg-white absolute translate-y-16 z-100 rounded-md drop-shadow-md`}
     >
-      <ul>
+      <ul className="px-4">
         <Link href="/socialmediamanagement">
-          <li className="py-2 px-4 w-fit text-xs">Social Media Management</li>
+          <li className="py-2 w-fit text-xs">Social Media Management</li>
+        </Link>
+        <Link href="">
+          <li className="py-2 w-fit text-xs">Copy writing</li>
+        </Link>
+        <Link href="">
+          <li className="py-2 w-fit text-xs">Email Campaign</li>
         </Link>
       </ul>
     </div>

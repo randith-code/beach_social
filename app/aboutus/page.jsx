@@ -1,26 +1,49 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
+import Scrollbar from "smooth-scrollbar";
 
 import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
 import OurValuesItem from "../components/CardModules/OurValuesItem";
 import TeamMemberCard from "../components/CardModules/TeamMemberCard";
-import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 const AboutUs = () => {
   const [openContact, setOpenContact] = useState(false);
+  const containerRef = useRef();
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
 
+    const scroller = containerRef.current;
+
     mm.add("(min-width: 768px)", () => {
+      let bodyScrollBar = Scrollbar.init(scroller, {
+        damping: 0.1,
+        delegateTo: document,
+      });
+
+      bodyScrollBar.setPosition(0, 0);
+
+      ScrollTrigger.scrollerProxy(scroller, {
+        scrollTop(value) {
+          if (arguments.length) {
+            bodyScrollBar.scrollTop = value;
+          }
+          return bodyScrollBar.scrollTop;
+        },
+      });
+
+      bodyScrollBar.addListener(ScrollTrigger.update);
+      ScrollTrigger.defaults({ scroller: scroller });
+
       gsap.to(".srcoller-inner", {
         xPercent: "20",
         scrollTrigger: {
@@ -53,7 +76,7 @@ const AboutUs = () => {
   };
 
   return (
-    <main className="bg-valuesBg">
+    <main ref={containerRef} className="bg-valuesBg h-screen">
       <Navbar />
       <div className="bg-valuesBg grid place-items-center w-full h-25vh">
         <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
