@@ -34,7 +34,7 @@ export default function Home() {
 
       mm.add("(min-width: 768px)", () => {
         let bodyScrollBar = Scrollbar.init(scroller, {
-          damping: 0.1,
+          damping: 0.07,
           delegateTo: document,
         });
 
