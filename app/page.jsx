@@ -9,10 +9,10 @@ import StoryCard from "./components/CardModules/storycrad";
 import ListItem from "./components/Hero section/ListItem";
 import InsightCard from "./components/CardModules/InsightCard";
 import Footer from "./components/Navigation/Footer";
-import useScrollPosition from "./customHooks/useScrollPosition";
 import ConatctCard from "./components/ContactUs/ContactCard";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
+import Overlay from "./components/CardModules/Overlay";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -23,9 +23,9 @@ export default function Home() {
 
   const containerRef = useRef();
   const hookListRef = useRef();
-  const scrollPosition = useScrollPosition();
 
   const [openContact, setOpenContact] = useState(false);
+  const [isHitTheBottom, setHitTheBottom] = useState(false);
 
   const { contextSafe } = useGSAP(
     () => {
@@ -40,6 +40,14 @@ export default function Home() {
 
         bodyScrollBar.setPosition(0, 0);
 
+        bodyScrollBar.addListener((status) => {
+          if (status.limit.y === status.offset.y) {
+            setHitTheBottom(true);
+          } else {
+            setHitTheBottom(false);
+          }
+        });
+
         ScrollTrigger.scrollerProxy(scroller, {
           scrollTop(value) {
             if (arguments.length) {
@@ -51,6 +59,14 @@ export default function Home() {
 
         bodyScrollBar.addListener(ScrollTrigger.update);
         ScrollTrigger.defaults({ scroller: scroller });
+
+        if (document.querySelector(".gsap-marker-scroller-start")) {
+          const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
+
+          bodyScrollBar.addListener(({ offset }) => {
+            gsap.set(markers, { marginTop: -offset.y });
+          });
+        }
 
         gsap.to(".personal-initial", {
           scale: 6,
@@ -259,9 +275,9 @@ export default function Home() {
         gsap.to(".hook-inner-container", {
           yPercent: "-45",
           scrollTrigger: {
-            trigger: ".hook-inner-container",
-            pin: ".hook-element",
-            toggleActions: "restart complete reverse pause",
+            trigger: ".hook-container",
+            pin: ".hook-container",
+            toggleActions: "restart reverse none pause",
             scrub: 3,
             start: "-=10% 10%",
             end: "+=10%",
@@ -272,16 +288,9 @@ export default function Home() {
     { scope: containerRef.current }
   );
 
-  const [isHitTheBottom, setHitTheBottom] = useState(false);
-
   useEffect(() => {
-    if (scrollPosition >= 99) {
-      setHitTheBottom(true);
-    } else {
-      setHitTheBottom(false);
-    }
-    console.log(scrollPosition);
-  }, [scrollPosition]);
+    console.log(isHitTheBottom);
+  }, [isHitTheBottom]);
 
   const handleContactEnter = contextSafe(() => {
     gsap.to(".contactBar", {
@@ -573,8 +582,8 @@ export default function Home() {
       </div>
 
       {/* your hook */}
-      <div className="w-full flex justify-center my-20 2xl:my-20 md:max-h-72 bg-white z-40">
-        <div className="hook-container w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
+      <div className="hook-container w-full flex justify-center  my-20 2xl:my-20 md:max-h-72 bg-white z-40">
+        <div className=" w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
@@ -587,7 +596,7 @@ export default function Home() {
                 &quot;
               </h1>
             </span>
-            <p className="font-medium text-xl 2xl:text-xl">
+            <p className="font-medium text-lg 2xl:text-xl">
               Where creativity meets strategy. Elevate your social presence with
               compelling content, engaging campaigns, and strategic maneuvers.
               Discover how we transform your unique hook into a magnetic force,
@@ -778,12 +787,14 @@ export default function Home() {
       </div>
 
       {isHitTheBottom ? (
-        <div className="absolute bottom-0 left-0 w-full h-screen z-50 bg-valuesBg">
-          <ConatctCard
-            hideSection={setHitTheBottom}
-            setOpenContact={setOpenContact}
-          />
-        </div>
+        <Overlay>
+          <div className="w-full h-full z-50">
+            <ConatctCard
+              hideSection={setHitTheBottom}
+              setOpenContact={setOpenContact}
+            />
+          </div>
+        </Overlay>
       ) : null}
 
       {/* footer */}
