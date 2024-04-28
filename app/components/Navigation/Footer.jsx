@@ -14,7 +14,11 @@ const Footer = () => {
                 <img className="w-full" src="/tiktok.png" alt="tiktok logo" />
               </div>
               <div className="w-6 aspect-square cursor-pointer">
-                <img className="w-full" src="/fb.png" alt="facebook logo" />
+                <img
+                  className="w-full"
+                  src="/fb_footer.png"
+                  alt="facebook logo"
+                />
               </div>
               <div className="w-6 aspect-square cursor-pointer">
                 <img className="w-full" src="/insta.png" alt="instagram logo" />
