@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,6 +19,15 @@ gsap.registerPlugin(useGSAP);
 const AboutUs = () => {
   const [openContact, setOpenContact] = useState(false);
   const containerRef = useRef();
+  const scrollContainer = useRef();
+
+  useEffect(() => {
+    if (scrollContainer) {
+      const innerScroller = Scrollbar.init(scrollContainer.current, {
+        damping: 0.07,
+      });
+    }
+  }, [scrollContainer]);
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -219,31 +228,36 @@ const AboutUs = () => {
               remains a vibrant, trusted, and inclusive space for all.
             </p>
           </div>
-          <div className="w-full md:w-1/2 flex flex-col md:overflow-y-scroll no-scrollbar gap-8">
-            <OurValuesItem
-              item={"Community:"}
-              description={
-                "At Beach Social, our core values drive everything we do. We champion Community, embrace Innovation, uphold Integrity, and celebrate Inclusivity. These principles ensure our platform remains a vibrant, trusted, and inclusive space for all."
-              }
-            />
-            <OurValuesItem
-              item={"Innovation:"}
-              description={
-                "We continually push the boundaries of what social media can do, implementing cutting-edge technologies and creative strategies to enhance user experience."
-              }
-            />
-            <OurValuesItem
-              item={"Integrity:"}
-              description={
-                "We operate with transparency and honesty, valuing the trust that our users place in us to manage their online presence responsibly."
-              }
-            />
-            <OurValuesItem
-              item={"Inclusivity:"}
-              description={
-                "Beach Social is for everyone. We celebrate diversity and work to ensure that our platform is accessible, welcoming, and empowering for all."
-              }
-            />
+          <div className="w-full md:w-1/2 flex flex-col gap-8">
+            <div
+              ref={scrollContainer}
+              className="w-full h-full md:overflow-hidden"
+            >
+              <OurValuesItem
+                item={"Community:"}
+                description={
+                  "At Beach Social, our core values drive everything we do. We champion Community, embrace Innovation, uphold Integrity, and celebrate Inclusivity. These principles ensure our platform remains a vibrant, trusted, and inclusive space for all."
+                }
+              />
+              <OurValuesItem
+                item={"Innovation:"}
+                description={
+                  "We continually push the boundaries of what social media can do, implementing cutting-edge technologies and creative strategies to enhance user experience."
+                }
+              />
+              <OurValuesItem
+                item={"Integrity:"}
+                description={
+                  "We operate with transparency and honesty, valuing the trust that our users place in us to manage their online presence responsibly."
+                }
+              />
+              <OurValuesItem
+                item={"Inclusivity:"}
+                description={
+                  "Beach Social is for everyone. We celebrate diversity and work to ensure that our platform is accessible, welcoming, and empowering for all."
+                }
+              />
+            </div>
           </div>
         </div>
       </div>

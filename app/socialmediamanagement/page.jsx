@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,6 +19,15 @@ gsap.registerPlugin(useGSAP);
 const SocialMediaMangement = () => {
   const [openContact, setOpenContact] = useState(false);
   const containerRef = useRef();
+  const scrollContainer = useRef();
+
+  useEffect(() => {
+    if (scrollContainer) {
+      const innerScroller = Scrollbar.init(scrollContainer.current, {
+        damping: 0.07,
+      });
+    }
+  }, [scrollContainer]);
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -126,7 +135,7 @@ const SocialMediaMangement = () => {
         </div>
       </div>
       {/* Our services */}
-      <div className="hook-container w-full flex justify-center py-16 2xl:my-20 md:max-h-96 bg-white z-40">
+      <div className="hook-container w-full flex justify-center py-20 2xl:my-20 md:max-h-96 bg-white z-40">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
@@ -147,37 +156,39 @@ const SocialMediaMangement = () => {
               remains a vibrant, trusted, and inclusive space for all.
             </p>
           </div>
-          <div className="hook-element w-full md:w-1/2 flex flex-col md:overflow-y-scroll no-scrollbar gap-8">
-            <OurValuesItem
-              item={"Strategy Development:"}
-              description={
-                "We begin by understanding your brand, goals, and audience. Using this insight, we craft a tailored social media strategy that aligns with your business objectives and sets the stage for digital success."
-              }
-            />
-            <OurValuesItem
-              item={"Content Creation:"}
-              description={
-                "Dive into a sea of creativity with our expert content creators. From eye-catching graphics to compelling copy, we produce content that resonates with your target audience and embodies your brand’s voice."
-              }
-            />
-            <OurValuesItem
-              item={"Daily Management and Posting:"}
-              description={
-                "Leave the day-to-day management of your social media profiles to us. We ensure that your accounts are active, engaging, and timely—keeping your brand top-of-mind and your audience engaged."
-              }
-            />
-            <OurValuesItem
-              item={"Monitoring and Engagement:"}
-              description={
-                "We monitor your social channels to ensure that every comment, query, and opportunity for engagement doesn’t slip through the net. Our team helps nurture relationships by interacting with your audience in a genuine and professional manner."
-              }
-            />
-            <OurValuesItem
-              item={"Analytics and Reporting:"}
-              description={
-                "With our comprehensive analytics tools, we track the performance of your campaigns and provide detailed reports. This helps us refine strategies and make data-driven decisions to boost your social media effectiveness."
-              }
-            />
+          <div className="hook-element w-full md:w-1/2 flex flex-col md:overflow-hidden gap-8">
+            <div ref={scrollContainer} className="w-full h-full">
+              <OurValuesItem
+                item={"Strategy Development:"}
+                description={
+                  "We begin by understanding your brand, goals, and audience. Using this insight, we craft a tailored social media strategy that aligns with your business objectives and sets the stage for digital success."
+                }
+              />
+              <OurValuesItem
+                item={"Content Creation:"}
+                description={
+                  "Dive into a sea of creativity with our expert content creators. From eye-catching graphics to compelling copy, we produce content that resonates with your target audience and embodies your brand’s voice."
+                }
+              />
+              <OurValuesItem
+                item={"Daily Management and Posting:"}
+                description={
+                  "Leave the day-to-day management of your social media profiles to us. We ensure that your accounts are active, engaging, and timely—keeping your brand top-of-mind and your audience engaged."
+                }
+              />
+              <OurValuesItem
+                item={"Monitoring and Engagement:"}
+                description={
+                  "We monitor your social channels to ensure that every comment, query, and opportunity for engagement doesn’t slip through the net. Our team helps nurture relationships by interacting with your audience in a genuine and professional manner."
+                }
+              />
+              <OurValuesItem
+                item={"Analytics and Reporting:"}
+                description={
+                  "With our comprehensive analytics tools, we track the performance of your campaigns and provide detailed reports. This helps us refine strategies and make data-driven decisions to boost your social media effectiveness."
+                }
+              />
+            </div>
           </div>
         </div>
       </div>
