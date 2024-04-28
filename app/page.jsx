@@ -98,7 +98,7 @@ export default function Home() {
           display: "none",
           scrollTrigger: {
             trigger: ".service-initial-text",
-            toggleActions: "restart complete reverse reset",
+            toggleActions: "restart complete none reset",
             start: "top 80%",
             end: "bottom 30%",
             scrub: 2,
@@ -111,7 +111,7 @@ export default function Home() {
           duration: 0.4,
           scrollTrigger: {
             trigger: ".service-text-container",
-            toggleActions: "restart complete reverse reset",
+            toggleActions: "restart complete none reset",
             start: "top 20%",
           },
         });
@@ -245,14 +245,6 @@ export default function Home() {
             end: "bottom top",
           },
         });
-        // gsap.from(".hook-element", {
-        //   yPercent: "30",
-        //   duration: 0.6,
-        //   scrollTrigger: {
-        //     trigger: ".hook-container",
-        //     toggleActions: "restart complete restart pause",
-        //   },
-        // });
         gsap.from(".recent-insight", {
           yPercent: "5",
           duration: 0.4,
@@ -273,14 +265,14 @@ export default function Home() {
           },
         });
         gsap.to(".hook-inner-container", {
-          yPercent: "-45",
+          yPercent: "-30",
           scrollTrigger: {
             trigger: ".hook-container",
             pin: ".hook-container",
             toggleActions: "restart reverse none pause",
             scrub: 3,
-            start: "-=10% 10%",
-            end: "+=10%",
+            start: "top 20%",
+            end: "+=20%",
           },
         });
       });
@@ -369,8 +361,8 @@ export default function Home() {
       </div>
 
       {/* services */}
-      <div className="relative flex flex-col h-fit py-8 md:py-0 md:h-screen font-Anton items-center gap-12 2xl:gap-20 justify-center bg-white z-40">
-        <span className="hidden service-text-container absolute md:flex items-center justify-center w-full h-full bg-white z-50">
+      <div className="service-main-container relative flex flex-col h-fit py-8 md:py-0 md:h-screen font-Anton items-center gap-12 2xl:gap-20 justify-center bg-white z-40">
+        <span className="hidden service-text-container absolute md:flex items-start justify-center w-full h-full bg-white z-50">
           <span className="service-initial-text flex items-center h-fit py-4">
             <h1 className="font-medium text-5xl 2xl:text-7xl">
               We&apos;ve got just what
@@ -582,7 +574,7 @@ export default function Home() {
       </div>
 
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center  my-20 2xl:my-20 md:max-h-72 bg-white z-40">
+      {/* <div className="hook-container w-full flex justify-center  my-20 2xl:my-20 md:max-h-72 bg-white z-40">
         <div className=" w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
@@ -609,6 +601,64 @@ export default function Home() {
             className="w-full md:w-1/2 flex flex-col md:overflow-y-hidden gap-8"
           >
             <div className="hook-inner-container flex flex-col gap-9 w-full">
+              <ListItem
+                item={
+                  "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
+                }
+              />
+              <ListItem
+                item={
+                  "Social Media Success, Simplified: Targeted Strategies, Tangible Results."
+                }
+              />
+              <ListItem
+                item={
+                  "From Posts to Profits: We Craft Your Social Media Success, You Reap the Rewards"
+                }
+              />
+              <ListItem
+                item={
+                  "From Shoreline to Online: Crafting Digital Experiences as Memorable as a Day at the Beach."
+                }
+              />
+              <ListItem
+                item={
+                  "Your Business at the Beach, Amplified Online: We Navigate the Digital Currents for You."
+                }
+              />
+              <ListItem
+                item={
+                  "Seaside to Screenside: Crafting Your Beach Brand's Digital Journey."
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div> */}
+      <div className="w-full flex justify-center bg-white">
+        <div className="w-3/4 h-fit flex gap-8">
+          <div className="hook-container md:w-1/2 flex flex-col gap-4 pt-20">
+            <span className="flex font-Anton">
+              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
+                Your &quot;
+              </h1>
+              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+                Hook
+              </h1>
+              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
+                &quot;
+              </h1>
+            </span>
+            <p className="font-medium text-lg 2xl:text-xl">
+              Where creativity meets strategy. Elevate your social presence with
+              compelling content, engaging campaigns, and strategic maneuvers.
+              Discover how we transform your unique hook into a magnetic force,
+              capturing attention and fostering connections in the digital
+              realm. Let your brand story shine with Beach Social.
+            </p>
+          </div>
+          <div className="relative md:w-1/2">
+            <div className="hook-inner-container flex flex-col gap-10 pt-20 w-full">
               <ListItem
                 item={
                   "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
