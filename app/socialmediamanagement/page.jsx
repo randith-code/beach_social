@@ -7,10 +7,11 @@ import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
 
-import Navbar from "../components/Navigation/Navbar";
+import CustomNavbar from "../components/Navigation/CustomNavBar";
 import Footer from "../components/Navigation/Footer";
 import OurValuesItem from "../components/CardModules/OurValuesItem";
 import StoryCard from "../components/CardModules/storycrad";
+import ServiceItem from "../components/CardModules/ServiceItem";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -96,29 +97,32 @@ const SocialMediaMangement = () => {
     setOpenContact(true);
   };
   return (
-    <main ref={containerRef} className="bg-lightBlue h-screen">
-      <Navbar />
-      <div className="w-full h-25vh bg-lightBlue grid place-items-center">
-        <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-          Social Media Management
-        </h1>
+    <main ref={containerRef} className="h-screen">
+      <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
+      <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-center w-full h-[100vh]" />
+      <div className="absolute w-[30%] z-10 right-0">
+        <img src="/background_demo.png" alt="a background feature" />
       </div>
-      {/* Elevate your online presence */}
-      <div className="w-full flex justify-center bg-white py-16">
-        <div className="w-3/4 flex flex-col gap-6">
-          <span className="flex items-center text-4xl font-Anton">
-            <h1>Elevate Your</h1>
-            <h1 className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-              &nbsp;Online Presence
+      <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
+        <div className="w-3/4">
+          <div className="flex flex-col gap-6 w-2/3">
+            <h1 className="font-Anton pt-20 text-5xl 2xl:text-7xl">
+              Social Media Management
             </h1>
-          </span>
-          <p className="font-Anton">
-            In today&apos;s digital landscape, maintaining an active and
-            engaging social media presence is more crucial than ever. At Beach
-            Social, we offer comprehensive Social Media Management services
-            designed to amplify your brand&apos;s online footprint and connect
-            with your audience more effectively.
-          </p>
+            <p className="font-Anton">
+              In today&apos;s digital landscape, maintaining an active and
+              engaging social media presence is more crucial than ever. At Beach
+              Social, we offer comprehensive Social Media Management services
+              designed to amplify your brand&apos;s online footprint and connect
+              with your audience more effectively.
+            </p>
+            <div className="flex justify-between py-10">
+              <ServiceItem img={"/fb.png"} title="Facebook" />
+              <ServiceItem img={"/x.png"} title="X" />
+              <ServiceItem img={"/gram.png"} title="Instagram" />
+              <ServiceItem img={"/social_media.png"} title="Social Media" />
+            </div>
+          </div>
         </div>
       </div>
       {/* Our services */}

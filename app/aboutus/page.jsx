@@ -7,10 +7,11 @@ import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
 
-import Navbar from "../components/Navigation/Navbar";
+import CustomNavbar from "../components/Navigation/CustomNavBar";
 import Footer from "../components/Navigation/Footer";
 import OurValuesItem from "../components/CardModules/OurValuesItem";
 import TeamMemberCard from "../components/CardModules/TeamMemberCard";
+import ServiceItem from "../components/CardModules/ServiceItem";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -76,17 +77,13 @@ const AboutUs = () => {
   };
 
   return (
-    <main ref={containerRef} className="bg-valuesBg h-screen">
-      <Navbar />
-      <div className="grid place-items-center w-full h-25vh">
-        <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-          About Us
-        </h1>
-      </div>
-      <div className="values bg-white w-full flex justify-center items-center py-16">
+    <main ref={containerRef} className="h-screen relative">
+      <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
+      <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
+      <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row items-center">
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
-            <div className="relative w-3/4 md:w-2/3">
+            <div className="relative w-3/4 md:w-3/4 mt-8">
               <img
                 className="absolute top-0 w-full aspect-square z-10"
                 src="/view_img.png"
@@ -98,6 +95,7 @@ const AboutUs = () => {
           {/* description */}
           <div className="w-full md:w-1/2 flex items-center">
             <span className="flex flex-col justify-start gap-4 w-full mt-8">
+              <h1 className="font-Anton text-5xl 2xl:text-7xl">About Us</h1>
               <p className="text-sm w-full 2xl:text-xl">
                 Founded in the vibrant heart of [City/Region], Beach Social
                 started with a simple vision: to bridge the gap between digital
@@ -122,14 +120,29 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+      {/* services */}
+      <div className="w-full py-20 flex justify-center">
+        <div className="w-3/4 flex justify-between gap-14">
+          <ServiceItem img={"/chatbot.png"} title={"Chatbots"} />
+          <ServiceItem
+            img={"/management.png"}
+            title={"Social Media Management"}
+          />
+          <ServiceItem
+            img={"/advertising.png"}
+            title={"Social Media Advertising"}
+          />
+          <ServiceItem
+            img={"/consulting.png"}
+            title={"Social Media Consulting"}
+          />
+          <ServiceItem img={"/promotion.png"} title={"Event Promotion"} />
+          <ServiceItem img={"/copy_writing.png"} title={"Copy Writing"} />
+        </div>
+      </div>
 
       {/* personal stories */}
       <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-16  bg-valuesBg">
-        {/* <span className="personal-text-container hidden absolute md:grid place-items-center w-full h-5/6 bg-lightBlue z-50">
-          <h3 className="personal-initial font-Anton text-center text-4xl font-medium">
-            Personal Story
-          </h3>
-        </span> */}
         <div className="srcoller-inner flex w-full gap-8 -translate-x-1/3">
           <img
             className="w-1/4 md:w-2/12 aspect-square"
@@ -206,7 +219,7 @@ const AboutUs = () => {
               remains a vibrant, trusted, and inclusive space for all.
             </p>
           </div>
-          <div className="hook-element w-full md:w-1/2 flex flex-col md:overflow-y-scroll no-scrollbar gap-8">
+          <div className="w-full md:w-1/2 flex flex-col md:overflow-y-scroll no-scrollbar gap-8">
             <OurValuesItem
               item={"Community:"}
               description={
