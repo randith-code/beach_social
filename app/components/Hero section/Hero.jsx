@@ -47,7 +47,6 @@ const Hero = () => {
         tl.from(leftArcRef.current, {
           duration: 1.5,
           opacity: 0.2,
-          transformOrigin: "left",
           ease: "power1.inOut",
         });
         tl.from(
@@ -55,7 +54,6 @@ const Hero = () => {
           {
             duration: 1.5,
             opacity: 0.2,
-            transformOrigin: "right",
             ease: "power1.inOut",
           },
           0
@@ -108,8 +106,8 @@ const Hero = () => {
         </button>
       </div>
       <div className="absolute hidden w-full h-full inset-0 -z-10 md:flex justify-between">
-        <LeftArc ref={leftArcRef} />
-        <RightArc ref={rightArcRef} />
+        <LeftArc className="arcs" ref={leftArcRef} />
+        <RightArc className="arcs" ref={rightArcRef} />
       </div>
       <ParticlesComponent id="particles" />
       <div className="w-full h-auto flex justify-center pt-16 pb-2">

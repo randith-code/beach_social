@@ -12,6 +12,7 @@ import Footer from "../components/Navigation/Footer";
 import OurValuesItem from "../components/CardModules/OurValuesItem";
 import StoryCard from "../components/CardModules/storycrad";
 import ServiceItem from "../components/CardModules/ServiceItem";
+import ParticlesComponent from "../components/Hero section/Particle";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -108,6 +109,7 @@ const SocialMediaMangement = () => {
   return (
     <main ref={containerRef} className="h-screen">
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
+      <ParticlesComponent id="partical_social" />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-center w-full h-[100vh]" />
       <div className="absolute w-[30%] z-10 right-0">
         <img src="/background_demo.png" alt="a background feature" />

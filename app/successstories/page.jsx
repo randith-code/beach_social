@@ -10,6 +10,7 @@ import Scrollbar from "smooth-scrollbar";
 import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
 import StoryCard from "../components/CardModules/storycrad";
+import ParticlesComponent from "../components/Hero section/Particle";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -64,6 +65,7 @@ const SuccessStories = () => {
   return (
     <main ref={containerRef} className="bg-lightBlue h-screen">
       <Navbar />
+      <ParticlesComponent id="partical_success" />
       <div className="w-full h-25vh bg-lightBlue grid place-items-center">
         <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
           Success Stories

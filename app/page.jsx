@@ -363,7 +363,7 @@ export default function Home() {
       {/* services */}
       <div className="service-main-container relative flex flex-col h-fit py-8 md:py-0 md:h-screen font-Anton items-center gap-12 2xl:gap-20 justify-center bg-white z-40">
         <span className="hidden service-text-container absolute md:flex items-start justify-center w-full h-full bg-white z-50">
-          <span className="service-initial-text flex items-center h-fit py-4">
+          <span className="service-initial-text flex items-center h-fit py-16">
             <h1 className="font-medium text-5xl 2xl:text-7xl">
               We&apos;ve got just what
             </h1>

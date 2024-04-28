@@ -12,6 +12,7 @@ import Footer from "../components/Navigation/Footer";
 import OurValuesItem from "../components/CardModules/OurValuesItem";
 import TeamMemberCard from "../components/CardModules/TeamMemberCard";
 import ServiceItem from "../components/CardModules/ServiceItem";
+import ParticlesComponent from "../components/Hero section/Particle";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -87,6 +88,7 @@ const AboutUs = () => {
 
   return (
     <main ref={containerRef} className="h-screen relative">
+      <ParticlesComponent id="particles_about" />
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
       <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
@@ -228,11 +230,8 @@ const AboutUs = () => {
               remains a vibrant, trusted, and inclusive space for all.
             </p>
           </div>
-          <div className="w-full md:w-1/2 flex flex-col gap-8">
-            <div
-              ref={scrollContainer}
-              className="w-full h-full md:overflow-hidden"
-            >
+          <div className="w-full md:w-1/2 flex flex-col">
+            <div ref={scrollContainer} className="w-full md:overflow-hidden">
               <OurValuesItem
                 item={"Community:"}
                 description={
