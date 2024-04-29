@@ -168,7 +168,7 @@ const AboutUs = () => {
       </div>
 
       {/* personal stories */}
-      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-16  bg-valuesBg">
+      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-28  bg-valuesBg">
         <div className="srcoller-inner flex w-full gap-8 -translate-x-1/3">
           <img
             className="w-1/4 md:w-2/12 aspect-square"
