@@ -224,21 +224,21 @@ const AboutUs = () => {
         </div>
       </div>
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center py-24 2xl:my-20 md:max-h-96 bg-white z-40">
+      <div className="hook-container w-full flex justify-center py-24 2xl:my-20 md:max-h-[28rem] bg-white z-40">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
-              <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl">
+              <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl">
                 Our &quot;
               </h1>
-              <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Values
               </h1>
-              <h1 className="font-medium text-2xl md:text-4xl 2xl:text-7xl">
+              <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
-            <p className="font-medium text-sm 2xl:text-xl">
+            <p className="font-medium text-base 2xl:text-xl">
               At Beach Social, our core values drive everything we do. We
               champion Community, embrace Innovation, uphold Integrity, and
               celebrate Inclusivity. These principles ensure our platform
