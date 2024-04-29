@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const ServiceItem = ({ img, hoverImage, title }) => {
+const ServiceItem = ({ img, hoverImage, title, className }) => {
   const [hover, setHover] = useState(false);
 
   const onMouseEnter = () => {
@@ -20,9 +20,9 @@ const ServiceItem = ({ img, hoverImage, title }) => {
     >
       <div className="aspect-square rounded-full grid place-items-center">
         {hover ? (
-          <img className="w-20 h-20" src={hoverImage} alt="hoverImage" />
+          <img className={`${className}`} src={hoverImage} alt="hoverImage" />
         ) : (
-          <img className="w-20 h-20" src={img} alt="service_image" />
+          <img className={`${className}`} src={img} alt="service_image" />
         )}
       </div>
       <h2 className="font-Anton text-xl text-center">{title}</h2>

@@ -134,21 +134,36 @@ const AboutUs = () => {
       {/* services */}
       <div className="w-full py-20 flex justify-center">
         <div className="w-3/4 flex justify-between gap-14">
-          <ServiceItem img={"/chatbot.png"} title={"Chatbots"} />
           <ServiceItem
-            img={"/management.png"}
+            img={"/chatbot.svg"}
+            hoverImage={"/chatbot_hover.svg"}
+            title={"Chatbots"}
+          />
+          <ServiceItem
+            img={"/management.svg"}
+            hoverImage={"/management_hover.svg"}
             title={"Social Media Management"}
           />
           <ServiceItem
-            img={"/advertising.png"}
+            img={"/advertising.svg"}
+            hoverImage={"/advertising_hover.svg"}
             title={"Social Media Advertising"}
           />
           <ServiceItem
-            img={"/consulting.png"}
+            img={"/consulting.svg"}
+            hoverImage={"/consulting_hover.svg"}
             title={"Social Media Consulting"}
           />
-          <ServiceItem img={"/promotion.png"} title={"Event Promotion"} />
-          <ServiceItem img={"/copy_writing.png"} title={"Copy Writing"} />
+          <ServiceItem
+            img={"/promotion.svg"}
+            hoverImage={"/promotion_hover.svg"}
+            title={"Event Promotion"}
+          />
+          <ServiceItem
+            img={"/copy_writing.svg"}
+            hoverImage={"/copy_writing_hover.svg"}
+            title={"Copy Writing"}
+          />
         </div>
       </div>
 

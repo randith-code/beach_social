@@ -574,9 +574,9 @@ export default function Home() {
       </div>
 
       {/* your hook */}
-      {/* <div className="hook-container w-full flex justify-center  my-20 2xl:my-20 md:max-h-72 bg-white z-40">
-        <div className=" w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
-          <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
+      <div className="hook-container w-full flex justify-center bg-white">
+        <div className="w-3/4 h-fit flex gap-8 items-center">
+          <div className="md:w-1/2 flex flex-col gap-4 py-20">
             <span className="flex font-Anton">
               <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
                 Your &quot;
@@ -596,69 +596,8 @@ export default function Home() {
               realm. Let your brand story shine with Beach Social.
             </p>
           </div>
-          <div
-            ref={hookListRef}
-            className="w-full md:w-1/2 flex flex-col md:overflow-y-hidden gap-8"
-          >
-            <div className="hook-inner-container flex flex-col gap-9 w-full">
-              <ListItem
-                item={
-                  "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
-                }
-              />
-              <ListItem
-                item={
-                  "Social Media Success, Simplified: Targeted Strategies, Tangible Results."
-                }
-              />
-              <ListItem
-                item={
-                  "From Posts to Profits: We Craft Your Social Media Success, You Reap the Rewards"
-                }
-              />
-              <ListItem
-                item={
-                  "From Shoreline to Online: Crafting Digital Experiences as Memorable as a Day at the Beach."
-                }
-              />
-              <ListItem
-                item={
-                  "Your Business at the Beach, Amplified Online: We Navigate the Digital Currents for You."
-                }
-              />
-              <ListItem
-                item={
-                  "Seaside to Screenside: Crafting Your Beach Brand's Digital Journey."
-                }
-              />
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <div className="w-full flex justify-center bg-white">
-        <div className="w-3/4 h-fit flex gap-8">
-          <div className="hook-container md:w-1/2 flex flex-col gap-4 pt-20">
-            <span className="flex font-Anton">
-              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
-                Your &quot;
-              </h1>
-              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                Hook
-              </h1>
-              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
-                &quot;
-              </h1>
-            </span>
-            <p className="font-medium text-lg 2xl:text-xl">
-              Where creativity meets strategy. Elevate your social presence with
-              compelling content, engaging campaigns, and strategic maneuvers.
-              Discover how we transform your unique hook into a magnetic force,
-              capturing attention and fostering connections in the digital
-              realm. Let your brand story shine with Beach Social.
-            </p>
-          </div>
-          <div className="relative md:w-1/2">
-            <div className="hook-inner-container flex flex-col gap-10 pt-20 w-full">
+          <div className="relative md:w-1/2 md:max-h-80 overflow-y-hidden">
+            <div className="hook-inner-container flex flex-col gap-10 pt-10 w-full">
               <ListItem
                 item={
                   "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
