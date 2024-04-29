@@ -128,10 +128,26 @@ const SocialMediaMangement = () => {
               with your audience more effectively.
             </p>
             <div className="flex justify-between py-10">
-              <ServiceItem img={"/fb.png"} title="Facebook" />
-              <ServiceItem img={"/x.png"} title="X" />
-              <ServiceItem img={"/gram.png"} title="Instagram" />
-              <ServiceItem img={"/social_media.png"} title="Social Media" />
+              <ServiceItem
+                img={"/fb.svg"}
+                hoverImage={"/fb_hover.svg"}
+                title="Facebook"
+              />
+              <ServiceItem
+                img={"/x.svg"}
+                hoverImage={"/x_hover.svg"}
+                title="X"
+              />
+              <ServiceItem
+                img={"/gram.svg"}
+                hoverImage={"/gram_hover.svg"}
+                title="Instagram"
+              />
+              <ServiceItem
+                img={"/social_media.svg"}
+                hoverImage={"/social_media_hover.svg"}
+                title="Social Media"
+              />
             </div>
           </div>
         </div>
