@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="flex flex-col w-full items-center bg-black text-white font-normal text-sm 2xl:texl-xl">
+    <footer className="relative flex flex-col w-full items-center z-40 bg-black text-white font-normal text-sm 2xl:texl-xl">
       <div className="flex w-full pt-16 pb-8 border-b-2 border-opacity-20 border-white justify-center">
         {/* inner-container */}
         <div className="flex flex-col md:flex-row justify-center w-10/12 md:w-9/12">
