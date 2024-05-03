@@ -64,7 +64,7 @@ const CustomNavbar = forwardRef((props, ref) => {
           )}
         </span>
         {open ? (
-          <span className="fixed flex flex-col md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-transparent items-center justify-around">
+          <span className="fixed flex flex-col bg-white md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-transparent items-center justify-around">
             <span className="w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,8 @@ const CustomNavbar = forwardRef((props, ref) => {
                 />
               </svg>
             </span>
-            <span className="flex-1 flex flex-col font-Anton justify-around text-2xl">
+            <span className="flex-1 flex flex-col font-Anton justify-center gap-8 text-4xl">
+              <img src="/Logo color.svg" alt="logo" />
               <a onClick={handleClose} href="/">
                 Home
               </a>

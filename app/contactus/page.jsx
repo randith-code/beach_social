@@ -260,15 +260,15 @@ const ContactUs = () => {
                 </div>
               ) : (
                 <div className="flex flex-col gap-8 items-center flex-1">
-                  <div className="w-full">
+                  <div className="w-full flex flex-col md:flex-row">
                     <span className="w-1/2 flex justify-center">
                       <span className="w-8/12">
                         <img className="w-2/5" src="/footer_logo.png" alt="" />
                       </span>
                     </span>
                   </div>
-
-                  <div className="flex items-center">
+                  {/* contact form */}
+                  <div className="flex flex-col md:flex-row items-center">
                     <div className="w-full md:w-1/2 md:pb-8 h-full grid place-items-center">
                       <span className="w-8/12 flex flex-col gap-4">
                         <span className="flex flex-col">

@@ -133,7 +133,7 @@ const AboutUs = () => {
       </div>
       {/* services */}
       <div className="w-full py-20 flex justify-center">
-        <div className="w-3/4 flex justify-between gap-14">
+        <div className="w-3/4 grid grid-cols-3 md:flex md:justify-between gap-14">
           <ServiceItem
             img={"/chatbot.svg"}
             hoverImage={"/chatbot_hover.svg"}

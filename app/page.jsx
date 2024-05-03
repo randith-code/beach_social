@@ -318,43 +318,163 @@ export default function Home() {
         <p className="partner-desc 2xl:text-xl text-xs md:text-sm font-medium w-1/2 md:w-2/6 text-center">
           {partnersDesc}
         </p>
-        <div className="flex flex-col gap-14 mt-8 bg-white z-40">
+        <div className="flex flex-col gap-8 md:gap-14 mt-8 bg-white z-40">
           <div className="flex w-full gap-10 overflow-x-hidden">
             <div className="top-logos flex gap-6 -translate-x-2/3 2xl:-translate-x-1/3">
-              <img src="/aely.png" alt="partner company logo" />
-              <img src="/camp.png" alt="partner company logo" />
-              <img src="/graanted.png" alt="partner company logo" />
-              <img src="/legato.png" alt="partner company logo" />
-              <img src="/metric.png" alt="partner company logo" />
-              <img src="/mint.png" alt="partner company logo" />
-              <img src="/oax.png" alt="partner company logo" />
-              <img src="/aely.png" alt="partner company logo" />
-              <img src="/camp.png" alt="partner company logo" />
-              <img src="/graanted.png" alt="partner company logo" />
-              <img src="/legato.png" alt="partner company logo" />
-              <img src="/metric.png" alt="partner company logo" />
-              <img src="/mint.png" alt="partner company logo" />
-              <img src="/oax.png" alt="partner company logo" />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/aely.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/camp.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/graanted.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/legato.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/metric.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/mint.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/oax.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/aely.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/camp.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/graanted.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/legato.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/metric.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/mint.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/oax.png"
+                alt="partner company logo"
+              />
             </div>
           </div>
           <div className="flex w-full overflow-x-hidden">
-            <div className="bottom-logos flex gap-10">
-              <img src="/overland.png" alt="partner company logo" />
-              <img src="/sunrun.png" alt="partner company logo" />
-              <img src="/sign.png" alt="partner company logo" />
-              <img src="/screensight.png" alt="partner company logo" />
-              <img src="/miller.png" alt="partner company logo" />
-              <img src="/oax.png" alt="partner company logo" />
-              <img src="/legato.png" alt="partner company logo" />
-              <img src="/overland.png" alt="partner company logo" />
-              <img src="/overland.png" alt="partner company logo" />
-              <img src="/sunrun.png" alt="partner company logo" />
-              <img src="/sign.png" alt="partner company logo" />
-              <img src="/screensight.png" alt="partner company logo" />
-              <img src="/miller.png" alt="partner company logo" />
-              <img src="/oax.png" alt="partner company logo" />
-              <img src="/legato.png" alt="partner company logo" />
-              <img src="/overland.png" alt="partner company logo" />
+            <div className="bottom-logos flex md:gap-10">
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/overland.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/sunrun.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/sign.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/screensight.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/miller.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/oax.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/legato.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/overland.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/overland.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/sunrun.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/sign.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/screensight.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/miller.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/oax.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/legato.png"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-auto aspect-auto"
+                src="/overland.png"
+                alt="partner company logo"
+              />
             </div>
           </div>
         </div>
@@ -575,16 +695,16 @@ export default function Home() {
 
       {/* your hook */}
       <div className="hook-container w-full flex justify-center bg-white">
-        <div className="w-3/4 h-fit flex gap-8 items-center">
+        <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-1/2 flex flex-col gap-4 py-20">
             <span className="flex font-Anton">
-              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
                 Your &quot;
               </h1>
-              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Hook
               </h1>
-              <h1 className="font-medium text-2xl md:text-6xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
@@ -597,7 +717,7 @@ export default function Home() {
             </p>
           </div>
           <div className="relative md:w-1/2 md:max-h-80 overflow-y-hidden">
-            <div className="hook-inner-container flex flex-col gap-10 pt-10 w-full">
+            <div className="hook-inner-container flex flex-col gap-10 pb-20 md:pb-0 md:pt-10 w-full">
               <ListItem
                 item={
                   "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
