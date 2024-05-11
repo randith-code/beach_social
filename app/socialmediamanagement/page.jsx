@@ -22,13 +22,13 @@ const SocialMediaMangement = () => {
   const containerRef = useRef();
   const scrollContainer = useRef();
 
-  useEffect(() => {
-    if (scrollContainer) {
-      const innerScroller = Scrollbar.init(scrollContainer.current, {
-        damping: 0.07,
-      });
-    }
-  }, [scrollContainer]);
+  // useEffect(() => {
+  //   if (scrollContainer) {
+  //     const innerScroller = Scrollbar.init(scrollContainer.current, {
+  //       damping: 0.07,
+  //     });
+  //   }
+  // }, [scrollContainer]);
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -86,6 +86,19 @@ const SocialMediaMangement = () => {
           end: "center center",
         },
       });
+      gsap.to(".hook-inner-container", {
+        scrollTrigger: {
+          trigger: ".hook-container",
+          pin: ".hook-title-section",
+          toggleActions: "restart reverse none pause",
+          scrub: 1,
+          start: "top top",
+          end: () =>
+            `bottom +=${
+              document.querySelector(".hook-title-section").offsetHeight + 112
+            }`,
+        },
+      });
     });
   });
 
@@ -112,7 +125,11 @@ const SocialMediaMangement = () => {
       <ParticlesComponent id="partical_social" />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-center w-full h-[100vh]" />
       <div className="absolute w-[30%] z-10 right-0">
-        <img src="/background_demo.png" alt="a background feature" />
+        <img
+          src="/background_demo.png"
+          className="w-full"
+          alt="a background feature"
+        />
       </div>
       <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
         <div className="w-3/4">
@@ -157,29 +174,29 @@ const SocialMediaMangement = () => {
         </div>
       </div>
       {/* Our services */}
-      <div className="hook-container w-full flex justify-center py-20 2xl:my-20 md:max-h-[28rem] bg-white z-40">
-        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
-          <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
+      <div className="hook-container w-full flex justify-center pt-16 pb-40 bg-white">
+        <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
+          <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
-              <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
                 Our &quot;
               </h1>
-              <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Services
               </h1>
-              <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
-            <p className="font-medium text-base 2xl:text-xl">
+            <p className="font-medium text-lg 2xl:text-xl">
               At Beach Social, our core values drive everything we do. We
               champion Community, embrace Innovation, uphold Integrity, and
               celebrate Inclusivity. These principles ensure our platform
               remains a vibrant, trusted, and inclusive space for all.
             </p>
           </div>
-          <div className="hook-element w-full md:w-1/2 flex flex-col md:overflow-hidden gap-8">
-            <div ref={scrollContainer} className="w-full h-full">
+          <div className="relative md:w-1/2">
+            <div className="hook-inner-container flex flex-col gap-32 2xl:gap-48 w-full">
               <OurValuesItem
                 item={"Strategy Development:"}
                 description={
@@ -214,6 +231,7 @@ const SocialMediaMangement = () => {
           </div>
         </div>
       </div>
+
       {/* values */}
       <div className="values bg-valuesBg w-full py-16 flex justify-center">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row-reverse">

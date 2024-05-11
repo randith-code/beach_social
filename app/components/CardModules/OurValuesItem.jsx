@@ -1,6 +1,6 @@
 const OurValuesItem = ({ item, description }) => {
   return (
-    <div className="flex items-start py-4 gap-4">
+    <div className="flex items-start py-4 gap-4 2xl:pb-16">
       <div className="w-6 h-6 rounded-lg aspect-square bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
       <div>
         <h2 className="font-Anton font-medium text-2xl 2xl:text-xl">{item}</h2>

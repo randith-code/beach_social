@@ -13,6 +13,7 @@ import ConatctCard from "./components/ContactUs/ContactCard";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
 import Overlay from "./components/CardModules/Overlay";
+import { getInsightPost1, getInsightPost2, getInsightPost3 } from "./api/posts";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -22,7 +23,6 @@ export default function Home() {
     "We build strong client relationships based on trust and honesty. You can always count on us to have your back.";
 
   const containerRef = useRef();
-  const hookListRef = useRef();
 
   const [openContact, setOpenContact] = useState(false);
   const [isHitTheBottom, setHitTheBottom] = useState(false);
@@ -265,14 +265,16 @@ export default function Home() {
           },
         });
         gsap.to(".hook-inner-container", {
-          yPercent: "-30",
           scrollTrigger: {
             trigger: ".hook-container",
-            pin: ".hook-container",
+            pin: ".hook-title-section",
             toggleActions: "restart reverse none pause",
-            scrub: 3,
-            start: "top 20%",
-            end: "+=20%",
+            scrub: 1,
+            start: "top top",
+            end: () =>
+              `bottom +=${
+                document.querySelector(".hook-title-section").offsetHeight + 112
+              }`,
           },
         });
       });
@@ -280,9 +282,30 @@ export default function Home() {
     { scope: containerRef.current }
   );
 
-  useEffect(() => {
-    console.log(isHitTheBottom);
-  }, [isHitTheBottom]);
+  const [insightContent1, setInsightContent1] = useState();
+  const [insightContent2, setInsightContent2] = useState();
+  const [insightContent3, setInsightContent3] = useState();
+
+  const handleDataFetch = async () => {
+    const res1 = await getInsightPost1();
+    const res2 = await getInsightPost2();
+    const res3 = await getInsightPost3();
+
+    setInsightContent1({
+      title: res1.data.title.rendered,
+      content: res1.data.excerpt.rendered,
+    });
+
+    setInsightContent2({
+      title: res2.data.title.rendered,
+      content: res2.data.excerpt.rendered,
+    });
+
+    setInsightContent3({
+      title: res3.data.title.rendered,
+      content: res3.data.excerpt.rendered,
+    });
+  };
 
   const handleContactEnter = contextSafe(() => {
     gsap.to(".contactBar", {
@@ -297,6 +320,10 @@ export default function Home() {
       duration: 0.4,
     });
   });
+
+  useEffect(() => {
+    handleDataFetch();
+  }, []);
 
   return (
     <main
@@ -539,40 +566,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* values */}
-      <div className="values bg-valuesBg py-16 w-full flex justify-center">
-        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row">
-          <div className="w-full md:w-1/2 flex items-center md:justify-end">
-            <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
-              <h2 className="font-extrabold font-Anton text-5xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                Values
-              </h2>
-              <p className="font-medium font-Anton text-lg w-full md:w-10/12 2xl:text-xl">
-                We value authenticity, community, and growth. We believe in
-                telling genuine stories that resonate with both the heart and
-                history of a business, fostering a sense of belonging among
-                customers and strengthening community ties.
-              </p>
-              <button className="group bg-black hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
-                <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                  Get in Touch
-                </p>
-              </button>
-            </span>
-          </div>
-          <div className="w-10/12 md:w-1/2 h-fit flex justify-center py-8">
-            <div className="relative w-3/4 md:w-2/3">
-              <img
-                className="absolute top-0 w-full aspect-square z-10"
-                src="/view_img.png"
-                alt="into image"
-              />
-              <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* success stories */}
       <div className="success-story-container py-16 relative bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop w-full z-40 flex justify-center">
         <span className="initial-text-container hidden absolute md:flex justify-center items-baseline w-full h-full bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
@@ -695,57 +688,51 @@ export default function Home() {
 
       {/* your hook */}
       <div className="hook-container w-full flex justify-center bg-white">
-        <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 items-center">
-          <div className="md:w-1/2 flex flex-col gap-4 py-20">
+        <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
+          <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
                 Your &quot;
               </h1>
               <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                Hook
+                Story
               </h1>
               <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
             <p className="font-medium text-lg 2xl:text-xl">
-              Where creativity meets strategy. Elevate your social presence with
-              compelling content, engaging campaigns, and strategic maneuvers.
-              Discover how we transform your unique hook into a magnetic force,
-              capturing attention and fostering connections in the digital
-              realm. Let your brand story shine with Beach Social.
+              Let&apos;s capture your brand&apos;s story together at Beach
+              Social. We&apos;ll tap into what makes you unique and turn it into
+              a viral sensation that captivates and engages. Ready to shine in
+              the digital landscape? Partner with us and watch your social
+              presence transform into your greatest asset.
             </p>
           </div>
-          <div className="relative md:w-1/2 md:max-h-80 overflow-y-hidden">
-            <div className="hook-inner-container flex flex-col gap-10 pb-20 md:pb-0 md:pt-10 w-full">
+          <div className="relative md:w-1/2">
+            <div className="hook-inner-container flex flex-col gap-32 2xl:gap-48 w-full">
               <ListItem
-                item={
-                  "Elevate Your Social Game, Minimize Your Effort: We Handle the Digital Heavy Lifting."
+                item={"Impactful Sharing"}
+                description={
+                  "We believe in sharing content that not only elevates your social status but also empowers your audience with useful and interesting information, giving everyone a reason to engage and spread the word."
                 }
               />
               <ListItem
-                item={
-                  "Social Media Success, Simplified: Targeted Strategies, Tangible Results."
+                item={"Emotional Resonance"}
+                description={
+                  "We're committed to crafting messages that resonate on a deeper emotional level, ensuring that every campaign not only captures attention but also maintains engagement by striking s heartfelt chord."
                 }
               />
               <ListItem
-                item={
-                  "From Posts to Profits: We Craft Your Social Media Success, You Reap the Rewards"
+                item={"Visibility and Imitation"}
+                description={
+                  "Our stratergies are designed to make your brand's actions highly visible, encouraging imitation and wider adoption by making sure your message is seen by as many as possible."
                 }
               />
               <ListItem
-                item={
-                  "From Shoreline to Online: Crafting Digital Experiences as Memorable as a Day at the Beach."
-                }
-              />
-              <ListItem
-                item={
-                  "Your Business at the Beach, Amplified Online: We Navigate the Digital Currents for You."
-                }
-              />
-              <ListItem
-                item={
-                  "Seaside to Screenside: Crafting Your Beach Brand's Digital Journey."
+                item={"Narrative Power"}
+                description={
+                  "We harness the power of storytelling to seamlessly integrate your brand into narratives that people feel compelled to share, driving both connection and conversion through compelling, memorable tales."
                 }
               />
             </div>
@@ -753,70 +740,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* personal story */}
-      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-20  bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop">
-        <span className="personal-text-container hidden absolute md:grid place-items-center w-full h-5/6 bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
-          <h3 className="personal-initial font-Anton text-center text-4xl font-medium">
-            Personal Story
-          </h3>
-        </span>
-        <div className="srcoller-inner flex w-full gap-8 -translate-x-1/3">
-          <img
-            className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_1.png"
-            alt="coresel image"
-          />
-          <img
-            className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_2.png"
-            alt="coresel image"
-          />
-          <img
-            className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_3.png"
-            alt="coresel image"
-          />
-          <img
-            className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_1.png"
-            alt="coresel image"
-          />
-          <img
-            className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_2.png"
-            alt="coresel image"
-          />
-          <img
-            className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_3.png"
-            alt="coresel image"
-          />
-          <img
-            className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_1.png"
-            alt="coresel image"
-          />
-          <img
-            className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_2.png"
-            alt="coresel image"
-          />
-        </div>
-        <div className="w-10/12 md:w-9/12 flex flex-col gap-4">
-          <h3 className="text-2xl md:text-5xl font-Anton font-medium 2xl:text-6xl">
-            Personal Story
-          </h3>
-          <p className="font-medium text-xs md:text-base 2xl:text-xl">
-            We value authenticity, community, and growth. We believe in telling
-            genuine stories that resonate with both the heart and history of a
-            business, fostering a sense of belonging among customers and
-            strengthening community ties.
-          </p>
-        </div>
-      </div>
-
       {/* recent insight */}
-      <div className="recent-insight w-full flex flex-col items-center pt-10 gap-8">
+      <div className="recent-insight w-full flex flex-col items-center pt-48 gap-8">
         <div className="w-10/12 md:w-9/12 flex flex-col gap-8">
           <span className="flex font-Anton mt-8 md:mt-0">
             <h1 className="font-medium text-2xl md:text-5xl 2xl:text-6xl">
@@ -828,27 +753,27 @@ export default function Home() {
           </span>
           <div className="w-full flex flex-col">
             <span className="w-full flex flex-col md:flex-row gap-2">
-              <InsightCard
-                img={"/insight_3.png"}
-                title={"A Day in the Life of a Social Media Manager"}
-                description={
-                  "Get an insider's look at the world of social media management. Follow a day in the life of a social media manager and uncover the strategies and tools that keep campaigns running smoothly."
-                }
-              />
-              <InsightCard
-                img={"/insight_2.png"}
-                title={"Planning Your Social Media Success"}
-                description={
-                  "Unlock the secrets of effective content planning. Dive into the art of creating a content calendar that keeps your social media strategy on track and your audience engaged."
-                }
-              />
-              <InsightCard
-                img={"/insight_1.png"}
-                title={"A Deep Dive into Social Media Surfing"}
-                description={
-                  "Explore the latest trends and strategies in the ever-evolving world of social media. Learn how to ride the digital waves with finesse and make a splash in your online presence."
-                }
-              />
+              {insightContent1 ? (
+                <InsightCard
+                  img={"/insight_3.png"}
+                  title={insightContent1.title}
+                  description={insightContent1.content}
+                />
+              ) : null}
+              {insightContent2 ? (
+                <InsightCard
+                  img={"/insight_2.png"}
+                  title={insightContent2.title}
+                  description={insightContent2.content}
+                />
+              ) : null}
+              {insightContent3 ? (
+                <InsightCard
+                  img={"/insight_1.png"}
+                  title={insightContent3.title}
+                  description={insightContent3.content}
+                />
+              ) : null}
             </span>
           </div>
         </div>

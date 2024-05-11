@@ -108,24 +108,28 @@ const AboutUs = () => {
             <span className="flex flex-col justify-start gap-4 w-full mt-8">
               <h1 className="font-Anton text-5xl 2xl:text-7xl">About Us</h1>
               <p className="text-sm w-full 2xl:text-xl">
-                Founded in the vibrant heart of [City/Region], Beach Social
-                started with a simple vision: to bridge the gap between digital
-                communication and genuine human connections. Inspired by the
-                boundless spirit of the beach, where diverse paths meet and
-                create unique patterns in the sand, we set out to craft a social
-                media platform that captures this essence. Our journey began in
-                [Year], driven by a passion to redefine online interaction and
-                make social media a more inclusive, engaging, and uplifting
-                space.
+                Founded on the scenic coasts of North Carolina and South
+                Carolina, Beach Social emerged from a vision to meld digital
+                communication with authentic human connections. Inspired by the
+                vibrant life of coastal towns&ndash;from Myrtle Beach to Oak
+                Island and now Wilmington&ndash;we started our journey in
+                December 2022. Our aim was to embody the spirit of the beach,
+                where diverse paths meet and leave unique marks in the sand,
+                transforming these interactions into a dynamic social media
+                platform that resonates with the energy of our coastal
+                communities.
               </p>
               <p className="text-sm w-full 2xl:text-xl">
-                At Beach Social, our mission is simple: to empower individuals
-                and businesses alike to create meaningful relationships through
-                our innovative social media solutions. We believe in the power
-                of connection and the impact it can have on both personal growth
-                and business success. Our platform is designed to not only
-                provide the tools for effective communication but to also foster
-                a community where every wave and whisper adds value.
+                At Beach Social, our mission is simple yet profound: to empower
+                individuals and businesses to forge meaningful connections
+                through innovative social media solutions. We believe in the
+                transformative power of connection to drive personal growth and
+                business success. From orchestrating large&ndash;scale events
+                that captivate thousands to boosting business revenues by a
+                minimum of 20% or more across restaurants, nightclubs,
+                boutiques, and smoke shops, we don&apos;t just manage social
+                media&ndash;we create impactful experiences that help our
+                clients flourish in the digital landscape.
               </p>
             </span>
           </div>
@@ -138,31 +142,37 @@ const AboutUs = () => {
             img={"/chatbot.svg"}
             hoverImage={"/chatbot_hover.svg"}
             title={"Chatbots"}
+            className={"2xl:w-32"}
           />
           <ServiceItem
             img={"/management.svg"}
             hoverImage={"/management_hover.svg"}
             title={"Social Media Management"}
+            className={"2xl:w-32"}
           />
           <ServiceItem
             img={"/advertising.svg"}
             hoverImage={"/advertising_hover.svg"}
             title={"Social Media Advertising"}
+            className={"2xl:w-32"}
           />
           <ServiceItem
             img={"/consulting.svg"}
             hoverImage={"/consulting_hover.svg"}
             title={"Social Media Consulting"}
+            className={"2xl:w-32"}
           />
           <ServiceItem
             img={"/promotion.svg"}
             hoverImage={"/promotion_hover.svg"}
             title={"Event Promotion"}
+            className={"2xl:w-32"}
           />
           <ServiceItem
             img={"/copy_writing.svg"}
             hoverImage={"/copy_writing_hover.svg"}
             title={"Copy Writing"}
+            className={"2xl:w-32"}
           />
         </div>
       </div>
@@ -224,7 +234,7 @@ const AboutUs = () => {
         </div>
       </div>
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center py-24 2xl:my-20 md:max-h-[28rem] bg-white z-40">
+      <div className="hook-container w-full flex justify-center py-24 2xl:my-20 md:max-h-[28rem] 2xl:max-h-[40rem] bg-white z-40">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
           <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
             <span className="flex font-Anton">
@@ -284,7 +294,7 @@ const AboutUs = () => {
               &nbsp;Team
             </h1>
           </span>
-          <p className="w-full text-sm font-medium">
+          <p className="w-full text-sm font-medium 2xl:text-base">
             Behind every post and pixel is our dedicated team of dreamers,
             thinkers, and doers. From tech gurus to creative mavens, our
             team&apos;s diverse backgrounds and skills breathe life into Beach
@@ -292,24 +302,28 @@ const AboutUs = () => {
           </p>
           <div className="flex flex-col md:flex-row w-full justify-between">
             <TeamMemberCard
-              img={"/member1.png"}
-              name={"User Name"}
+              img={
+                "https://beachsocial.leadmedia.lk/wp-content/uploads/2024/05/Noah.jpg"
+              }
+              name={"Noah Rudolph"}
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis congue quam. Donec vitae feugiat orci, at tempor enim. Etiam sit amet viverra quam,"
+                "Noah Rudolph is the visionary founder with over 10 years of experience across restaurants, bars, nightclubs, and large-scale events, managing more than five establishments. His extensive background in marketing ensures that wherever he leads, success follows."
               }
             />
             <TeamMemberCard
-              img={"/member2.png"}
-              name={"User Name"}
+              img={
+                "https://beachsocial.leadmedia.lk/wp-content/uploads/2024/05/Bridgette.jpg"
+              }
+              name={"Bridgette Tayman"}
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis congue quam. Donec vitae feugiat orci, at tempor enim. Etiam sit amet viverra quam,"
+                "Bridgette Tayman, a marketing guru from Maryland, combines her keen eye for aesthetics with a deep expertise in restaurant branding and design. Her innovative visual strategies not only enhance the dining atmosphere but also significantly elevate the overall brand experience."
               }
             />
             <TeamMemberCard
               img={"/member3.png"}
-              name={"User Name"}
+              name={"Dolan Brassier"}
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis congue quam. Donec vitae feugiat orci, at tempor enim. Etiam sit amet viverra quam,"
+                "Dolan Brassier is a prominent videographer known for his dynamic work with top YouTube brands like Danny Duncan. His keen eye captures more than what meets the lens, bringing visionary content to life with exceptional clarity and creativity."
               }
             />
           </div>

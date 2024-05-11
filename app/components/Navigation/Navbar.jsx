@@ -33,7 +33,7 @@ const Navbar = forwardRef((props, ref) => {
     >
       <span className="flex items-center justify-between w-3/4">
         <img
-          className="h-12 "
+          className="h-12 2xl:h-16"
           src="http://www.beachsocial.leadmedia.lk/wp-content/uploads/2024/04/beach_social_logo.png"
           alt="beach social logo"
         />
@@ -167,7 +167,7 @@ const Navbar = forwardRef((props, ref) => {
             </span>
           </span>
         ) : null}
-        <span className="hidden md:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:base">
+        <span className="hidden md:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:text-xl">
           <span className="flex items-center gap-6">
             <a
               className={
