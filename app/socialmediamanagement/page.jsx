@@ -95,7 +95,7 @@ const SocialMediaMangement = () => {
           start: "top top",
           end: () =>
             `bottom +=${
-              document.querySelector(".hook-title-section").offsetHeight + 112
+              document.querySelector(".hook-title-section").offsetHeight + 176
             }`,
         },
       });

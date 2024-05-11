@@ -20,15 +20,6 @@ gsap.registerPlugin(useGSAP);
 const AboutUs = () => {
   const [openContact, setOpenContact] = useState(false);
   const containerRef = useRef();
-  const scrollContainer = useRef();
-
-  useEffect(() => {
-    if (scrollContainer) {
-      const innerScroller = Scrollbar.init(scrollContainer.current, {
-        damping: 0.07,
-      });
-    }
-  }, [scrollContainer]);
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -65,6 +56,19 @@ const AboutUs = () => {
           end: "bottom top",
         },
       });
+      gsap.to(".hook-inner-container", {
+        scrollTrigger: {
+          trigger: ".hook-container",
+          pin: ".hook-title-section",
+          toggleActions: "restart reverse none pause",
+          scrub: 1,
+          start: "top top",
+          end: () =>
+            `bottom +=${
+              document.querySelector(".hook-title-section").offsetHeight + 176
+            }`,
+        },
+      });
     });
   });
 
@@ -87,14 +91,14 @@ const AboutUs = () => {
   };
 
   return (
-    <main ref={containerRef} className="h-screen relative">
+    <main ref={containerRef} className="h-screen">
       <ParticlesComponent id="particles_about" />
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
       <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
-        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row items-center">
-          <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
-            <div className="relative w-3/4 md:w-3/4 mt-8">
+        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row justify-between items-center">
+          <div className="w-10/12 md:w-1/2 h-fit flex justify-start items-center pt-8">
+            <div className="relative w-3/4 md:w-10/12 mt-8">
               <img
                 className="absolute top-0 w-full aspect-square z-10"
                 src="/view_img.png"
@@ -106,8 +110,10 @@ const AboutUs = () => {
           {/* description */}
           <div className="w-full md:w-1/2 flex items-center">
             <span className="flex flex-col justify-start gap-4 w-full mt-8">
-              <h1 className="font-Anton text-5xl 2xl:text-7xl">About Us</h1>
-              <p className="text-sm w-full 2xl:text-xl">
+              <h1 className="font-Anton text-5xl pb-12 2xl:text-7xl">
+                About Us
+              </h1>
+              <p className="text-sm w-full 2xl:text-lg">
                 Founded on the scenic coasts of North Carolina and South
                 Carolina, Beach Social emerged from a vision to meld digital
                 communication with authentic human connections. Inspired by the
@@ -119,7 +125,7 @@ const AboutUs = () => {
                 platform that resonates with the energy of our coastal
                 communities.
               </p>
-              <p className="text-sm w-full 2xl:text-xl">
+              <p className="text-sm w-full 2xl:text-lg">
                 At Beach Social, our mission is simple yet profound: to empower
                 individuals and businesses to forge meaningful connections
                 through innovative social media solutions. We believe in the
@@ -234,29 +240,29 @@ const AboutUs = () => {
         </div>
       </div>
       {/* your hook */}
-      <div className="hook-container w-full flex justify-center py-24 2xl:my-20 md:max-h-[28rem] 2xl:max-h-[40rem] bg-white z-40">
-        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row gap-8">
-          <div className="hook-element w-full md:w-1/2 flex flex-col gap-4">
+      <div className="hook-container w-full flex justify-center pt-16 pb-40 bg-white">
+        <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
+          <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
-              <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
                 Our &quot;
               </h1>
-              <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Values
               </h1>
-              <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
-            <p className="font-medium text-base 2xl:text-xl">
+            <p className="font-medium text-lg 2xl:text-xl">
               At Beach Social, our core values drive everything we do. We
               champion Community, embrace Innovation, uphold Integrity, and
               celebrate Inclusivity. These principles ensure our platform
               remains a vibrant, trusted, and inclusive space for all.
             </p>
           </div>
-          <div className="w-full md:w-1/2 flex flex-col">
-            <div ref={scrollContainer} className="w-full md:overflow-hidden">
+          <div className="relative md:w-1/2">
+            <div className="hook-inner-container flex flex-col gap-32 2xl:gap-48 w-full">
               <OurValuesItem
                 item={"Community:"}
                 description={
@@ -285,8 +291,9 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+
       {/* meet the team */}
-      <div className="w-full bg-lightBlue flex justify-center py-16">
+      <div className="w-full bg-lightBlue flex justify-center py-16 2xl:py-32">
         <div className="flex flex-col gap-6 w-3/4">
           <span className="flex items-center text-4xl font-Anton">
             <h1>Meet Our</h1>
@@ -331,7 +338,7 @@ const AboutUs = () => {
       </div>
 
       {/* contact us */}
-      <div className="w-full flex bg-white overflow-hidden justify-center py-16">
+      <div className="w-full flex bg-white overflow-hidden justify-center py-16 2xl:py-32">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
             <h2 className="text-black text-base md:text-2xl font-bold">
