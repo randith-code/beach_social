@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,15 +20,6 @@ gsap.registerPlugin(useGSAP);
 const SocialMediaMangement = () => {
   const [openContact, setOpenContact] = useState(false);
   const containerRef = useRef();
-  const scrollContainer = useRef();
-
-  // useEffect(() => {
-  //   if (scrollContainer) {
-  //     const innerScroller = Scrollbar.init(scrollContainer.current, {
-  //       damping: 0.07,
-  //     });
-  //   }
-  // }, [scrollContainer]);
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -53,6 +44,7 @@ const SocialMediaMangement = () => {
 
       bodyScrollBar.addListener(ScrollTrigger.update);
       ScrollTrigger.defaults({ scroller: scroller });
+
       gsap.from(".story-title", {
         yPercent: "50",
         opacity: 0,
@@ -94,7 +86,9 @@ const SocialMediaMangement = () => {
           scrub: 1,
           start: "top top",
           end: () =>
-            `bottom +=${
+            `+=${
+              document.querySelector(".hook-inner-container").offsetHeight + 176
+            } +=${
               document.querySelector(".hook-title-section").offsetHeight + 176
             }`,
         },

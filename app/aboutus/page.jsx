@@ -56,16 +56,19 @@ const AboutUs = () => {
           end: "bottom top",
         },
       });
-      gsap.to(".hook-inner-container", {
+      gsap.to(".values-inner-container", {
         scrollTrigger: {
-          trigger: ".hook-container",
-          pin: ".hook-title-section",
+          trigger: ".values-container",
+          pin: ".values-title-section",
           toggleActions: "restart reverse none pause",
           scrub: 1,
           start: "top top",
           end: () =>
-            `bottom +=${
-              document.querySelector(".hook-title-section").offsetHeight + 176
+            `+=${
+              document.querySelector(".values-inner-container").offsetHeight +
+              176
+            } +=${
+              document.querySelector(".values-title-section").offsetHeight + 176
             }`,
         },
       });
@@ -91,7 +94,7 @@ const AboutUs = () => {
   };
 
   return (
-    <main ref={containerRef} className="h-screen">
+    <main ref={containerRef} className="h-screen relative">
       <ParticlesComponent id="particles_about" />
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
@@ -239,10 +242,10 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      {/* your hook */}
-      <div className="hook-container w-full flex justify-center pt-16 pb-40 bg-white">
+      {/* our values */}
+      <div className="values-container w-full flex justify-center pt-16 pb-40 bg-white">
         <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
-          <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
+          <div className="values-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
                 Our &quot;
@@ -262,7 +265,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="relative md:w-1/2">
-            <div className="hook-inner-container flex flex-col gap-32 2xl:gap-48 w-full">
+            <div className="values-inner-container flex flex-col gap-32 2xl:gap-48 w-full">
               <OurValuesItem
                 item={"Community:"}
                 description={
