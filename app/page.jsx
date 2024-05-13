@@ -70,7 +70,7 @@ export default function Home() {
 
         gsap.to(".personal-initial", {
           scale: 6,
-          opacity: 0.4,
+          opacity: 0,
           display: "none",
           scrollTrigger: {
             trigger: ".personal-initial",
@@ -94,7 +94,7 @@ export default function Home() {
 
         gsap.to(".service-initial-text", {
           scale: 6,
-          opacity: 0.4,
+          opacity: 0,
           display: "none",
           scrollTrigger: {
             trigger: ".service-initial-text",
@@ -118,7 +118,7 @@ export default function Home() {
 
         gsap.to(".story-initial", {
           scale: 6,
-          opacity: 0.4,
+          opacity: 0,
           display: "none",
           scrollTrigger: {
             trigger: ".story-initial",
@@ -204,6 +204,7 @@ export default function Home() {
 
         gsap.from(".services", {
           yPercent: "100",
+          opacity: 0.4,
           duration: 0.5,
           stagger: 0.1,
           scrollTrigger: {

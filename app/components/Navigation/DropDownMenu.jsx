@@ -11,7 +11,7 @@ const DropdownMenu = ({ className }) => {
             Social Media Management
           </li>
         </Link>
-        <Link href="">
+        <Link href="/servicedetails">
           <li className="py-2 w-fit text-xs 2xl:text-base">Copy writing</li>
         </Link>
         <Link href="">
