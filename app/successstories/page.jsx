@@ -71,6 +71,32 @@ const SuccessStories = () => {
           Success Stories
         </h1>
       </div>
+      {/* feature success story */}
+      <div className="w-full flex justify-center py-16 2xl:py-28">
+        <div className="w-3/4 flex">
+          <div className="w-5/12 aspect-square">
+            <img src="/view_img.png" alt="featured story" className="w-full" />
+          </div>
+          <div className="flex-1 flex flex-col justify-center items-center gap-12">
+            <div className="w-3/4 flex flex-col 2xl:gap-12">
+              <span className="flex flex-col gap-4">
+                <h2 className="font-Anton 2xl:text-7xl">Varnish Nightclub</h2>
+                <p className="font-semibold">2024 Jun. - Carolinas</p>
+              </span>
+
+              <p className="2xl:text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* success stories */}
       <div className="success-story-container py-16 relative bg-white w-full z-40 flex justify-center">
         <span className="w-10/12 md:w-9/12 flex flex-col">

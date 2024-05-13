@@ -822,7 +822,7 @@ export default function Home() {
       </div>
 
       {isHitTheBottom ? (
-        <Overlay>
+        <Overlay className={"bg-valuesBg"}>
           <div className="w-full h-full z-50">
             <ConatctCard
               hideSection={setHitTheBottom}
