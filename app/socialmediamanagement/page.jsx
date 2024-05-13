@@ -138,7 +138,7 @@ const SocialMediaMangement = () => {
               designed to amplify your brand&apos;s online footprint and connect
               with your audience more effectively.
             </p>
-            <div className="flex justify-between py-10">
+            <div className="flex 2xl:w-3/4 justify-between py-10">
               <ServiceItem
                 className="w-24 h-24"
                 img={"/fb.svg"}
@@ -227,7 +227,7 @@ const SocialMediaMangement = () => {
       </div>
 
       {/* values */}
-      <div className="values bg-valuesBg w-full py-16 flex justify-center">
+      <div className="values bg-valuesBg w-full py-16 flex justify-center 2xl:py-28">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row-reverse">
           <div className="w-full md:w-1/2 flex items-center md:justify-end">
             <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
@@ -271,7 +271,7 @@ const SocialMediaMangement = () => {
         </div>
       </div>
       {/* success stories */}
-      <div className="success-story-container py-10 relative bg-white w-full z-40 flex justify-center">
+      <div className="success-story-container py-16 relative bg-white w-full z-40 flex justify-center 2xl:py-28">
         <span className="w-10/12 md:w-9/12 flex flex-col">
           <h3 className="story-title font-Anton text-2xl md:text-4xl 2xl:text-6xl font-medium py-4 md:pt-8">
             Recent Works
@@ -350,10 +350,10 @@ const SocialMediaMangement = () => {
       <div className="w-full flex overflow-hidden justify-center my-16">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
-            <h2 className="text-black text-base md:text-2xl font-bold">
+            <h2 className="text-black text-base md:text-2xl 2xl:text-4xl font-bold">
               Join our
             </h2>
-            <h2 className="text-base md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+            <h2 className="text-base md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-4xl">
               &nbsp;Community
             </h2>
           </span>

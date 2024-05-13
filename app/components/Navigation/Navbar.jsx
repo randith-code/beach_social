@@ -168,7 +168,7 @@ const Navbar = forwardRef((props, ref) => {
           </span>
         ) : null}
         <span className="hidden md:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:text-xl">
-          <span className="flex items-center gap-6">
+          <span className="flex items-center gap-6 2xl:gap-10">
             <a
               className={
                 pathName == "/" ? "text-cyan-400" : "hover:text-cyan-400"

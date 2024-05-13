@@ -70,7 +70,7 @@ export default function ConatctCard({ setOpenContact, hideSection }) {
                 width={20}
                 height={20}
                 alt="close button"
-                className="cursor-pointer m-2"
+                className="cursor-pointer m-8"
               />
             </div>
             {submited ? (
@@ -178,7 +178,7 @@ export default function ConatctCard({ setOpenContact, hideSection }) {
                 </div>
                 <div className="w-full md:w-1/2 h-full grid place-items-center">
                   <form
-                    className="flex flex-col w-9/12 gap-8 py-4 md:py-0"
+                    className="flex flex-col w-8/12 gap-8 py-4 md:py-0"
                     action=""
                     onSubmit={formik.handleSubmit}
                   >
@@ -217,13 +217,13 @@ export default function ConatctCard({ setOpenContact, hideSection }) {
                     />
                     <span className="flex justify-end gap-4">
                       <button
-                        className="text-black bg-white px-4 rounded-xl"
+                        className="text-black bg-white px-6 py-1 font-bold rounded-2xl"
                         type="reset"
                       >
                         Clear
                       </button>
                       <button
-                        className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-black px-4 rounded-xl"
+                        className="bg-gradient-to-br from-gradiantLftBtm font-bold to-gradiantRghtTop text-black px-6 py-1 rounded-2xl"
                         type="submit"
                       >
                         Submit

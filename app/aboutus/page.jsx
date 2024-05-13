@@ -113,7 +113,7 @@ const AboutUs = () => {
           {/* description */}
           <div className="w-full md:w-1/2 flex items-center">
             <span className="flex flex-col justify-start gap-4 w-full mt-8">
-              <h1 className="font-Anton text-5xl pb-12 2xl:text-7xl">
+              <h1 className="font-Anton text-5xl 2xl:pb-12 2xl:text-7xl">
                 About Us
               </h1>
               <p className="text-sm w-full 2xl:text-lg">
@@ -169,7 +169,7 @@ const AboutUs = () => {
             img={"/consulting.svg"}
             hoverImage={"/consulting_hover.svg"}
             title={"Social Media Consulting"}
-            className={"2xl:w-32"}
+            className={"2xl:w-32 aspect-square"}
           />
           <ServiceItem
             img={"/promotion.svg"}
@@ -235,10 +235,12 @@ const AboutUs = () => {
             Personal Story
           </h3>
           <p className="font-medium text-xs md:text-base 2xl:text-xl">
-            We value authenticity, community, and growth. We believe in telling
-            genuine stories that resonate with both the heart and history of a
-            business, fostering a sense of belonging among customers and
-            strengthening community ties.
+            Coming from a family of small business owners and having worked
+            closely with local enterprises for years, the Beach Social deeply
+            understand the nuances and needs of small businesses. We&apos;re
+            here to leverage this expertise to craft compelling stories and
+            strategies that ensure significant returns, regardless of your
+            business&apos;s size.
           </p>
         </div>
       </div>
@@ -298,13 +300,13 @@ const AboutUs = () => {
       {/* meet the team */}
       <div className="w-full bg-lightBlue flex justify-center py-16 2xl:py-32">
         <div className="flex flex-col gap-6 w-3/4">
-          <span className="flex items-center text-4xl font-Anton">
+          <span className="flex items-center text-4xl font-Anton 2xl:text-6xl">
             <h1>Meet Our</h1>
             <h1 className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
               &nbsp;Team
             </h1>
           </span>
-          <p className="w-full text-sm font-medium 2xl:text-base">
+          <p className="w-full text-sm font-medium 2xl:text-lg">
             Behind every post and pixel is our dedicated team of dreamers,
             thinkers, and doers. From tech gurus to creative mavens, our
             team&apos;s diverse backgrounds and skills breathe life into Beach
@@ -313,8 +315,9 @@ const AboutUs = () => {
           <div className="flex flex-col md:flex-row w-full justify-between">
             <TeamMemberCard
               img={
-                "https://beachsocial.leadmedia.lk/wp-content/uploads/2024/05/Noah.jpg"
+                "https://beachsocial.leadmedia.lk/wp-content/uploads/2024/05/Noah.png"
               }
+              title={"Founder"}
               name={"Noah Rudolph"}
               description={
                 "Noah Rudolph is the visionary founder with over 10 years of experience across restaurants, bars, nightclubs, and large-scale events, managing more than five establishments. His extensive background in marketing ensures that wherever he leads, success follows."
@@ -324,16 +327,18 @@ const AboutUs = () => {
               img={
                 "https://beachsocial.leadmedia.lk/wp-content/uploads/2024/05/Bridgette.jpg"
               }
-              name={"Bridgette Tayman"}
+              title={"Videographer"}
+              name={"Dolan Brassier"}
               description={
-                "Bridgette Tayman, a marketing guru from Maryland, combines her keen eye for aesthetics with a deep expertise in restaurant branding and design. Her innovative visual strategies not only enhance the dining atmosphere but also significantly elevate the overall brand experience."
+                "Dolan Brassier is a prominent videographer known for his dynamic work with top YouTube brands like Danny Duncan. His keen eye captures more than what meets the lens, bringing visionary content to life with exceptional clarity and creativity."
               }
             />
             <TeamMemberCard
               img={"/member3.png"}
-              name={"Dolan Brassier"}
+              title={"Marketing Specialist"}
+              name={"Bridgette Tayman"}
               description={
-                "Dolan Brassier is a prominent videographer known for his dynamic work with top YouTube brands like Danny Duncan. His keen eye captures more than what meets the lens, bringing visionary content to life with exceptional clarity and creativity."
+                "Bridgette Tayman, a marketing guru from Maryland, combines her keen eye for aesthetics with a deep expertise in restaurant branding and design. Her innovative visual strategies not only enhance the dining atmosphere but also significantly elevate the overall brand experience."
               }
             />
           </div>
@@ -344,14 +349,14 @@ const AboutUs = () => {
       <div className="w-full flex bg-white overflow-hidden justify-center py-16 2xl:py-32">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
-            <h2 className="text-black text-base md:text-2xl font-bold">
+            <h2 className="text-black text-base md:text-2xl 2xl:text-4xl font-bold">
               Join our
             </h2>
-            <h2 className="text-base md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+            <h2 className="text-base md:text-xl 2xl:text-4xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
               &nbsp;Community
             </h2>
           </span>
-          <h2 className="text-black w-3/4 font-medium text-sm 2xl:text-base">
+          <h2 className="text-black w-3/4 font-medium text-sm 2xl:text-lg">
             Whether you&apos;re looking to grow your brand, expand your social
             network, or just find a fun and friendly place to express yourself,
             Beach Social is your go-to platform. Connect with us to stay updated
