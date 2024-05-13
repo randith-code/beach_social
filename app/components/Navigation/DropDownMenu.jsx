@@ -17,7 +17,7 @@ const DropdownMenu = ({ className, setFormOpen }) => {
             className="py-2 w-fit text-xs 2xl:text-base"
             onClick={setFormOpen}
           >
-            Copy writing
+            Other Services
           </li>
         </ul>
       </div>

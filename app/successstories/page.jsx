@@ -78,9 +78,11 @@ const SuccessStories = () => {
             <img src="/view_img.png" alt="featured story" className="w-full" />
           </div>
           <div className="flex-1 flex flex-col justify-center items-center gap-12">
-            <div className="w-3/4 flex flex-col 2xl:gap-12">
-              <span className="flex flex-col gap-4">
-                <h2 className="font-Anton 2xl:text-7xl">Varnish Nightclub</h2>
+            <div className="w-3/4 flex flex-col gap-8 2xl:gap-12">
+              <span className="flex flex-col gap-2 2xl:gap-4">
+                <h2 className="font-Anton text-5xl 2xl:text-7xl">
+                  Varnish Nightclub
+                </h2>
                 <p className="font-semibold">2024 Jun. - Carolinas</p>
               </span>
 

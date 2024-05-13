@@ -249,7 +249,7 @@ const CustomNavbar = forwardRef((props, ref) => {
           <>
             <div className={`contactus flex flex-col w-full`}>
               <div className="grid place-items-center">
-                <div className="w-9/12 flex flex-col bg-black pb-16">
+                <div className="w-9/12 flex flex-col bg-black pb-10 2xl:pb-16">
                   <div className="flex w-full justify-end">
                     <Image
                       src="/close_button.png"
@@ -352,7 +352,7 @@ const CustomNavbar = forwardRef((props, ref) => {
                     <div className="flex flex-col gap-8 items-center flex-1">
                       <div className="w-full flex flex-col md:flex-row">
                         <span className="w-3/4 flex justify-center">
-                          <span className="w-8/12">
+                          <span className="w-9/12 2xl:w-8/12">
                             <img
                               className="w-2/5"
                               src="/footer_logo.png"
@@ -362,18 +362,18 @@ const CustomNavbar = forwardRef((props, ref) => {
                         </span>
                       </div>
                       {/* contact form */}
-                      <div className="flex flex-col items-center">
+                      <div className="flex 2xl:flex-col items-center">
                         <div className="w-full md:pb-8 h-full grid place-items-center">
                           <span className="w-9/12 flex flex-col gap-4">
                             <span className="flex flex-col">
                               <h1 className="font-extrabold text-xl md:text-3xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
                                 SocialReach Nexus
                               </h1>
-                              <h1 className="font-extrabold text-white text-xl md:text-3xl pt-4">
+                              <h1 className="font-extrabold text-white text-xl 2xl:text-3xl pt-4">
                                 Do you want to know more about Our Services?
                               </h1>
                             </span>
-                            <p className="font-light text-xs md:text-base text-white">
+                            <p className="font-light text-xs md:text-sm 2xl:text-base text-white">
                               Ready to elevate your digital footprint?
                               Let&apos;s intertwine innovation, creativity, and
                               strategy to amplify your social media presence.
@@ -385,9 +385,9 @@ const CustomNavbar = forwardRef((props, ref) => {
                             </p>
                           </span>
                         </div>
-                        <div className="w-full h-full grid place-items-center pt-16">
+                        <div className="w-full h-full grid place-items-center pt-10 2xl:pt-16">
                           <form
-                            className="flex flex-col w-9/12 gap-8 py-4 md:py-0"
+                            className="flex flex-col w-9/12 text-sm 2xl:text-base gap-4 2xl:gap-8 py-4 md:py-0"
                             action=""
                             onSubmit={formik.handleSubmit}
                           >
