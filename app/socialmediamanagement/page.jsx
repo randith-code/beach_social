@@ -159,9 +159,9 @@ const SocialMediaMangement = () => {
               />
               <ServiceItem
                 className="w-24 h-24"
-                img={"/social_media.svg"}
-                hoverImage={"/social_media_hover.svg"}
-                title="Social Media"
+                img={"/google.svg"}
+                hoverImage={"/google_hover.svg"}
+                title="Google"
               />
             </div>
           </div>
