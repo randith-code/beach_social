@@ -487,13 +487,13 @@ const Navbar = forwardRef((props, ref) => {
                             />
                             <span className="flex justify-end gap-4">
                               <button
-                                className="text-black bg-white px-6 py-1 rounded-2xl font-semibold"
+                                className="text-black bg-white px-6 2xl:text-lg py-1 rounded-2xl font-semibold"
                                 type="reset"
                               >
                                 Clear
                               </button>
                               <button
-                                className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-black px-6 py-1 rounded-2xl font-semibold"
+                                className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-black px-6 2xl:text-lg py-1 rounded-2xl font-semibold"
                                 type="submit"
                               >
                                 Submit
