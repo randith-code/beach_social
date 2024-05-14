@@ -32,41 +32,6 @@ export default function Home() {
       const mm = gsap.matchMedia();
       const scroller = containerRef.current;
 
-      let bodyScrollBar = Scrollbar.init(scroller, {
-        damping: 0.07,
-        delegateTo: document,
-      });
-
-      bodyScrollBar.setPosition(0, 0);
-
-      bodyScrollBar.addListener((status) => {
-        if (status.limit.y === status.offset.y) {
-          setHitTheBottom(true);
-        } else {
-          setHitTheBottom(false);
-        }
-      });
-
-      bodyScrollBar.addListener(ScrollTrigger.update);
-      ScrollTrigger.defaults({ scroller: scroller });
-
-      ScrollTrigger.scrollerProxy(scroller, {
-        scrollTop(value) {
-          if (arguments.length) {
-            bodyScrollBar.scrollTop = value;
-          }
-          return bodyScrollBar.scrollTop;
-        },
-      });
-
-      if (document.querySelector(".gsap-marker-scroller-start")) {
-        const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
-
-        bodyScrollBar.addListener(({ offset }) => {
-          gsap.set(markers, { marginTop: -offset.y });
-        });
-      }
-
       gsap.to(".top-logos", {
         xPercent: "10",
         scrollTrigger: {
@@ -89,6 +54,41 @@ export default function Home() {
       });
 
       mm.add("(min-width: 768px)", () => {
+        let bodyScrollBar = Scrollbar.init(scroller, {
+          damping: 0.07,
+          delegateTo: document,
+        });
+
+        bodyScrollBar.setPosition(0, 0);
+
+        bodyScrollBar.addListener((status) => {
+          if (status.limit.y === status.offset.y) {
+            setHitTheBottom(true);
+          } else {
+            setHitTheBottom(false);
+          }
+        });
+
+        bodyScrollBar.addListener(ScrollTrigger.update);
+        ScrollTrigger.defaults({ scroller: scroller });
+
+        ScrollTrigger.scrollerProxy(scroller, {
+          scrollTop(value) {
+            if (arguments.length) {
+              bodyScrollBar.scrollTop = value;
+            }
+            return bodyScrollBar.scrollTop;
+          },
+        });
+
+        if (document.querySelector(".gsap-marker-scroller-start")) {
+          const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
+
+          bodyScrollBar.addListener(({ offset }) => {
+            gsap.set(markers, { marginTop: -offset.y });
+          });
+        }
+
         gsap.to(".personal-initial", {
           scale: 6,
           opacity: 0,
@@ -710,7 +710,7 @@ export default function Home() {
 
       {/* your hook */}
       <div className="hook-container w-full flex justify-center bg-white">
-        <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
+        <div className="w-3/4 h-fit flex flex-col md:flex-row gap-16 pt-28">
           <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
@@ -732,7 +732,7 @@ export default function Home() {
             </p>
           </div>
           <div className="relative md:w-1/2">
-            <div className="hook-inner-container flex flex-col gap-16 md:gap-32 2xl:gap-48 w-full">
+            <div className="hook-inner-container flex flex-col gap-8 md:gap-32 2xl:gap-48 w-full">
               <ListItem
                 item={"Impactful Sharing"}
                 description={
@@ -843,7 +843,7 @@ export default function Home() {
       </div>
 
       {isHitTheBottom ? (
-        <Overlay className={"bg-valuesBg"}>
+        <Overlay className={"bg-valuesBg hidden md:block"}>
           <div className="w-full h-full z-50">
             <ConatctCard
               hideSection={setHitTheBottom}
