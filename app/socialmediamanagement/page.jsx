@@ -350,10 +350,10 @@ const SocialMediaMangement = () => {
       <div className="w-full flex overflow-hidden justify-center my-16">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
-            <h2 className="text-black text-base md:text-2xl 2xl:text-4xl font-bold">
+            <h2 className="text-black text-xl md:text-2xl 2xl:text-4xl font-bold">
               Join our
             </h2>
-            <h2 className="text-base md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-4xl">
+            <h2 className="text-xl md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-4xl">
               &nbsp;Community
             </h2>
           </span>

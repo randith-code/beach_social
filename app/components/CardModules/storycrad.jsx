@@ -4,8 +4,8 @@ const StoryCard = ({ img, title, description, isLarge }) => {
   };
 
   const width = isLarge
-    ? "md:w-6/12 aspect-square md:aspect-video bg-center rounded-3xl cursor-pointer"
-    : "md:w-4/12 aspect-square bg-center rounded-3xl cursor-pointer";
+    ? "md:w-6/12 aspect-square md:aspect-video bg-center rounded-xl md:rounded-3xl cursor-pointer"
+    : "md:w-4/12 aspect-square bg-center rounded-xl md:rounded-3xl cursor-pointer";
   return (
     <div
       className={`transition-all duration-[2000ms] bg-120% hover:bg-100% ${width}`}

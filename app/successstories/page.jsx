@@ -133,42 +133,46 @@ const SuccessStories = () => {
       <div className="w-full flex justify-center py-16 2xl:py-28">
         <div className="w-10/12 md:w-3/4 flex flex-col gap-8 lg:flex-row lg:gap-0">
           <div className="relative w-full flex justify-center lg:w-5/12 aspect-square">
-            <img src={heroImage} alt="featured story" className="w-full" />
+            <img
+              src={heroImage}
+              alt="featured story"
+              className="w-full transition-all"
+            />
             <div className="absolute bottom-10 flex justify-around w-2/3 z-50">
               <div
                 onClick={() => {
                   setTracker(1);
                   setHeroImage("/view_img.png");
                 }}
-                className={imageIndicater.section1}
+                className={`transition-all ${imageIndicater.section1}`}
               />
               <div
                 onClick={() => {
                   setTracker(2);
                   setHeroImage("/view_img1.png");
                 }}
-                className={imageIndicater.section2}
+                className={`transition-all ${imageIndicater.section2}`}
               />
               <div
                 onClick={() => {
                   setTracker(3);
                   setHeroImage("/view_img2.png");
                 }}
-                className={imageIndicater.section3}
+                className={`transition-all ${imageIndicater.section3}`}
               />
               <div
                 onClick={() => {
                   setTracker(4);
                   setHeroImage("/view_img3.png");
                 }}
-                className={imageIndicater.section4}
+                className={`transition-all ${imageIndicater.section4}`}
               />
               <div
                 onClick={() => {
                   setTracker(5);
                   setHeroImage("/view_img4.png");
                 }}
-                className={imageIndicater.section5}
+                className={`transition-all ${imageIndicater.section5}`}
               />
             </div>
           </div>
@@ -297,10 +301,10 @@ const SuccessStories = () => {
       <div className="w-full flex overflow-hidden justify-center my-16">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
-            <h2 className="text-black text-base md:text-2xl 2xl:text-4xl font-bold">
+            <h2 className="text-black text-xl md:text-2xl 2xl:text-4xl font-bold">
               Join our
             </h2>
-            <h2 className="text-base md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-4xl">
+            <h2 className=" text-xl md:text-xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-4xl">
               &nbsp;Community
             </h2>
           </span>
