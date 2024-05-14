@@ -101,7 +101,7 @@ const AboutUs = () => {
       <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
         <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row justify-between items-center">
           <div className="w-10/12 lg:w-1/2 h-fit flex justify-start items-center pt-8">
-            <div className="relative w-3/4 md:w-10/12 mt-8">
+            <div className="relative w-full md:w-10/12 mt-8">
               <img
                 className="absolute top-0 w-full aspect-square z-10"
                 src="/view_img.png"
@@ -187,8 +187,8 @@ const AboutUs = () => {
       </div>
 
       {/* personal stories */}
-      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-28  bg-valuesBg">
-        <div className="srcoller-inner flex w-full gap-8 -translate-x-1/3">
+      <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-20 md:py-28  bg-valuesBg">
+        <div className="srcoller-inner flex w-full gap-8 overflow-x-scroll no-scrollbar md:overflow-visible md:-translate-x-1/3">
           <img
             className="w-1/4 md:w-2/12 aspect-square"
             src="/personal_story_1.png"
@@ -245,8 +245,8 @@ const AboutUs = () => {
         </div>
       </div>
       {/* our values */}
-      <div className="values-container w-full flex justify-center pt-16 pb-40 bg-white">
-        <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
+      <div className="values-container w-full flex justify-center py-20 md:pt-16 md:pb-40 bg-white">
+        <div className="w-3/4 h-fit flex flex-col md:flex-row gap-16 md:pt-28">
           <div className="values-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
@@ -267,7 +267,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="relative md:w-1/2">
-            <div className="values-inner-container flex flex-col gap-16 md:gap-32 2xl:gap-48 w-full">
+            <div className="values-inner-container flex flex-col gap-8 md:gap-32 2xl:gap-48 w-full">
               <OurValuesItem
                 item={"Community:"}
                 description={

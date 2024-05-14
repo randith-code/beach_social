@@ -355,7 +355,7 @@ export default function Home() {
     >
       <Hero />
       {/* partners */}
-      <div className="w-full flex flex-col gap-6 items-center py-32 bg-white z-40">
+      <div className="w-full flex flex-col gap-6 items-center py-16 md:py-32 bg-white z-40">
         <span className="partner-header font-Anton flex">
           <h1 className="font-bold text-2xl md:text-5xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
             Friends
@@ -368,7 +368,7 @@ export default function Home() {
           {partnersDesc}
         </p>
         <div className="flex flex-col gap-8 md:gap-14 mt-8 bg-white z-40">
-          <div className="flex w-full gap-10 overflow-x-hidden">
+          <div className="flex w-full gap-10 overflow-x-scroll no-scrollbar md:overflow-x-hidden">
             <div className="top-logos flex gap-6 -translate-x-2/3 2xl:-translate-x-1/3">
               <img
                 className="h-12 md:h-auto aspect-auto"
@@ -442,7 +442,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="flex w-full overflow-x-hidden">
+          <div className="flex w-full overflow-x-scroll no-scrollbar md:overflow-x-hidden">
             <div className="bottom-logos flex md:gap-10">
               <img
                 className="h-12 md:h-auto aspect-auto"
@@ -812,7 +812,7 @@ export default function Home() {
       </div>
 
       {/* contact us */}
-      <div className="w-full py-16 flex overflow-hidden justify-center">
+      <div className="w-full py-16 flex overflow-visible  md:overflow-hidden justify-center">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-4 pb-8">
           <h4 className="font-semibold text-black w-full md:w-1/2 text-base md:text-lg">
             We love to help brands succeed. Let&apos;s Start a Winning Project
