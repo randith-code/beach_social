@@ -74,12 +74,12 @@ const SuccessStories = () => {
       </div>
       {/* feature success story */}
       <div className="w-full flex justify-center py-16 2xl:py-28">
-        <div className="w-10/12 md:w-3/4 flex flex-col gap-8 md:flex-row md:gap-0">
-          <div className="w-full md:w-5/12 aspect-square">
+        <div className="w-10/12 md:w-3/4 flex flex-col gap-8 lg:flex-row lg:gap-0">
+          <div className="w-full lg:w-5/12 aspect-square">
             <img src="/view_img.png" alt="featured story" className="w-full" />
           </div>
           <div className="flex-1 flex flex-col justify-center items-center gap-12">
-            <div className="w-full md:w-3/4 flex flex-col gap-8 2xl:gap-12">
+            <div className="w-full lg:w-3/4 flex flex-col gap-8 2xl:gap-12">
               <span className="flex flex-col gap-2 2xl:gap-4">
                 <h2 className="font-Anton text-5xl 2xl:text-7xl">
                   Varnish Nightclub
@@ -96,6 +96,12 @@ const SuccessStories = () => {
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum
               </p>
+
+              <button className="contact-button w-fit group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6">
+                <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
+                  See more
+                </p>
+              </button>
             </div>
           </div>
         </div>

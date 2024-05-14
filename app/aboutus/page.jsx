@@ -99,8 +99,8 @@ const AboutUs = () => {
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
       <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
-        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row justify-between items-center">
-          <div className="w-10/12 md:w-1/2 h-fit flex justify-start items-center pt-8">
+        <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row justify-between items-center">
+          <div className="w-10/12 lg:w-1/2 h-fit flex justify-start items-center pt-8">
             <div className="relative w-3/4 md:w-10/12 mt-8">
               <img
                 className="absolute top-0 w-full aspect-square z-10"
@@ -111,7 +111,7 @@ const AboutUs = () => {
             </div>
           </div>
           {/* description */}
-          <div className="w-full md:w-1/2 flex items-center">
+          <div className="w-full lg:w-1/2 flex items-center">
             <span className="flex flex-col justify-start gap-4 w-full mt-8">
               <h1 className="font-Anton text-5xl 2xl:pb-12 2xl:text-7xl">
                 About Us
@@ -146,7 +146,7 @@ const AboutUs = () => {
       </div>
       {/* services */}
       <div className="w-full py-20 flex justify-center">
-        <div className="w-3/4 grid grid-cols-3 md:flex md:justify-between gap-14">
+        <div className="w-3/4 grid grid-cols-3 lg:flex md:justify-between gap-14">
           <ServiceItem
             img={"/chatbot.svg"}
             hoverImage={"/chatbot_hover.svg"}
@@ -249,17 +249,17 @@ const AboutUs = () => {
         <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
           <div className="values-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
-              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
                 Our &quot;
               </h1>
-              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Values
               </h1>
-              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
-            <p className="font-medium text-lg 2xl:text-xl">
+            <p className="font-medium text-lg md:text-base lg:text-lg 2xl:text-xl">
               At Beach Social, our core values drive everything we do. We
               champion Community, embrace Innovation, uphold Integrity, and
               celebrate Inclusivity. These principles ensure our platform

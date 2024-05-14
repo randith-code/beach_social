@@ -77,7 +77,7 @@ const Navbar = forwardRef((props, ref) => {
             src="http://www.beachsocial.leadmedia.lk/wp-content/uploads/2024/04/beach_social_logo.png"
             alt="beach social logo"
           />
-          <span onClick={() => setOpen(!open)} className="md:hidden">
+          <span onClick={() => setOpen(!open)} className="lg:hidden">
             {open ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@ const Navbar = forwardRef((props, ref) => {
             )}
           </span>
           {open ? (
-            <span className="fixed flex flex-col bg-white md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-transparent items-center justify-around">
+            <span className="fixed flex flex-col bg-white lg:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-transparent items-center justify-around">
               <span className="w-full">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +202,7 @@ const Navbar = forwardRef((props, ref) => {
               </span>
             </span>
           ) : null}
-          <span className="hidden md:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:text-xl">
+          <span className="hidden lg:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:text-xl">
             <span className="flex items-center gap-6 2xl:gap-10">
               <a
                 className={

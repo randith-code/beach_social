@@ -16,7 +16,7 @@ const ServiceItem = ({ img, hoverImage, title, className }) => {
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="flex flex-col items-center w-full md:w-1/6 gap-4"
+      className="flex flex-col items-center w-full lg:w-1/6 gap-4"
     >
       <div className="aspect-square rounded-full grid place-items-center">
         {hover ? (

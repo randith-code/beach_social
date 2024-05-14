@@ -7,10 +7,10 @@ const Footer = () => {
     <footer className="relative flex flex-col w-full items-center z-40 bg-black text-white font-normal text-sm 2xl:texl-xl">
       <div className="flex w-full pt-16 pb-8 border-b-2 border-opacity-20 border-white justify-center 2xl:pt-28 2xl:pb-14">
         {/* inner-container */}-
-        <div className="flex flex-col md:flex-row justify-center w-10/12 md:w-9/12">
-          <div className="w-full md:w-1/4 flex flex-col gap-4">
+        <div className="flex flex-col lg:flex-row justify-center w-10/12 md:w-9/12">
+          <div className="w-full lg:w-1/4 flex flex-col gap-4">
             <img className="w-3/5" src="/footer_logo.png" alt="footer logo" />
-            <p className="text-xs w-full md:w-3/5 font-light 2xl:text-sm">
+            <p className="text-xs md:text-sm lg:text-xs w-full lg:w-3/5 font-light 2xl:text-sm">
               Dive into a sea of endless possibilities with Beach Social
             </p>
             <span className="flex gap-4">
@@ -19,8 +19,8 @@ const Footer = () => {
               <Instagram />
             </span>
           </div>
-          <div className="w-full md:w-3/4 grid grid-cols-2 md:flex justify-between gap-4 text-xs 2xl:text-xl">
-            <div className="flex flex-col mt-4 md:mt-0 gap-4 w-full md:w-2/12">
+          <div className="w-full lg:w-3/4 grid grid-cols-2 lg:flex justify-between gap-4 text-xs md:text-sm lg:text-xs 2xl:text-xl pt-6">
+            <div className="flex flex-col mt-4 md:mt-0 gap-4 w-full lg:w-2/12">
               <h3 className="font-bold"> Services</h3>
               <span className="flex flex-col gap-4 font-light 2xl:text-base">
                 <p>Chatbots</p>
@@ -30,7 +30,7 @@ const Footer = () => {
                 <p>Event Promotion</p>
               </span>
             </div>
-            <div className="flex flex-col gap-4 w-full md:w-4/12">
+            <div className="flex flex-col gap-4 w-full lg:w-4/12">
               <h3 className="h-7"></h3>
               <span className="flex flex-col gap-4 font-light 2xl:text-base">
                 <p>Google adwords Campaign</p>
@@ -40,7 +40,7 @@ const Footer = () => {
                 <p>Creative Designs</p>
               </span>
             </div>
-            <div className="flex flex-col gap-4 w-full  md:w-3/12">
+            <div className="flex flex-col gap-4 w-full  lg:w-3/12">
               <h3 className="font-bold"> Quick Links</h3>
               <span className="flex flex-col gap-4 font-light 2xl:text-base">
                 <p>Home</p>
@@ -49,12 +49,12 @@ const Footer = () => {
                 <p>Success Stories</p>
               </span>
             </div>
-            <div className="flex flex-col gap-4 w-full md:w-3/12">
+            <div className="flex flex-col gap-4 w-full lg:w-3/12">
               <h3 className="font-bold">Get in Touch</h3>
               <span className="flex flex-col gap-4 font-light 2xl:text-base">
                 <span className="flex items-center gap-4">
                   <img
-                    className="2xl:aspect-auto w-5"
+                    className="2xl:aspect-auto w-4 lg:w-5"
                     src="/phone.png"
                     alt="phone"
                   />
@@ -62,7 +62,7 @@ const Footer = () => {
                 </span>
                 <span className="flex items-center gap-4">
                   <img
-                    className="2xl:aspect-auto w-5"
+                    className="2xl:aspect-auto w-4 lg:w-5"
                     src="/mail.png"
                     alt="mail"
                   />
@@ -70,7 +70,7 @@ const Footer = () => {
                 </span>
                 <span className="flex items-start gap-4">
                   <img
-                    className="2xl:aspect-auto w-6"
+                    className="2xl:aspect-auto w-4 lg:w-6"
                     src="/location.png"
                     alt="location"
                   />

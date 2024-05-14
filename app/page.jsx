@@ -713,17 +713,17 @@ export default function Home() {
         <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
           <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
-              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
                 Your &quot;
               </h1>
-              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Story
               </h1>
-              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
-            <p className="font-medium text-lg 2xl:text-xl">
+            <p className="font-medium text-base lg:text-lg 2xl:text-xl">
               Let&apos;s capture your brand&apos;s story together at Beach
               Social. We&apos;ll tap into what makes you unique and turn it into
               a viral sensation that captivates and engages. Ready to shine in
@@ -774,7 +774,7 @@ export default function Home() {
             </h1>
           </span>
           <div className="w-full flex flex-col">
-            <span className="w-full flex flex-col md:flex-row gap-2">
+            <span className="w-full flex flex-col lg:flex-row gap-6 lg:gap-2 2xl:gap-2">
               {insightContent1 ? (
                 <InsightCard
                   img={"/insight_3.png"}

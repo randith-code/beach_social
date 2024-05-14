@@ -118,16 +118,16 @@ const SocialMediaMangement = () => {
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
       <ParticlesComponent id="partical_social" />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-center w-full h-[100vh]" />
-      <div className="absolute pt-40 md:pt-0 w-[30%] -z-10 right-0">
+      <div className="absolute pt-40 lg:pt-0 w-[30%] -z-10 right-0">
         <img
           src="/background_demo.png"
           className="w-full"
           alt="a background feature"
         />
       </div>
-      <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
+      <div className="values h-screen md:h-fit lg:h-screen w-full flex justify-center items-center pt-32 md:pt-20 lg:pt-32 pb-16">
         <div className="w-3/4">
-          <div className="flex flex-col gap-6 w-full md:w-2/3">
+          <div className="flex flex-col gap-6 w-full lg:w-2/3">
             <h1 className="font-Anton pt-20 text-5xl 2xl:text-7xl">
               Social Media Management
             </h1>
@@ -168,17 +168,17 @@ const SocialMediaMangement = () => {
         </div>
       </div>
       {/* Our services */}
-      <div className="hook-container w-full flex justify-center  pb-16 md:pt-16 md:pb-40 bg-white">
+      <div className="hook-container w-full flex justify-center  pb-16 md:pt-0 lg:pt-16 md:pb-40 bg-white">
         <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
           <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
-              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
                 Our &quot;
               </h1>
-              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+              <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                 Services
               </h1>
-              <h1 className="font-medium text-4xl md:text-6xl 2xl:text-7xl">
+              <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
                 &quot;
               </h1>
             </span>
