@@ -94,7 +94,7 @@ const AboutUs = () => {
   };
 
   return (
-    <main ref={containerRef} className="h-screen relative">
+    <main ref={containerRef} className="h-screen relative pt-16 md:pt-0">
       <ParticlesComponent id="particles_about" />
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
@@ -267,7 +267,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="relative md:w-1/2">
-            <div className="values-inner-container flex flex-col gap-32 2xl:gap-48 w-full">
+            <div className="values-inner-container flex flex-col gap-16 md:gap-32 2xl:gap-48 w-full">
               <OurValuesItem
                 item={"Community:"}
                 description={

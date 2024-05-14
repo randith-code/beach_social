@@ -177,15 +177,10 @@ const Navbar = forwardRef((props, ref) => {
                   </span>
                   <span className={expand ? visible : hidden}>
                     <ul className="flex flex-col pt-4 gap-4">
-                      <Link href="/">
+                      <Link href="/socialmediamanagement">
                         <li>Social Media Management</li>
                       </Link>
-                      <Link href="/">
-                        <li>Social Media Management</li>
-                      </Link>
-                      <Link href="/">
-                        <li>Social Media Management</li>
-                      </Link>
+                      <li>Other Services</li>
                     </ul>
                   </span>
                 </div>

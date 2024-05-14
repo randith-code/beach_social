@@ -63,22 +63,23 @@ const SuccessStories = () => {
     setOpenContact(true);
   };
   return (
-    <main ref={containerRef} className="bg-lightBlue h-screen">
+    <main ref={containerRef} className="h-screen">
       <Navbar />
       <ParticlesComponent id="partical_success" />
-      <div className="w-full h-25vh bg-lightBlue grid place-items-center">
-        <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+      <div className="w-full grid place-items-center">
+        <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
+        <h1 className="text-5xl 2xl:text-8xl font-Anton py-16 font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
           Success Stories
         </h1>
       </div>
       {/* feature success story */}
       <div className="w-full flex justify-center py-16 2xl:py-28">
-        <div className="w-3/4 flex">
-          <div className="w-5/12 aspect-square">
+        <div className="w-10/12 md:w-3/4 flex flex-col gap-8 md:flex-row md:gap-0">
+          <div className="w-full md:w-5/12 aspect-square">
             <img src="/view_img.png" alt="featured story" className="w-full" />
           </div>
           <div className="flex-1 flex flex-col justify-center items-center gap-12">
-            <div className="w-3/4 flex flex-col gap-8 2xl:gap-12">
+            <div className="w-full md:w-3/4 flex flex-col gap-8 2xl:gap-12">
               <span className="flex flex-col gap-2 2xl:gap-4">
                 <h2 className="font-Anton text-5xl 2xl:text-7xl">
                   Varnish Nightclub
@@ -100,7 +101,7 @@ const SuccessStories = () => {
         </div>
       </div>
       {/* success stories */}
-      <div className="success-story-container py-16 relative bg-white w-full z-40 flex justify-center">
+      <div className="success-story-container md:py-16 relative bg-white w-full z-40 flex justify-center">
         <span className="w-10/12 md:w-9/12 flex flex-col">
           <div className="md:hidden grid grid-cols-2 gap-2 pb-4">
             <StoryCard

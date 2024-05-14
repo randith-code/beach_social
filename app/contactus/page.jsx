@@ -72,16 +72,17 @@ const ContactUs = () => {
     },
   });
   return (
-    <main ref={containerRef} className="bg-lightBlue h-screen">
+    <main ref={containerRef} className="h-screen">
       <Navbar />
       <ParticlesComponent id="partical_contact" />
-      <div className="grid place-items-center w-full h-25vh">
+      <div className="grid place-items-center w-full">
+        <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
         <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
           Contact Us
         </h1>
       </div>
 
-      <div className="values bg-white w-full flex justify-center items-center py-16 2xl:py-28">
+      <div className="values w-full flex justify-center items-center py-16 2xl:py-28">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row items-center">
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
             <div className="relative w-3/4 md:w-2/3">
@@ -110,12 +111,12 @@ const ContactUs = () => {
               </p>
               <span className="flex flex-col gap-6">
                 <span className="flex gap-4 items-center">
-                  <div className="p-2 border-2 border-cyan-400 rounded-lg hover:bg-cyan-400 cursor-pointer">
+                  <div className="group p-2 bg-cyan-400 rounded-lg hover:bg-black cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      className="w-4 h-4 2xl:w-6 2xl:h-6"
+                      className="w-4 h-4 2xl:w-6 2xl:h-6  group-hover:fill-cyan-400"
                     >
                       <path
                         fillRule="evenodd"
@@ -128,12 +129,12 @@ const ContactUs = () => {
                 </span>
 
                 <span className="flex gap-4 items-center">
-                  <div className="p-2 border-2 border-cyan-400 rounded-lg hover:bg-cyan-400 cursor-pointer">
+                  <div className="group p-2 bg-cyan-400 rounded-lg hover:bg-black cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      className="w-4 h-4 2xl:w-6 2xl:h-6"
+                      className="w-4 h-4 2xl:w-6 2xl:h-6 group-hover:fill-cyan-400"
                     >
                       <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                       <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
@@ -143,12 +144,12 @@ const ContactUs = () => {
                 </span>
 
                 <span className="flex gap-4 items-center">
-                  <div className="p-2 border-2 border-cyan-400 rounded-lg hover:bg-cyan-400 cursor-pointer">
+                  <div className="group p-2 bg-cyan-400 rounded-lg hover:bg-black cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="w-4 h-4 2xl:w-6 2xl:h-6"
+                      class="w-4 h-4 2xl:w-6 2xl:h-6  group-hover:fill-cyan-400"
                     >
                       <path
                         fill-rule="evenodd"

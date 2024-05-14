@@ -32,42 +32,63 @@ export default function Home() {
       const mm = gsap.matchMedia();
       const scroller = containerRef.current;
 
-      mm.add("(min-width: 768px)", () => {
-        let bodyScrollBar = Scrollbar.init(scroller, {
-          damping: 0.07,
-          delegateTo: document,
-        });
+      let bodyScrollBar = Scrollbar.init(scroller, {
+        damping: 0.07,
+        delegateTo: document,
+      });
 
-        bodyScrollBar.setPosition(0, 0);
+      bodyScrollBar.setPosition(0, 0);
 
-        bodyScrollBar.addListener((status) => {
-          if (status.limit.y === status.offset.y) {
-            setHitTheBottom(true);
-          } else {
-            setHitTheBottom(false);
-          }
-        });
-
-        ScrollTrigger.scrollerProxy(scroller, {
-          scrollTop(value) {
-            if (arguments.length) {
-              bodyScrollBar.scrollTop = value;
-            }
-            return bodyScrollBar.scrollTop;
-          },
-        });
-
-        bodyScrollBar.addListener(ScrollTrigger.update);
-        ScrollTrigger.defaults({ scroller: scroller });
-
-        if (document.querySelector(".gsap-marker-scroller-start")) {
-          const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
-
-          bodyScrollBar.addListener(({ offset }) => {
-            gsap.set(markers, { marginTop: -offset.y });
-          });
+      bodyScrollBar.addListener((status) => {
+        if (status.limit.y === status.offset.y) {
+          setHitTheBottom(true);
+        } else {
+          setHitTheBottom(false);
         }
+      });
 
+      bodyScrollBar.addListener(ScrollTrigger.update);
+      ScrollTrigger.defaults({ scroller: scroller });
+
+      ScrollTrigger.scrollerProxy(scroller, {
+        scrollTop(value) {
+          if (arguments.length) {
+            bodyScrollBar.scrollTop = value;
+          }
+          return bodyScrollBar.scrollTop;
+        },
+      });
+
+      if (document.querySelector(".gsap-marker-scroller-start")) {
+        const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
+
+        bodyScrollBar.addListener(({ offset }) => {
+          gsap.set(markers, { marginTop: -offset.y });
+        });
+      }
+
+      gsap.to(".top-logos", {
+        xPercent: "10",
+        scrollTrigger: {
+          trigger: ".top-logos",
+          toggleActions: "restart pause restart pause",
+          scrub: 1,
+          start: "top bottom",
+          end: "bottom top",
+        },
+      });
+      gsap.to(".bottom-logos", {
+        xPercent: "-10",
+        scrollTrigger: {
+          trigger: ".bottom-logos",
+          toggleActions: "restart complete restart pause",
+          scrub: 1,
+          start: "top bottom",
+          end: "bottom top",
+        },
+      });
+
+      mm.add("(min-width: 768px)", () => {
         gsap.to(".personal-initial", {
           scale: 6,
           opacity: 0,
@@ -711,7 +732,7 @@ export default function Home() {
             </p>
           </div>
           <div className="relative md:w-1/2">
-            <div className="hook-inner-container flex flex-col gap-32 2xl:gap-48 w-full">
+            <div className="hook-inner-container flex flex-col gap-16 md:gap-32 2xl:gap-48 w-full">
               <ListItem
                 item={"Impactful Sharing"}
                 description={
@@ -742,7 +763,7 @@ export default function Home() {
       </div>
 
       {/* recent insight */}
-      <div className="recent-insight w-full flex flex-col items-center pt-48 gap-8">
+      <div className="recent-insight w-full flex flex-col items-center pt-16 md:pt-48 gap-8">
         <div className="w-10/12 md:w-9/12 flex flex-col gap-8">
           <span className="flex font-Anton mt-8 md:mt-0">
             <h1 className="font-medium text-2xl md:text-5xl 2xl:text-6xl">

@@ -118,7 +118,7 @@ const SocialMediaMangement = () => {
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
       <ParticlesComponent id="partical_social" />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-center w-full h-[100vh]" />
-      <div className="absolute w-[30%] z-10 right-0">
+      <div className="absolute pt-40 md:pt-0 w-[30%] -z-10 right-0">
         <img
           src="/background_demo.png"
           className="w-full"
@@ -127,7 +127,7 @@ const SocialMediaMangement = () => {
       </div>
       <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
         <div className="w-3/4">
-          <div className="flex flex-col gap-6 w-2/3">
+          <div className="flex flex-col gap-6 w-full md:w-2/3">
             <h1 className="font-Anton pt-20 text-5xl 2xl:text-7xl">
               Social Media Management
             </h1>
@@ -138,7 +138,7 @@ const SocialMediaMangement = () => {
               designed to amplify your brand&apos;s online footprint and connect
               with your audience more effectively.
             </p>
-            <div className="flex 2xl:w-3/4 justify-between py-10">
+            <div className="grid grid-cols-2 md:flex 2xl:w-3/4 justify-between py-10">
               <ServiceItem
                 className="w-24 h-24"
                 img={"/fb.svg"}
@@ -168,7 +168,7 @@ const SocialMediaMangement = () => {
         </div>
       </div>
       {/* Our services */}
-      <div className="hook-container w-full flex justify-center pt-16 pb-40 bg-white">
+      <div className="hook-container w-full flex justify-center  pb-16 md:pt-16 md:pb-40 bg-white">
         <div className="w-3/4 h-fit flex flex-col md:flex-row gap-8 pt-28">
           <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
@@ -228,7 +228,7 @@ const SocialMediaMangement = () => {
 
       {/* values */}
       <div className="values bg-valuesBg w-full py-16 flex justify-center 2xl:py-28">
-        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row-reverse">
+        <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row-reverse items-center gap-8 md:gap-0">
           <div className="w-full md:w-1/2 flex items-center md:justify-end">
             <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
               <span className="flex font-Anton">
@@ -259,7 +259,7 @@ const SocialMediaMangement = () => {
             </span>
           </div>
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center py-8">
-            <div className="relative w-3/4 md:w-3/4">
+            <div className="relative w-full md:w-3/4">
               <img
                 className="absolute top-0 w-full aspect-square z-10"
                 src="/view_img.png"

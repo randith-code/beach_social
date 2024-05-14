@@ -10,9 +10,14 @@ import Overlay from "../CardModules/Overlay";
 
 const CustomNavbar = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
+  const [expand, setExpand] = useState(false);
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleExpand = () => {
+    setExpand(!expand);
   };
 
   const pathName = usePathname();
@@ -57,6 +62,9 @@ const CustomNavbar = forwardRef((props, ref) => {
     },
   });
 
+  const hidden = "animate-fade-up hidden text-2xl";
+  const visible = "block text-2xl animate-fade-down animate-once";
+
   return (
     <>
       <nav
@@ -77,7 +85,7 @@ const CustomNavbar = forwardRef((props, ref) => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-12 h-12"
               >
                 <path
                   strokeLinecap="round"
@@ -92,7 +100,7 @@ const CustomNavbar = forwardRef((props, ref) => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="w-12 h-12"
               >
                 <path
                   strokeLinecap="round"
@@ -103,7 +111,7 @@ const CustomNavbar = forwardRef((props, ref) => {
             )}
           </span>
           {open ? (
-            <span className="fixed flex flex-col bg-white md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-transparent items-center justify-around">
+            <span className="fixed flex flex-col bg-white md:hidden w-full h-screen z-50 top-0 left-0 right-0 bottom-0 bg-transparent items-center">
               <span className="w-full">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +119,7 @@ const CustomNavbar = forwardRef((props, ref) => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-6 h-6 m-4"
+                  className="w-12 h-12 m-4"
                   onClick={handleClose}
                 >
                   <path
@@ -129,9 +137,60 @@ const CustomNavbar = forwardRef((props, ref) => {
                 <a onClick={handleClose} href="/aboutus">
                   About Us
                 </a>
-                <a onClick={handleClose} href="/services">
-                  Services
-                </a>
+                <div>
+                  <span
+                    onClick={handleExpand}
+                    className="flex items-center gap-6"
+                  >
+                    <p className="text-4xl">Services</p>
+                    {expand ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        className="w-8 h-8"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        className="w-8 h-8"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    )}
+                  </span>
+                  <span className={expand ? visible : hidden}>
+                    <ul className="flex flex-col pt-4 gap-4">
+                      <Link href="/socialmediamanagement">
+                        <li onClick={handleClose}>Social Media Management</li>
+                      </Link>
+                      <li
+                        onClick={() => {
+                          handleClose();
+                          handleFormOpen();
+                        }}
+                      >
+                        Other Services
+                      </li>
+                    </ul>
+                  </span>
+                </div>
                 <a onClick={handleClose} href="/successstories">
                   Success stories
                 </a>
@@ -245,11 +304,13 @@ const CustomNavbar = forwardRef((props, ref) => {
       </nav>
 
       {formOpen ? (
-        <Overlay className={"bg-backgroundBlur grid place-content-center"}>
+        <Overlay
+          className={"bg-backgroundBlur grid place-content-center z-100"}
+        >
           <>
             <div className={`contactus flex flex-col w-full`}>
               <div className="grid place-items-center">
-                <div className="w-9/12 flex flex-col bg-black pb-10 2xl:pb-16">
+                <div className="w-9/12 flex flex-col bg-black pb-6 md:pb-10 2xl:pb-16">
                   <div className="flex w-full justify-end">
                     <Image
                       src="/close_button.png"
@@ -257,7 +318,7 @@ const CustomNavbar = forwardRef((props, ref) => {
                       width={20}
                       height={20}
                       alt="close button"
-                      className="cursor-pointer m-8"
+                      className="cursor-pointer m-4 md:m-8 "
                     />
                   </div>
                   {submited ? (
@@ -362,14 +423,14 @@ const CustomNavbar = forwardRef((props, ref) => {
                         </span>
                       </div>
                       {/* contact form */}
-                      <div className="flex 2xl:flex-col items-center">
+                      <div className="flex flex-col md:flex-row 2xl:flex-col items-center">
                         <div className="w-full md:pb-8 h-full grid place-items-center">
-                          <span className="w-9/12 flex flex-col gap-4">
+                          <span className="w-10/12 md:w-9/12 flex flex-col gap-4">
                             <span className="flex flex-col">
                               <h1 className="font-extrabold text-xl md:text-3xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
                                 SocialReach Nexus
                               </h1>
-                              <h1 className="font-extrabold text-white text-xl 2xl:text-3xl pt-4">
+                              <h1 className="font-extrabold text-white text-lg md:text-xl 2xl:text-3xl pt-4">
                                 Do you want to know more about Our Services?
                               </h1>
                             </span>
@@ -385,9 +446,9 @@ const CustomNavbar = forwardRef((props, ref) => {
                             </p>
                           </span>
                         </div>
-                        <div className="w-full h-full grid place-items-center pt-10 2xl:pt-16">
+                        <div className="w-full h-full grid place-items-center pt-6 md:pt-10 2xl:pt-16">
                           <form
-                            className="flex flex-col w-9/12 text-sm 2xl:text-base gap-4 2xl:gap-8 py-4 md:py-0"
+                            className="flex flex-col w-10/12  md:w-9/12 text-xs md:text-sm 2xl:text-base gap-4 2xl:gap-8 py-4 md:py-0"
                             action=""
                             onSubmit={formik.handleSubmit}
                           >
