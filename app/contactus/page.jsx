@@ -85,7 +85,7 @@ const ContactUs = () => {
       <div className="values w-full flex justify-center items-center py-16 2xl:py-28">
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row items-center">
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
-            <div className="relative w-3/4 md:w-2/3">
+            <div className="relative w-full md:w-2/3">
               <img
                 className="absolute top-0 w-full aspect-square z-10"
                 src="/view_img.png"
