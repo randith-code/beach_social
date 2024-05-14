@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -59,6 +59,63 @@ const SuccessStories = () => {
     });
   });
 
+  const notSelected = `h-2 w-8 bg-white rounded-lg cursor-pointer`;
+  const selected = `h-2 w-10 bg-cyan-400 rounded-lg cursor-pointer`;
+
+  const [imageIndicater, setImageIndicater] = useState({
+    section1: selected,
+    section2: notSelected,
+    section3: notSelected,
+    section4: notSelected,
+    section5: notSelected,
+  });
+  const [tracker, setTracker] = useState(1);
+  const [heroImage, setHeroImage] = useState("/view_img.png");
+
+  useEffect(() => {
+    if (tracker == 1) {
+      setImageIndicater({
+        section1: selected,
+        section2: notSelected,
+        section3: notSelected,
+        section4: notSelected,
+        section5: notSelected,
+      });
+    } else if (tracker == 2) {
+      setImageIndicater({
+        section1: notSelected,
+        section2: selected,
+        section3: notSelected,
+        section4: notSelected,
+        section5: notSelected,
+      });
+    } else if (tracker == 3) {
+      setImageIndicater({
+        section1: notSelected,
+        section2: notSelected,
+        section3: selected,
+        section4: notSelected,
+        section5: notSelected,
+      });
+    } else if (tracker == 4) {
+      setImageIndicater({
+        section1: notSelected,
+        section2: notSelected,
+        section3: notSelected,
+        section4: selected,
+        section5: notSelected,
+      });
+    } else {
+      setImageIndicater({
+        section1: notSelected,
+        section2: notSelected,
+        section3: notSelected,
+        section4: notSelected,
+        section5: selected,
+      });
+    }
+  }, [tracker]);
+
   const handleOpenContact = () => {
     setOpenContact(true);
   };
@@ -75,8 +132,45 @@ const SuccessStories = () => {
       {/* feature success story */}
       <div className="w-full flex justify-center py-16 2xl:py-28">
         <div className="w-10/12 md:w-3/4 flex flex-col gap-8 lg:flex-row lg:gap-0">
-          <div className="w-full lg:w-5/12 aspect-square">
-            <img src="/view_img.png" alt="featured story" className="w-full" />
+          <div className="relative w-full flex justify-center lg:w-5/12 aspect-square">
+            <img src={heroImage} alt="featured story" className="w-full" />
+            <div className="absolute bottom-10 flex justify-around w-2/3 z-50">
+              <div
+                onClick={() => {
+                  setTracker(1);
+                  setHeroImage("/view_img.png");
+                }}
+                className={imageIndicater.section1}
+              />
+              <div
+                onClick={() => {
+                  setTracker(2);
+                  setHeroImage("/view_img1.png");
+                }}
+                className={imageIndicater.section2}
+              />
+              <div
+                onClick={() => {
+                  setTracker(3);
+                  setHeroImage("/view_img2.png");
+                }}
+                className={imageIndicater.section3}
+              />
+              <div
+                onClick={() => {
+                  setTracker(4);
+                  setHeroImage("/view_img3.png");
+                }}
+                className={imageIndicater.section4}
+              />
+              <div
+                onClick={() => {
+                  setTracker(5);
+                  setHeroImage("/view_img4.png");
+                }}
+                className={imageIndicater.section5}
+              />
+            </div>
           </div>
           <div className="flex-1 flex flex-col justify-center items-center gap-12">
             <div className="w-full lg:w-3/4 flex flex-col gap-8 2xl:gap-12">

@@ -35,6 +35,10 @@ module.exports = {
       zIndex: {
         100: "10000",
       },
+      backgroundSize: {
+        "120%": "120%",
+        "100%": "100%",
+      },
     },
   },
   plugins: [
