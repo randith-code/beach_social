@@ -8,7 +8,7 @@ const Overlay = ({ children, className }) => {
 
   return ReactDOM.createPortal(
     <div
-      className={`overlay absolute top-0 left-0 right-0 bottom-0 h-screen w-full ${className}`}
+      className={`overlay z-100 absolute top-0 left-0 right-0 bottom-0 h-screen w-full ${className}`}
     >
       {children}
     </div>,

@@ -160,8 +160,12 @@ const Footer = ({ handlePopUpOpen }) => {
           Managed by Ulix Digital.
         </p>
         <span className="flex gap-1 md:gap-4">
-          <p>Terms & Agreements</p>
-          <p>Privacy Policy</p>
+          <Link href="/termsandagreements">
+            <p>Terms & Agreements</p>
+          </Link>
+          <Link href="/privacypolicy">
+            <p>Privacy Policy</p>
+          </Link>
         </span>
       </div>
     </footer>

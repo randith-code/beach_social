@@ -2,6 +2,9 @@ import apiInstance from "./axiosInstance";
 
 export const getHeroContent = () => apiInstance.get("/posts/25");
 
-export const getInsightPost1 = () => apiInstance.get("/posts/73");
-export const getInsightPost2 = () => apiInstance.get("/posts/75");
-export const getInsightPost3 = () => apiInstance.get("/posts/77");
+export const getInsightPosts = () =>
+  apiInstance.get("/recent-insight?_field=featured_image&acf_format=standard");
+
+export const getSuccessStories = () => {
+  apiInstance.get("/case-study?_field=featured_image&acf_format=standard");
+};

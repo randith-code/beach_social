@@ -14,7 +14,7 @@ import ContactUsPopUP from "./components/ContactUs/ContactUsPopUp";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
 import Overlay from "./components/CardModules/Overlay";
-import { getInsightPost1, getInsightPost2, getInsightPost3 } from "./api/posts";
+import { getInsightPosts } from "./api/posts";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -313,29 +313,12 @@ export default function Home() {
     { scope: containerRef.current }
   );
 
-  const [insightContent1, setInsightContent1] = useState();
-  const [insightContent2, setInsightContent2] = useState();
-  const [insightContent3, setInsightContent3] = useState();
+  const [insightContent, setInsightContent] = useState([]);
 
   const handleDataFetch = async () => {
-    const res1 = await getInsightPost1();
-    const res2 = await getInsightPost2();
-    const res3 = await getInsightPost3();
-
-    setInsightContent1({
-      title: res1.data.title.rendered,
-      content: res1.data.excerpt.rendered,
-    });
-
-    setInsightContent2({
-      title: res2.data.title.rendered,
-      content: res2.data.excerpt.rendered,
-    });
-
-    setInsightContent3({
-      title: res3.data.title.rendered,
-      content: res3.data.excerpt.rendered,
-    });
+    const res = await getInsightPosts();
+    console.log(res.data);
+    setInsightContent(res.data);
   };
 
   const handleContactEnter = contextSafe(() => {
@@ -791,28 +774,17 @@ export default function Home() {
             </h1>
           </span>
           <div className="w-full flex flex-col">
-            <span className="w-full flex flex-col lg:flex-row gap-6 lg:gap-2 2xl:gap-2">
-              {insightContent1 ? (
-                <InsightCard
-                  img={"/insight_3.png"}
-                  title={insightContent1.title}
-                  description={insightContent1.content}
-                />
-              ) : null}
-              {insightContent2 ? (
-                <InsightCard
-                  img={"/insight_2.png"}
-                  title={insightContent2.title}
-                  description={insightContent2.content}
-                />
-              ) : null}
-              {insightContent3 ? (
-                <InsightCard
-                  img={"/insight_1.png"}
-                  title={insightContent3.title}
-                  description={insightContent3.content}
-                />
-              ) : null}
+            <span className="w-full h-fit flex justify-stretch flex-col lg:flex-row gap-6 lg:gap-2 2xl:gap-2">
+              {insightContent
+                ? insightContent.map((insight) => (
+                    <InsightCard
+                      key={insight.id}
+                      title={insight.acf.insight_title}
+                      description={insight.acf.insight_content}
+                      img={insight.acf.featured_image}
+                    />
+                  ))
+                : null}
             </span>
           </div>
         </div>
