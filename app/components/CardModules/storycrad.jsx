@@ -11,7 +11,7 @@ const StoryCard = ({ img, title, description, isLarge }) => {
     : "md:w-full aspect-square bg-center rounded-xl md:rounded-3xl cursor-pointer";
 
   const widthLink = isLarge
-    ? "md:w-6/12 aspect-square cursor-pointer"
+    ? "md:w-6/12 aspect-square md:aspect-video cursor-pointer"
     : "md:w-4/12 aspect-square cursor-pointer";
   return (
     <Link
