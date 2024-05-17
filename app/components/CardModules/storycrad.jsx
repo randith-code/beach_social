@@ -1,7 +1,20 @@
 "use client";
 import Link from "next/link";
+import parse from "html-react-parser";
 
-const StoryCard = ({ img, title, description, isLarge }) => {
+const StoryCard = ({
+  img,
+  title,
+  description,
+  isLarge,
+  about_client,
+  about_client_image,
+  casestudy_hero,
+  our_goal,
+  our_goal_image,
+  project_title,
+  service,
+}) => {
   const cardStyle = {
     backgroundImage: `url('${img}')`,
   };
@@ -19,9 +32,13 @@ const StoryCard = ({ img, title, description, isLarge }) => {
       href={{
         pathname: "/casestudy",
         query: {
-          img,
-          title,
-          description,
+          about_client,
+          about_client_image,
+          casestudy_hero,
+          our_goal,
+          our_goal_image,
+          project_title,
+          service,
         },
       }}
     >
@@ -33,7 +50,7 @@ const StoryCard = ({ img, title, description, isLarge }) => {
           <h2 className="text-white text-xs md:text-lg font-semibold">
             {title}
           </h2>
-          <p className="text-white text-xxs md:text-xs font-reguler">
+          <p className="text-white text-xxs md:text-xs font-reguler line-clamp-1">
             {description}
           </p>
         </div>

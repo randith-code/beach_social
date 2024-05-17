@@ -1,11 +1,11 @@
 "use client";
-import { useState, useRef } from "react";
-
+import { useState, useRef, Suspense } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Scrollbar from "smooth-scrollbar";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 import CustomNavbar from "../components/Navigation/CustomNavBar";
 import Footer from "../components/Navigation/Footer";
@@ -26,6 +26,7 @@ const CaseStudy = () => {
   };
 
   const containerRef = useRef();
+  const searchParams = useSearchParams();
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -66,18 +67,21 @@ const CaseStudy = () => {
       duration: 0.4,
     });
   });
+
   return (
     <main ref={containerRef} className="h-screen">
       <CustomNavbar />
       <ParticlesComponent />
-      <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
+      <div className="absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
       <div className="w-full flex justify-center">
         <div className="w-3/4">
           <div className="w-full flex py-28">
             <div className="w-1/2 flex flex-col gap-16">
               <span className="flex flex-col gap-2">
                 <p className="font-semibold text-lg font-Roboto">Case Study</p>
-                <h1 className="font-Anton text-6xl">OKI Scoop Shop & Donuts</h1>
+                <h1 className="font-Anton text-6xl">
+                  {searchParams.get("project_title")}
+                </h1>
               </span>
               <span className="flex flex-col gap-4">
                 <h2 className="text-5xl font-Roboto">Services :</h2>
@@ -101,7 +105,7 @@ const CaseStudy = () => {
             <div className="w-1/2">
               <img
                 className="w-full h-full"
-                src="/case_study_1.png"
+                src={searchParams.get("casestudy_hero")}
                 alt="case study hero"
               />
             </div>
@@ -111,55 +115,28 @@ const CaseStudy = () => {
             <div className="w-5/12">
               <img
                 className="w-full h-full"
-                src="/client_about_casestudy.png"
+                src={searchParams.get("about_client_image")}
                 alt="case_study_item_1"
               />
             </div>
 
             <div className="w-7/12 flex flex-col justify-center gap-8">
               <h1 className="font-Anton text-5xl">About Client</h1>
-              <p>
-                Founded in the vibrant heart of North carolina, Beach Social
-                started with a simple vision: to bridge the gap between digital
-                communication and genuine human connections. Inspired by the
-                boundless spirit of the beach, where diverse paths meet and
-                create unique patterns in the sand, we set out to craft a social
-                media platform that captures this essence. Our journey began in
-                2023, driven by a passion to redefine online interaction and
-                make social media a more inclusive, engaging, and uplifting
-                space.
-              </p>
-              <p>
-                At Beach Social, our mission is simple to empower individuals
-                and businesses alike to create meaningful relationships through
-                our innovative social media solutions. We believe in the power
-                of connection and the impact it can have on both personal growth
-                and business success. Our platform is designed to not only
-                provide the tools for effective communication but to also foster
-                a community where every wave and whisper adds value.
-              </p>
+              <p>{searchParams.get("about_client")}</p>
             </div>
           </div>
 
           <div className="w-full flex gap-20 py-28">
             <div className="w-1/2 flex flex-col justify-center gap-8">
               <h1 className="font-Anton text-5xl">Our Goal</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                in turpis quam. Pellentesque pretium, nisi quis pharetra porta,
-                tellus arcu laoreet turpis, vitae sagittis erat dolor nec diam.
-                In interdum augue mauris, non sodales mauris pharetra ut. Nunc
-                ullamcorper augue a lorem pellentesque viverra. Donec neque
-                quam, facilisis vitae mi eu, fermentum commodo elit. Quisque ac
-                rutrum tortor, sit amet congue arcu. Morbi posuere augue et
-                ipsum euismod facilisis. Maecenas congue, lacus nec rutrum
-                dictum, velit arcu tincidunt est, nec sodales dui eros faucibus
-                diam.
-              </p>
+              <p>{searchParams.get("our_goal")}</p>
             </div>
 
             <div className="w-1/2">
-              <img src="case_study_2.png" alt="case_study_item_1" />
+              <img
+                src={searchParams.get("our_goal_image")}
+                alt="case_study_item_1"
+              />
             </div>
           </div>
         </div>
@@ -213,4 +190,10 @@ const CaseStudy = () => {
   );
 };
 
-export default CaseStudy;
+export default function WrappedCaseStudy() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CaseStudy />
+    </Suspense>
+  );
+}

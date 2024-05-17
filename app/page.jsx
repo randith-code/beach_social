@@ -14,7 +14,7 @@ import ContactUsPopUP from "./components/ContactUs/ContactUsPopUp";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
 import Overlay from "./components/CardModules/Overlay";
-import { getInsightPosts } from "./api/posts";
+import { getInsightPosts, getSuccessStoryPosts } from "./api/posts";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -314,11 +314,18 @@ export default function Home() {
   );
 
   const [insightContent, setInsightContent] = useState([]);
+  const [successStories, setSuccessStories] = useState([]);
 
   const handleDataFetch = async () => {
-    const res = await getInsightPosts();
-    console.log(res.data);
-    setInsightContent(res.data);
+    try {
+      const res = await getInsightPosts();
+      const resStory = await getSuccessStoryPosts();
+      setSuccessStories(resStory.data);
+      console.log(resStory.data);
+      setInsightContent(res.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   const handleContactEnter = contextSafe(() => {
@@ -651,12 +658,21 @@ export default function Home() {
           </div>
           <div className="hidden md:flex flex-col gap-1 md:gap-6 py-8">
             <div className="stories-line1 flex justify-between gap-6">
-              <StoryCard
-                img="/view_img.png"
-                title={"Varnish Nightclub"}
-                description={"Revolutionizing Nightlife Marketing Background"}
-                isLarge={false}
-              />
+              {successStories[0] ? (
+                <StoryCard
+                  img={successStories[0].acf.casestudy_hero}
+                  title={successStories[0].acf.project_title}
+                  description={successStories[0].acf.about_client}
+                  isLarge={false}
+                  about_client={successStories[0].acf.about_client}
+                  about_client_image={successStories[0].acf.about_client_image}
+                  casestudy_hero={successStories[0].acf.casestudy_hero}
+                  our_goal={successStories[0].acf.our_goal}
+                  our_goal_image={successStories[0].acf.our_goal_image}
+                  project_title={successStories[0].acf.project_title}
+                  service={successStories[0].acf.service}
+                />
+              ) : null}
               <StoryCard
                 img="/view_img.png"
                 title={"Varnish Nightclub"}
