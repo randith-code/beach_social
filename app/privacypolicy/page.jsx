@@ -64,15 +64,15 @@ const PrivacyPolicy = () => {
             Privacy Policy
           </h1>
           <p>
-            The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
+            The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum
             dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
             ea commodo consequat. Duis aute irure dolor in reprehenderit in
             voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum." Section 1.10.32 of "de
-            Finibus Bonorum et Malorum", written by Cicero in 45 BC "Sed ut
+            officia deserunt mollit anim id est laborum. Section 1.10.32 of de
+            Finibus Bonorum et Malorum, written by Cicero in 45 BC Sed ut
             perspiciatis unde omnis iste natus error sit voluptatem accusantium
             doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
             inventore veritatis et quasi architecto beatae vitae dicta sunt
@@ -86,11 +86,11 @@ const PrivacyPolicy = () => {
             aliquid ex ea commodi consequatur? Quis autem vel eum iure
             reprehenderit qui in ea voluptate velit esse quam nihil molestiae
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-            pariatur?" 1914 translation by H. Rackham "But I must explain to you
+            pariatur? 1914 translation by H. Rackham But I must explain to you
             how all this mistaken idea of denouncing pleasure and praising pain
             was born and I will give you a complete account of the system, and
             expound the actual teachings of the great explorer of the truth, the
-            master-builder of human happiness. No one rejects, dislikes, or
+            masterbuilder of human happiness. No one rejects, dislikes, or
             avoids pleasure itself, because it is pleasure, but because those
             who do not know how to pursue pleasure rationally encounter
             consequences that are extremely painful. Nor again is there anyone
@@ -101,8 +101,8 @@ const PrivacyPolicy = () => {
             except to obtain some advantage from it? But who has any right to
             find fault with a man who chooses to enjoy a pleasure that has no
             annoying consequences, or one who avoids a pain that produces no
-            resultant pleasure?" Section 1.10.33 of "de Finibus Bonorum et
-            Malorum", written by Cicero in 45 BC "At vero eos et accusamus et
+            resultant pleasure? Section 1.10.33 of de Finibus Bonorum et
+            Malorum, written by Cicero in 45 BC At vero eos et accusamus et
             iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
             deleniti atque corrupti quos dolores et quas molestias excepturi
             sint occaecati cupiditate non provident, similique sunt in culpa qui
@@ -115,7 +115,7 @@ const PrivacyPolicy = () => {
             voluptates repudiandae sint et molestiae non recusandae. Itaque
             earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
             voluptatibus maiores alias consequatur aut perferendis doloribus
-            asperiores repellat." 1914 translation by H. Rackham "On the other
+            asperiores repellat. 1914 translation by H. Rackham On the other
             hand, we denounce with righteous indignation and dislike men who are
             so beguiled and demoralized by the charms of pleasure of the moment,
             so blinded by desire, that they cannot foresee the pain and trouble
@@ -129,8 +129,8 @@ const PrivacyPolicy = () => {
             of duty or the obligations of business it will frequently occur that
             pleasures have to be repudiated and annoyances accepted. The wise
             man therefore always holds in these matters to this principle of
-            selection: he rejects pleasures to secure other greater pleasures,
-            or else he endures pains to avoid worse pains."
+            selection he rejects pleasures to secure other greater pleasures, or
+            else he endures pains to avoid worse pains.
           </p>
         </div>
       </div>

@@ -505,7 +505,6 @@ const CustomNavbar = forwardRef((props, ref) => {
                             >
                               Social Media Advertising
                             </option>
-                            value="Social Media Advertising"
                             <option
                               className="bg-black"
                               value="Social Media Consulting"

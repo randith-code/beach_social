@@ -242,7 +242,6 @@ const ContactUsPopUP = ({ open, handelPopUpClose }) => {
                         >
                           Social Media Advertising
                         </option>
-                        value="Social Media Advertising"
                         <option
                           className="bg-black"
                           value="Social Media Consulting"
