@@ -7,9 +7,9 @@ import Instagram from "../icons/Instagram";
 const Footer = ({ handlePopUpOpen }) => {
   return (
     <footer className="relative flex flex-col w-full items-center z-40 bg-black text-white font-normal text-sm 2xl:texl-xl">
-      <div className="flex w-full pt-16 pb-8 border-b-2 border-opacity-20 border-white justify-center 2xl:pt-28 2xl:pb-14">
+      <div className="flex w-full pt-16 pb-8 justify-center 2xl:pt-28 2xl:pb-14">
         {/* inner-container */}-
-        <div className="flex flex-col lg:flex-row justify-center w-10/12 md:w-9/12">
+        <div className="flex flex-col lg:flex-row justify-center w-10/12 md:w-9/12 border-b-2 pb-8 border-opacity-20 border-white">
           <div className="w-full lg:w-1/4 flex flex-col gap-4">
             <Link href="/">
               <img className="w-3/5" src="/footer_logo.png" alt="footer logo" />
@@ -154,7 +154,7 @@ const Footer = ({ handlePopUpOpen }) => {
           </div>
         </div>
       </div>
-      <div className="flex w-10/12 text-xxs md:text-xs 2xl:text-sm  md:w-9/12 justify-between py-4 font-light">
+      <div className="flex w-10/12 text-xxs md:text-xs 2xl:text-sm  md:w-9/12 justify-between pt-4 pb-16 font-light">
         <p>
           © 2023 BeachSocial . Copyright and All rights reserved. Developed and
           Managed by Ulix Digital.
