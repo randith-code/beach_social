@@ -16,6 +16,7 @@ import {
   ThirdFeatureCard,
   FourthFeatureCard,
 } from "./FeaturesCard";
+import Link from "next/link";
 
 const Hero = () => {
   const [content, setContent] = useState();
@@ -99,13 +100,15 @@ const Hero = () => {
         <p className="main-content font-medium 2xl:text-xl text-sm w-10/12 md:w-2/5 text-center">
           {description}
         </p>
-        <button className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6">
-          <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
-            Get in Touch
-          </p>
-        </button>
+        <Link href="/contactus">
+          <button className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6">
+            <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
+              Get in Touch
+            </p>
+          </button>
+        </Link>
       </div>
-      <div className="absolute hidden w-full h-full inset-0 -z-10 md:flex justify-between">
+      <div className="absolute top-0 left-0 right-0  hidden w-full h-full inset-0 -z-10 md:flex justify-between">
         <LeftArc className="arcs" ref={leftArcRef} />
         <RightArc className="arcs" ref={rightArcRef} />
       </div>

@@ -13,6 +13,7 @@ import OurValuesItem from "../components/CardModules/OurValuesItem";
 import StoryCard from "../components/CardModules/storycrad";
 import ServiceItem from "../components/CardModules/ServiceItem";
 import ParticlesComponent from "../components/Hero section/Particle";
+import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -20,6 +21,14 @@ gsap.registerPlugin(useGSAP);
 const SocialMediaMangement = () => {
   const [openContact, setOpenContact] = useState(false);
   const containerRef = useRef();
+  const [popUpOpen, setPopUpOpen] = useState(false);
+
+  const handlePopUpOpen = () => {
+    setPopUpOpen(true);
+  };
+  const handlePopUpClose = () => {
+    setPopUpOpen(false);
+  };
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -149,7 +158,7 @@ const SocialMediaMangement = () => {
                 className="w-24 h-24"
                 img={"/x.svg"}
                 hoverImage={"/x_hover.svg"}
-                title="X"
+                title="Twitter"
               />
               <ServiceItem
                 className="w-24 h-24"
@@ -387,7 +396,8 @@ const SocialMediaMangement = () => {
           </Link>
         </div>
       </div>
-      <Footer />
+      <ContactUsPopUP open={popUpOpen} handelPopUpClose={handlePopUpClose} />
+      <Footer handlePopUpOpen={handlePopUpOpen} />
     </main>
   );
 };

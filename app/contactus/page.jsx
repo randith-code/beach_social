@@ -11,6 +11,7 @@ import { sendMessage } from "@/app/api/contactForm";
 import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
 import ParticlesComponent from "../components/Hero section/Particle";
+import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -20,6 +21,14 @@ const ContactUs = () => {
   const [submited, setSubmited] = useState(false);
   const [message, setMessage] = useState("");
   const containerRef = useRef();
+  const [popUpOpen, setPopUpOpen] = useState(false);
+
+  const handlePopUpOpen = () => {
+    setPopUpOpen(true);
+  };
+  const handlePopUpClose = () => {
+    setPopUpOpen(false);
+  };
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -169,7 +178,9 @@ const ContactUs = () => {
       </div>
 
       <>
-        <div className={`contactus bg-white flex flex-col w-full`}>
+        <div
+          className={`relative contactus flex flex-col w-full opacity-100 z-100`}
+        >
           <div className="grid place-items-center py-28">
             <div className="w-9/12 flex flex-col bg-black py-10 2xl:py-28">
               {submited ? (
@@ -347,7 +358,8 @@ const ContactUs = () => {
         </div>
       </>
 
-      <Footer />
+      <ContactUsPopUP open={popUpOpen} handelPopUpClose={handlePopUpClose} />
+      <Footer handlePopUpOpen={handlePopUpOpen} />
     </main>
   );
 };

@@ -13,6 +13,8 @@ import OurValuesItem from "../components/CardModules/OurValuesItem";
 import TeamMemberCard from "../components/CardModules/TeamMemberCard";
 import ServiceItem from "../components/CardModules/ServiceItem";
 import ParticlesComponent from "../components/Hero section/Particle";
+import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
+import ClickAndDragScroll from "../components/CardModules/ClickAndDragScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -20,6 +22,14 @@ gsap.registerPlugin(useGSAP);
 const AboutUs = () => {
   const [openContact, setOpenContact] = useState(false);
   const containerRef = useRef();
+  const [popUpOpen, setPopUpOpen] = useState(false);
+
+  const handlePopUpOpen = () => {
+    setPopUpOpen(true);
+  };
+  const handlePopUpClose = () => {
+    setPopUpOpen(false);
+  };
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -146,43 +156,65 @@ const AboutUs = () => {
       </div>
       {/* services */}
       <div className="w-full py-20 flex justify-center">
-        <div className="w-3/4 grid grid-cols-3 lg:flex md:justify-between gap-14">
-          <ServiceItem
-            img={"/chatbot.svg"}
-            hoverImage={"/chatbot_hover.svg"}
-            title={"Chatbots"}
-            className={"2xl:w-32"}
-          />
-          <ServiceItem
-            img={"/management.svg"}
-            hoverImage={"/management_hover.svg"}
-            title={"Social Media Management"}
-            className={"2xl:w-32"}
-          />
-          <ServiceItem
-            img={"/advertising.svg"}
-            hoverImage={"/advertising_hover.svg"}
-            title={"Social Media Advertising"}
-            className={"2xl:w-32"}
-          />
-          <ServiceItem
-            img={"/consulting.svg"}
-            hoverImage={"/consulting_hover.svg"}
-            title={"Social Media Consulting"}
-            className={"2xl:w-32 aspect-square"}
-          />
-          <ServiceItem
-            img={"/promotion.svg"}
-            hoverImage={"/promotion_hover.svg"}
-            title={"Event Promotion"}
-            className={"2xl:w-32"}
-          />
-          <ServiceItem
-            img={"/copy_writing.svg"}
-            hoverImage={"/copy_writing_hover.svg"}
-            title={"Copy Writing"}
-            className={"2xl:w-32"}
-          />
+        <div className="relative  whitespace-nowrap w-3/4 grid grid-cols-3 lg:flex lg:overflow-x-scroll lg:h-fit no-scrollbar gap-20">
+          <ClickAndDragScroll className={"w-full flex gap-20 no-scrollbar"}>
+            <ServiceItem
+              img={"/web_design.svg"}
+              hoverImage={"/web_design_hover.svg"}
+              title={"Web Designing"}
+              className={"w-full"}
+            />
+            <ServiceItem
+              img={"/management.svg"}
+              hoverImage={"/management_hover.svg"}
+              title={"Social Media Management"}
+              className={"w-full"}
+            />
+            <ServiceItem
+              img={"/advertising.svg"}
+              hoverImage={"/advertising_hover.svg"}
+              title={"Social Media Advertising"}
+              className={"w-full"}
+            />
+            <ServiceItem
+              img={"/consulting.svg"}
+              hoverImage={"/consulting_hover.svg"}
+              title={"Social Media Consulting"}
+              className={"w-full"}
+            />
+            <ServiceItem
+              img={"/promotion.svg"}
+              hoverImage={"/promotion_hover.svg"}
+              title={"Event Promotion"}
+              className={"w-full"}
+            />
+            <ServiceItem
+              img={"/copy_writing.svg"}
+              hoverImage={"/copy_writing_hover.svg"}
+              title={"Copy Writing"}
+              className={"w-full"}
+            />
+            <ServiceItem
+              img={"/email_sms_campaign.svg"}
+              hoverImage={"/email_sms_campaign_hover.svg"}
+              title={"Email / SMS Campaign"}
+              className={"w-full 2xl:w-32"}
+            />
+            <ServiceItem
+              img={"/google_ad_campaign.svg"}
+              hoverImage={"/google_ad_campaign_hover.svg"}
+              title={"Google awards Campaign"}
+              className={"w-full 2xl:w-32"}
+            />
+            <ServiceItem
+              img={"/creative_design.svg"}
+              hoverImage={"/creative_design_hover.svg"}
+              title={"Creative Designs"}
+              className={"w-full"}
+            />
+          </ClickAndDragScroll>
+          {/* <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-gray-300 to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-black to-transparent pointer-events-none"></div> */}
         </div>
       </div>
 
@@ -386,7 +418,8 @@ const AboutUs = () => {
           </Link>
         </div>
       </div>
-      <Footer />
+      <ContactUsPopUP open={popUpOpen} handelPopUpClose={handlePopUpClose} />
+      <Footer handlePopUpOpen={handlePopUpOpen} />
     </main>
   );
 };

@@ -1,8 +1,8 @@
 const Facebook = () => {
   return (
-    <div className="grid place-items-center bg-white aspect-square p-2 rounded-lg cursor-pointer hover:bg-cyan-400">
+    <div className="grid place-items-center bg-white aspect-square py-1 px-2 rounded-lg cursor-pointer hover:bg-cyan-400">
       <svg
-        className="w-5 aspect-square"
+        className="w-4 h-4 aspect-square"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

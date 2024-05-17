@@ -72,11 +72,13 @@ const CustomNavbar = forwardRef((props, ref) => {
         className={`${props.className} flex z-100 items-center justify-center w-full py-8`}
       >
         <span className="flex items-center justify-between w-3/4">
-          <img
-            className="h-12 2xl:h-16"
-            src="http://www.beachsocial.leadmedia.lk/wp-content/uploads/2024/04/beach_social_logo.png"
-            alt="beach social logo"
-          />
+          <Link href={"/"}>
+            <img
+              className="h-12 2xl:h-16"
+              src="http://www.beachsocial.leadmedia.lk/wp-content/uploads/2024/04/beach_social_logo.png"
+              alt="beach social logo"
+            />
+          </Link>
           <span onClick={() => setOpen(!open)} className="lg:hidden">
             {open ? (
               <svg
@@ -205,7 +207,7 @@ const CustomNavbar = forwardRef((props, ref) => {
               </span>
             </span>
           ) : null}
-          <span className="hidden lg:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-sm 2xl:text-xl">
+          <span className="hidden lg:flex gap-16 items-center font-medium justify-around md:text-xs lg:text-base 2xl:text-xl">
             <span className="flex items-center gap-6 2xl:gap-10">
               <a
                 className={
@@ -309,16 +311,16 @@ const CustomNavbar = forwardRef((props, ref) => {
         >
           <>
             <div className={`contactus flex flex-col w-full`}>
-              <div className="grid place-items-center">
-                <div className="w-9/12 flex flex-col bg-black pb-6 md:pb-10 2xl:pb-16">
-                  <div className="flex w-full justify-end">
+              <div className="bg-backgroundBlur grid place-items-center h-screen">
+                <div className="w-10/12 h-5/6 flex flex-col bg-black">
+                  <div className="w-full flex justify-end">
                     <Image
                       src="/close_button.png"
                       onClick={() => setFormOpen(false)}
                       width={20}
                       height={20}
                       alt="close button"
-                      className="cursor-pointer m-4 md:m-8 "
+                      className="cursor-pointer m-8"
                     />
                   </div>
                   {submited ? (
@@ -410,97 +412,142 @@ const CustomNavbar = forwardRef((props, ref) => {
                       </svg>
                     </div>
                   ) : (
-                    <div className="flex flex-col gap-8 items-center flex-1">
-                      <div className="w-full flex flex-col md:flex-row">
-                        <span className="w-3/4 flex justify-center">
-                          <span className="w-9/12 2xl:w-8/12">
-                            <img
-                              className="w-2/5"
-                              src="/footer_logo.png"
-                              alt=""
-                            />
+                    <div className="flex flex-col md:flex-row md:items-center flex-1">
+                      <div className="w-full md:w-1/2 md:pb-8 h-full grid place-items-center">
+                        <span className="w-8/12 flex flex-col gap-4">
+                          <img
+                            className="w-2/5"
+                            src="/footer_logo.png"
+                            alt=""
+                          />
+                          <span className="flex flex-col">
+                            <h1 className="font-extrabold text-xl md:text-3xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
+                              SocialReach Nexus
+                            </h1>
+                            <h1 className="font-extrabold text-white text-xl md:text-3xl">
+                              Let&apos;s Connect and Elevate Your Presence!
+                            </h1>
                           </span>
+                          <p className="font-light text-xs md:text-base text-white">
+                            let&apos;s weave the threads of innovation,
+                            creativity, and strategy to magnetize your social
+                            media presence. Our team is here to turn your
+                            digital dreams into reality. Ready to make waves in
+                            the social sphere? Contact us now, and let the
+                            social magic begin!
+                          </p>
                         </span>
                       </div>
-                      {/* contact form */}
-                      <div className="flex flex-col md:flex-row 2xl:flex-col items-center">
-                        <div className="w-full md:pb-8 h-full grid place-items-center">
-                          <span className="w-10/12 md:w-9/12 flex flex-col gap-4">
-                            <span className="flex flex-col">
-                              <h1 className="font-extrabold text-xl md:text-3xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
-                                SocialReach Nexus
-                              </h1>
-                              <h1 className="font-extrabold text-white text-lg md:text-xl 2xl:text-3xl pt-4">
-                                Do you want to know more about Our Services?
-                              </h1>
-                            </span>
-                            <p className="font-light text-xs md:text-sm 2xl:text-base text-white">
-                              Ready to elevate your digital footprint?
-                              Let&apos;s intertwine innovation, creativity, and
-                              strategy to amplify your social media presence.
-                              Our dedicated team is poised to turn your digital
-                              aspirations into tangible results. Are you
-                              prepared to make a splash in the social sphere?
-                              Reach out to us today, and let the social magic
-                              commence!
-                            </p>
-                          </span>
-                        </div>
-                        <div className="w-full h-full grid place-items-center pt-6 md:pt-10 2xl:pt-16">
-                          <form
-                            className="flex flex-col w-10/12  md:w-9/12 text-xs md:text-sm 2xl:text-base gap-4 2xl:gap-8 py-4 md:py-0"
-                            action=""
-                            onSubmit={formik.handleSubmit}
+                      <div className="w-full md:w-1/2 h-full grid place-items-center">
+                        <form
+                          className="flex flex-col w-8/12 gap-8 py-4 md:py-0"
+                          action=""
+                          onSubmit={formik.handleSubmit}
+                        >
+                          <input
+                            className="bg-transparent border-b-2 font-light border-white text-white outline-none"
+                            id="name"
+                            name="name"
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            type="text"
+                            placeholder="Name"
+                          />
+                          <input
+                            className="bg-transparent border-b-2 font-light border-white text-white outline-none"
+                            name="email"
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
+                            type="email"
+                            placeholder="Email address"
+                          />
+                          <select
+                            className="bg-transparent border-b-2 font-light border-white text-white outline-none"
+                            name="subject"
+                            value={formik.values.subject}
+                            onChange={formik.handleChange}
+                            id="service_set"
                           >
-                            <input
-                              className="bg-transparent border-b-2 font-light border-white text-white outline-none"
-                              id="name"
-                              name="name"
-                              value={formik.values.name}
-                              onChange={formik.handleChange}
-                              type="text"
-                              placeholder="Name"
-                            />
-                            <input
-                              className="bg-transparent border-b-2 font-light border-white text-white outline-none"
-                              name="email"
-                              value={formik.values.email}
-                              onChange={formik.handleChange}
-                              type="email"
-                              placeholder="Email address"
-                            />
-                            <input
-                              className="bg-transparent border-b-2 font-light border-white text-white outline-none"
-                              name="subject"
-                              value={formik.values.subject}
-                              onChange={formik.handleChange}
-                              type="text"
-                              placeholder="Subject"
-                            />
-                            <textarea
-                              name="message"
-                              value={formik.values.message}
-                              onChange={formik.handleChange}
-                              rows={4}
-                              className="bg-transparent border-b-2 font-light border-white text-white outline-none"
-                              placeholder="Message"
-                            />
-                            <span className="flex justify-end gap-4">
-                              <button
-                                className="text-black bg-white 2xl:text-lg px-6 py-1 rounded-2xl font-semibold"
-                                type="reset"
-                              >
-                                Clear
-                              </button>
-                              <button
-                                className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-black px-6 py-1 rounded-2xl 2xl:text-lg font-semibold"
-                                type="submit"
-                              >
-                                Submit
-                              </button>
-                            </span>
-                          </form>
-                        </div>
+                            <option
+                              className="text-gray-400 bg-black"
+                              value=""
+                              disabled
+                            >
+                              Select a Service
+                            </option>
+                            <option className="bg-black" value="Copy Writing">
+                              Copy Writing
+                            </option>
+                            <option className="bg-black" value="Web Designing">
+                              Web Designing
+                            </option>
+                            <option className="bg-black" value="Email Campaign">
+                              Email Campaign
+                            </option>
+                            <option className="bg-black" value="SMS Campaign">
+                              SMS Campaign
+                            </option>
+                            <option
+                              className="bg-black"
+                              value="Event Promotion"
+                            >
+                              Event Promotion
+                            </option>
+                            <option
+                              className="bg-black"
+                              value="Creative Design"
+                            >
+                              Creative Design
+                            </option>
+                            <option
+                              className="bg-black"
+                              value="Social Media Advertising"
+                            >
+                              Social Media Advertising
+                            </option>
+                            value="Social Media Advertising"
+                            <option
+                              className="bg-black"
+                              value="Social Media Consulting"
+                            >
+                              Social Media Consulting
+                            </option>
+                            <option
+                              className="bg-black"
+                              value="Social Media Consulting"
+                            >
+                              Social Media Management
+                            </option>
+                            <option
+                              className="bg-black"
+                              value="Google adwords Campaign"
+                            >
+                              Google adwords Campaign
+                            </option>
+                          </select>
+                          <textarea
+                            name="message"
+                            value={formik.values.message}
+                            onChange={formik.handleChange}
+                            rows={4}
+                            className="bg-transparent border-b-2 font-light border-white text-white outline-none"
+                            placeholder="Message"
+                          />
+                          <span className="flex justify-end gap-4">
+                            <button
+                              className="text-black bg-white px-6 py-1 font-bold rounded-2xl"
+                              type="reset"
+                            >
+                              Clear
+                            </button>
+                            <button
+                              className="bg-gradient-to-br from-gradiantLftBtm font-bold to-gradiantRghtTop text-black px-6 py-1 rounded-2xl"
+                              type="submit"
+                            >
+                              Submit
+                            </button>
+                          </span>
+                        </form>
                       </div>
                     </div>
                   )}

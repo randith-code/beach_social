@@ -11,6 +11,7 @@ import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
 import StoryCard from "../components/CardModules/storycrad";
 import ParticlesComponent from "../components/Hero section/Particle";
+import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -18,6 +19,14 @@ gsap.registerPlugin(useGSAP);
 const SuccessStories = () => {
   const [openContact, setOpenContact] = useState(false);
   const containerRef = useRef();
+  const [popUpOpen, setPopUpOpen] = useState(false);
+
+  const handlePopUpOpen = () => {
+    setPopUpOpen(true);
+  };
+  const handlePopUpClose = () => {
+    setPopUpOpen(false);
+  };
 
   const { contextSafe } = useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -338,7 +347,8 @@ const SuccessStories = () => {
           </Link>
         </div>
       </div>
-      <Footer />
+      <ContactUsPopUP open={popUpOpen} handelPopUpClose={handlePopUpClose} />
+      <Footer handlePopUpOpen={handlePopUpOpen} />{" "}
     </main>
   );
 };

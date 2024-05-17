@@ -10,6 +10,7 @@ import ListItem from "./components/Hero section/ListItem";
 import InsightCard from "./components/CardModules/InsightCard";
 import Footer from "./components/Navigation/Footer";
 import ConatctCard from "./components/ContactUs/ContactCard";
+import ContactUsPopUP from "./components/ContactUs/ContactUsPopUp";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
 import Overlay from "./components/CardModules/Overlay";
@@ -26,6 +27,14 @@ export default function Home() {
 
   const [openContact, setOpenContact] = useState(false);
   const [isHitTheBottom, setHitTheBottom] = useState(false);
+  const [popUpOpen, setPopUpOpen] = useState(false);
+
+  const handlePopUpOpen = () => {
+    setPopUpOpen(true);
+  };
+  const handlePopUpClose = () => {
+    setPopUpOpen(false);
+  };
 
   const { contextSafe } = useGSAP(
     () => {
@@ -555,7 +564,7 @@ export default function Home() {
             <div className=" text-center flex justify-center items-center w-6 md:w-10">
               <hr className="h-1 md:h-1.5 w-full bg-black rounded-lg" />
             </div>
-            <div className="text-left flex-1">Chat bots</div>
+            <div className="text-left flex-1">Web Design</div>
           </div>
           <div className="services flex justify-center items-center w-full font-normal text-xl md:text-4xl 2xl:text-6xl gap-4">
             <div className=" text-right flex-1">Email Campaign</div>
@@ -585,6 +594,14 @@ export default function Home() {
             </div>
             <div className="text-left flex-1">Google adwords Campaign</div>
           </div>
+          <button
+            onClick={handlePopUpOpen}
+            className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6 mt-12"
+          >
+            <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
+              Learn more
+            </p>
+          </button>
         </div>
       </div>
 
@@ -852,9 +869,9 @@ export default function Home() {
           </div>
         </Overlay>
       ) : null}
-
+      <ContactUsPopUP open={popUpOpen} handelPopUpClose={handlePopUpClose} />
       {/* footer */}
-      <Footer />
+      <Footer handlePopUpOpen={handlePopUpOpen} />
     </main>
   );
 }

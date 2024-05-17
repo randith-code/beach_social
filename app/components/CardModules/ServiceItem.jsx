@@ -16,15 +16,16 @@ const ServiceItem = ({ img, hoverImage, title, className }) => {
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="flex flex-col items-center w-full lg:w-1/6 gap-4"
+      className="flex flex-col items-center w-28  lg:w-32 gap-4"
     >
-      <div className="aspect-square rounded-full grid place-items-center">
-        {hover ? (
-          <img className={`${className}`} src={hoverImage} alt="hoverImage" />
-        ) : (
-          <img className={`${className}`} src={img} alt="service_image" />
-        )}
-      </div>
+      <div
+        style={{
+          backgroundImage: hover ? `url(${hoverImage})` : `url(${img})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className={`aspect-square rounded-full w-24 2xl:w-28  grid place-items-center`}
+      ></div>
       <h2 className="font-Anton text-xl text-center">{title}</h2>
     </div>
   );
