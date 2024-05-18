@@ -87,6 +87,7 @@ const SuccessStories = () => {
     try {
       const resStory = await getSuccessStoryPosts();
       setSuccessStories(resStory.data);
+      setHeroImage[resStory.data[0].acf.feature_image_1];
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -152,11 +153,13 @@ const SuccessStories = () => {
       <div className="w-full flex justify-center py-16 2xl:py-28">
         <div className="w-10/12 md:w-3/4 flex flex-col gap-8 lg:flex-row lg:gap-0">
           <div className="relative w-full flex justify-center lg:w-5/12 aspect-square">
+            {/* {successStories[0] ? ( */}
             <img
               src={heroImage}
               alt="featured story"
               className="w-full aspect-square rounded-3xl transition-all"
             />
+            {/* ):null} */}
             <div className="absolute bottom-10 flex justify-around w-1/2 z-50">
               <div
                 onClick={() => {

@@ -113,8 +113,8 @@ const AboutUs = () => {
           <div className="w-10/12 lg:w-1/2 h-fit flex justify-start items-center pt-8">
             <div className="relative w-full md:w-10/12 mt-8">
               <img
-                className="absolute top-0 w-full aspect-square z-10"
-                src="/view_img.png"
+                className="absolute top-0 w-full rounded-3xl aspect-square z-10"
+                src="/about_us.jpg"
                 alt="into image"
               />
               <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>

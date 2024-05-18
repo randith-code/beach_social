@@ -587,7 +587,7 @@ export default function Home() {
           </div>
           <button
             onClick={handlePopUpOpen}
-            className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6 mt-12"
+            className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white lg:mb-16 py-2 px-6  2xl:mt-0"
           >
             <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
               Learn more

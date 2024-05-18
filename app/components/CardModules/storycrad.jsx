@@ -43,15 +43,15 @@ const StoryCard = ({
       }}
     >
       <div
-        className={`relative transition-all duration-[2000ms] bg-120% hover:bg-100% ${width}`}
+        className={`relative transition-all duration-[2000ms] bg-no-repeat bg-120% hover:bg-100% ${width}`}
         style={cardStyle}
       >
         <div className="absolute w-full h-full bg-balckMask rounded-xl md:rounded-3xl" />
-        <div className="w-full h-full flex flex-col justify-end  md:gap-4 p-4">
+        <div className="w-full h-full flex flex-col justify-end  md:gap-2 p-6">
           <h2 className="text-white text-xs md:text-2xl font-semibold z-10 line-clamp-1">
             {title}
           </h2>
-          <p className="text-white text-xxs md:text-base font-reguler line-clamp-1 z-10">
+          <p className="text-white text-xxs md:text-base font-reguler line-clamp-2 z-10">
             {description}
           </p>
         </div>

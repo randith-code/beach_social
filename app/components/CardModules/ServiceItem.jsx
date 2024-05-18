@@ -26,7 +26,9 @@ const ServiceItem = ({ img, hoverImage, title, className }) => {
         }}
         className={`aspect-square rounded-full w-24 2xl:w-28  grid place-items-center`}
       ></div>
-      <h2 className="font-Anton text-xl text-center">{title}</h2>
+      <h2 className="font-Anton w-full text-xl text-center break-all">
+        {title}
+      </h2>
     </div>
   );
 };

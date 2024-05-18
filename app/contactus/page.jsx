@@ -96,8 +96,8 @@ const ContactUs = () => {
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
             <div className="relative w-full md:w-2/3">
               <img
-                className="absolute top-0 w-full aspect-square z-10"
-                src="/view_img.png"
+                className="absolute top-0 rounded-3xl w-full aspect-square z-10"
+                src="/contact_us.jpg"
                 alt="into image"
               />
               <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
