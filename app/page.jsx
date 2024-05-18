@@ -838,13 +838,9 @@ export default function Home() {
           </div>
         </div>
         <span className="w-1/2 hidden md:flex justify-center pb-16 gap-4">
-          <div className="w-12 h-2 rounded-lg bg-black"></div>
-          <div className="w-12 h-2 rounded-lg bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop"></div>
-          <div className="w-12 h-2 rounded-lg bg-black"></div>
-          <div className="w-12 h-2 rounded-lg bg-black"></div>
-          <div className="w-12 h-2 rounded-lg bg-black"></div>
-          <div className="w-12 h-2 rounded-lg bg-black"></div>
-          <div className="w-12 h-2 rounded-lg bg-black"></div>
+          <div className="w-12 h-2 rounded-lg bg-black cursor-pointer"></div>
+          <div className="w-12 h-2 rounded-lg bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop cursor-pointer"></div>
+          <div className="w-12 h-2 rounded-lg bg-black cursor-pointer"></div>
         </span>
         <hr className="w-9/12 h-1 bg-slate-200" />
       </div>
