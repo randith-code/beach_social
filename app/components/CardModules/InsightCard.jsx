@@ -5,7 +5,7 @@ import Link from "next/link";
 const InsightCard = ({ img, title, description }) => {
   return (
     <Link
-      className="w-full lg:w-1/3"
+      className="w-full lg:w-[25vw]"
       href={{
         pathname: "/recentinsight",
         query: {
@@ -15,8 +15,12 @@ const InsightCard = ({ img, title, description }) => {
         },
       }}
     >
-      <div className="bg-black rounded-3xl w-full h-full flex flex-col items-center p-4 cursor-pointer">
-        <img className="w-11/12" src={img} alt="insight image" />
+      <div className="bg-black rounded-3xl w-[25vw] h-full flex flex-col items-center p-4 cursor-pointer">
+        <img
+          className="w-11/12 aspect-square rounded-3xl"
+          src={img}
+          alt="insight image"
+        />
         <div className="text-white flex flex-col gap-4 pt-4">
           <h3 className="font-bold md:text-xl lg:text-base 2xl:text-2xl line-clamp-1">
             {title}

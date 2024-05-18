@@ -14,6 +14,7 @@ import ContactUsPopUP from "./components/ContactUs/ContactUsPopUp";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
 import Overlay from "./components/CardModules/Overlay";
+import InsightContainer from "./components/LayoutComponents/INsightContainer";
 import { getInsightPosts, getSuccessStoryPosts } from "./api/posts";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -822,7 +823,8 @@ export default function Home() {
               &nbsp; insights
             </h1>
           </span>
-          <div className="w-full flex flex-col">
+          <InsightContainer insightContent={insightContent} />
+          {/* <div className="w-full flex flex-col">
             <span className="w-full h-fit flex justify-stretch flex-col lg:flex-row gap-6 lg:gap-2 2xl:gap-2">
               {insightContent
                 ? insightContent.map((insight) => (
@@ -835,13 +837,13 @@ export default function Home() {
                   ))
                 : null}
             </span>
-          </div>
+          </div> */}
         </div>
-        <span className="w-1/2 hidden md:flex justify-center pb-16 gap-4">
+        {/* <span className="w-1/2 hidden md:flex justify-center pb-16 gap-4">
           <div className="w-12 h-2 rounded-lg bg-black cursor-pointer"></div>
           <div className="w-12 h-2 rounded-lg bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop cursor-pointer"></div>
           <div className="w-12 h-2 rounded-lg bg-black cursor-pointer"></div>
-        </span>
+        </span> */}
         <hr className="w-9/12 h-1 bg-slate-200" />
       </div>
 

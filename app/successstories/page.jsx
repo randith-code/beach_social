@@ -12,6 +12,7 @@ import Footer from "../components/Navigation/Footer";
 import StoryCard from "../components/CardModules/storycrad";
 import ParticlesComponent from "../components/Hero section/Particle";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
+import StoryContainer from "../components/LayoutComponents/StoryContainer";
 import { getSuccessStoryPosts } from "../api/posts";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -271,134 +272,7 @@ const SuccessStories = () => {
                 ))
               : null}
           </div>
-          <div className="hidden md:flex flex-col gap-1 md:gap-6 py-8">
-            <div className="stories-line1 flex justify-between gap-6">
-              {successStories[0] ? (
-                <StoryCard
-                  img={successStories[0].acf.casestudy_hero}
-                  title={successStories[0].acf.project_title}
-                  description={successStories[0].acf.card_title}
-                  isLarge={false}
-                  about_client={successStories[0].acf.about_client}
-                  about_client_image={successStories[0].acf.about_client_image}
-                  casestudy_hero={successStories[0].acf.casestudy_hero}
-                  our_goal={successStories[0].acf.our_goal}
-                  our_goal_image={successStories[0].acf.our_goal_image}
-                  project_title={successStories[0].acf.project_title}
-                  service={successStories[0].acf.service}
-                />
-              ) : null}
-              {successStories[1] ? (
-                <StoryCard
-                  img={successStories[1].acf.casestudy_hero}
-                  title={successStories[1].acf.project_title}
-                  description={successStories[1].acf.card_title}
-                  isLarge={false}
-                  about_client={successStories[1].acf.about_client}
-                  about_client_image={successStories[1].acf.about_client_image}
-                  casestudy_hero={successStories[1].acf.casestudy_hero}
-                  our_goal={successStories[1].acf.our_goal}
-                  our_goal_image={successStories[1].acf.our_goal_image}
-                  project_title={successStories[1].acf.project_title}
-                  service={successStories[1].acf.service}
-                />
-              ) : null}
-              {successStories[2] ? (
-                <StoryCard
-                  img={successStories[2].acf.casestudy_hero}
-                  title={successStories[2].acf.project_title}
-                  description={successStories[2].acf.card_title}
-                  isLarge={false}
-                  about_client={successStories[2].acf.about_client}
-                  about_client_image={successStories[2].acf.about_client_image}
-                  casestudy_hero={successStories[2].acf.casestudy_hero}
-                  our_goal={successStories[2].acf.our_goal}
-                  our_goal_image={successStories[2].acf.our_goal_image}
-                  project_title={successStories[2].acf.project_title}
-                  service={successStories[2].acf.service}
-                />
-              ) : null}
-            </div>
-            <div className="stories-line2 flex justify-between gap-6">
-              {successStories[3] ? (
-                <StoryCard
-                  img={successStories[3].acf.casestudy_hero}
-                  title={successStories[3].acf.project_title}
-                  description={successStories[3].acf.card_title}
-                  isLarge={true}
-                  about_client={successStories[3].acf.about_client}
-                  about_client_image={successStories[3].acf.about_client_image}
-                  casestudy_hero={successStories[3].acf.casestudy_hero}
-                  our_goal={successStories[3].acf.our_goal}
-                  our_goal_image={successStories[3].acf.our_goal_image}
-                  project_title={successStories[3].acf.project_title}
-                  service={successStories[3].acf.service}
-                />
-              ) : null}
-              {successStories[4] ? (
-                <StoryCard
-                  img={successStories[4].acf.casestudy_hero}
-                  title={successStories[4].acf.project_title}
-                  description={successStories[4].acf.card_title}
-                  isLarge={true}
-                  about_client={successStories[4].acf.about_client}
-                  about_client_image={successStories[4].acf.about_client_image}
-                  casestudy_hero={successStories[4].acf.casestudy_hero}
-                  our_goal={successStories[4].acf.our_goal}
-                  our_goal_image={successStories[4].acf.our_goal_image}
-                  project_title={successStories[4].acf.project_title}
-                  service={successStories[4].acf.service}
-                />
-              ) : null}
-            </div>
-            <div className="stories-line3 flex justify-between gap-6">
-              {successStories[5] ? (
-                <StoryCard
-                  img={successStories[5].acf.casestudy_hero}
-                  title={successStories[5].acf.project_title}
-                  description={successStories[5].acf.card_title}
-                  isLarge={false}
-                  about_client={successStories[5].acf.about_client}
-                  about_client_image={successStories[5].acf.about_client_image}
-                  casestudy_hero={successStories[5].acf.casestudy_hero}
-                  our_goal={successStories[5].acf.our_goal}
-                  our_goal_image={successStories[5].acf.our_goal_image}
-                  project_title={successStories[5].acf.project_title}
-                  service={successStories[5].acf.service}
-                />
-              ) : null}
-              {successStories[6] ? (
-                <StoryCard
-                  img={successStories[6].acf.casestudy_hero}
-                  title={successStories[6].acf.project_title}
-                  description={successStories[6].acf.card_title}
-                  isLarge={false}
-                  about_client={successStories[6].acf.about_client}
-                  about_client_image={successStories[6].acf.about_client_image}
-                  casestudy_hero={successStories[6].acf.casestudy_hero}
-                  our_goal={successStories[6].acf.our_goal}
-                  our_goal_image={successStories[6].acf.our_goal_image}
-                  project_title={successStories[6].acf.project_title}
-                  service={successStories[6].acf.service}
-                />
-              ) : null}
-              {successStories[7] ? (
-                <StoryCard
-                  img={successStories[7].acf.casestudy_hero}
-                  title={successStories[7].acf.project_title}
-                  description={successStories[7].acf.card_title}
-                  isLarge={false}
-                  about_client={successStories[7].acf.about_client}
-                  about_client_image={successStories[7].acf.about_client_image}
-                  casestudy_hero={successStories[7].acf.casestudy_hero}
-                  our_goal={successStories[7].acf.our_goal}
-                  our_goal_image={successStories[7].acf.our_goal_image}
-                  project_title={successStories[7].acf.project_title}
-                  service={successStories[7].acf.service}
-                />
-              ) : null}
-            </div>
-          </div>
+          <StoryContainer successStories={successStories} />
         </span>
       </div>
       {/* contact us */}
