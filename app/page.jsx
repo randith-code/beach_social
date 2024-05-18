@@ -610,6 +610,7 @@ export default function Home() {
             {successStories
               ? successStories.map((story) => (
                   <StoryCard
+                    key={story.id}
                     img={story.acf.casestudy_hero}
                     title={story.acf.project_title}
                     description={story.acf.card_title}
