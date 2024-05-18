@@ -14,7 +14,7 @@ import ContactUsPopUP from "./components/ContactUs/ContactUsPopUp";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
 import Overlay from "./components/CardModules/Overlay";
-import InsightContainer from "./components/LayoutComponents/INsightContainer";
+import InsightContainer from "./components/LayoutComponents/InsightContainer";
 import { getInsightPosts, getSuccessStoryPosts } from "./api/posts";
 
 gsap.registerPlugin(ScrollTrigger);
