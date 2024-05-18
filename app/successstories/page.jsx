@@ -12,6 +12,7 @@ import Footer from "../components/Navigation/Footer";
 import StoryCard from "../components/CardModules/storycrad";
 import ParticlesComponent from "../components/Hero section/Particle";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
+import { getSuccessStoryPosts } from "../api/posts";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -76,10 +77,23 @@ const SuccessStories = () => {
     section2: notSelected,
     section3: notSelected,
     section4: notSelected,
-    section5: notSelected,
   });
   const [tracker, setTracker] = useState(1);
   const [heroImage, setHeroImage] = useState("/view_img.png");
+  const [successStories, setSuccessStories] = useState([]);
+
+  const handleDataFetch = async () => {
+    try {
+      const resStory = await getSuccessStoryPosts();
+      setSuccessStories(resStory.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    handleDataFetch();
+  }, []);
 
   useEffect(() => {
     if (tracker == 1) {
@@ -88,7 +102,6 @@ const SuccessStories = () => {
         section2: notSelected,
         section3: notSelected,
         section4: notSelected,
-        section5: notSelected,
       });
     } else if (tracker == 2) {
       setImageIndicater({
@@ -96,7 +109,6 @@ const SuccessStories = () => {
         section2: selected,
         section3: notSelected,
         section4: notSelected,
-        section5: notSelected,
       });
     } else if (tracker == 3) {
       setImageIndicater({
@@ -104,7 +116,6 @@ const SuccessStories = () => {
         section2: notSelected,
         section3: selected,
         section4: notSelected,
-        section5: notSelected,
       });
     } else if (tracker == 4) {
       setImageIndicater({
@@ -112,7 +123,6 @@ const SuccessStories = () => {
         section2: notSelected,
         section3: notSelected,
         section4: selected,
-        section5: notSelected,
       });
     } else {
       setImageIndicater({
@@ -120,7 +130,6 @@ const SuccessStories = () => {
         section2: notSelected,
         section3: notSelected,
         section4: notSelected,
-        section5: selected,
       });
     }
   }, [tracker]);
@@ -145,43 +154,44 @@ const SuccessStories = () => {
             <img
               src={heroImage}
               alt="featured story"
-              className="w-full transition-all"
+              className="w-full aspect-square rounded-3xl transition-all"
             />
-            <div className="absolute bottom-10 flex justify-around w-2/3 z-50">
+            <div className="absolute bottom-10 flex justify-around w-1/2 z-50">
               <div
                 onClick={() => {
                   setTracker(1);
-                  setHeroImage("/view_img.png");
+                  successStories[0].acf.feature_image_1
+                    ? setHeroImage(successStories[0].acf.feature_image_1)
+                    : setHeroImage("/view_img.png");
                 }}
                 className={`transition-all ${imageIndicater.section1}`}
               />
               <div
                 onClick={() => {
                   setTracker(2);
-                  setHeroImage("/view_img1.png");
+                  successStories[0].acf.feature_image_2
+                    ? setHeroImage(successStories[0].acf.feature_image_2)
+                    : setHeroImage("/view_img1.png");
                 }}
                 className={`transition-all ${imageIndicater.section2}`}
               />
               <div
                 onClick={() => {
                   setTracker(3);
-                  setHeroImage("/view_img2.png");
+                  successStories[0].acf.feature_image_3
+                    ? setHeroImage(successStories[0].acf.feature_image_3)
+                    : setHeroImage("/view_img2.png");
                 }}
                 className={`transition-all ${imageIndicater.section3}`}
               />
               <div
                 onClick={() => {
                   setTracker(4);
-                  setHeroImage("/view_img3.png");
+                  successStories[0].acf.feature_image_4
+                    ? setHeroImage(successStories[0].acf.feature_image_4)
+                    : setHeroImage("/view_img3.png");
                 }}
                 className={`transition-all ${imageIndicater.section4}`}
-              />
-              <div
-                onClick={() => {
-                  setTracker(5);
-                  setHeroImage("/view_img4.png");
-                }}
-                className={`transition-all ${imageIndicater.section5}`}
               />
             </div>
           </div>
@@ -189,26 +199,51 @@ const SuccessStories = () => {
             <div className="w-full lg:w-3/4 flex flex-col gap-8 2xl:gap-12">
               <span className="flex flex-col gap-2 2xl:gap-4">
                 <h2 className="font-Anton text-5xl 2xl:text-7xl">
-                  Varnish Nightclub
+                  {successStories[0]
+                    ? successStories[0].acf.project_title
+                    : "Featuted Case study"}
                 </h2>
-                <p className="font-semibold">2024 Jun. - Carolinas</p>
               </span>
 
               <p className="2xl:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum
+                {successStories[0]
+                  ? successStories[0].acf.about_client
+                  : "Case study description"}
               </p>
-
-              <button className="contact-button w-fit group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6">
-                <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
-                  See more
-                </p>
-              </button>
+              <Link
+                href={{
+                  pathname: "/casestudy",
+                  query: {
+                    about_client: successStories[0]
+                      ? successStories[0].acf.about_client
+                      : "",
+                    about_client_image: successStories[0]
+                      ? successStories[0].acf.about_client_image
+                      : "",
+                    casestudy_hero: successStories[0]
+                      ? successStories[0].acf.casestudy_hero
+                      : "",
+                    our_goal: successStories[0]
+                      ? successStories[0].acf.our_goal
+                      : "",
+                    our_goal_image: successStories[0]
+                      ? successStories[0].acf.our_goal_image
+                      : "",
+                    project_title: successStories[0]
+                      ? successStories[0].acf.project_title
+                      : "",
+                    service: successStories[0]
+                      ? successStories[0].acf.service
+                      : "",
+                  },
+                }}
+              >
+                <button className="contact-button w-fit group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6">
+                  <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
+                    See more
+                  </p>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -217,91 +252,150 @@ const SuccessStories = () => {
       <div className="success-story-container md:py-16 relative bg-white w-full z-40 flex justify-center">
         <span className="w-10/12 md:w-9/12 flex flex-col">
           <div className="md:hidden grid grid-cols-2 gap-2 pb-4">
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
+            {successStories
+              ? successStories.map((story) => (
+                  <StoryCard
+                    img={story.acf.casestudy_hero}
+                    title={story.acf.project_title}
+                    description={story.acf.card_title}
+                    isLarge={false}
+                    about_client={story.acf.about_client}
+                    about_client_image={story.acf.about_client_image}
+                    casestudy_hero={story.acf.casestudy_hero}
+                    our_goal={story.acf.our_goal}
+                    our_goal_image={story.acf.our_goal_image}
+                    project_title={story.acf.project_title}
+                    service={story.acf.service}
+                  />
+                ))
+              : null}
           </div>
           <div className="hidden md:flex flex-col gap-1 md:gap-6 py-8">
             <div className="stories-line1 flex justify-between gap-6">
-              <StoryCard
-                img="/view_img.png"
-                title={"Varnish Nightclub"}
-                description={"Revolutionizing Nightlife Marketing Background"}
-                isLarge={false}
-              />
-              <StoryCard
-                img="/view_img.png"
-                title={"Varnish Nightclub"}
-                description={"Revolutionizing Nightlife Marketing Background"}
-                isLarge={false}
-              />
-              <StoryCard
-                img="/view_img.png"
-                title={"Varnish Nightclub"}
-                description={"Revolutionizing Nightlife Marketing Background"}
-                isLarge={false}
-              />
+              {successStories[0] ? (
+                <StoryCard
+                  img={successStories[0].acf.casestudy_hero}
+                  title={successStories[0].acf.project_title}
+                  description={successStories[0].acf.card_title}
+                  isLarge={false}
+                  about_client={successStories[0].acf.about_client}
+                  about_client_image={successStories[0].acf.about_client_image}
+                  casestudy_hero={successStories[0].acf.casestudy_hero}
+                  our_goal={successStories[0].acf.our_goal}
+                  our_goal_image={successStories[0].acf.our_goal_image}
+                  project_title={successStories[0].acf.project_title}
+                  service={successStories[0].acf.service}
+                />
+              ) : null}
+              {successStories[1] ? (
+                <StoryCard
+                  img={successStories[1].acf.casestudy_hero}
+                  title={successStories[1].acf.project_title}
+                  description={successStories[1].acf.card_title}
+                  isLarge={false}
+                  about_client={successStories[1].acf.about_client}
+                  about_client_image={successStories[1].acf.about_client_image}
+                  casestudy_hero={successStories[1].acf.casestudy_hero}
+                  our_goal={successStories[1].acf.our_goal}
+                  our_goal_image={successStories[1].acf.our_goal_image}
+                  project_title={successStories[1].acf.project_title}
+                  service={successStories[1].acf.service}
+                />
+              ) : null}
+              {successStories[2] ? (
+                <StoryCard
+                  img={successStories[2].acf.casestudy_hero}
+                  title={successStories[2].acf.project_title}
+                  description={successStories[2].acf.card_title}
+                  isLarge={false}
+                  about_client={successStories[2].acf.about_client}
+                  about_client_image={successStories[2].acf.about_client_image}
+                  casestudy_hero={successStories[2].acf.casestudy_hero}
+                  our_goal={successStories[2].acf.our_goal}
+                  our_goal_image={successStories[2].acf.our_goal_image}
+                  project_title={successStories[2].acf.project_title}
+                  service={successStories[2].acf.service}
+                />
+              ) : null}
             </div>
             <div className="stories-line2 flex justify-between gap-6">
-              <StoryCard
-                img="/view_img.png"
-                title={"Varnish Nightclub"}
-                description={"Revolutionizing Nightlife Marketing Background"}
-                isLarge={true}
-              />
-              <StoryCard
-                img="/view_img.png"
-                title={"Varnish Nightclub"}
-                description={"Revolutionizing Nightlife Marketing Background"}
-                isLarge={true}
-              />
+              {successStories[3] ? (
+                <StoryCard
+                  img={successStories[3].acf.casestudy_hero}
+                  title={successStories[3].acf.project_title}
+                  description={successStories[3].acf.card_title}
+                  isLarge={true}
+                  about_client={successStories[3].acf.about_client}
+                  about_client_image={successStories[3].acf.about_client_image}
+                  casestudy_hero={successStories[3].acf.casestudy_hero}
+                  our_goal={successStories[3].acf.our_goal}
+                  our_goal_image={successStories[3].acf.our_goal_image}
+                  project_title={successStories[3].acf.project_title}
+                  service={successStories[3].acf.service}
+                />
+              ) : null}
+              {successStories[4] ? (
+                <StoryCard
+                  img={successStories[4].acf.casestudy_hero}
+                  title={successStories[4].acf.project_title}
+                  description={successStories[4].acf.card_title}
+                  isLarge={true}
+                  about_client={successStories[4].acf.about_client}
+                  about_client_image={successStories[4].acf.about_client_image}
+                  casestudy_hero={successStories[4].acf.casestudy_hero}
+                  our_goal={successStories[4].acf.our_goal}
+                  our_goal_image={successStories[4].acf.our_goal_image}
+                  project_title={successStories[4].acf.project_title}
+                  service={successStories[4].acf.service}
+                />
+              ) : null}
             </div>
             <div className="stories-line3 flex justify-between gap-6">
-              <StoryCard
-                img="/view_img.png"
-                title={"Varnish Nightclub"}
-                description={"Revolutionizing Nightlife Marketing Background"}
-                isLarge={false}
-              />
-              <StoryCard
-                img="/view_img.png"
-                title={"Varnish Nightclub"}
-                description={"Revolutionizing Nightlife Marketing Background"}
-                isLarge={false}
-              />
-              <StoryCard
-                img="/view_img.png"
-                title={"Varnish Nightclub"}
-                description={"Revolutionizing Nightlife Marketing Background"}
-                isLarge={false}
-              />
+              {successStories[5] ? (
+                <StoryCard
+                  img={successStories[5].acf.casestudy_hero}
+                  title={successStories[5].acf.project_title}
+                  description={successStories[5].acf.card_title}
+                  isLarge={false}
+                  about_client={successStories[5].acf.about_client}
+                  about_client_image={successStories[5].acf.about_client_image}
+                  casestudy_hero={successStories[5].acf.casestudy_hero}
+                  our_goal={successStories[5].acf.our_goal}
+                  our_goal_image={successStories[5].acf.our_goal_image}
+                  project_title={successStories[5].acf.project_title}
+                  service={successStories[5].acf.service}
+                />
+              ) : null}
+              {successStories[6] ? (
+                <StoryCard
+                  img={successStories[6].acf.casestudy_hero}
+                  title={successStories[6].acf.project_title}
+                  description={successStories[6].acf.card_title}
+                  isLarge={false}
+                  about_client={successStories[6].acf.about_client}
+                  about_client_image={successStories[6].acf.about_client_image}
+                  casestudy_hero={successStories[6].acf.casestudy_hero}
+                  our_goal={successStories[6].acf.our_goal}
+                  our_goal_image={successStories[6].acf.our_goal_image}
+                  project_title={successStories[6].acf.project_title}
+                  service={successStories[6].acf.service}
+                />
+              ) : null}
+              {successStories[7] ? (
+                <StoryCard
+                  img={successStories[7].acf.casestudy_hero}
+                  title={successStories[7].acf.project_title}
+                  description={successStories[7].acf.card_title}
+                  isLarge={false}
+                  about_client={successStories[7].acf.about_client}
+                  about_client_image={successStories[7].acf.about_client_image}
+                  casestudy_hero={successStories[7].acf.casestudy_hero}
+                  our_goal={successStories[7].acf.our_goal}
+                  our_goal_image={successStories[7].acf.our_goal_image}
+                  project_title={successStories[7].acf.project_title}
+                  service={successStories[7].acf.service}
+                />
+              ) : null}
             </div>
           </div>
         </span>

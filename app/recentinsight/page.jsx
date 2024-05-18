@@ -63,7 +63,11 @@ const RecentInsight = () => {
       <div className="w-full flex justify-center">
         <div className="w-3/4 py-28 flex flex-col gap-16">
           <h1 className="font-Anton text-6xl">{searchParams.get("title")}</h1>
-          <img className="w-1/3" src={searchParams.get("img")} alt="" />
+          <img
+            className="w-full lg:w-1/3"
+            src={searchParams.get("img")}
+            alt="blog image"
+          />
           <p>{parse(searchParams.get("description"))}</p>
         </div>
       </div>

@@ -75,17 +75,21 @@ const CaseStudy = () => {
       <div className="absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
       <div className="w-full flex justify-center">
         <div className="w-3/4">
-          <div className="w-full flex py-28">
-            <div className="w-1/2 flex flex-col gap-16">
+          <div className="w-full flex flex-col gap-8 md:gap-0 md:flex-row md:py-16 2xl:py-28">
+            <div className="w-full md:w-1/2 flex flex-col md:gap-8 lg:gap-16">
               <span className="flex flex-col gap-2">
-                <p className="font-semibold text-lg font-Roboto">Case Study</p>
-                <h1 className="font-Anton text-6xl">
+                <p className="font-semibold md:text-base lg:text-lg font-Roboto">
+                  Case Study
+                </p>
+                <h1 className="font-Anton  md:text-4xl lg:text-6xl">
                   {searchParams.get("project_title")}
                 </h1>
               </span>
               <span className="flex flex-col gap-4">
-                <h2 className="text-5xl font-Roboto">Services :</h2>
-                <dl className="font-Anton text-xl flex flex-col gap-4">
+                <h2 className="text-2xl 2xl:text-5xl font-Roboto">
+                  Services :
+                </h2>
+                <dl className="font-Anton md:text-base lg:text-xl flex flex-col gap-4">
                   <dt>Social Media Consulting</dt>
                   <dt>Social Media Management</dt>
                   <dt>Web Development</dt>
@@ -96,23 +100,23 @@ const CaseStudy = () => {
                 onClick={handlePopUpOpen}
                 className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6 w-fit "
               >
-                <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
+                <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text md:text-sm lg:text-base 2xl:text-xl">
                   Contact Us
                 </p>
               </button>
             </div>
 
-            <div className="w-1/2">
+            <div className="w-full grid place-content-center md:w-1/2">
               <img
-                className="w-full h-full"
+                className="w-full md:w-10/12 rounded-3xl  aspect-square"
                 src={searchParams.get("casestudy_hero")}
                 alt="case study hero"
               />
             </div>
           </div>
 
-          <div className="w-full flex gap-20 py-28">
-            <div className="w-5/12">
+          <div className="w-full flex flex-col lg:flex-row gap-20 py-16 lg:py-28">
+            <div className=" w-full lg:w-5/12">
               <img
                 className="w-full h-full"
                 src={searchParams.get("about_client_image")}
@@ -120,19 +124,21 @@ const CaseStudy = () => {
               />
             </div>
 
-            <div className="w-7/12 flex flex-col justify-center gap-8">
-              <h1 className="font-Anton text-5xl">About Client</h1>
+            <div className="w-full lg:w-7/12 flex flex-col justify-center gap-8">
+              <h1 className="font-Anton md:text-3xl lg:text-5xl">
+                About Client
+              </h1>
               <p>{searchParams.get("about_client")}</p>
             </div>
           </div>
 
-          <div className="w-full flex gap-20 py-28">
-            <div className="w-1/2 flex flex-col justify-center gap-8">
+          <div className="w-full flex flex-col lg:flex-row gap-20 py-16 lg:py-28">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center gap-8">
               <h1 className="font-Anton text-5xl">Our Goal</h1>
               <p>{searchParams.get("our_goal")}</p>
             </div>
 
-            <div className="w-1/2">
+            <div className="w-full lg:w-1/2">
               <img
                 src={searchParams.get("our_goal_image")}
                 alt="case_study_item_1"

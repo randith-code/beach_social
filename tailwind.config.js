@@ -21,6 +21,7 @@ module.exports = {
         valuesBg: "rgba(0, 182, 255, 0.07)",
         lightBlue: "#DCF5FF",
         backgroundBlur: "rgba(255, 255, 255, 0.6)",
+        balckMask: "rgba(0, 0, 0, 0.3)",
       },
       fontFamily: {
         Roboto: ['"Roboto"', ...defaultTheme.fontFamily.sans],
