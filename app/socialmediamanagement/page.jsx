@@ -303,36 +303,26 @@ const SocialMediaMangement = () => {
             Recent Works
           </h3>
           <div className="md:hidden grid grid-cols-2 gap-2 pb-4">
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
-            <StoryCard
-              img="/view_img.png"
-              title={"Varnish Nightclub"}
-              description={"Revolutionizing Nightlife Marketing Background"}
-              isLarge={false}
-            />
+            {successStories
+              ? successStories
+                  .slice(0, 6)
+                  .map((story) => (
+                    <StoryCard
+                      key={story.id}
+                      img={story.acf.casestudy_hero}
+                      title={story.acf.project_title}
+                      description={story.acf.card_title}
+                      isLarge={false}
+                      about_client={story.acf.about_client}
+                      about_client_image={story.acf.about_client_image}
+                      casestudy_hero={story.acf.casestudy_hero}
+                      our_goal={story.acf.our_goal}
+                      our_goal_image={story.acf.our_goal_image}
+                      project_title={story.acf.project_title}
+                      service={story.acf.service}
+                    />
+                  ))
+              : null}
           </div>
           <div className="hidden md:flex flex-col gap-1 md:gap-6 py-8">
             <div className="stories-line1 flex justify-between gap-6">
