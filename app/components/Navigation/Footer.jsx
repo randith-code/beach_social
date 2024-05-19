@@ -157,7 +157,10 @@ const Footer = ({ handlePopUpOpen }) => {
       <div className="flex w-10/12 text-xxs md:text-xs 2xl:text-sm  md:w-9/12 justify-between pt-4 pb-16 font-light">
         <p>
           © 2023 BeachSocial . Copyright and All rights reserved. Developed and
-          Managed by Ulix Digital.
+          Managed by{" "}
+          <a href="https://ulixdigital.com/" target="_blank">
+            Ulix Digital.
+          </a>
         </p>
         <span className="flex gap-1 md:gap-4">
           <Link href="/termsandagreements">

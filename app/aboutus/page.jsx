@@ -205,7 +205,7 @@ const AboutUs = () => {
             <ServiceItem
               img={"/google_ad_campaign.svg"}
               hoverImage={"/google_ad_campaign_hover.svg"}
-              title={"Google awards Campaign"}
+              title={"Google adwords Campaign"}
               className={"w-full 2xl:w-32"}
             />
             <ServiceItem
