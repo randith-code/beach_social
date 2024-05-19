@@ -157,7 +157,9 @@ const AboutUs = () => {
       {/* services */}
       <div className="w-full py-20 flex justify-center">
         <div className="relative  whitespace-nowrap w-3/4 grid grid-cols-3 lg:flex lg:overflow-x-scroll lg:h-fit no-scrollbar gap-20">
-          <ClickAndDragScroll className={"w-full flex gap-20 no-scrollbar"}>
+          <ClickAndDragScroll
+            className={"w-full h-fit flex gap-20 no-scrollbar"}
+          >
             <ServiceItem
               img={"/web_design.svg"}
               hoverImage={"/web_design_hover.svg"}

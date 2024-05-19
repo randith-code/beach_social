@@ -15,7 +15,7 @@ const InsightCard = ({ img, title, description }) => {
         },
       }}
     >
-      <div className="bg-black rounded-3xl w-[25vw] h-full flex flex-col items-center p-4 cursor-pointer">
+      <div className="bg-black rounded-3xl w-full md:w-[24vw] h-full flex flex-col items-center p-4 cursor-pointer">
         <img
           className="w-11/12 aspect-square rounded-3xl"
           src={img}

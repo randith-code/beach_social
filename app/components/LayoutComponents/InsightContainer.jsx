@@ -33,7 +33,7 @@ const InsightContainer = ({ insightContent }) => {
     <div className="w-full flex flex-col items-center gap-8">
       <div className="w-full flex flex-col">
         <span
-          className="flex overflow-x-scroll no-scrollbar snap-x snap-mandatory gap-6"
+          className="flex flex-col md:flex-row md:overflow-x-scroll no-scrollbar snap-x snap-mandatory gap-6"
           ref={scrollRef}
         >
           {insightContent &&
