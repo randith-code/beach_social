@@ -76,20 +76,20 @@ const CaseStudy = () => {
       <div className="w-full flex justify-center">
         <div className="w-3/4">
           <div className="w-full flex flex-col gap-8 md:gap-0 md:flex-row md:py-16 2xl:py-28">
-            <div className="w-full md:w-1/2 flex flex-col md:gap-8 lg:gap-16">
+            <div className="w-full md:w-1/2 flex flex-col gap-6 md:gap-8 lg:gap-16">
               <span className="flex flex-col gap-2">
                 <p className="font-semibold md:text-base lg:text-lg font-Roboto">
                   Case Study
                 </p>
-                <h1 className="font-Anton  md:text-4xl lg:text-6xl">
+                <h1 className="font-Anton text-4xl md:text-4xl lg:text-6xl">
                   {searchParams.get("project_title")}
                 </h1>
               </span>
               <span className="flex flex-col gap-4">
-                <h2 className="text-2xl 2xl:text-5xl font-Roboto">
+                <h2 className="text-xl md:text-3xl 2xl:text-4xl font-Roboto">
                   Services :
                 </h2>
-                <dl className="font-Anton md:text-base lg:text-xl flex flex-col gap-4">
+                <dl className="font-Anton text-sm md:text-base lg:text-xl flex flex-col gap-4">
                   <dt>Social Media Consulting</dt>
                   <dt>Social Media Management</dt>
                   <dt>Web Development</dt>
