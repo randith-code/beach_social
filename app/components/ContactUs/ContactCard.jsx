@@ -199,14 +199,63 @@ export default function ConatctCard({ setOpenContact, hideSection }) {
                       type="email"
                       placeholder="Email address"
                     />
-                    <input
+                    <select
                       className="bg-transparent border-b-2 font-light border-white text-white outline-none"
                       name="subject"
                       value={formik.values.subject}
                       onChange={formik.handleChange}
-                      type="text"
-                      placeholder="Subject"
-                    />
+                      id="service_set"
+                    >
+                      <option
+                        className="text-gray-400 bg-black"
+                        value=""
+                        disabled
+                      >
+                        Select a Service
+                      </option>
+                      <option className="bg-black" value="Copy Writing">
+                        Copy Writing
+                      </option>
+                      <option className="bg-black" value="Web Designing">
+                        Web Designing
+                      </option>
+                      <option className="bg-black" value="Email Campaign">
+                        Email Campaign
+                      </option>
+                      <option className="bg-black" value="SMS Campaign">
+                        SMS Campaign
+                      </option>
+                      <option className="bg-black" value="Event Promotion">
+                        Event Promotion
+                      </option>
+                      <option className="bg-black" value="Creative Design">
+                        Creative Design
+                      </option>
+                      <option
+                        className="bg-black"
+                        value="Social Media Advertising"
+                      >
+                        Social Media Advertising
+                      </option>
+                      <option
+                        className="bg-black"
+                        value="Social Media Consulting"
+                      >
+                        Social Media Consulting
+                      </option>
+                      <option
+                        className="bg-black"
+                        value="Social Media Consulting"
+                      >
+                        Social Media Management
+                      </option>
+                      <option
+                        className="bg-black"
+                        value="Google adwords Campaign"
+                      >
+                        Google adwords Campaign
+                      </option>
+                    </select>
                     <textarea
                       name="message"
                       value={formik.values.message}
