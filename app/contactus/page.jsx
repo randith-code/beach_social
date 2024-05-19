@@ -182,7 +182,7 @@ const ContactUs = () => {
           className={`relative contactus flex flex-col w-full opacity-100 z-100`}
         >
           <div className="grid place-items-center py-28">
-            <div className="w-9/12 flex flex-col bg-black py-10 2xl:py-28">
+            <div className="w-9/12 flex flex-col bg-black rounded-3xl py-10 2xl:py-28">
               {submited ? (
                 <div className="flex flex-col items-center py-16 justify-center flex-1">
                   <h1 className="text-center w-2/3 text-4xl text-white">

@@ -346,7 +346,7 @@ const AboutUs = () => {
             team&apos;s diverse backgrounds and skills breathe life into Beach
             Social&apos;s vision every day.
           </p>
-          <div className="flex flex-col md:flex-row w-full justify-between">
+          <div className="relative z-40 flex flex-col md:flex-row w-full justify-between">
             <TeamMemberCard
               img={
                 "https://beachsocial.leadmedia.lk/wp-content/uploads/2024/05/Noah.png"

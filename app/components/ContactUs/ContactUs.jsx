@@ -61,7 +61,7 @@ export default function ConatctUs({ setOpenContact }) {
     <>
       <div className={`contactus flex flex-col w-full`}>
         <div className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop grid place-items-center h-screen">
-          <div className="w-10/12 flex flex-col bg-black">
+          <div className="w-10/12 flex flex-col bg-black rounded-3xl">
             <div className="w-full flex justify-end">
               <Image
                 src="/close_button.png"

@@ -43,7 +43,7 @@ const StoryCard = ({
       }}
     >
       <div
-        className={`relative transition-all duration-[2000ms] bg-no-repeat bg-120% hover:bg-100% ${width}`}
+        className={`relative transition-all duration-[2000ms] bg-no-repeat bg-center bg-120% hover:bg-100% ${width}`}
         style={cardStyle}
       >
         <div className="absolute w-full h-full bg-balckMask rounded-xl md:rounded-3xl" />

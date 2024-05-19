@@ -16,7 +16,7 @@ const ServiceItem = ({ img, hoverImage, title, className }) => {
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="flex flex-col items-center w-28 h-fit lg:w-32 gap-4"
+      className="relative flex flex-col items-center justify-center w-28 h-fit lg:w-32 gap-4"
     >
       <div
         style={{
@@ -26,7 +26,7 @@ const ServiceItem = ({ img, hoverImage, title, className }) => {
         }}
         className={`aspect-square rounded-full w-24 2xl:w-28  grid place-items-center`}
       ></div>
-      <h2 className="font-Anton text-xl text-center w-full truncate">
+      <h2 className="font-Anton text-xl text-center text-wrap w-full">
         {title}
       </h2>
     </div>

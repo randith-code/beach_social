@@ -67,7 +67,7 @@ const ContactUsPopUP = ({ open, handelPopUpClose }) => {
       <>
         <div className={`contactus flex flex-col w-full`}>
           <div className="bg-backgroundBlur grid place-items-center h-screen">
-            <div className="w-10/12 h-5/6 flex flex-col bg-black">
+            <div className="w-10/12 h-5/6 flex flex-col bg-black rounded-3xl">
               <div className="w-full flex justify-end">
                 <Image
                   src="/close_button.png"

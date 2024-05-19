@@ -87,7 +87,9 @@ const SuccessStories = () => {
     try {
       const resStory = await getSuccessStoryPosts();
       setSuccessStories(resStory.data);
-      setHeroImage[resStory.data[0].acf.feature_image_1];
+      if (resStory.data.length > 0) {
+        setHeroImage(resStory.data[0].acf.feature_image_1 || "/view_img.png");
+      }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -98,43 +100,25 @@ const SuccessStories = () => {
   }, []);
 
   useEffect(() => {
-    if (tracker == 1) {
-      setImageIndicater({
-        section1: selected,
-        section2: notSelected,
-        section3: notSelected,
-        section4: notSelected,
-      });
-    } else if (tracker == 2) {
-      setImageIndicater({
-        section1: notSelected,
-        section2: selected,
-        section3: notSelected,
-        section4: notSelected,
-      });
-    } else if (tracker == 3) {
-      setImageIndicater({
-        section1: notSelected,
-        section2: notSelected,
-        section3: selected,
-        section4: notSelected,
-      });
-    } else if (tracker == 4) {
-      setImageIndicater({
-        section1: notSelected,
-        section2: notSelected,
-        section3: notSelected,
-        section4: selected,
-      });
+    if (tracker === 1 && successStories[0]) {
+      setHeroImage(successStories[0].acf.feature_image_1 || "/view_img.png");
+    } else if (tracker === 2 && successStories[0]) {
+      setHeroImage(successStories[0].acf.feature_image_2 || "/view_img1.png");
+    } else if (tracker === 3 && successStories[0]) {
+      setHeroImage(successStories[0].acf.feature_image_3 || "/view_img2.png");
+    } else if (tracker === 4 && successStories[0]) {
+      setHeroImage(successStories[0].acf.feature_image_4 || "/view_img3.png");
     } else {
-      setImageIndicater({
-        section1: notSelected,
-        section2: notSelected,
-        section3: notSelected,
-        section4: notSelected,
-      });
+      setHeroImage("/view_img.png");
     }
-  }, [tracker]);
+
+    setImageIndicater({
+      section1: tracker === 1 ? selected : notSelected,
+      section2: tracker === 2 ? selected : notSelected,
+      section3: tracker === 3 ? selected : notSelected,
+      section4: tracker === 4 ? selected : notSelected,
+    });
+  }, [tracker, successStories]);
 
   const handleOpenContact = () => {
     setOpenContact(true);
@@ -160,7 +144,7 @@ const SuccessStories = () => {
               className="w-full aspect-square rounded-3xl transition-all"
             />
             {/* ):null} */}
-            <div className="absolute bottom-10 flex justify-around w-1/2 z-50">
+            <div className="absolute bottom-10 flex justify-around w-1/3 z-50">
               <div
                 onClick={() => {
                   setTracker(1);

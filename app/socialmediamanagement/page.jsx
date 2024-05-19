@@ -194,7 +194,7 @@ const SocialMediaMangement = () => {
         </div>
       </div>
       {/* Our services */}
-      <div className="hook-container w-full flex justify-center  pb-16 md:pt-0 lg:pt-16 md:pb-40 bg-white">
+      <div className="hook-container w-full flex justify-center  pb-16 md:pt-0 lg:pt-16 md:pb-40 ">
         <div className="w-3/4 h-fit flex flex-col md:flex-row gap-16 md:pt-28">
           <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
