@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useFormik } from "formik";
 import Scrollbar from "smooth-scrollbar";
+import Link from "next/link";
 
 import { sendMessage } from "@/app/api/contactForm";
 import Navbar from "../components/Navigation/Navbar";
@@ -158,12 +159,12 @@ const ContactUs = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="w-4 h-4 2xl:w-6 2xl:h-6  group-hover:fill-cyan-400"
+                      className="w-4 h-4 2xl:w-6 2xl:h-6  group-hover:fill-cyan-400"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </div>
@@ -188,17 +189,28 @@ const ContactUs = () => {
                   <h1 className="text-center w-2/3 text-4xl text-white">
                     {message}!
                   </h1>
-                  <button
-                    onClick={() => {
-                      setSubmited(false);
-                      setMessage("");
-                    }}
-                    className="contact-button my-4 bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop rounded-3xl text-white py-2 px-6"
-                  >
-                    <p className="font-semibold bg-black inline-block text-transparent bg-clip-text">
-                      Back
-                    </p>
-                  </button>
+                  <div className="flex gap-8">
+                    <Link href="/">
+                      <button
+                        onClick={() => {
+                          setSubmited(false);
+                          setMessage("");
+                        }}
+                        className="contact-button my-4 bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop rounded-3xl text-white py-2 px-6"
+                      >
+                        <p className="font-semibold bg-black inline-block text-transparent bg-clip-text">
+                          Back to Home Page
+                        </p>
+                      </button>
+                    </Link>
+                    <a href="tel:3366889102">
+                      <button className="contact-button my-4 bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop rounded-3xl text-white py-2 px-6">
+                        <p className="font-semibold bg-black inline-block text-transparent bg-clip-text">
+                          Call Us
+                        </p>
+                      </button>
+                    </a>
+                  </div>
                 </div>
               ) : isLoading ? (
                 <div className="flex justify-center items-center gap-12 py-16 flex-1">

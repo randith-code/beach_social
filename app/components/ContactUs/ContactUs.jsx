@@ -77,17 +77,28 @@ export default function ConatctUs({ setOpenContact }) {
                 <h1 className="text-center w-2/3 text-4xl text-white">
                   {message}!
                 </h1>
-                <button
-                  onClick={() => {
-                    setSubmited(false);
-                    setMessage("");
-                  }}
-                  className="contact-button my-4 bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop rounded-3xl text-white py-2 px-6"
-                >
-                  <p className="font-semibold bg-black inline-block text-transparent bg-clip-text">
-                    Back
-                  </p>
-                </button>
+                <div className="flex gap-8">
+                  <Link href="/">
+                    <button
+                      onClick={() => {
+                        setSubmited(false);
+                        setMessage("");
+                      }}
+                      className="contact-button my-4 bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop rounded-3xl text-white py-2 px-6"
+                    >
+                      <p className="font-semibold bg-black inline-block text-transparent bg-clip-text">
+                        Back to Home Page
+                      </p>
+                    </button>
+                  </Link>
+                  <a href="tel:3366889102">
+                    <button className="contact-button my-4 bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop rounded-3xl text-white py-2 px-6">
+                      <p className="font-semibold bg-black inline-block text-transparent bg-clip-text">
+                        Call Us
+                      </p>
+                    </button>
+                  </a>
+                </div>
               </div>
             ) : isLoading ? (
               <div className="flex justify-center items-center gap-12 py-16 flex-1">
