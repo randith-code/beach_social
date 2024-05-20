@@ -3,6 +3,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useFormik } from "formik";
+import Link from "next/link";
 
 import { sendMessage } from "@/app/api/contactForm";
 import { useState } from "react";
