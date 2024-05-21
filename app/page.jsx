@@ -369,75 +369,105 @@ export default function Home() {
         </p>
         <div className="flex flex-col gap-8 md:gap-14 mt-8 bg-white z-40">
           <div className="flex w-full gap-10 overflow-x-scroll no-scrollbar md:overflow-x-hidden">
-            <div className="top-logos flex gap-6 -translate-x-2/3 2xl:-translate-x-1/3">
+            <div className="top-logos flex gap-6 -translate-x-2/3 2xl:-translate-x-1/4">
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/aely.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/camp.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/graanted.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/legato.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/metric.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/mint.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/oax.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/aely.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/camp.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/graanted.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/legato.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/metric.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/mint.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/oax.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
                 alt="partner company logo"
               />
             </div>
@@ -445,83 +475,73 @@ export default function Home() {
           <div className="flex w-full overflow-x-scroll no-scrollbar md:overflow-x-hidden">
             <div className="bottom-logos flex md:gap-10">
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/overland.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/sunrun.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/sign.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/screensight.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/miller.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/oax.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/legato.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/overland.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/overland.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/sunrun.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/sign.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/screensight.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/miller.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
                 alt="partner company logo"
               />
               <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/oax.png"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/legato.png"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-auto aspect-auto"
-                src="/overland.png"
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
                 alt="partner company logo"
               />
             </div>
