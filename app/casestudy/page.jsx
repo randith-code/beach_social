@@ -118,7 +118,7 @@ const CaseStudy = () => {
           <div className="w-full flex flex-col lg:flex-row gap-20 py-16 lg:py-28">
             <div className=" w-full lg:w-5/12">
               <img
-                className="w-full h-full"
+                className="w-full h-full aspect-auto rounded-3xl"
                 src={searchParams.get("about_client_image")}
                 alt="case_study_item_1"
               />
@@ -132,16 +132,17 @@ const CaseStudy = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-col lg:flex-row gap-20 py-16 lg:py-28">
-            <div className="w-full lg:w-1/2 flex flex-col justify-center gap-8">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center gap-20 py-16 lg:py-28">
+            <div className="w-full lg:w-5/12 flex flex-col justify-center gap-8">
               <h1 className="font-Anton text-5xl">Our Goal</h1>
               <p>{searchParams.get("our_goal")}</p>
             </div>
 
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-6/12">
               <img
                 src={searchParams.get("our_goal_image")}
                 alt="case_study_item_1"
+                className="w-full ma:w-10/12 aspect-auto rounded-3xl"
               />
             </div>
           </div>
