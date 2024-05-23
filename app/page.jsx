@@ -392,22 +392,12 @@ export default function Home() {
               />
               <img
                 className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
+                src="/up_up.svg"
                 alt="partner company logo"
               />
               <img
                 className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
+                src="/projectx.svg"
                 alt="partner company logo"
               />
               <img
@@ -432,22 +422,12 @@ export default function Home() {
               />
               <img
                 className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
+                src="/up_up.svg"
                 alt="partner company logo"
               />
               <img
                 className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
+                src="/projectx.svg"
                 alt="partner company logo"
               />
               <img
@@ -468,6 +448,76 @@ export default function Home() {
               <img
                 className="h-12 md:h-28 aspect-auto"
                 src="/palmroom.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/up_up.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/projectx.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/up_up.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/projectx.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/up_up.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/projectx.svg"
                 alt="partner company logo"
               />
             </div>
@@ -496,22 +546,12 @@ export default function Home() {
               />
               <img
                 className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
+                src="/up_up.svg"
                 alt="partner company logo"
               />
               <img
                 className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
+                src="/projectx.svg"
                 alt="partner company logo"
               />
               <img
@@ -532,6 +572,46 @@ export default function Home() {
               <img
                 className="h-12 md:h-28 aspect-auto"
                 src="/palmroom.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/up_up.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/projectx.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/oki.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/varnish.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/bbq.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/palmroom.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/up_up.svg"
+                alt="partner company logo"
+              />
+              <img
+                className="h-12 md:h-28 aspect-auto"
+                src="/projectx.svg"
                 alt="partner company logo"
               />
               <img
