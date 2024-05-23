@@ -1,6 +1,6 @@
 "use client";
 import { useState, useContext } from "react";
-import ServiceContext from "./serviceContext";
+import ServiceContext from "./ServiceContext";
 
 export const useService = () => {
   return useContext(ServiceContext);
