@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ServiceContextProvider from "./context/serviceContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,10 +26,12 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         ></link>
       </head>
-      <body className={inter.className}>
-        {children}
-        <div id="overlay-root"></div>
-      </body>
+      <ServiceContextProvider>
+        <body className={inter.className}>
+          {children}
+          <div id="overlay-root"></div>
+        </body>
+      </ServiceContextProvider>
     </html>
   );
 }

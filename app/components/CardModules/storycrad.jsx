@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import parse from "html-react-parser";
+import { useService } from "@/app/context/serviceContextProvider";
 
 const StoryCard = ({
   img,
@@ -26,6 +27,8 @@ const StoryCard = ({
   const widthLink = isLarge
     ? "md:w-6/12 aspect-square md:aspect-video cursor-pointer"
     : "md:w-4/12 aspect-square cursor-pointer";
+
+  const { setServices } = useService();
   return (
     <Link
       className={`${widthLink}`}
@@ -38,9 +41,9 @@ const StoryCard = ({
           our_goal,
           our_goal_image,
           project_title,
-          service,
         },
       }}
+      onClick={() => setServices(service)}
     >
       <div
         className={`relative transition-all duration-[2000ms] bg-no-repeat bg-center bg-120% hover:bg-100% ${width}`}

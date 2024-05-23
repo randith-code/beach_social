@@ -11,6 +11,7 @@ import CustomNavbar from "../components/Navigation/CustomNavBar";
 import Footer from "../components/Navigation/Footer";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 import ParticlesComponent from "../components/Hero section/Particle";
+import { useService } from "../context/serviceContextProvider";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -68,6 +69,8 @@ const CaseStudy = () => {
     });
   });
 
+  const { services } = useService();
+
   return (
     <main ref={containerRef} className="h-screen">
       <CustomNavbar />
@@ -90,9 +93,12 @@ const CaseStudy = () => {
                   Services :
                 </h2>
                 <dl className="font-Anton text-sm md:text-base lg:text-xl flex flex-col gap-4">
-                  <dt>Social Media Consulting</dt>
+                  {services.map((service, key) => (
+                    <dt key={key}>{service}</dt>
+                  ))}
+                  {/* <dt>Social Media Consulting</dt>
                   <dt>Social Media Management</dt>
-                  <dt>Web Development</dt>
+                  <dt>Web Development</dt> */}
                 </dl>
               </span>
 
