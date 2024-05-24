@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { Roboto, Anton } = require("next/font/google");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -24,8 +25,8 @@ module.exports = {
         balckMask: "rgba(0, 0, 0, 0.3)",
       },
       fontFamily: {
-        Roboto: ['"Roboto"', ...defaultTheme.fontFamily.sans],
-        Anton: ["Anton"],
+        Roboto: ["var(--font-roboto)"],
+        Anton: ["var(--font-anton)"],
       },
       fontSize: {
         xxs: "0.5rem",

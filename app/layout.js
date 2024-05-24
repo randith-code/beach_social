@@ -1,8 +1,22 @@
-import { Inter } from "next/font/google";
+import { Inter, Anton, Roboto } from "next/font/google";
 import "./globals.css";
 import ServiceContextProvider from "./context/serviceContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const anton = Anton({
+  subsets: ["latin"],
+  variable: "--font-anton",
+  display: "swap",
+  weight: "400",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  variable: "--font-roboto",
+  display: "swap",
+  weight: ["100", "300", "400", "500", "700", "900"],
+});
 
 export const metadata = {
   title: "Beach Social",
@@ -21,13 +35,11 @@ export default function RootLayout({ children }) {
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-          rel="stylesheet"
-        ></link>
       </head>
       <ServiceContextProvider>
-        <body className={inter.className}>
+        <body
+          className={`${inter.className} ${roboto.variable} ${anton.variable}`}
+        >
           {children}
           <div id="overlay-root"></div>
         </body>
