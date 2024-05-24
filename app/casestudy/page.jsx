@@ -96,9 +96,6 @@ const CaseStudy = () => {
                   {services.map((service, key) => (
                     <dt key={key}>{service}</dt>
                   ))}
-                  {/* <dt>Social Media Consulting</dt>
-                  <dt>Social Media Management</dt>
-                  <dt>Web Development</dt> */}
                 </dl>
               </span>
 

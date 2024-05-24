@@ -135,7 +135,9 @@ const ContactUs = () => {
                       />
                     </svg>
                   </div>
-                  <p className="font-Anton 2xl:text-xl">336688&ndash;9102</p>
+                  <a href="tel:3366889102">
+                    <p className="font-Anton 2xl:text-xl">336688&ndash;9102</p>
+                  </a>
                 </span>
 
                 <span className="flex gap-4 items-center">
@@ -150,7 +152,9 @@ const ContactUs = () => {
                       <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                     </svg>
                   </div>
-                  <p className="font-Anton 2xl:text-xl">atbeachsocial.com</p>
+                  <a href="mailto:atbeachsocial.com">
+                    <p className="font-Anton 2xl:text-xl">atbeachsocial.com</p>
+                  </a>
                 </span>
 
                 <span className="flex gap-4 items-center">
@@ -168,9 +172,14 @@ const ContactUs = () => {
                       />
                     </svg>
                   </div>
-                  <p className="font-Anton 2xl:text-xl">
-                    Coast of the Carolinas,United States
-                  </p>
+                  <a
+                    href="https://www.google.com/maps/place/North+Carolina,+USA/@35.146362,-82.5009574,7z/data=!3m1!4b1!4m6!3m5!1s0x88541fc4fc381a81:0xad3f30f5e922ae19!8m2!3d35.7595731!4d-79.0192997!16zL20vMDVma2Y?entry=ttu"
+                    target="_blank"
+                  >
+                    <p className="font-Anton 2xl:text-xl">
+                      Coast of the Carolinas,United States
+                    </p>
+                  </a>
                 </span>
               </span>
             </span>
