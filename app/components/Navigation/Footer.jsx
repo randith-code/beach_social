@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import TikTok from "../icons/TikTok";
 import Facebook from "../icons/Facebook";
 import Instagram from "../icons/Instagram";
+import footer_logo from "../../../public/footer_logo.png";
 
 const Footer = ({ handlePopUpOpen }) => {
   return (
@@ -12,7 +14,7 @@ const Footer = ({ handlePopUpOpen }) => {
         <div className="flex flex-col lg:flex-row justify-center w-10/12 md:w-9/12 border-b-2 pb-8 border-opacity-20 border-white">
           <div className="w-full lg:w-1/4 flex flex-col gap-4">
             <Link href="/">
-              <img className="w-3/5" src="/footer_logo.png" alt="footer logo" />
+              <Image className="w-3/5" src={footer_logo} alt="footer logo" />
             </Link>
             <p className="text-xs md:text-sm lg:text-xs w-full lg:w-3/5 font-light 2xl:text-sm">
               Dive into a sea of endless possibilities with Beach Social
@@ -110,7 +112,7 @@ const Footer = ({ handlePopUpOpen }) => {
                     />
                   </svg>
                   <a href="tel:3366889102">
-                    <p>336688&ndash;9102</p>
+                    <p>(336) 688&ndash;9102</p>
                   </a>
                 </span>
                 <span className="flex items-center gap-4">
@@ -123,9 +125,9 @@ const Footer = ({ handlePopUpOpen }) => {
                     <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                     <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                   </svg>
-                  <a href="mailto:atbeachsocial.com">
+                  <a href="mailto:Info@beachsocial.com">
                     {" "}
-                    <p>atbeachsocial.com</p>
+                    <p>Info@beachsocial.com</p>
                   </a>
                 </span>
                 <span className="flex items-start gap-4">
@@ -146,7 +148,7 @@ const Footer = ({ handlePopUpOpen }) => {
                     target="_blank"
                   >
                     {" "}
-                    <p>Coast of the Carolinas,United States</p>
+                    <p>Coastal of the Carolinas</p>
                   </a>
                 </span>
               </span>

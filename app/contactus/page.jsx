@@ -7,12 +7,16 @@ import { useGSAP } from "@gsap/react";
 import { useFormik } from "formik";
 import Scrollbar from "smooth-scrollbar";
 import Link from "next/link";
+import Image from "next/image";
 
 import { sendMessage } from "@/app/api/contactForm";
 import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
 import ParticlesComponent from "../components/Hero section/Particle";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
+
+import contactus_hero from "../../public/contact_us.jpg";
+import footer_logo from "../../public/footer_logo.png";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -96,10 +100,11 @@ const ContactUs = () => {
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row items-center">
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
             <div className="relative w-full md:w-2/3">
-              <img
-                className="absolute top-0 rounded-3xl w-full aspect-square z-10"
-                src="/contact_us.jpg"
-                alt="into image"
+              <Image
+                className="absolute top-0 rounded-3xl z-10"
+                src={contactus_hero}
+                fill
+                alt="contact us hero image"
               />
               <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
             </div>
@@ -136,7 +141,9 @@ const ContactUs = () => {
                     </svg>
                   </div>
                   <a href="tel:3366889102">
-                    <p className="font-Anton 2xl:text-xl">336688&ndash;9102</p>
+                    <p className="font-Anton 2xl:text-xl">
+                      (336) 688&ndash;9102
+                    </p>
                   </a>
                 </span>
 
@@ -152,8 +159,10 @@ const ContactUs = () => {
                       <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                     </svg>
                   </div>
-                  <a href="mailto:atbeachsocial.com">
-                    <p className="font-Anton 2xl:text-xl">atbeachsocial.com</p>
+                  <a href="mailto:Info@beachsocial.com">
+                    <p className="font-Anton 2xl:text-xl">
+                      Info@beachsocial.com
+                    </p>
                   </a>
                 </span>
 
@@ -177,7 +186,7 @@ const ContactUs = () => {
                     target="_blank"
                   >
                     <p className="font-Anton 2xl:text-xl">
-                      Coast of the Carolinas,United States
+                      Coastal of the Carolinas
                     </p>
                   </a>
                 </span>
@@ -286,11 +295,15 @@ const ContactUs = () => {
                   </svg>
                 </div>
               ) : (
-                <div className="flex flex-col gap-8 items-center flex-1">
+                <div className="flex flex-col gap-4 md:gap-8 items-center flex-1">
                   <div className="w-full flex flex-col md:flex-row">
-                    <span className="w-1/2 flex justify-center">
+                    <span className="w-full md:w-1/2 flex justify-center">
                       <span className="w-8/12">
-                        <img className="w-2/5" src="/footer_logo.png" alt="" />
+                        <Image
+                          className="w-1/2 md:w-2/5"
+                          src={footer_logo}
+                          alt="footer log"
+                        />
                       </span>
                     </span>
                   </div>

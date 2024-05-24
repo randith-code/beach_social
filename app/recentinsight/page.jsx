@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import Scrollbar from "smooth-scrollbar";
 import { useSearchParams } from "next/navigation";
 import parse from "html-react-parser";
+import Image from "next/image";
 
 import CustomNavbar from "../components/Navigation/CustomNavBar";
 import Footer from "../components/Navigation/Footer";
@@ -63,11 +64,14 @@ const RecentInsight = () => {
       <div className="w-full flex justify-center">
         <div className="w-3/4 py-28 flex flex-col gap-16">
           <h1 className="font-Anton text-6xl">{searchParams.get("title")}</h1>
-          <img
-            className="w-full lg:w-1/3"
-            src={searchParams.get("img")}
-            alt="blog image"
-          />
+          <div className="relative w-full aspect-square lg:w-1/3">
+            <Image
+              className="rounded-3xl"
+              fill
+              src={searchParams.get("img")}
+              alt="blog image"
+            />
+          </div>
           <p>{parse(searchParams.get("description"))}</p>
         </div>
       </div>

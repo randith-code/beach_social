@@ -3,11 +3,11 @@ import { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 import Hero from "./components/Hero section/Hero";
 import StoryCard from "./components/CardModules/storycrad";
 import ListItem from "./components/Hero section/ListItem";
-import InsightCard from "./components/CardModules/InsightCard";
 import Footer from "./components/Navigation/Footer";
 import ConatctCard from "./components/ContactUs/ContactCard";
 import ContactUsPopUP from "./components/ContactUs/ContactUsPopUp";
@@ -16,6 +16,13 @@ import Scrollbar from "smooth-scrollbar";
 import Overlay from "./components/CardModules/Overlay";
 import InsightContainer from "./components/LayoutComponents/InsightContainer";
 import { getInsightPosts, getSuccessStoryPosts } from "./api/posts";
+
+import logo_1 from "../public/oki.svg";
+import logo_2 from "../public//varnish.svg";
+import logo_3 from "../public/bbq.svg";
+import logo_4 from "../public/palmroom.svg";
+import logo_5 from "../public/up_up.svg";
+import logo_6 from "../public/projectx.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -370,258 +377,248 @@ export default function Home() {
         <div className="flex flex-col gap-8 md:gap-14 mt-8 bg-white z-40">
           <div className="flex w-full gap-10 overflow-x-scroll no-scrollbar md:overflow-x-hidden">
             <div className="top-logos flex gap-6 -translate-x-2/3 2xl:-translate-x-1/4">
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
+                src={logo_1}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
+                src={logo_2}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_3}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_4}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_5}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_6}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
+                src={logo_1}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
+                src={logo_2}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_3}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_4}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_5}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_6}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/up_up.svg"
+                src={logo_1}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/projectx.svg"
+                src={logo_2}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_3}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_4}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_5}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_6}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
+                src={logo_1}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
+                src={logo_2}
                 alt="partner company logo"
-              />
-              <img
+              />{" "}
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
+                src={logo_3}
                 alt="partner company logo"
-              />
-              <img
+              />{" "}
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
+                src={logo_4}
                 alt="partner company logo"
-              />
-              <img
+              />{" "}
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/up_up.svg"
+                src={logo_5}
                 alt="partner company logo"
-              />
-              <img
+              />{" "}
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/projectx.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/up_up.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/projectx.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/up_up.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/projectx.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/up_up.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/projectx.svg"
+                src={logo_6}
                 alt="partner company logo"
               />
             </div>
           </div>
           <div className="flex w-full overflow-x-scroll no-scrollbar md:overflow-x-hidden">
             <div className="bottom-logos flex md:gap-10">
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
+                src={logo_1}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
+                src={logo_2}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_3}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_4}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_5}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_6}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
+                src={logo_1}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
+                src={logo_2}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_3}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_4}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_5}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_6}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/up_up.svg"
+                src={logo_1}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/projectx.svg"
+                src={logo_2}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_3}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_4}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_5}
+                alt="partner company logo"
+              />{" "}
+              <Image
+                className="h-12 md:h-28 aspect-auto"
+                src={logo_6}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
+                src={logo_1}
                 alt="partner company logo"
               />
-              <img
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
+                src={logo_2}
                 alt="partner company logo"
-              />
-              <img
+              />{" "}
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
+                src={logo_3}
                 alt="partner company logo"
-              />
-              <img
+              />{" "}
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
+                src={logo_4}
                 alt="partner company logo"
-              />
-              <img
+              />{" "}
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/up_up.svg"
+                src={logo_5}
                 alt="partner company logo"
-              />
-              <img
+              />{" "}
+              <Image
                 className="h-12 md:h-28 aspect-auto"
-                src="/projectx.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/bbq.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/palmroom.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/up_up.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/projectx.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/oki.svg"
-                alt="partner company logo"
-              />
-              <img
-                className="h-12 md:h-28 aspect-auto"
-                src="/varnish.svg"
+                src={logo_6}
                 alt="partner company logo"
               />
             </div>

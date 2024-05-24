@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
+import Image from "next/image";
 
 import CustomNavbar from "../components/Navigation/CustomNavBar";
 import Footer from "../components/Navigation/Footer";
@@ -15,6 +16,9 @@ import ServiceItem from "../components/CardModules/ServiceItem";
 import ParticlesComponent from "../components/Hero section/Particle";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 import { getSuccessStoryPosts } from "../api/posts";
+
+import background_demo from "../../public/background_demo.png";
+import our_values from "../../public//our_value.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -144,12 +148,8 @@ const SocialMediaMangement = () => {
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
       <ParticlesComponent id="partical_social" />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-center w-full h-[100vh]" />
-      <div className="absolute hidden md:block pt-40 lg:pt-0 w-[30%] -z-10 right-0">
-        <img
-          src="/background_demo.png"
-          className="w-full"
-          alt="a background feature"
-        />
+      <div className="absolute hidden lg:block pt-40 lg:pt-0 w-[30vw] h-[120vh] -z-10 right-0">
+        <Image src={background_demo} fill alt="a background feature" />
       </div>
       <div className="values h-screen md:h-fit lg:h-screen w-full flex justify-center items-center pt-32 md:pt-20 lg:pt-32 pb-16">
         <div className="w-3/4">
@@ -286,10 +286,10 @@ const SocialMediaMangement = () => {
           </div>
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center py-8">
             <div className="relative w-full md:w-3/4">
-              <img
+              <Image
                 className="absolute top-0 w-full rounded-3xl aspect-square z-10"
-                src="/our_value.jpg"
-                alt="into image"
+                src={our_values}
+                alt="our values image"
               />
               <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
             </div>

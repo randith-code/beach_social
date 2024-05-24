@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Scrollbar from "smooth-scrollbar";
 import Link from "next/link";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
 import CustomNavbar from "../components/Navigation/CustomNavBar";
@@ -109,22 +110,29 @@ const CaseStudy = () => {
               </button>
             </div>
 
-            <div className="w-full grid place-content-center md:w-1/2">
-              <img
-                className="w-full md:w-10/12 rounded-3xl  aspect-square"
-                src={searchParams.get("casestudy_hero")}
-                alt="case study hero"
-              />
+            <div className="w-full flex justify-center items-center aspect-square md:w-1/2">
+              <div className="relative w-full md:w-10/12 aspect-square rounded-3xl">
+                <Image
+                  priority
+                  src={searchParams.get("casestudy_hero")}
+                  fill
+                  alt="case study hero"
+                  className="rounded-3xl"
+                />
+              </div>
             </div>
           </div>
 
           <div className="w-full flex flex-col lg:flex-row gap-20 py-16 lg:py-28">
             <div className=" w-full lg:w-5/12">
-              <img
-                className="w-full h-full aspect-auto rounded-3xl"
-                src={searchParams.get("about_client_image")}
-                alt="case_study_item_1"
-              />
+              <div className="relative w-full aspect-square rounded-3xl">
+                <Image
+                  className="rounded-3xl"
+                  fill
+                  src={searchParams.get("about_client_image")}
+                  alt="case_study_item_1"
+                />
+              </div>
             </div>
 
             <div className="w-full lg:w-7/12 flex flex-col justify-center gap-8">
@@ -142,11 +150,14 @@ const CaseStudy = () => {
             </div>
 
             <div className="w-full lg:w-6/12">
-              <img
-                src={searchParams.get("our_goal_image")}
-                alt="case_study_item_1"
-                className="w-full ma:w-10/12 aspect-auto rounded-3xl"
-              />
+              <div className="relative w-full ma:w-10/12 aspect-video rounded-3xl">
+                <Image
+                  className="rounded-3xl"
+                  fill
+                  src={searchParams.get("our_goal_image")}
+                  alt="case_study_item_1"
+                />
+              </div>
             </div>
           </div>
         </div>

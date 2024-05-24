@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
+import Image from "next/image";
 
 import CustomNavbar from "../components/Navigation/CustomNavBar";
 import Footer from "../components/Navigation/Footer";
@@ -15,6 +16,11 @@ import ServiceItem from "../components/CardModules/ServiceItem";
 import ParticlesComponent from "../components/Hero section/Particle";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 import ClickAndDragScroll from "../components/CardModules/ClickAndDragScroll";
+
+import about_us from "../../public/about_us.jpg";
+import personal_story_img_1 from "../../public/personal_story_1.png";
+import personal_story_img_2 from "../../public/personal_story_2.png";
+import personal_story_img_3 from "../../public/personal_story_3.png";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -112,10 +118,10 @@ const AboutUs = () => {
         <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row justify-between items-center">
           <div className="w-10/12 lg:w-1/2 h-fit flex justify-start items-center pt-8">
             <div className="relative w-full md:w-10/12 mt-8">
-              <img
+              <Image
                 className="absolute top-0 w-full rounded-3xl aspect-square z-10"
-                src="/about_us.jpg"
-                alt="into image"
+                src={about_us}
+                alt="about us hero image"
               />
               <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
             </div>
@@ -156,9 +162,11 @@ const AboutUs = () => {
       </div>
       {/* services */}
       <div className="w-full py-20 flex justify-center">
-        <div className="relative  whitespace-nowrap w-3/4 grid grid-cols-3 lg:flex lg:overflow-x-scroll lg:h-fit no-scrollbar gap-20">
+        <div className="relative  whitespace-nowrap w-3/4 lg:flex lg:overflow-x-scroll lg:h-fit no-scrollbar gap-20">
           <ClickAndDragScroll
-            className={"w-full h-fit flex gap-20 no-scrollbar"}
+            className={
+              "w-full h-fit grid grid-cols-3 lg:flex gap-20 no-scrollbar"
+            }
           >
             <ServiceItem
               img={"/web_design.svg"}
@@ -223,44 +231,59 @@ const AboutUs = () => {
       {/* personal stories */}
       <div className="w-full relative flex flex-col items-center overflow-x-hidden gap-8 py-20 md:py-28  bg-valuesBg">
         <div className="srcoller-inner flex w-full gap-8 overflow-x-scroll no-scrollbar md:overflow-visible md:-translate-x-1/3">
-          <img
+          <Image
             className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_1.png"
+            src={personal_story_img_1}
             alt="coresel image"
           />
-          <img
+          <Image
             className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_2.png"
+            src={personal_story_img_2}
             alt="coresel image"
           />
-          <img
+          <Image
             className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_3.png"
+            src={personal_story_img_3}
             alt="coresel image"
           />
-          <img
+          <Image
             className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_1.png"
+            src={personal_story_img_1}
             alt="coresel image"
           />
-          <img
+          <Image
             className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_2.png"
+            src={personal_story_img_2}
             alt="coresel image"
           />
-          <img
+          <Image
             className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_3.png"
+            src={personal_story_img_3}
             alt="coresel image"
           />
-          <img
+          <Image
             className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_1.png"
+            src={personal_story_img_1}
             alt="coresel image"
           />
-          <img
+          <Image
             className="w-1/4 md:w-2/12 aspect-square"
-            src="/personal_story_2.png"
+            src={personal_story_img_2}
+            alt="coresel image"
+          />
+          <Image
+            className="w-1/4 md:w-2/12 aspect-square"
+            src={personal_story_img_3}
+            alt="coresel image"
+          />
+          <Image
+            className="w-1/4 md:w-2/12 aspect-square"
+            src={personal_story_img_1}
+            alt="coresel image"
+          />
+          <Image
+            className="w-1/4 md:w-2/12 aspect-square"
+            src={personal_story_img_2}
             alt="coresel image"
           />
         </div>

@@ -9,6 +9,8 @@ import { sendMessage } from "@/app/api/contactForm";
 import { useState } from "react";
 import Overlay from "../CardModules/Overlay";
 
+import footer_logo from "../../../public/footer_logo.png";
+
 const ContactUsPopUP = ({ open, handelPopUpClose }) => {
   const { contextSafe } = useGSAP(() => {
     gsap.from(".contactus", {
@@ -68,16 +70,17 @@ const ContactUsPopUP = ({ open, handelPopUpClose }) => {
       <>
         <div className={`contactus flex flex-col w-full`}>
           <div className="bg-backgroundBlur grid place-items-center h-screen">
-            <div className="w-10/12 h-5/6 flex flex-col bg-black rounded-3xl">
+            <div className="w-10/12 h-fit md:min-h-[90vh] pb-2 flex flex-col bg-black rounded-3xl">
               <div className="w-full flex justify-end">
-                <Image
-                  src="/close_button.png"
-                  onClick={handelClose}
-                  width={20}
-                  height={20}
-                  alt="close button"
-                  className="cursor-pointer m-8"
-                />
+                <div className="relative m-4 md:m-6 w-3 md:w-5 aspect-square">
+                  <Image
+                    src="/close_button.png"
+                    onClick={handelClose}
+                    fill
+                    alt="close button"
+                    className="cursor-pointer"
+                  />
+                </div>
               </div>
               {submited ? (
                 <div className="flex flex-col items-center py-16 justify-center flex-1">
@@ -175,7 +178,11 @@ const ContactUsPopUP = ({ open, handelPopUpClose }) => {
                 <div className="flex flex-col md:flex-row md:items-center flex-1">
                   <div className="w-full md:w-1/2 md:pb-8 h-full grid place-items-center">
                     <span className="w-8/12 flex flex-col gap-4">
-                      <img className="w-2/5" src="/footer_logo.png" alt="" />
+                      <Image
+                        className="w-1/2 md:w-3/5 lg:w-2/5"
+                        src={footer_logo}
+                        alt="footer log"
+                      />
                       <span className="flex flex-col">
                         <h1 className="font-extrabold text-xl md:text-3xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
                           SocialReach Nexus
@@ -195,7 +202,7 @@ const ContactUsPopUP = ({ open, handelPopUpClose }) => {
                   </div>
                   <div className="w-full md:w-1/2 h-full grid place-items-center">
                     <form
-                      className="flex flex-col w-8/12 gap-8 py-4 md:py-0"
+                      className="flex flex-col w-8/12 text-xs gap-8 py-4 md:py-0"
                       action=""
                       onSubmit={formik.handleSubmit}
                     >

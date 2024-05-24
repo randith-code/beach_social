@@ -1,8 +1,11 @@
+import Image from "next/image";
+
 const TeamMemberCard = ({ img, title, name, description }) => {
   return (
     <div className="rounded-xl w-full md:w-4/12 flex flex-col items-center p-4">
-      <div className="w-full aspect-square overflow-hidden rounded-2xl">
-        <img src={img} alt="insight image" className="w-full" />
+      <div className="relative w-full aspect-square overflow-hidden rounded-2xl">
+        <Image src={img} alt="team member photo" fill />
+        {/* <img src={img} alt="insight image" className="w-full" /> */}
       </div>
       <div className="flex flex-col gap-4 pt-4">
         <span className="flex flex-col">
