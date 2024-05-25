@@ -157,7 +157,7 @@ const SocialMediaMangement = () => {
             <h1 className="font-Anton pt-20 text-5xl 2xl:text-7xl">
               Social Media Management
             </h1>
-            <p className="font-Anton">
+            <p className="font-Anton 2xl:text-lg">
               In today&apos;s digital landscape, maintaining an active and
               engaging social media presence is more crucial than ever. At Beach
               Social, we offer comprehensive Social Media Management services
@@ -278,7 +278,7 @@ const SocialMediaMangement = () => {
                 management can make.
               </p>
               <button className="bg-black group hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
-                <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
+                <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
                   Get in Touch
                 </p>
               </button>
