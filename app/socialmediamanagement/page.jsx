@@ -18,7 +18,10 @@ import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 import { getSuccessStoryPosts, getSocialMediaContent } from "../api/posts";
 
 import background_demo from "../../public/background_demo.png";
-import { pairServices } from "../utils/utilityFunctions/stringFormat";
+import {
+  pairServices,
+  splitStringIntoParts,
+} from "../utils/utilityFunctions/stringFormat";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -127,6 +130,9 @@ const SocialMediaMangement = () => {
   const [successStories, setSuccessStories] = useState([]);
   const [socialMediaContent, setSocialMediaContent] = useState();
   const [valueItems, setValueItems] = useState([]);
+  const [serviceTitle, setServiceTitle] = useState([]);
+  const [chooseUsTitle, setChooseUsTitle] = useState([]);
+  const [communityTitle, setCommunityTitle] = useState([]);
 
   const handleDataFetch = async () => {
     try {
@@ -147,6 +153,15 @@ const SocialMediaMangement = () => {
   useEffect(() => {
     if (socialMediaContent) {
       setValueItems(pairServices(socialMediaContent.acf.our_services_items));
+      setServiceTitle(
+        splitStringIntoParts(socialMediaContent.acf.our_services_title, 1)
+      );
+      setChooseUsTitle(
+        splitStringIntoParts(socialMediaContent.acf.why_choose_us_title, 2)
+      );
+      setCommunityTitle(
+        splitStringIntoParts(socialMediaContent.acf.join_community_title, 1)
+      );
     }
   }, [socialMediaContent]);
 
@@ -213,10 +228,10 @@ const SocialMediaMangement = () => {
           <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
-                Our &quot;
+                {socialMediaContent ? serviceTitle[0] : `Our`} &quot;
               </h1>
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                Services
+                {socialMediaContent ? serviceTitle[1] : `Services`}
               </h1>
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
                 &quot;
@@ -242,36 +257,6 @@ const SocialMediaMangement = () => {
                     />
                   ))
                 : null}
-              {/* <OurValuesItem
-                item={"Strategy Development:"}
-                description={
-                  "We begin by understanding your brand, goals, and audience. Using this insight, we craft a tailored social media strategy that aligns with your business objectives and sets the stage for digital success."
-                }
-              />
-              <OurValuesItem
-                item={"Content Creation:"}
-                description={
-                  "Dive into a sea of creativity with our expert content creators. From eye-catching graphics to compelling copy, we produce content that resonates with your target audience and embodies your brand’s voice."
-                }
-              />
-              <OurValuesItem
-                item={"Daily Management and Posting:"}
-                description={
-                  "Leave the day-to-day management of your social media profiles to us. We ensure that your accounts are active, engaging, and timely—keeping your brand top-of-mind and your audience engaged."
-                }
-              />
-              <OurValuesItem
-                item={"Monitoring and Engagement:"}
-                description={
-                  "We monitor your social channels to ensure that every comment, query, and opportunity for engagement doesn’t slip through the net. Our team helps nurture relationships by interacting with your audience in a genuine and professional manner."
-                }
-              />
-              <OurValuesItem
-                item={"Analytics and Reporting:"}
-                description={
-                  "With our comprehensive analytics tools, we track the performance of your campaigns and provide detailed reports. This helps us refine strategies and make data-driven decisions to boost your social media effectiveness."
-                }
-              /> */}
             </div>
           </div>
         </div>
@@ -284,10 +269,10 @@ const SocialMediaMangement = () => {
             <span className="flex flex-col justify-start gap-4 w-10/12 mt-8">
               <span className="flex font-Anton">
                 <h1 className="font-medium text-3xl md:text-4xl 2xl:text-7xl">
-                  Why &quot;
+                  {socialMediaContent ? chooseUsTitle[0] : `Why`} &quot;
                 </h1>
                 <h1 className="font-medium text-3xl md:text-4xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                  Choose Us
+                  {socialMediaContent ? chooseUsTitle[1] : `Choose Us`}
                 </h1>
                 <h1 className="font-medium text-3xl md:text-4xl 2xl:text-7xl">
                   &quot;

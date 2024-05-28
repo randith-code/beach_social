@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const TeamMemberCard = ({ img, title, name, description }) => {
   return (
-    <div className="rounded-xl w-full md:w-4/12 flex flex-col items-center p-4">
+    <div className="rounded-xl w-full md:w-full flex flex-col items-center p-4">
       <div className="relative w-full aspect-square overflow-hidden rounded-2xl">
         <Image src={img} alt="team member photo" fill />
         {/* <img src={img} alt="insight image" className="w-full" /> */}

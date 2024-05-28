@@ -23,6 +23,7 @@ import {
 import {
   splitString,
   pairServices,
+  splitStringIntoParts,
 } from "./utils/utilityFunctions/stringFormat";
 
 import logo_1 from "../public/oki.svg";
@@ -332,6 +333,9 @@ export default function Home() {
   const [homeContent, setHomeContent] = useState([]);
   const [pairedServices, setPairedSrvices] = useState([]);
   const [itemList, setItemList] = useState([]);
+  const [serviceTitle, setServiceTitle] = useState([]);
+  const [yourStoryTitle, setYourStoryTitle] = useState([]);
+  const [insightTitle, setInsightTitle] = useState([]);
 
   const handleDataFetch = async () => {
     try {
@@ -369,6 +373,13 @@ export default function Home() {
       setPartnersTitle(splitString(homeContent.acf.partners_title));
       setPairedSrvices(pairServices(homeContent.acf.services));
       setItemList(pairServices(homeContent.acf.story_items));
+      setServiceTitle(splitStringIntoParts(homeContent.acf.service_title, 2));
+      setYourStoryTitle(
+        splitStringIntoParts(homeContent.acf.your_story_title, 1)
+      );
+      setInsightTitle(
+        splitStringIntoParts(homeContent.acf.recent_insight_title, 1)
+      );
     }
   }, [homeContent]);
 
@@ -649,19 +660,23 @@ export default function Home() {
         <span className="hidden service-text-container absolute md:flex items-start justify-center w-full h-full bg-white z-50">
           <span className="service-initial-text flex items-center h-fit py-16">
             <h1 className="font-medium text-5xl 2xl:text-7xl">
-              We&apos;ve got just what
+              {homeContent
+                ? `${serviceTitle[0]} \u00A0`
+                : `We&apos;ve got just what`}
             </h1>
             <h1 className="font-medium text-5xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-              &nbsp; you need.
+              {homeContent ? serviceTitle[1] : `&nbsp; you need.`}
             </h1>
           </span>
         </span>
         <span className="services flex">
           <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl">
-            We&apos;ve got just what
+            {homeContent
+              ? `${serviceTitle[0]} \u00A0`
+              : `We&apos;ve got just what`}
           </h1>
           <h1 className="font-medium text-2xl md:text-5xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-            &nbsp; you need.
+            {homeContent ? serviceTitle[1] : `&nbsp; you need.`}
           </h1>
         </span>
         <div className="service-container flex flex-col gap-8 items-center w-full">
@@ -859,10 +874,10 @@ export default function Home() {
           <div className="hook-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
-                Your &quot;
+                {homeContent ? yourStoryTitle[0] : `Your`} &quot;
               </h1>
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                Story
+                {homeContent ? yourStoryTitle[1] : `Story`}
               </h1>
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
                 &quot;
@@ -895,10 +910,10 @@ export default function Home() {
         <div className="w-10/12 md:w-9/12 flex flex-col gap-8">
           <span className="flex font-Anton mt-8 md:mt-0">
             <h1 className="font-medium text-2xl md:text-5xl 2xl:text-6xl">
-              Recent
+              {homeContent ? `${insightTitle[0]}` : `Recent`}
             </h1>
             <h1 className="font-medium text-2xl md:text-5xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-              &nbsp; insights
+              &nbsp; {homeContent ? insightTitle[1] : `insights`}
             </h1>
           </span>
           <InsightContainer insightContent={insightContent} />

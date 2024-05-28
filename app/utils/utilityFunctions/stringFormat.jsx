@@ -18,3 +18,19 @@ export function splitString(input) {
 
   return [firstWord, restOfString];
 }
+
+export function splitStringIntoParts(str, numWords = 1) {
+  str = str.trim();
+
+  const words = str.split(" ");
+
+  if (words.length <= numWords) {
+    return ["", str];
+  }
+
+  const lastWords = words.slice(-numWords).join(" ").trim();
+
+  const firstPart = words.slice(0, -numWords).join(" ").trim();
+
+  return [firstPart, lastWords];
+}

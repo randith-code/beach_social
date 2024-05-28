@@ -89,10 +89,14 @@ const Hero = () => {
       <Navbar ref={navRef} />
       <div className="flex flex-col w-full items-center gap-6 pt-16">
         <h1 className="main-title 2xl:pt-20 text-6xl 2xl:text-8xl font-Anton font-bold w-10/12 md:w-1/2 text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-          {heroContent ? heroContent.acf.header_title : null}
+          {heroContent
+            ? heroContent.acf.header_title
+            : `Ride the Social Tide with Beach Social`}
         </h1>
         <p className="main-content font-medium 2xl:text-xl text-sm w-10/12 md:w-2/5 text-center">
-          {heroContent ? heroContent.acf.header_description : null}
+          {heroContent
+            ? heroContent.acf.header_description
+            : `Dive into a sea of endless possibilities with Beach Social, where every ripple in the digital ocean brings you closer to a vibrant online community. Join us and surf the social wave like never before`}
         </p>
         <Link href="/contactus">
           <button className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6">

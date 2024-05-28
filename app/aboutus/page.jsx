@@ -16,8 +16,11 @@ import ServiceItem from "../components/CardModules/ServiceItem";
 import ParticlesComponent from "../components/Hero section/Particle";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 import ClickAndDragScroll from "../components/CardModules/ClickAndDragScroll";
-import { getAboutUsContent } from "../api/posts";
-import { pairServices } from "../utils/utilityFunctions/stringFormat";
+import { getAboutUsContent, getTeamMembers } from "../api/posts";
+import {
+  pairServices,
+  splitStringIntoParts,
+} from "../utils/utilityFunctions/stringFormat";
 
 import personal_story_img_1 from "../../public/personal_story_1.png";
 import personal_story_img_2 from "../../public/personal_story_2.png";
@@ -112,10 +115,16 @@ const AboutUs = () => {
 
   const [aboutUsContent, setAboutUsContent] = useState();
   const [valueItems, setValueItems] = useState([]);
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [ourValuesTitle, setOurValuesTitle] = useState([]);
+  const [teamTitle, setTeamTitle] = useState([]);
+  const [communityTitle, setCommunityTitle] = useState([]);
 
   const handleFetch = async () => {
     const res = await getAboutUsContent();
+    const resTeam = await getTeamMembers();
     setAboutUsContent(res.data);
+    setTeamMembers(resTeam.data);
   };
 
   useEffect(() => {
@@ -125,6 +134,13 @@ const AboutUs = () => {
   useEffect(() => {
     if (aboutUsContent) {
       setValueItems(pairServices(aboutUsContent.acf.our_values_items));
+      setCommunityTitle(
+        splitStringIntoParts(aboutUsContent.acf.join_commnity_title, 1)
+      );
+      setOurValuesTitle(
+        splitStringIntoParts(aboutUsContent.acf.our_values_titlle, 1)
+      );
+      setTeamTitle(splitStringIntoParts(aboutUsContent.acf.our_team_title, 1));
     }
   }, [aboutUsContent]);
 
@@ -200,7 +216,7 @@ const AboutUs = () => {
         <div className="relative  whitespace-nowrap w-3/4 lg:flex lg:overflow-x-scroll lg:h-fit no-scrollbar gap-20">
           <ClickAndDragScroll
             className={
-              "w-full h-fit grid grid-cols-3 lg:flex gap-20 no-scrollbar"
+              "w-full h-fit grid grid-cols-2 gap-12 md:grid-cols-3 lg:flex md:gap-20 no-scrollbar"
             }
           >
             <ServiceItem
@@ -258,8 +274,6 @@ const AboutUs = () => {
               className={"w-full"}
             />
           </ClickAndDragScroll>
-          {/* <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-gray-300 to-transparent pointer-events-none"></div>
-          <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-black to-transparent pointer-events-none"></div> */}
         </div>
       </div>
 
@@ -346,10 +360,10 @@ const AboutUs = () => {
           <div className="values-title-section md:w-1/2 flex flex-col h-fit gap-4">
             <span className="flex font-Anton">
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
-                Our &quot;
+                {aboutUsContent ? ourValuesTitle[0] : `Our`} &quot;
               </h1>
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-                Values
+                {aboutUsContent ? ourValuesTitle[1] : `Values`}
               </h1>
               <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl">
                 &quot;
@@ -384,9 +398,9 @@ const AboutUs = () => {
       <div className="w-full bg-lightBlue flex justify-center py-16 2xl:py-32">
         <div className="flex flex-col gap-6 w-3/4">
           <span className="flex items-center text-4xl font-Anton 2xl:text-6xl">
-            <h1>Meet Our</h1>
+            <h1>{aboutUsContent ? teamTitle[0] : `Meet Our`}</h1>
             <h1 className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-              &nbsp;Team
+              &nbsp;{aboutUsContent ? teamTitle[1] : `Team`}
             </h1>
           </span>
           <p className="w-full text-sm font-medium 2xl:text-lg">
@@ -398,35 +412,18 @@ const AboutUs = () => {
             team&apos;s diverse backgrounds and skills breathe life into Beach
             Social&apos;s vision every day.`}
           </p>
-          <div className="relative z-40 flex flex-col md:flex-row w-full justify-between">
-            <TeamMemberCard
-              img={
-                "https://beachsocial.leadmedia.lk/wp-content/uploads/2024/05/Noah.png"
-              }
-              title={"Founder"}
-              name={"Noah Rudolph"}
-              description={
-                "Noah Rudolph is the visionary founder with over 10 years of experience across restaurants, bars, nightclubs, and large-scale events, managing more than five establishments. His extensive background in marketing ensures that wherever he leads, success follows."
-              }
-            />
-            <TeamMemberCard
-              img={
-                "https://beachsocial.leadmedia.lk/wp-content/uploads/2024/05/Bridgette.jpg"
-              }
-              title={"Videographer"}
-              name={"Dolan Brassier"}
-              description={
-                "Dolan Brassier is a prominent videographer known for his dynamic work with top YouTube brands like Danny Duncan. His keen eye captures more than what meets the lens, bringing visionary content to life with exceptional clarity and creativity."
-              }
-            />
-            <TeamMemberCard
-              img={"/member3.png"}
-              title={"Marketing Specialist"}
-              name={"Bridgette Tayman"}
-              description={
-                "Bridgette Tayman, a marketing guru from Maryland, combines her keen eye for aesthetics with a deep expertise in restaurant branding and design. Her innovative visual strategies not only enhance the dining atmosphere but also significantly elevate the overall brand experience."
-              }
-            />
+          <div className="relative z-40 flex flex-col md:grid md:grid-cols-3 w-full justify-between">
+            {teamMembers
+              ? teamMembers.map((member, key) => (
+                  <TeamMemberCard
+                    img={member.acf.member_image}
+                    title={member.acf.title}
+                    name={member.acf.name}
+                    description={member.acf.description}
+                    key={key}
+                  />
+                ))
+              : null}
           </div>
         </div>
       </div>
@@ -436,10 +433,10 @@ const AboutUs = () => {
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
             <h2 className="text-black text-xl md:text-2xl 2xl:text-4xl font-bold">
-              Join our
+              {aboutUsContent ? communityTitle[0] : `Join our`}
             </h2>
             <h2 className="text-xl md:text-xl 2xl:text-4xl font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-              &nbsp;Community
+              &nbsp;{aboutUsContent ? communityTitle[1] : `Community`}
             </h2>
           </span>
           <h2 className="text-black w-3/4 font-medium text-sm 2xl:text-lg">

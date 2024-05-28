@@ -25,3 +25,6 @@ export const getContactUsContent = () =>
   apiInstance.get(
     "/contact-us/292?_field=contact_us_image&acf_format=standard"
   );
+
+export const getTeamMembers = () =>
+  apiInstance.get("/member?_field=member_image&acf_format=standard");
