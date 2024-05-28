@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,6 +10,7 @@ import CustomNavbar from "../components/Navigation/CustomNavBar";
 import Footer from "../components/Navigation/Footer";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 import ParticlesComponent from "../components/Hero section/Particle";
+import { getTermsContent } from "../api/posts";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -51,6 +52,18 @@ const TermsAndAgreements = () => {
       ScrollTrigger.defaults({ scroller: scroller });
     });
   });
+
+  const [termsContent, setTermsContent] = useState();
+
+  const handleFetch = async () => {
+    const res = await getTermsContent();
+    setTermsContent(res.data);
+  };
+
+  useEffect(() => {
+    handleFetch();
+  }, []);
+
   return (
     <main ref={containerRef} className="h-screen">
       <CustomNavbar />
@@ -60,10 +73,12 @@ const TermsAndAgreements = () => {
       <div className="w-full flex justify-center">
         <div className="w-3/4 flex flex-col gap-16 pt-16 pb-28">
           <h1 className="text-6xl 2xl:text-8xl font-Anton font-bold bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-            Terms & Agreements
+            {termsContent ? termsContent.acf.title : `Terms & Agreements`}
           </h1>
           <p>
-            The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum
+            {termsContent
+              ? termsContent.acf.content
+              : `The standard Lorem Ipsum passage, used since the 1500s Lorem ipsum
             dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
@@ -129,7 +144,7 @@ const TermsAndAgreements = () => {
             pleasures have to be repudiated and annoyances accepted. The wise
             man therefore always holds in these matters to this principle of
             selection he rejects pleasures to secure other greater pleasures, or
-            else he endures pains to avoid worse pains.
+            else he endures pains to avoid worse pains.`}
           </p>
         </div>
       </div>

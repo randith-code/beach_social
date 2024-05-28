@@ -28,3 +28,8 @@ export const getContactUsContent = () =>
 
 export const getTeamMembers = () =>
   apiInstance.get("/member?_field=member_image&acf_format=standard");
+
+export const getTermsContent = () => apiInstance.get("/legal-informations/315");
+
+export const getPolicyContent = () =>
+  apiInstance.get("/legal-informations/314");
