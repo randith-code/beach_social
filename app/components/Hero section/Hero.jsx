@@ -17,25 +17,12 @@ import {
   FourthFeatureCard,
 } from "./FeaturesCard";
 import Link from "next/link";
+import { getHomeContent } from "@/app/api/posts";
 
 const Hero = () => {
-  const [content, setContent] = useState();
   const rightArcRef = createRef();
   const leftArcRef = createRef();
   const navRef = createRef();
-
-  const handleGetContent = async () => {
-    const res = await getHeroContent();
-    setContent(res.data);
-  };
-
-  let doc;
-  if (content) {
-    doc = parse(content.content.rendered);
-  }
-  const title = "Ride the Social Tide with Beach Social";
-  const description =
-    "Dive into a sea of endless possibilities with Beach Social, where every ripple in the digital ocean brings you closer to a vibrant online community. Join us and surf the social wave like never before";
 
   gsap.registerPlugin(useGSAP);
 
@@ -86,8 +73,15 @@ const Hero = () => {
     });
   }, []);
 
+  const [heroContent, setHeroContent] = useState();
+
+  const handleFetch = async () => {
+    const res = await getHomeContent();
+    setHeroContent(res.data);
+  };
+
   useEffect(() => {
-    handleGetContent();
+    handleFetch();
   }, []);
 
   return (
@@ -95,10 +89,10 @@ const Hero = () => {
       <Navbar ref={navRef} />
       <div className="flex flex-col w-full items-center gap-6 pt-16">
         <h1 className="main-title 2xl:pt-20 text-6xl 2xl:text-8xl font-Anton font-bold w-10/12 md:w-1/2 text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-          {title}
+          {heroContent ? heroContent.acf.header_title : null}
         </h1>
         <p className="main-content font-medium 2xl:text-xl text-sm w-10/12 md:w-2/5 text-center">
-          {description}
+          {heroContent ? heroContent.acf.header_description : null}
         </p>
         <Link href="/contactus">
           <button className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white py-2 px-6">

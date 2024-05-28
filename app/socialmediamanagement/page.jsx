@@ -15,10 +15,10 @@ import StoryCard from "../components/CardModules/storycrad";
 import ServiceItem from "../components/CardModules/ServiceItem";
 import ParticlesComponent from "../components/Hero section/Particle";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
-import { getSuccessStoryPosts } from "../api/posts";
+import { getSuccessStoryPosts, getSocialMediaContent } from "../api/posts";
 
 import background_demo from "../../public/background_demo.png";
-import our_values from "../../public//our_value.jpg";
+import { pairServices } from "../utils/utilityFunctions/stringFormat";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -125,11 +125,15 @@ const SocialMediaMangement = () => {
   });
 
   const [successStories, setSuccessStories] = useState([]);
+  const [socialMediaContent, setSocialMediaContent] = useState();
+  const [valueItems, setValueItems] = useState([]);
 
   const handleDataFetch = async () => {
     try {
       const resStory = await getSuccessStoryPosts();
+      const resSocial = await getSocialMediaContent();
       setSuccessStories(resStory.data);
+      setSocialMediaContent(resSocial.data);
       setHeroImage[resStory.data[0].acf.feature_image_1];
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -139,6 +143,12 @@ const SocialMediaMangement = () => {
   useEffect(() => {
     handleDataFetch();
   }, []);
+
+  useEffect(() => {
+    if (socialMediaContent) {
+      setValueItems(pairServices(socialMediaContent.acf.our_services_items));
+    }
+  }, [socialMediaContent]);
 
   const handleOpenContact = () => {
     setOpenContact(true);
@@ -155,14 +165,18 @@ const SocialMediaMangement = () => {
         <div className="w-3/4">
           <div className="flex flex-col gap-6 w-full lg:w-2/3">
             <h1 className="font-Anton pt-20 text-5xl 2xl:text-7xl">
-              Social Media Management
+              {socialMediaContent
+                ? socialMediaContent.acf.hero_title
+                : `Social Media Management`}
             </h1>
             <p className="font-Anton 2xl:text-lg">
-              In today&apos;s digital landscape, maintaining an active and
+              {socialMediaContent
+                ? socialMediaContent.acf.hero_description
+                : `In today&apos;s digital landscape, maintaining an active and
               engaging social media presence is more crucial than ever. At Beach
               Social, we offer comprehensive Social Media Management services
               designed to amplify your brand&apos;s online footprint and connect
-              with your audience more effectively.
+              with your audience more effectively.`}
             </p>
             <div className="grid grid-cols-2 gap-8 md:flex 2xl:w-3/4 justify-between py-10">
               <ServiceItem
@@ -209,15 +223,26 @@ const SocialMediaMangement = () => {
               </h1>
             </span>
             <p className="font-medium text-lg 2xl:text-xl">
-              At Beach Social, our core values drive everything we do. We
+              {socialMediaContent
+                ? socialMediaContent.acf.our_service_description
+                : `At Beach Social, our core values drive everything we do. We
               champion Community, embrace Innovation, uphold Integrity, and
               celebrate Inclusivity. These principles ensure our platform
-              remains a vibrant, trusted, and inclusive space for all.
+              remains a vibrant, trusted, and inclusive space for all.`}
             </p>
           </div>
           <div className="relative md:w-1/2">
             <div className="hook-inner-container flex flex-col gap-8 md:gap-32 2xl:gap-48 w-full">
-              <OurValuesItem
+              {socialMediaContent
+                ? valueItems.map((item, key) => (
+                    <OurValuesItem
+                      key={key}
+                      item={item[0]}
+                      description={item[1]}
+                    />
+                  ))
+                : null}
+              {/* <OurValuesItem
                 item={"Strategy Development:"}
                 description={
                   "We begin by understanding your brand, goals, and audience. Using this insight, we craft a tailored social media strategy that aligns with your business objectives and sets the stage for digital success."
@@ -246,7 +271,7 @@ const SocialMediaMangement = () => {
                 description={
                   "With our comprehensive analytics tools, we track the performance of your campaigns and provide detailed reports. This helps us refine strategies and make data-driven decisions to boost your social media effectiveness."
                 }
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -269,13 +294,15 @@ const SocialMediaMangement = () => {
                 </h1>
               </span>
               <p className="font-medium w-full md:w-full 2xl:text-xl">
-                At Beach Social, we don&apos;t just manage your social
+                {socialMediaContent
+                  ? socialMediaContent.acf.why_choose_us_description
+                  : `At Beach Social, we don&apos;t just manage your social
                 media&#59; we empower your brand to thrive in a digital world.
                 Our team of social media experts is passionate about crafting
                 unique strategies that drive engagement, increase followers, and
                 convert leads into loyal customers. Partner with us to
                 experience the difference that professional social media
-                management can make.
+                management can make.`}
               </p>
               <button className="bg-black group hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-sm text-white rounded-3xl w-fit px-4 py-2 2xl:py-2 2xl:px-6">
                 <p className="font-semibold group-hover:text-black bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text 2xl:text-xl">
@@ -286,11 +313,21 @@ const SocialMediaMangement = () => {
           </div>
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center py-8">
             <div className="relative w-full md:w-3/4">
-              <Image
-                className="absolute top-0 w-full rounded-3xl aspect-square z-10"
-                src={our_values}
-                alt="our values image"
-              />
+              {socialMediaContent ? (
+                <Image
+                  className="absolute top-0 w-full rounded-3xl aspect-square z-10"
+                  src={socialMediaContent.acf.why_choose_us_image}
+                  alt="our values image"
+                  fill
+                />
+              ) : (
+                <Image
+                  className="absolute top-0 w-full rounded-3xl aspect-square z-10"
+                  src={"/place_holder.png"}
+                  alt="our values image"
+                  fill
+                />
+              )}
               <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
             </div>
           </div>
@@ -300,7 +337,9 @@ const SocialMediaMangement = () => {
       <div className="success-story-container py-16 relative bg-white w-full z-40 flex justify-center 2xl:py-28">
         <span className="w-10/12 md:w-9/12 flex flex-col">
           <h3 className="story-title font-Anton text-2xl md:text-4xl 2xl:text-6xl font-medium py-4 md:pt-8">
-            Recent Works
+            {socialMediaContent
+              ? socialMediaContent.acf.recent_works
+              : `Recent Works`}
           </h3>
           <div className="md:hidden grid grid-cols-2 gap-2 pb-4">
             {successStories
@@ -419,11 +458,13 @@ const SocialMediaMangement = () => {
             </h2>
           </span>
           <h2 className="text-black w-3/4 font-medium text-sm 2xl:text-base">
-            Whether you&apos;re looking to grow your brand, expand your social
+            {socialMediaContent
+              ? socialMediaContent.acf.join_community_description
+              : `Whether you&apos;re looking to grow your brand, expand your social
             network, or just find a fun and friendly place to express yourself,
             Beach Social is your go-to platform. Connect with us to stay updated
             on exciting features, community highlights, and more as we continue
-            to make social media a positive force in the world.
+            to make social media a positive force in the world.`}
           </h2>
           <Link href="/contactus">
             <span className="flex mt-12 gap-8 2xl:gap-16">
@@ -433,7 +474,9 @@ const SocialMediaMangement = () => {
                   onMouseLeave={handleContactLeave}
                   className="font-medium font-Anton text-black text-4xl md:text-6xl 2xl:text-8xl z-20 relative"
                 >
-                  Get in Touch with Us
+                  {socialMediaContent
+                    ? socialMediaContent.acf.get_in_touch_with_us_title
+                    : `Get in Touch with Us`}
                 </h1>
                 <div className="contactBar w-full h-0 rounded-xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop absolute bottom-0 left-0"></div>
               </div>

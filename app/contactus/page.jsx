@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,6 +14,7 @@ import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Navigation/Footer";
 import ParticlesComponent from "../components/Hero section/Particle";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
+import { getContactUsContent } from "../api/posts";
 
 import contactus_hero from "../../public/contact_us.jpg";
 import footer_logo from "../../public/footer_logo.png";
@@ -85,6 +86,18 @@ const ContactUs = () => {
       }
     },
   });
+
+  const [conatctContent, setContactContent] = useState();
+
+  const handleFetch = async () => {
+    const res = await getContactUsContent();
+    setContactContent(res.data);
+  };
+
+  useEffect(() => {
+    handleFetch();
+  }, []);
+
   return (
     <main ref={containerRef} className="h-screen">
       <Navbar />
@@ -92,7 +105,7 @@ const ContactUs = () => {
       <div className="grid place-items-center w-full">
         <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
         <h1 className="text-5xl 2xl:text-8xl font-Anton font-bold text-center bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-          Contact Us
+          {conatctContent ? conatctContent.acf.main_title : `Contact Us`}
         </h1>
       </div>
 
@@ -100,12 +113,21 @@ const ContactUs = () => {
         <div className="w-10/12 md:w-9/12 flex flex-col md:flex-row items-center">
           <div className="w-10/12 md:w-1/2 h-fit flex justify-center items-center pt-8">
             <div className="relative w-full md:w-2/3">
-              <Image
-                className="absolute top-0 rounded-3xl z-10"
-                src={contactus_hero}
-                fill
-                alt="contact us hero image"
-              />
+              {conatctContent ? (
+                <Image
+                  className="absolute top-0 rounded-3xl z-10"
+                  src={conatctContent.acf.contact_us_image}
+                  fill
+                  alt="contact us hero image"
+                />
+              ) : (
+                <Image
+                  className="absolute top-0 rounded-3xl z-10"
+                  src={"/place_holder.png"}
+                  fill
+                  alt="contact us hero image"
+                />
+              )}
               <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
             </div>
           </div>
@@ -113,16 +135,22 @@ const ContactUs = () => {
           <div className="w-full md:w-1/2 flex items-center">
             <span className="flex flex-col justify-start gap-4 w-full mt-8">
               <span className="flex items-center text-4xl font-Anton">
-                <h1>Get in touch with us</h1>
+                <h1>
+                  {conatctContent
+                    ? conatctContent.acf.sub_title
+                    : `Get in touch with us`}
+                </h1>
                 {/* <h1 className="bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
                   &nbsp;Team
                 </h1> */}
               </span>
               <p className="text-sm w-full 2xl:text-xl">
-                We&apos;re here to help you navigate the exciting world of
+                {conatctContent
+                  ? conatctContent.acf.hero_section_description
+                  : `We&apos;re here to help you navigate the exciting world of
                 social media. Whether you have questions about our services,
                 need support for your existing account, or simply want to share
-                your thoughts and feedback, we&apos;re all ears!
+                your thoughts and feedback, we&apos;re all ears!`}
               </p>
               <span className="flex flex-col gap-6">
                 <span className="flex gap-4 items-center">
@@ -140,9 +168,17 @@ const ContactUs = () => {
                       />
                     </svg>
                   </div>
-                  <a href="tel:3366889102">
+                  <a
+                    href={
+                      conatctContent
+                        ? `tel:${conatctContent.acf.telephone_number}`
+                        : null
+                    }
+                  >
                     <p className="font-Anton 2xl:text-xl">
-                      (336) 688&ndash;9102
+                      {conatctContent
+                        ? conatctContent.acf.telephone_number
+                        : null}
                     </p>
                   </a>
                 </span>
@@ -159,9 +195,15 @@ const ContactUs = () => {
                       <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                     </svg>
                   </div>
-                  <a href="mailto:Info@beachsocial.com">
+                  <a
+                    href={
+                      conatctContent
+                        ? `mailto:${conatctContent.acf.email}`
+                        : null
+                    }
+                  >
                     <p className="font-Anton 2xl:text-xl">
-                      Info@beachsocial.com
+                      {conatctContent ? conatctContent.acf.email : null}
                     </p>
                   </a>
                 </span>
@@ -186,7 +228,7 @@ const ContactUs = () => {
                     target="_blank"
                   >
                     <p className="font-Anton 2xl:text-xl">
-                      Coastal of the Carolinas
+                      {conatctContent ? conatctContent.acf.location : null}
                     </p>
                   </a>
                 </span>
@@ -313,19 +355,25 @@ const ContactUs = () => {
                       <span className="w-8/12 flex flex-col gap-4">
                         <span className="flex flex-col">
                           <h1 className="font-extrabold text-xl md:text-3xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
-                            SocialReach Nexus
+                            {conatctContent
+                              ? conatctContent.acf.contact_description_title_1
+                              : `SocialReach Nexus`}
                           </h1>
                           <h1 className="font-extrabold text-white text-xl md:text-3xl">
-                            Let&apos;s Connect and Elevate Your Presence!
+                            {conatctContent
+                              ? conatctContent.acf.contact_description_title_1
+                              : `Let&apos;s Connect and Elevate Your Presence!`}
                           </h1>
                         </span>
                         <p className="font-light text-xs md:text-base text-white">
-                          let&apos;s weave the threads of innovation,
+                          {conatctContent
+                            ? conatctContent.acf.contact_description
+                            : `let&apos;s weave the threads of innovation,
                           creativity, and strategy to magnetize your social
                           media presence. Our team is here to turn your digital
                           dreams into reality. Ready to make waves in the social
                           sphere? Contact us now, and let the social magic
-                          begin!
+                          begin!`}
                         </p>
                       </span>
                     </div>

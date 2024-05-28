@@ -16,8 +16,9 @@ import ServiceItem from "../components/CardModules/ServiceItem";
 import ParticlesComponent from "../components/Hero section/Particle";
 import ContactUsPopUP from "../components/ContactUs/ContactUsPopUp";
 import ClickAndDragScroll from "../components/CardModules/ClickAndDragScroll";
+import { getAboutUsContent } from "../api/posts";
+import { pairServices } from "../utils/utilityFunctions/stringFormat";
 
-import about_us from "../../public/about_us.jpg";
 import personal_story_img_1 from "../../public/personal_story_1.png";
 import personal_story_img_2 from "../../public/personal_story_2.png";
 import personal_story_img_3 from "../../public/personal_story_3.png";
@@ -109,6 +110,24 @@ const AboutUs = () => {
     setOpenContact(true);
   };
 
+  const [aboutUsContent, setAboutUsContent] = useState();
+  const [valueItems, setValueItems] = useState([]);
+
+  const handleFetch = async () => {
+    const res = await getAboutUsContent();
+    setAboutUsContent(res.data);
+  };
+
+  useEffect(() => {
+    handleFetch();
+  }, []);
+
+  useEffect(() => {
+    if (aboutUsContent) {
+      setValueItems(pairServices(aboutUsContent.acf.our_values_items));
+    }
+  }, [aboutUsContent]);
+
   return (
     <main ref={containerRef} className="h-screen relative pt-16 md:pt-0">
       <ParticlesComponent id="particles_about" />
@@ -118,11 +137,21 @@ const AboutUs = () => {
         <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row justify-between items-center">
           <div className="w-10/12 lg:w-1/2 h-fit flex justify-start items-center pt-8">
             <div className="relative w-full md:w-10/12 mt-8">
-              <Image
-                className="absolute top-0 w-full rounded-3xl aspect-square z-10"
-                src={about_us}
-                alt="about us hero image"
-              />
+              {aboutUsContent ? (
+                <Image
+                  className="absolute top-0 w-full rounded-3xl aspect-square z-10"
+                  src={aboutUsContent.acf.about_us_hero_image}
+                  alt="about us hero image"
+                  fill
+                />
+              ) : (
+                <Image
+                  className="absolute top-0 w-full rounded-3xl aspect-square z-10"
+                  src={"/place_holder.png"}
+                  alt="about us hero image"
+                  fill
+                />
+              )}
               <div className="rounded-2xl w-full aspect-square bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop translate-x-4 -translate-y-4"></div>
             </div>
           </div>
@@ -130,10 +159,14 @@ const AboutUs = () => {
           <div className="w-full lg:w-1/2 flex items-center">
             <span className="flex flex-col justify-start gap-4 w-full mt-8">
               <h1 className="font-Anton text-5xl 2xl:pb-12 2xl:text-7xl">
-                About Us
+                {aboutUsContent
+                  ? aboutUsContent.acf.about_hero_title
+                  : "About Us"}
               </h1>
               <p className="text-sm w-full 2xl:text-lg">
-                Founded on the scenic coasts of North Carolina and South
+                {aboutUsContent
+                  ? aboutUsContent.acf.about_hero_description_1
+                  : `Founded on the scenic coasts of North Carolina and South
                 Carolina, Beach Social emerged from a vision to meld digital
                 communication with authentic human connections. Inspired by the
                 vibrant life of coastal towns&ndash;from Myrtle Beach to Oak
@@ -142,10 +175,12 @@ const AboutUs = () => {
                 where diverse paths meet and leave unique marks in the sand,
                 transforming these interactions into a dynamic social media
                 platform that resonates with the energy of our coastal
-                communities.
+                communities.`}
               </p>
               <p className="text-sm w-full 2xl:text-lg">
-                At Beach Social, our mission is simple yet profound: to empower
+                {aboutUsContent
+                  ? aboutUsContent.acf.about_hero_description_2
+                  : `At Beach Social, our mission is simple yet profound: to empower
                 individuals and businesses to forge meaningful connections
                 through innovative social media solutions. We believe in the
                 transformative power of connection to drive personal growth and
@@ -154,7 +189,7 @@ const AboutUs = () => {
                 minimum of 20% or more across restaurants, nightclubs,
                 boutiques, and smoke shops, we don&apos;t just manage social
                 media&ndash;we create impactful experiences that help our
-                clients flourish in the digital landscape.
+                clients flourish in the digital landscape.`}
               </p>
             </span>
           </div>
@@ -289,15 +324,19 @@ const AboutUs = () => {
         </div>
         <div className="w-10/12 md:w-9/12 flex flex-col gap-4">
           <h3 className="text-2xl md:text-3xl font-Anton font-medium 2xl:text-6xl">
-            Personal Story
+            {aboutUsContent
+              ? aboutUsContent.acf.personal_story_title
+              : "Personal Story"}
           </h3>
           <p className="font-medium text-xs md:text-base 2xl:text-xl">
-            Coming from a family of small business owners and having worked
+            {aboutUsContent
+              ? aboutUsContent.acf.personal_story_description
+              : `Coming from a family of small business owners and having worked
             closely with local enterprises for years, the Beach Social deeply
             understand the nuances and needs of small businesses. We&apos;re
             here to leverage this expertise to craft compelling stories and
             strategies that ensure significant returns, regardless of your
-            business&apos;s size.
+            business&apos;s size.`}
           </p>
         </div>
       </div>
@@ -317,38 +356,25 @@ const AboutUs = () => {
               </h1>
             </span>
             <p className="font-medium text-lg md:text-base lg:text-lg 2xl:text-xl">
-              At Beach Social, our core values drive everything we do. We
+              {aboutUsContent
+                ? aboutUsContent.acf.our_values_description
+                : `At Beach Social, our core values drive everything we do. We
               champion Community, embrace Innovation, uphold Integrity, and
               celebrate Inclusivity. These principles ensure our platform
-              remains a vibrant, trusted, and inclusive space for all.
+              remains a vibrant, trusted, and inclusive space for all.`}
             </p>
           </div>
           <div className="relative md:w-1/2">
             <div className="values-inner-container flex flex-col gap-8 md:gap-32 2xl:gap-48 w-full">
-              <OurValuesItem
-                item={"Community:"}
-                description={
-                  "At Beach Social, our core values drive everything we do. We champion Community, embrace Innovation, uphold Integrity, and celebrate Inclusivity. These principles ensure our platform remains a vibrant, trusted, and inclusive space for all."
-                }
-              />
-              <OurValuesItem
-                item={"Innovation:"}
-                description={
-                  "We continually push the boundaries of what social media can do, implementing cutting-edge technologies and creative strategies to enhance user experience."
-                }
-              />
-              <OurValuesItem
-                item={"Integrity:"}
-                description={
-                  "We operate with transparency and honesty, valuing the trust that our users place in us to manage their online presence responsibly."
-                }
-              />
-              <OurValuesItem
-                item={"Inclusivity:"}
-                description={
-                  "Beach Social is for everyone. We celebrate diversity and work to ensure that our platform is accessible, welcoming, and empowering for all."
-                }
-              />
+              {valueItems
+                ? valueItems.map((value, key) => (
+                    <OurValuesItem
+                      item={value[0]}
+                      description={value[1]}
+                      key={key}
+                    />
+                  ))
+                : null}
             </div>
           </div>
         </div>
@@ -364,10 +390,13 @@ const AboutUs = () => {
             </h1>
           </span>
           <p className="w-full text-sm font-medium 2xl:text-lg">
+            {aboutUsContent
+              ? aboutUsContent.acf.our_team_description
+              : `
             Behind every post and pixel is our dedicated team of dreamers,
             thinkers, and doers. From tech gurus to creative mavens, our
             team&apos;s diverse backgrounds and skills breathe life into Beach
-            Social&apos;s vision every day.
+            Social&apos;s vision every day.`}
           </p>
           <div className="relative z-40 flex flex-col md:flex-row w-full justify-between">
             <TeamMemberCard
@@ -414,11 +443,13 @@ const AboutUs = () => {
             </h2>
           </span>
           <h2 className="text-black w-3/4 font-medium text-sm 2xl:text-lg">
-            Whether you&apos;re looking to grow your brand, expand your social
+            {aboutUsContent
+              ? aboutUsContent.acf.join_community_description
+              : `Whether you&apos;re looking to grow your brand, expand your social
             network, or just find a fun and friendly place to express yourself,
             Beach Social is your go-to platform. Connect with us to stay updated
             on exciting features, community highlights, and more as we continue
-            to make social media a positive force in the world.
+            to make social media a positive force in the world.`}
           </h2>
           <Link href="/contactus">
             <span className="flex mt-12 gap-8 2xl:gap-16">
@@ -428,7 +459,9 @@ const AboutUs = () => {
                   onMouseLeave={handleContactLeave}
                   className="font-medium font-Anton text-black text-4xl md:text-6xl 2xl:text-8xl z-20 relative"
                 >
-                  Get in Touch with Us
+                  {aboutUsContent
+                    ? aboutUsContent.acf.get_in_touch_with_us_title
+                    : `Get in Touch with Us`}
                 </h1>
                 <div className="contactBar w-full h-0 rounded-xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop absolute bottom-0 left-0"></div>
               </div>

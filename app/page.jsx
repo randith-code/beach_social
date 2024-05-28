@@ -15,7 +15,15 @@ import Link from "next/link";
 import Scrollbar from "smooth-scrollbar";
 import Overlay from "./components/CardModules/Overlay";
 import InsightContainer from "./components/LayoutComponents/InsightContainer";
-import { getInsightPosts, getSuccessStoryPosts } from "./api/posts";
+import {
+  getInsightPosts,
+  getSuccessStoryPosts,
+  getHomeContent,
+} from "./api/posts";
+import {
+  splitString,
+  pairServices,
+} from "./utils/utilityFunctions/stringFormat";
 
 import logo_1 from "../public/oki.svg";
 import logo_2 from "../public//varnish.svg";
@@ -28,9 +36,6 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 export default function Home() {
-  const partnersDesc =
-    "We build strong client relationships based on trust and honesty. You can always count on us to have your back.";
-
   const containerRef = useRef();
 
   const [openContact, setOpenContact] = useState(false);
@@ -242,12 +247,12 @@ export default function Home() {
 
         gsap.from(".services", {
           yPercent: "100",
-          opacity: 0.4,
+          // opacity: 0.4,
           duration: 0.5,
           stagger: 0.1,
           scrollTrigger: {
-            trigger: ".services",
-            toggleActions: "restart complete restart pause",
+            trigger: ".service",
+            toggleActions: "restart complete none pause",
             scrub: 1,
           },
         });
@@ -323,14 +328,19 @@ export default function Home() {
 
   const [insightContent, setInsightContent] = useState([]);
   const [successStories, setSuccessStories] = useState([]);
+  const [partnersTitle, setPartnersTitle] = useState([]);
+  const [homeContent, setHomeContent] = useState([]);
+  const [pairedServices, setPairedSrvices] = useState([]);
+  const [itemList, setItemList] = useState([]);
 
   const handleDataFetch = async () => {
     try {
       const res = await getInsightPosts();
       const resStory = await getSuccessStoryPosts();
+      const resHome = await getHomeContent();
       setSuccessStories(resStory.data);
-      console.log(resStory.data);
       setInsightContent(res.data);
+      setHomeContent(resHome.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -354,6 +364,14 @@ export default function Home() {
     handleDataFetch();
   }, []);
 
+  useEffect(() => {
+    if (homeContent.acf) {
+      setPartnersTitle(splitString(homeContent.acf.partners_title));
+      setPairedSrvices(pairServices(homeContent.acf.services));
+      setItemList(pairServices(homeContent.acf.story_items));
+    }
+  }, [homeContent]);
+
   return (
     <main
       id="main-container"
@@ -365,14 +383,14 @@ export default function Home() {
       <div className="w-full flex flex-col gap-6 items-center py-16 md:py-32 bg-white z-40">
         <span className="partner-header font-Anton flex">
           <h1 className="font-bold text-2xl md:text-5xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-            Friends
+            {partnersTitle[0]}
           </h1>
           <h1 className="font-bold text-2xl md:text-5xl 2xl:text-6xl">
-            &nbsp; we have made along the way
+            &nbsp; {partnersTitle[1]}
           </h1>
         </span>
         <p className="partner-desc 2xl:text-xl text-xs md:text-sm font-medium w-1/2 md:w-2/6 text-center">
-          {partnersDesc}
+          {homeContent.acf ? homeContent.acf.partners_description : null}
         </p>
         <div className="flex flex-col gap-8 md:gap-14 mt-8 bg-white z-40">
           <div className="flex w-full gap-10 overflow-x-scroll no-scrollbar md:overflow-x-hidden">
@@ -646,42 +664,22 @@ export default function Home() {
             &nbsp; you need.
           </h1>
         </span>
-        <div className="flex flex-col gap-8 items-center w-full">
-          <div className="services flex justify-center items-center w-full font-normal text-xl md:text-4xl 2xl:text-6xl gap-4">
-            <div className=" text-right flex-1">Copy Writing</div>
-            <div className=" text-center flex justify-center items-center w-6 md:w-10">
-              <hr className="h-1 md:h-1.5 w-full bg-black rounded-lg" />
-            </div>
-            <div className="text-left flex-1">Web Design</div>
-          </div>
-          <div className="services flex justify-center items-center w-full font-normal text-xl md:text-4xl 2xl:text-6xl gap-4">
-            <div className=" text-right flex-1">Email Campaign</div>
-            <div className=" text-center flex justify-center items-center w-6 md:w-10">
-              <hr className="h-1 md:h-1.5 w-full bg-black rounded-lg" />
-            </div>
-            <div className="text-left flex-1">SMS Campaign</div>
-          </div>
-          <div className="services flex justify-center items-center w-full font-normal text-xl md:text-4xl 2xl:text-6xl gap-4">
-            <div className=" text-right flex-1">Event Promotion</div>
-            <div className=" text-center flex justify-center items-center w-6 md:w-10">
-              <hr className="h-1 md:h-1.5 w-full bg-black rounded-lg" />
-            </div>
-            <div className="text-left flex-1">Creative Design</div>
-          </div>
-          <div className="services flex justify-center items-center w-full font-normal text-xl md:text-4xl 2xl:text-6xl gap-4">
-            <div className=" text-right flex-1">Social Media Advertising</div>
-            <div className=" text-center flex justify-center items-center w-6 md:w-10">
-              <hr className="h-1 md:h-1.5 w-full bg-black rounded-lg" />
-            </div>
-            <div className="text-left flex-1">Social Media Consulting</div>
-          </div>
-          <div className="services flex justify-center items-center w-full font-normal text-xl md:text-4xl 2xl:text-6xl gap-4">
-            <div className=" text-right flex-1">Social Media Management</div>
-            <div className=" text-center flex justify-center items-center w-6 md:w-10">
-              <hr className="h-1 md:h-1.5 w-full bg-black rounded-lg" />
-            </div>
-            <div className="text-left flex-1">Google adwords Campaign</div>
-          </div>
+        <div className="service-container flex flex-col gap-8 items-center w-full">
+          {homeContent.acf
+            ? pairedServices.map((servicePair, index) => (
+                <div
+                  key={index}
+                  className="services flex justify-center items-center w-full font-normal text-xl md:text-4xl 2xl:text-6xl gap-4"
+                >
+                  <div className="text-right flex-1">{servicePair[0]}</div>
+                  <div className="text-center flex justify-center items-center w-6 md:w-10">
+                    <hr className="h-1 md:h-1.5 w-full bg-black rounded-lg" />
+                  </div>
+                  <div className="text-left flex-1">{servicePair[1]}</div>
+                </div>
+              ))
+            : null}
+
           <button
             onClick={handlePopUpOpen}
             className="contact-button group bg-black rounded-3xl hover:bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop text-white lg:mb-16 py-2 px-8  2xl:mt-16"
@@ -697,12 +695,12 @@ export default function Home() {
       <div className="success-story-container py-16 relative bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop w-full z-40 flex justify-center">
         <span className="initial-text-container hidden absolute md:flex justify-center items-baseline w-full h-full bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop z-50">
           <h3 className="story-initial font-Anton text-center text-4xl font-medium mt-60">
-            Success Stories
+            {homeContent.acf ? homeContent.acf.success_story_title : null}
           </h3>
         </span>
         <span className="w-10/12 md:w-9/12 flex flex-col">
           <h3 className="story-title font-Anton text-2xl md:text-5xl 2xl:text-6xl font-medium py-4 md:pt-8">
-            Success Stories
+            {homeContent.acf ? homeContent.acf.success_story_title : null}
           </h3>
           <div className="md:hidden grid grid-cols-2 gap-2 pb-4">
             {successStories
@@ -871,39 +869,22 @@ export default function Home() {
               </h1>
             </span>
             <p className="font-medium text-base lg:text-lg 2xl:text-xl">
-              Let&apos;s capture your brand&apos;s story together at Beach
+              {homeContent.acf
+                ? homeContent.acf.your_story_description
+                : `Let&apos;s capture your brand&apos;s story together at Beach
               Social. We&apos;ll tap into what makes you unique and turn it into
               a viral sensation that captivates and engages. Ready to shine in
               the digital landscape? Partner with us and watch your social
-              presence transform into your greatest asset.
+              presence transform into your greatest asset.`}
             </p>
           </div>
           <div className="relative md:w-1/2">
             <div className="hook-inner-container flex flex-col gap-8 md:gap-32 2xl:gap-48 w-full">
-              <ListItem
-                item={"Impactful Sharing"}
-                description={
-                  "We believe in sharing content that not only elevates your social status but also empowers your audience with useful and interesting information, giving everyone a reason to engage and spread the word."
-                }
-              />
-              <ListItem
-                item={"Emotional Resonance"}
-                description={
-                  "We're committed to crafting messages that resonate on a deeper emotional level, ensuring that every campaign not only captures attention but also maintains engagement by striking s heartfelt chord."
-                }
-              />
-              <ListItem
-                item={"Visibility and Imitation"}
-                description={
-                  "Our stratergies are designed to make your brand's actions highly visible, encouraging imitation and wider adoption by making sure your message is seen by as many as possible."
-                }
-              />
-              <ListItem
-                item={"Narrative Power"}
-                description={
-                  "We harness the power of storytelling to seamlessly integrate your brand into narratives that people feel compelled to share, driving both connection and conversion through compelling, memorable tales."
-                }
-              />
+              {homeContent.acf
+                ? itemList.map((item, key) => (
+                    <ListItem key={key} item={item[0]} description={item[1]} />
+                  ))
+                : null}
             </div>
           </div>
         </div>
@@ -921,26 +902,7 @@ export default function Home() {
             </h1>
           </span>
           <InsightContainer insightContent={insightContent} />
-          {/* <div className="w-full flex flex-col">
-            <span className="w-full h-fit flex justify-stretch flex-col lg:flex-row gap-6 lg:gap-2 2xl:gap-2">
-              {insightContent
-                ? insightContent.map((insight) => (
-                    <InsightCard
-                      key={insight.id}
-                      title={insight.acf.insight_title}
-                      description={insight.acf.insight_content}
-                      img={insight.acf.featured_image}
-                    />
-                  ))
-                : null}
-            </span>
-          </div> */}
         </div>
-        {/* <span className="w-1/2 hidden md:flex justify-center pb-16 gap-4">
-          <div className="w-12 h-2 rounded-lg bg-black cursor-pointer"></div>
-          <div className="w-12 h-2 rounded-lg bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop cursor-pointer"></div>
-          <div className="w-12 h-2 rounded-lg bg-black cursor-pointer"></div>
-        </span> */}
         <hr className="w-9/12 h-1 bg-slate-200" />
       </div>
 
@@ -948,8 +910,7 @@ export default function Home() {
       <div className="w-full py-16 flex overflow-visible  md:overflow-hidden justify-center">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-4 pb-8">
           <h4 className="font-semibold text-black w-full md:w-1/2 text-base md:text-lg">
-            We love to help brands succeed. Let&apos;s Start a Winning Project
-            Together.
+            {homeContent.acf ? homeContent.acf.get_in_touch_description : null}
           </h4>
           <Link href="/contactus">
             <span className="flex gap-8 2xl:gap-16">
@@ -959,7 +920,7 @@ export default function Home() {
                   onMouseLeave={handleContactLeave}
                   className="font-medium font-Anton text-black text-4xl md:text-6xl 2xl:text-8xl z-20 relative"
                 >
-                  Get in Touch with Us
+                  {homeContent.acf ? homeContent.acf.get_in_touch_title : null}
                 </h1>
                 <div className="contactBar w-full h-0 rounded-xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop absolute bottom-0 left-0"></div>
               </div>
