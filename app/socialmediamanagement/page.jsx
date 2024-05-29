@@ -176,7 +176,7 @@ const SocialMediaMangement = () => {
       <div className="absolute hidden lg:block pt-40 lg:pt-0 w-[30vw] h-[120vh] -z-10 right-0">
         <Image src={background_demo} fill alt="a background feature" />
       </div>
-      <div className="values h-screen md:h-fit lg:h-screen w-full flex justify-center items-center pt-32 md:pt-20 lg:pt-32 pb-16">
+      <div className="values h-fit lg:h-screen w-full flex justify-center items-center pt-16 md:pt-20 lg:pt-32 pb-16">
         <div className="w-3/4">
           <div className="flex flex-col gap-6 w-full lg:w-2/3">
             <h1 className="font-Anton pt-20 text-5xl 2xl:text-7xl">
@@ -432,7 +432,7 @@ const SocialMediaMangement = () => {
         </span>
       </div>
       {/* contact us */}
-      <div className="w-full flex overflow-hidden justify-center my-16">
+      <div className="w-full flex overflow-hidden justify-center md:my-16">
         <div className="contact-us w-10/12 md:w-9/12 flex flex-col gap-6">
           <span className="flex items-center justify-start md:text-xl">
             <h2 className="text-black text-xl md:text-2xl 2xl:text-4xl font-bold">

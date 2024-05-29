@@ -42,6 +42,7 @@ export default function Home() {
   const [openContact, setOpenContact] = useState(false);
   const [isHitTheBottom, setHitTheBottom] = useState(false);
   const [popUpOpen, setPopUpOpen] = useState(false);
+  const [homeContent, setHomeContent] = useState([]);
 
   const handlePopUpOpen = () => {
     setPopUpOpen(true);
@@ -101,38 +102,6 @@ export default function Home() {
               bodyScrollBar.scrollTop = value;
             }
             return bodyScrollBar.scrollTop;
-          },
-        });
-
-        if (document.querySelector(".gsap-marker-scroller-start")) {
-          const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
-
-          bodyScrollBar.addListener(({ offset }) => {
-            gsap.set(markers, { marginTop: -offset.y });
-          });
-        }
-
-        gsap.to(".personal-initial", {
-          scale: 6,
-          opacity: 0,
-          display: "none",
-          scrollTrigger: {
-            trigger: ".personal-initial",
-            toggleActions: "restart complete reverse reset",
-            start: "top 80%",
-            end: "bottom 40%",
-            scrub: true,
-          },
-        });
-
-        gsap.to(".personal-text-container", {
-          opacity: 0,
-          display: "none",
-          duration: 0.4,
-          scrollTrigger: {
-            trigger: ".personal-text-container",
-            toggleActions: "restart complete reverse reset",
-            start: "top 20%",
           },
         });
 
@@ -258,18 +227,6 @@ export default function Home() {
           },
         });
 
-        gsap.from(".values", {
-          xPercent: "-100",
-          duration: 0.8,
-          stagger: 1,
-          scrollTrigger: {
-            trigger: ".values",
-            toggleActions: "restart complete restart pause",
-            scrub: 1,
-            end: "center center",
-          },
-        });
-
         gsap.to(".top-logos", {
           xPercent: "10",
           scrollTrigger: {
@@ -299,16 +256,7 @@ export default function Home() {
             scrub: 1,
           },
         });
-        gsap.to(".srcoller-inner", {
-          xPercent: "20",
-          scrollTrigger: {
-            trigger: ".srcoller-inner",
-            toggleActions: "restart pause restart pause",
-            scrub: 1,
-            start: "top bottom",
-            end: "bottom top",
-          },
-        });
+
         gsap.to(".hook-inner-container", {
           scrollTrigger: {
             trigger: ".hook-container",
@@ -330,7 +278,6 @@ export default function Home() {
   const [insightContent, setInsightContent] = useState([]);
   const [successStories, setSuccessStories] = useState([]);
   const [partnersTitle, setPartnersTitle] = useState([]);
-  const [homeContent, setHomeContent] = useState([]);
   const [pairedServices, setPairedSrvices] = useState([]);
   const [itemList, setItemList] = useState([]);
   const [serviceTitle, setServiceTitle] = useState([]);

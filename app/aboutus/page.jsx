@@ -145,14 +145,14 @@ const AboutUs = () => {
   }, [aboutUsContent]);
 
   return (
-    <main ref={containerRef} className="h-screen relative pt-16 md:pt-0">
+    <main ref={containerRef} className="h-screen relative md:pt-0">
       <ParticlesComponent id="particles_about" />
       <CustomNavbar className={"absolute bg-transparent top-0 left-0"} />
       <div className=" absolute top-0 left-0 -z-50 bg-[url('/about_hero.png')] bg-cover bg-top w-full h-[80vh]" />
-      <div className="values h-screen w-full flex justify-center items-center pt-32 pb-16">
+      <div className="values h-fit md:h-screen w-full flex justify-center items-center pt-32 pb-16">
         <div className="w-10/12 md:w-9/12 flex flex-col lg:flex-row justify-between items-center">
           <div className="w-10/12 lg:w-1/2 h-fit flex justify-start items-center pt-8">
-            <div className="relative w-full md:w-10/12 mt-8">
+            <div className="relative w-full md:w-10/12 md:mt-8">
               {aboutUsContent ? (
                 <Image
                   className="absolute top-0 w-full rounded-3xl aspect-square z-10"
