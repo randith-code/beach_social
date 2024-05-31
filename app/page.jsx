@@ -341,14 +341,17 @@ export default function Home() {
       <div className="w-full flex flex-col gap-6 items-center py-16 md:py-32 bg-white z-40">
         <span className="partner-header font-Anton flex">
           <h1 className="font-bold text-2xl md:text-5xl 2xl:text-6xl bg-gradient-to-br from-gradiantLftBtm to-gradiantRghtTop inline-block text-transparent bg-clip-text">
-            {partnersTitle[0]}
+            {partnersTitle ? partnersTitle[0] : `Friends`}
           </h1>
           <h1 className="font-bold text-2xl md:text-5xl 2xl:text-6xl">
-            &nbsp; {partnersTitle[1]}
+            &nbsp;{" "}
+            {partnersTitle ? partnersTitle[1] : `we have made along the way`}
           </h1>
         </span>
         <p className="partner-desc 2xl:text-xl text-xs md:text-sm font-medium w-1/2 md:w-2/6 text-center">
-          {homeContent.acf ? homeContent.acf.partners_description : null}
+          {homeContent.acf
+            ? homeContent.acf.partners_description
+            : `We build strong client relationships based on trust and honesty. You can always count on us to have your back.`}
         </p>
         <div className="flex flex-col gap-8 md:gap-14 mt-8 bg-white z-40">
           <div className="flex w-full gap-10 overflow-x-scroll no-scrollbar md:overflow-x-hidden">
