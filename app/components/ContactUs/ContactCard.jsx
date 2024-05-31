@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import Link from "next/link";
 
 import { sendMessage } from "@/app/api/contactForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getContactFormContent } from "@/app/api/posts";
 
 gsap.registerPlugin(useGSAP);
