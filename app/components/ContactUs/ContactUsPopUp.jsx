@@ -6,10 +6,11 @@ import { useFormik } from "formik";
 import Link from "next/link";
 
 import { sendMessage } from "@/app/api/contactForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Overlay from "../CardModules/Overlay";
 
 import footer_logo from "../../../public/footer_logo.png";
+import { getContactFormContent } from "@/app/api/posts";
 
 const ContactUsPopUP = ({ open, handelPopUpClose }) => {
   const { contextSafe } = useGSAP(() => {
@@ -64,6 +65,17 @@ const ContactUsPopUP = ({ open, handelPopUpClose }) => {
         (values.subject = "");
     },
   });
+
+  const [contactFormContent, setContactFormContent] = useState();
+
+  const handleFetch = async () => {
+    const res = await getContactFormContent();
+    setContactFormContent(res.data);
+  };
+
+  useEffect(() => {
+    handleFetch();
+  }, []);
 
   return open ? (
     <Overlay>
@@ -185,18 +197,24 @@ const ContactUsPopUP = ({ open, handelPopUpClose }) => {
                       />
                       <span className="flex flex-col">
                         <h1 className="font-extrabold text-xl md:text-3xl bg-gradient-to-r from-emerald-400 to-cyan-400 inline-block text-transparent bg-clip-text">
-                          SocialReach Nexus
+                          {contactFormContent
+                            ? contactFormContent.acf.form_title_1
+                            : `SocialReach Nexus`}
                         </h1>
                         <h1 className="font-extrabold text-white text-xl md:text-3xl">
-                          Let&apos;s Connect and Elevate Your Presence!
+                          {contactFormContent
+                            ? contactFormContent.acf.form_title_2
+                            : `Let&apos;s Connect and Elevate Your Presence!`}
                         </h1>
                       </span>
                       <p className="font-light text-xs md:text-base text-white">
-                        let&apos;s weave the threads of innovation, creativity,
+                        {contactFormContent
+                          ? contactFormContent.acf.form_description
+                          : ` let&apos;s weave the threads of innovation, creativity,
                         and strategy to magnetize your social media presence.
                         Our team is here to turn your digital dreams into
                         reality. Ready to make waves in the social sphere?
-                        Contact us now, and let the social magic begin!
+                        Contact us now, and let the social magic begin!`}
                       </p>
                     </span>
                   </div>

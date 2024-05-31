@@ -33,3 +33,5 @@ export const getTermsContent = () => apiInstance.get("/legal-informations/315");
 
 export const getPolicyContent = () =>
   apiInstance.get("/legal-informations/314");
+
+export const getContactFormContent = () => apiInstance.get("/contact-form/323");
